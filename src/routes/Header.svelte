@@ -3,7 +3,7 @@
 		<a href="https://up.edu.ph/"><img src="UP Logo.png" alt="UP Logo" /> </a>
 	</div>
 	<div class="next-to-logo">
-		<p style="font-size: 20px; margin-top: 0px; line-height: 1.2;"> University of the Philippines - Baguio<br><b style="font-size: 30px;">Office of Guidance and Counseling</b> </p>
+		<p style="font-size: 20px; margin-top: 20px; line-height: 1.2;"> University of the Philippines - Baguio<br><b style="font-size: 30px;">Office of Guidance and Counseling</b> </p>
 	</div>
 </header>
 
@@ -29,6 +29,7 @@
 		width: 50%;
 		height: 50%;
 		object-fit: contain;
+		margin-top: 20px;
 	}
 
 	a:hover {
