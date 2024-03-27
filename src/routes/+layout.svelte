@@ -11,7 +11,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>UPB - Office of Guidance and Counseling - Patnubay</p>
 	</footer>
 </div>
 
