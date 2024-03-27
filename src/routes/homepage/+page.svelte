@@ -21,7 +21,7 @@
         left: 0;
       }
 
-      .button {
+      .buttons {
 		border-style: solid;
 		border-width: 2px;
 		border-color: black;
@@ -35,19 +35,21 @@
   		cursor: pointer;
 	  }
 
-	  .button:hover{
+	  .buttons:hover{
 		background-color: #e7e7e7;
         color: black;
 	  }
+
+
 </style>
 </head>
 
 <body class="container">
 	<div class="box">
 		<div class="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l">
-            <a href="/login-admin" class="button"><span class="relative text-sm font-semibold text-primary dark:text-primaryLight">Admin</span>                    
+            <a href="/login-admin" class="buttons"><span>Admin</span>                    
             </a>
-            <a href="/login-student" class="button"><span class="relative text-sm font-semibold text-white dark:text-gray-900">Student</span>                    
+            <a href="/login-student" class="buttons"><span>Student</span>                    
             </a>
         </div>
 	</div>

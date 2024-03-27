@@ -1,6 +1,6 @@
 <head>
 	<style>
-		.container {
+		.mainbody {
 			min-height: 100vh;
 			display: flex;
 			text-align: left;
@@ -10,6 +10,7 @@
 		}
 	
 		.square{
+			position: relative;
 			background-color: white;
 			box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 			border-radius: 0.5rem;
@@ -19,6 +20,7 @@
 			padding-bottom: 1.5rem; /* 24px */
 			max-width: 768px;
 			height: 55%;
+			width: 30%;
 			align-items: left;
 			transform: translate(-70%, 15%);
 		}
@@ -28,7 +30,7 @@
 			line-height: 5px;
 			text-align: center;
 			margin-top: 30px;
-			margin-bottom: 10px;
+			margin-bottom: 15px;
 		}
 	
 		.title {
@@ -73,11 +75,11 @@
 		a {
 			font-size: 0.75rem; /* 12px */ 
 			line-height: 1rem; /* 16px */
-			color: rgb(75 85 99);
+			color: maroon;
 		}
 	
 		a:hover{
-			color: rgb(99 102 241);
+			color: gray;
 		}
 	
 		a:focus{
@@ -88,6 +90,11 @@
 			--tw-ring-color: rgb(99 102 241);
 		}
 	
+		.forgot{
+			text-align: center;
+			width: 110%;
+		}
+
 		.login-button{
 			width: 110%;
 			display: flex;
@@ -130,24 +137,28 @@
 		  }
 	</style>
 </head>
-<body class="container">
+
+<body class="mainbody">
 	<div class="square">
 		<h2 class="mini-title">STUDENT ACCOUNT</h2>
 		<h1 class="title">LOG IN</h1>
 		<form action="#">
 			<div style="margin-bottom: 2rem;">
-				<label for="email" class="subtitle">Email Address</label>
-				<input type="email" id="email" class="input-box" placeholder="your@email.com" required>
+				<label for="email" class="subtitle">UP Mail Address</label>
+				<input type="email" id="email" class="input-box" placeholder="your@up.edu.ph" required>
 			</div>
-			<div style="margin-bottom: 4rem;">
-				<label for="password" class="subtitle">Password</label>
-				<input type="password" id="password" class="input-box" placeholder="Enter your password" required>
-				<a href="https://www.roblox.com/Login" class="forgot">Forgot Password?</a>
+			<div style="margin-bottom: 3rem;">
+				<label for="password" class="subtitle">Student ID</label>
+				<input type="password" id="password" class="input-box" placeholder="Enter your Student ID" required>
 			</div>
 			<button type="submit" class="login-button">Login</button>
+			<div class="forgot">
+				<a href="https://www.roblox.com/Login">Forgot Password?</a>
+			</div>
+			
 		</form>
 	</div>
 	<div class="box overlay">
-		<img style="width: 55%; height: 110%; " src="oble.png" alt="Logo" />
+		<img style="width: 50%; height: 110%; " src="oble.png" alt="Logo" />
 	</div>
 </body>
