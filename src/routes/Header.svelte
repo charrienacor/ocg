@@ -3,7 +3,7 @@
 		<a href="https://up.edu.ph/"><img src="UP Logo.png" alt="UP Logo" /> </a>
 	</div>
 	<div class="next-to-logo">
-		<p style="font-size: 20px; margin-top: 20px; line-height: 1.2;"> University of the Philippines - Baguio<br><b style="font-size: 30px;">Office of Guidance and Counseling</b> </p>
+		<p style="font-size: 20px; margin-top: 27px; line-height: 1.2;"> University of the Philippines - Baguio<br><b style="font-size: 30px;">Office of Guidance and Counseling</b> </p>
 	</div>
 </header>
 
@@ -13,8 +13,8 @@
 	}
 
 	.corner {
-		width: 10%;
-		height: 50%;
+		width: 12%;
+		height: 52%;
 	}
 
 	.corner a {
