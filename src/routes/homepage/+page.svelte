@@ -2,12 +2,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
   
 <style>
-	header{
+	/* header{
 		background-color: maroon;
 		color: white;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		font-weight: 500;
+	} */
+
+	header{
+		margin-top: 30px;
+		margin-left: 25px;
+		display: flex;
+		font-family : Urbanist, sans-serif;
 	}
 
 	body {
@@ -61,13 +68,24 @@
 		object-fit: fill;
 	}
 	
+	.square{
+		position: relative;
+		background-color: white;
+		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+		border-radius: 0.5rem;
+		padding: 30px 30px 30px 30px;
+		max-width: 768px;
+		height: 55%;
+		width: 100%;
+		transform: translate(10%, 0%);
+	}
 </style>
 </head>
 
 <body class="container">
-	<h1 style="text-align: left; line-height: 5px; font-weight: 800; font-size: 50px; padding-top: 40px;">WELCOME!</h1>
-	<p>You have entered the OCG Patnubay Aguhon. Please select a category.</p>
-	<br>
+	<div class="square">
+	<h1 style="text-align: left; line-height: 5px; font-weight: 800; font-size: 50px; padding-top: 40px; padding-left: 25px;">WELCOME!</h1>
+	<p style="padding-left: 25px; padding-bottom: 10px;">You have entered the OCG Patnubay Aguhon. Please select a category.</p>
 	<div class="box">
             <a href="/login-admin" class="user">
 				<div class="buttons">
@@ -88,5 +106,6 @@
 					<p>To fill in the Background Information Sheet or avail free services.</p>
 				</div>                  
 			</a>
+	</div>
 	</div>
 </body>
