@@ -1,3 +1,61 @@
+<script lang="ts">
+	import { onMount } from "svelte";
+	import { initializeApp, type FirebaseApp } from "firebase/app";
+  
+	import {
+	  GoogleAuthProvider,
+	  initializeAuth,
+	  type Auth,
+	  browserSessionPersistence,
+	  browserPopupRedirectResolver,
+	  signInWithRedirect,
+	  getRedirectResult,
+	} from "firebase/auth";
+	import { goto } from "$app/navigation";
+  
+	let app: FirebaseApp;
+	let auth: Auth;
+	const firebaseConfig = {
+	  apiKey: "AIzaSyDrK6Sxkx91G9IhzrWzlwK5z8rvOT1Mj7k",
+	  authDomain: "aguhon-c1026.firebaseapp.com",
+	  projectId: "aguhon-c1026",
+	  storageBucket: "aguhon-c1026.appspot.com",
+	  messagingSenderId: "224957047205",
+	  appId: "1:224957047205:web:2de2d3389bdb0589f9884c",
+	};
+	onMount(async () => {
+	  app = initializeApp(firebaseConfig);
+	  auth = initializeAuth(app, {
+		persistence: browserSessionPersistence,
+		popupRedirectResolver: browserPopupRedirectResolver,
+	  });
+  
+	  const result = await getRedirectResult(auth, browserPopupRedirectResolver);
+	  if (result) {
+		const idToken = await result.user.getIdToken();
+  
+		const response = await fetch("api/sessionLogin", {
+		  method: "POST",
+		  body: JSON.stringify({ idToken }),
+		  headers: {
+			"content-type": "application/json",
+		  },
+		});
+  
+		const { url, redirected } = response;
+		if (redirected) {
+		  goto(url);
+		}
+	  }
+	});
+  
+	async function signInWithGoogle() {
+	  const provider = new GoogleAuthProvider();
+  
+	  await signInWithRedirect(auth, provider);
+	}
+  </script>
+
 <head>
 	<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
   
@@ -161,6 +219,7 @@
 				<input type="password" id="password" class="input-box" placeholder="Enter your Student ID" required>
 			</div>
 			<button type="submit" class="login-button">Login</button>
+			<button on:click={signInWithGoogle}>Login with Google</button>
 		</form>
 	</div>
 	<div class="box overlay">
