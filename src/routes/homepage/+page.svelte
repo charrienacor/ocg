@@ -43,21 +43,21 @@
 		width:  20vw;
 		height: 15vw;
 		text-align: center;
-		border-style: solid;
+		/* border-style: solid; */
 		border-width: 2px;
 		border-color: black;
 		border-radius: 0.75rem; /* 12px */
 		margin: 10px;
 		padding: 30px;
 		font-weight: 600;
-		background-color: #7B1113;
+		background-color: #8e1537;
 		color: white;
 		transition-duration: 0.4s;
   		cursor: pointer;
 	}
 
 	.buttons:hover{
-		background-color: #9d1518;
+		background-color: #045b62;
 	}
 
 	img{

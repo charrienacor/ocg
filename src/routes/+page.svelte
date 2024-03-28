@@ -30,12 +30,12 @@
 	  .button {
 		border-style: solid;
 		border-width: 2px;
-		border-color: black;
+		border-color: #8e1537;
 		border-radius: 0.75rem; /* 12px */
 		margin: 10px 10px 10px 10px;
 		padding: 10px 30px 10px 30px;
 		font-weight: 600;
-		background-color: #7B1113;
+		background-color: #8e1537;
 		color: white;
 		transition-duration: 0.4s;
   		cursor: pointer;
@@ -43,7 +43,7 @@
 
 	  .button:hover{
 		background-color: #e7e7e7;
-		color: black;
+		color: #8e1537;
 	  }
 </style>
 </head>
