@@ -89,7 +89,7 @@
 			height: 55%;
 			width: 30%;
 			align-items: left;
-			transform: translate(-70%, 15%);
+			transform: translate(-70%, 8%);
 		}
 	
 		.mini-title{
