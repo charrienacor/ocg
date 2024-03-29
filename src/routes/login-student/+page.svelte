@@ -86,10 +86,10 @@
 			padding-top: 1.5rem; /* 24px */
 			padding-bottom: 1.5rem; /* 24px */
 			max-width: 768px;
-			height: 55%;
+			height: 35%;
 			width: 30%;
 			align-items: left;
-			transform: translate(-70%, 8%);
+			transform: translate(-70%, 15%);
 		}
 	
 		.mini-title{
@@ -116,53 +116,12 @@
 			line-height: 1.25rem; /* 20px */
 			font-weight: 500;
 			color: rgb(55 65 81);
-			margin-bottom: 0.25rem;
-			text-align: left;
-		}
-	
-		.input-box{
-			box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-			border-radius: 0.375rem; /* 6px */
-			width: 100%;
-			padding-left: 0.75rem; /* 12px */
-			padding-right: 0.75rem; /* 12px */
-			padding-top: 0.5rem; /* 8px */
-			padding-bottom: 0.5rem; /* 8px */
-			border: solid;
-			border-color: rgb(209 213 219);
-		}
-	
-		input:focus{
-			outline: none;
-			--tw-ring-color: rgb(99 102 241);
-			--tw-border-opacity: 1;
-			border-color: rgba(99, 102, 241, var(--tw-border-opacity));
-		}
-	
-		a {
-			font-size: 0.75rem; /* 12px */ 
-			line-height: 1rem; /* 16px */
-			color: maroon;
-		}
-	
-		a:hover{
-			color: gray;
-		}
-	
-		a:focus{
-			outline: none;
-			box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-			--tw-ring-offset-width: 2px;
-			box-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);
-			--tw-ring-color: rgb(99 102 241);
-		}
-	
-		.forgot{
+			margin-bottom: 30px;
 			text-align: center;
 			width: 110%;
 		}
 
-		.login-button{
+		.google-button{
 			width: 110%;
 			display: flex;
 			justify-content: center; 
@@ -180,40 +139,13 @@
 			background-color: maroon;
 		}
 	
-		.login-button:hover{
-			outline: none;
-			box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-			--tw-ring-offset-width: 2px;
-			box-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);
-			--tw-ring-color: rgb(99 102 241);
-			background-color: gray;
-		}
-	
-		.google-button{
-			width: 110%;
-			display: flex;
-			justify-content: center; 
-			padding-top: 0.5rem; /* 8px */
-			padding-bottom: 0.5rem; /* 8px */
-			padding-left: 1rem; /* 16px */
-			padding-right: 1rem; /* 16px */
-			border: solid;
-			border-radius: 6px;
-			border-color: lightgray;
-			box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-			font-size: 0.875rem; /* 14px */
-			line-height: 1.25rem; /* 20px */
-			font-weight: 500;
-			background-color: white;
-		}
-	
 		.google-button:hover{
 			outline: none;
 			box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
 			--tw-ring-offset-width: 2px;
 			box-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);
 			--tw-ring-color: rgb(99 102 241);
-			background-color: lightgray;
+			background-color: gray;
 		}
 
 		.box {
@@ -243,21 +175,8 @@
 		<h2 class="mini-title">STUDENT ACCOUNT</h2>
 		<h1 class="title">LOG IN</h1>
 		<form action="#">
-			<div style="margin-bottom: 2rem;">
-				<label for="email" class="subtitle">UP Mail Address</label>
-				<input type="email" id="email" class="input-box" placeholder="your@up.edu.ph" required>
-			</div>
-			<div style="margin-bottom: 3rem;">
-				<label for="password" class="subtitle">Student ID</label>
-				<input type="password" id="password" class="input-box" placeholder="Enter your Student ID" required>
-			</div>
-			<button type="submit" class="login-button">Login</button>
-			<br>
-			<div style="text-align: center; width: 110%; color: gray; font-size: 10px">
-				<hr> OR <hr>
-			</div>
-			<br>
-			<button on:click={signInWithGoogle} class="google-button">Login with Google</button>
+			<p class="subtitle">To log in to your account, please use your designated UP Mail (your@up.edu.ph).</p>
+			<button on:click={signInWithGoogle} class="google-button">Login with UP Mail</button>
 		</form>
 	</div>
 	<div class="box overlay">

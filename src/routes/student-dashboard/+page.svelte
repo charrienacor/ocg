@@ -3,7 +3,8 @@
 
   export let data: PageServerData;
 
-  const name: string = data.name;
+  const name = data.name;
+  // const name: string = data.name;
 </script>
 
 <h1>Hi {name}~</h1>
