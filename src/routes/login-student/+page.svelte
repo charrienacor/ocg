@@ -189,6 +189,33 @@
 			background-color: gray;
 		}
 	
+		.google-button{
+			width: 110%;
+			display: flex;
+			justify-content: center; 
+			padding-top: 0.5rem; /* 8px */
+			padding-bottom: 0.5rem; /* 8px */
+			padding-left: 1rem; /* 16px */
+			padding-right: 1rem; /* 16px */
+			border: solid;
+			border-radius: 6px;
+			border-color: lightgray;
+			box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+			font-size: 0.875rem; /* 14px */
+			line-height: 1.25rem; /* 20px */
+			font-weight: 500;
+			background-color: white;
+		}
+	
+		.google-button:hover{
+			outline: none;
+			box-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+			--tw-ring-offset-width: 2px;
+			box-shadow: 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-shadow);
+			--tw-ring-color: rgb(99 102 241);
+			background-color: lightgray;
+		}
+
 		.box {
 			width: 100%;
 			height: 100%;
@@ -201,6 +228,12 @@
 			z-index: 1;
 			margin: 30px;
 			transform: translate(40%, 5%);
+		  }
+
+		  hr {
+			display: inline-block; 
+			width: 45%; 
+			transform: translate(0%, 150%);
 		  }
 	</style>
 </head>
@@ -219,7 +252,12 @@
 				<input type="password" id="password" class="input-box" placeholder="Enter your Student ID" required>
 			</div>
 			<button type="submit" class="login-button">Login</button>
-			<button on:click={signInWithGoogle}>Login with Google</button>
+			<br>
+			<div style="text-align: center; width: 110%; color: gray; font-size: 10px">
+				<hr> OR <hr>
+			</div>
+			<br>
+			<button on:click={signInWithGoogle} class="google-button">Login with Google</button>
 		</form>
 	</div>
 	<div class="box overlay">
