@@ -73,7 +73,7 @@
         </p>
       </div>
       <div
-        class="w-full space-y-2 border-primary/10 dark:border-gray-700 flex flex-col -ml-1 sm:flex-row lg:space-y-0 md:w-max lg:border-l"
+        class="-ml-1 flex w-full flex-col space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:space-y-0 lg:border-l"
       >
         <a href="/homepage" class="button"><span>Enter Aguhon</span> </a>
         <a

@@ -10,6 +10,9 @@
 
 <h1>Hi {name}~</h1>
 
-<button class="danger lg bg-red-100"  on:click={()=>goto("/student-appointment")}>
-	Appointment Scheduler
+<button
+  class="danger lg bg-red-100"
+  on:click={() => goto("/student-appointment")}
+>
+  Appointment Scheduler
 </button>

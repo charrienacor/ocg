@@ -5,13 +5,16 @@ import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema";
 import { zod } from "sveltekit-superforms/adapters";
- 
+
 export const load: PageServerLoad = async ({ cookies }) => {
-    const idToken = cookies.get("idToken");
-    if (!idToken) return {};
-    const payload = jose.decodeJwt(idToken);
-    return { picture: payload.picture, name: payload.name,
-    form: await superValidate(zod(formSchema)), };
+  const idToken = cookies.get("idToken");
+  if (!idToken) return {};
+  const payload = jose.decodeJwt(idToken);
+  return {
+    picture: payload.picture,
+    name: payload.name,
+    form: await superValidate(zod(formSchema)),
+  };
 };
 
 export const actions: Actions = {
