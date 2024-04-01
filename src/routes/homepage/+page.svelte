@@ -1,3 +1,8 @@
+<script lang="ts">
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { buttonVariants } from "$lib/components/ui/button";
+</script>
+
 <head>
   <link
     href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
@@ -87,19 +92,15 @@
   </style>
 </head>
 
-<body class="container">
-  <div class="square">
-    <h1
-      style="text-align: left; line-height: 5px; font-weight: 800; font-size: 50px; padding-top: 40px; padding-left: 25px;"
-    >
-      WELCOME!
-    </h1>
-    <p style="padding-left: 25px; padding-bottom: 10px;">
-      You have entered the OCG Patnubay Aguhon. Please select a category.
-    </p>
-    <div class="box">
+<body class="relative">
+  <div class="center relative top-1/2 rounded-lg bg-white">
+    <h1 class="center static">WELCOME!</h1>
+    <div class="center static object-center text-center">
+      <p>You have entered the OCG Patnubay Aguhon. Please select a category.</p>
+    </div>
+    <div class="relative">
       <a href="/login-admin" class="user">
-        <div class="buttons">
+        <div class={buttonVariants({ variant: "default" })}>
           <img src="admin-icon.png" alt="admin" style="icons" />
           <br />
           <span style="font-size: 33px;">ADMINISTRATOR</span>
@@ -109,7 +110,7 @@
       </a>
 
       <a href="/login-student" class="user" style="translate: 0px 23px;">
-        <div class="buttons">
+        <div class={buttonVariants({ variant: "default" })}>
           <img src="student-icon.png" alt="student" style="icons" />
           <br />
           <span style="font-size: 33px;">STUDENT</span>

@@ -1,3 +1,9 @@
+<script lang="ts">
+  import { Button } from "$lib/components/ui/button/index.js";
+  import { buttonVariants } from "$lib/components/ui/button";
+  import { goto } from "$app/navigation";
+</script>
+
 <head>
   <link
     href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
@@ -10,49 +16,17 @@
       background-color: rgb(0 0 0);
       background-color: rgb(243 244 246);
     }
-
-    .container {
-      position: relative;
-      margin: 30px;
-    }
-
-    .box {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .overlay {
-      z-index: 1;
-      margin: 30px;
-      transform: translate(40%, 0%);
-    }
-
-    .button {
-      border-style: solid;
-      border-width: 2px;
-      border-color: #8e1537;
-      border-radius: 0.75rem; /* 12px */
-      margin: 10px 10px 10px 10px;
-      padding: 10px 30px 10px 30px;
-      font-weight: 600;
-      background-color: #8e1537;
-      color: white;
-      transition-duration: 0.4s;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background-color: #e7e7e7;
-      color: #8e1537;
-    }
   </style>
 </head>
 
-<body class="container">
-  <div class="box">
+<body class="relative">
+  <img
+    class="absolute right-1 top-1 z-0 ms-auto h-auto max-w-lg"
+    src="oble.png"
+    alt="Logo"
+  />
+
+  <div class="static z-50">
     <h1
       style="text-align:left; font-weight: 900; font-size: 60px; margin-top: 20px; background: -webkit-linear-gradient(#8e1537, #00573f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
     >
@@ -62,7 +36,7 @@
         >AGUHON</span
       >
     </h1>
-    <div class="lg:flex">
+    <div class="static z-50">
       <div style="width: 50%;">
         <p
           style="font-size: 18px; line-height: 28px; color: rgb(55 65 81); padding: 0px 10px 20px 10px;"
@@ -72,19 +46,14 @@
           University of the Philippines Baguio.
         </p>
       </div>
-      <div
-        class="-ml-1 flex w-full flex-col space-y-2 border-primary/10 dark:border-gray-700 sm:flex-row md:w-max lg:space-y-0 lg:border-l"
-      >
-        <a href="/homepage" class="button"><span>Enter Aguhon</span> </a>
+      <div class="static">
+        <Button on:click={() => goto("/homepage")}>Enter Aguhon</Button>
         <a
           href="https://www.upb.edu.ph/office-of-counseling-and-guidance/"
-          class="button"
+          class={buttonVariants({ variant: "default" })}
           ><span>Learn More</span>
         </a>
       </div>
     </div>
-  </div>
-  <div class="box overlay">
-    <img style="width: 75%; height: 110%; " src="oble.png" alt="Logo" />
   </div>
 </body>
