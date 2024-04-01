@@ -6,7 +6,7 @@ CREATE TABLE Appointments(
     Counselor_Email VARCHAR(30) NOT NULL,
     Appointment_Date DATE NOT NULL,
     Appointment_Time TIME NOT NULL,
-    Nature_Of_Concern VARCHAR(10000),
+    Nature_Of_Concern VARCHAR(1000),
     Appointment_Status ENUM('Approved', 'Pending', 'Rejected', 'Completed'),
     PRIMARY KEY (Appointment_ID),
     FOREIGN KEY (Counselor_Email) REFERENCES Counselors(Counselor_Email),

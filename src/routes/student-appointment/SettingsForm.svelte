@@ -24,18 +24,33 @@
       <Form.Label>Student Number</Form.Label>
       <Input {...attrs} bind:value={$formData.Student_ID} />
     </Form.Control>
-    <Form.Description>No dashes.</Form.Description>
+    <Form.Description>No hyphens.</Form.Description>
     <Form.FieldErrors />
   </Form.Field>
 
-  <!-- <Form.Field {form} name="username">
+  <Form.Field {form} name="Student_Name">
     <Form.Control let:attrs>
-      <Form.Label>Username</Form.Label>
-      <Input {...attrs} bind:value={$formData.username} />
+      <Form.Label>Student Name</Form.Label>
+      <Input {...attrs} bind:value={$formData.Student_Name} />
     </Form.Control>
-    <Form.Description>This is your public display name.</Form.Description>
     <Form.FieldErrors />
-  </Form.Field> -->
+  </Form.Field>
+
+  <Form.Field {form} name="Student_Email">
+    <Form.Control let:attrs>
+      <Form.Label>Student Email</Form.Label>
+      <Input {...attrs} bind:value={$formData.Student_Email} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Nature_Of_Concern">
+    <Form.Control let:attrs>
+      <Form.Label>Nature of Concern</Form.Label>
+      <Input {...attrs} bind:value={$formData.Nature_Of_Concern} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
 
   <Form.Button>Submit</Form.Button>
 </form>
@@ -48,7 +63,7 @@
     Counselor_Email VARCHAR(30) NOT NULL,
     Appointment_Date DATE NOT NULL,
     Appointment_Time TIME NOT NULL,
-    Nature_Of_Concern VARCHAR(10000),
+    Nature_Of_Concern VARCHAR(1000),
     Appointment_Status ENUM('Approved', 'Pending', 'Rejected', 'Completed'),
     PRIMARY KEY (Appointment_ID),
     FOREIGN KEY (Counselor_Email) REFERENCES Counselors(Counselor_Email),
