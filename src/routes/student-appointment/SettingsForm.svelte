@@ -45,22 +45,6 @@
 </script>
 
 <form method="POST" use:enhance>
-  <Form.Field {form} name="Student_Name">
-    <Form.Control let:attrs>
-      <Form.Label>Student Name</Form.Label>
-      <Input disabled {...attrs} bind:value={$formData.Student_Name} />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
-  <Form.Field {form} name="Student_Email">
-    <Form.Control let:attrs>
-      <Form.Label>Student Email</Form.Label>
-      <Input {...attrs} disabled bind:value={$formData.Student_Email} />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
   <Form.Field {form} name="Student_ID">
     <Form.Control let:attrs>
       <Form.Label>Student Number</Form.Label>
