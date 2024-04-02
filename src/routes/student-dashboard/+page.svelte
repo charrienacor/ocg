@@ -2,8 +2,7 @@
   import type { PageServerData } from "./$types";
   import { goto } from "$app/navigation";
   import { Button } from "$lib/components/ui/button";
-  import { AlignLeft, CalendarDays } from "lucide-svelte";
-    import { signInWithCustomToken } from "firebase/auth";
+  import { AlignLeft, CalendarDays,  FileTextIcon, LayoutDashboardIcon, LogOutIcon } from "lucide-svelte";
 
   export let data: PageServerData;
 
@@ -30,9 +29,34 @@
     }
   </style>
 </head>
-<div
-  class="center relative top-1/2 flex flex-col gap-3 rounded-l bg-white px-8 py-8 mt-20"
->
+
+<div class="flex absolute top-10 right-10">
+  <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center rounded-full p-3 text-sm font-medium text-center text-gray-900 bg-white hover:bg-gray-300 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
+      <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
+      </svg>
+  </button>
+      
+      <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+            <li>
+            <a href="/student-dashboard" class="flex items-center px-4 py-2 text-black text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><LayoutDashboardIcon size={15} /><p class="ml-3">Dashboard</p></a>
+          </li>
+          <li>
+            <a href="/student-bis" class="flex items-center px-4 py-2 text-black text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><FileTextIcon size={15} /> <p class="ml-3">Records</p></a>
+          </li>
+          <li>
+            <a href="/student-appointment" class="flex items-center px-4 py-2 text-black text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> <CalendarDays size={15} /> <p class="ml-3">Calendar</p></a>
+          </li>
+        </ul>
+        <div class="py-2">
+          <a href="/login-student" class="flex items-center  px-4 py-2 text-sm text-gray-900 text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"> <LogOutIcon size={15} /> <p class="ml-3">Log Out</p></a>
+        </div>
+    </div>
+  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+</div>
+
+<div class="center relative top-1/2 flex flex-col gap-3 rounded-l bg-white px-8 py-8 mt-20">
   <h1 class="center static text-red-950">Welcome {name}!</h1>
     <div class="center static mb-5 object-center text-center text-red-950">
       <p>You have successfully logged in to your account.</p>
