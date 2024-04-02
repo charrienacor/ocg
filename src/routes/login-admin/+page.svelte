@@ -6,8 +6,6 @@
 
   <style>
     header {
-      margin-top: 30px;
-      margin-left: 25px;
       display: flex;
       font-family: Urbanist, sans-serif;
     }
@@ -15,6 +13,7 @@
     .mainbody {
       min-height: 100vh;
       display: flex;
+      position: relative;
       text-align: left;
       justify-content: center;
       width: 100%;
@@ -34,7 +33,7 @@
       padding-bottom: 1.5rem; /* 24px */
       max-width: 768px;
       height: 55%;
-      width: 30%;
+      width: 35%;
       align-items: left;
       transform: translate(-70%, 15%);
     }
@@ -45,16 +44,18 @@
       text-align: center;
       margin-top: 30px;
       margin-bottom: 15px;
+      width: 110%;
     }
 
     .title {
-      font-size: 50px;
+      font-size: 4vw;
       line-height: 2rem; /* 32px */
       font-weight: bold;
       text-align: center;
       margin-top: 10px;
       margin-bottom: 55px;
       color: rgb(55 65 81);
+      width: 110%;
     }
 
     .subtitle {
@@ -70,7 +71,7 @@
     .input-box {
       box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
       border-radius: 0.375rem; /* 6px */
-      width: 100%;
+      width: 110%;
       padding-left: 0.75rem; /* 12px */
       padding-right: 0.75rem; /* 12px */
       padding-top: 0.5rem; /* 8px */
@@ -189,7 +190,9 @@
       </div>
     </form>
   </div>
-  <div class="box overlay">
-    <img style="width: 50%; height: 110%; " src="oble.png" alt="Logo" />
-  </div>
+  <img
+    class="absolute -right-1 top-20 z-0 ms-auto h-auto max-w-sm md:right-1 md:top-1 md:max-w-lg"
+    src="oble.png"
+    alt="Logo"
+  />
 </body>
