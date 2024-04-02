@@ -87,7 +87,7 @@
       variant="bigbutton"
       size="default"
       class="text-xl"
-      on:click={() => goto("/login-student")}>
+      on:click={() => goto("/login-admin")}>
       Log Out
       </Button>
   </div>
