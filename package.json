@@ -32,6 +32,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@internationalized/date": "^3.5.2",
     "bits-ui": "^0.21.1",
     "clsx": "^2.1.0",
     "firebase": "^10.10.0",
@@ -39,6 +40,8 @@
     "jose": "^5.2.3",
     "lucide-svelte": "^0.364.0",
     "mysql2": "^3.9.3",
+    "svelte-radix": "^1.1.0",
+    "svelte-sonner": "^0.3.20",
     "sveltekit-superforms": "^2.12.2",
     "tailwind-merge": "^2.2.2",
     "tailwind-variants": "^0.2.1",
