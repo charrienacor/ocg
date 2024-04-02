@@ -1,5 +1,5 @@
 <header>
-  <div class="corner">
+  <div class="corner h-24">
     <a href="https://up.edu.ph/"><img src="UP Logo.png" alt="UP Logo" /> </a>
   </div>
   <div class="next-to-logo">
@@ -17,8 +17,7 @@
   }
 
   .corner {
-    width: 12%;
-    height: 52%;
+    width: 150px;
   }
 
   .corner a {
@@ -30,8 +29,8 @@
   }
 
   .corner img {
-    width: 50%;
-    height: 50%;
+    width: 150px;
+    height: 75px;
     object-fit: contain;
     margin-top: 20px;
   }

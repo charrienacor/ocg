@@ -64,8 +64,6 @@
 
   <style>
     header {
-      margin-top: 30px;
-      margin-left: 25px;
       display: flex;
       font-family: Urbanist, sans-serif;
     }
@@ -73,6 +71,7 @@
     .mainbody {
       min-height: 100vh;
       display: flex;
+      position: relative;
       text-align: left;
       justify-content: center;
       width: 100%;
@@ -80,6 +79,7 @@
     }
 
     .square {
+      position: relative;
       background-color: white;
       box-shadow:
         0 4px 6px -1px rgb(0 0 0 / 0.1),
@@ -91,7 +91,9 @@
       padding-bottom: 1.5rem; /* 24px */
       max-width: 768px;
       height: 35%;
-      width: 30%;
+      width: 35%;
+      align-items: left;
+      transform: translate(-70%, 15%);
     }
 
     .mini-title {
@@ -100,16 +102,18 @@
       text-align: center;
       margin-top: 30px;
       margin-bottom: 15px;
+      width: 110%;
     }
 
     .title {
-      font-size: 50px;
+      font-size: 4vw;
       line-height: 2rem; /* 32px */
       font-weight: bold;
       text-align: center;
       margin-top: 10px;
-      margin-bottom: 55px;
+      margin-bottom: 40px;
       color: rgb(55 65 81);
+      width: 110%;
     }
 
     .subtitle {
@@ -152,30 +156,10 @@
       --tw-ring-color: rgb(99 102 241);
       background-color: gray;
     }
-
-    .box {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .overlay {
-      z-index: 1;
-      margin: 30px;
-      transform: translate(40%, 5%);
-    }
-
-    hr {
-      display: inline-block;
-      width: 45%;
-      transform: translate(0%, 150%);
-    }
   </style>
 </head>
 
-<div class="relative flex h-full w-full justify-center">
+<div class="relative flex h-full min-h-screen w-full justify-center">
   <div class="square mt-16">
     <h2 class="mini-title">STUDENT ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>
@@ -187,5 +171,9 @@
       >Login with UP Mail</button
     >
   </div>
-  <img class="" src="oble.png" alt="Logo" />
+  <img
+    class="absolute -right-1 top-20 z-0 ms-auto h-auto max-w-sm md:right-1 md:top-1 md:max-w-lg"
+    src="oble.png"
+    alt="Logo"
+  />
 </div>

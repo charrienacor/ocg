@@ -13,15 +13,13 @@
   <style>
     body {
       font-family: Urbanist, sans-serif;
-      background-color: rgb(0 0 0);
-      background-color: rgb(243 244 246);
     }
   </style>
 </head>
 
 <body class="relative">
   <img
-    class="absolute right-1 top-1 bottom-0 z-0 ms-auto h-min max-w-xs md:max-w-lg "
+    class="absolute right-1 top-40 z-0 ms-auto h-min max-w-xs md:right-1 md:top-1 md:max-w-lg"
     src="oble.png"
     alt="Logo"
   />
@@ -32,14 +30,14 @@
     >
       UPB OCG PATNUBAY <br />
       <span
-        style="font-size: 65px; margin-top: 10px; background: -webkit-linear-gradient(#8e1537, #00573f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+        style="font-size: 65px; margin-top: 0px; background: -webkit-linear-gradient(#8e1537, #00573f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
         >AGUHON</span
       >
     </h1>
     <div class="static z-50">
       <div style="width: 50%;">
         <p
-          style="font-size: 18px; line-height: 28px; color: rgb(55 65 81); padding: 0px 10px 20px 10px;"
+          style="font-size: 18px; line-height: 28px; color: rgb(55 65 81); padding: 10px 0px 30px 0px;"
         >
           The Office of Counseling and Guidance (OCG) is a service-oriented
           unit, fundamental and integral partner to the academic programs of the
