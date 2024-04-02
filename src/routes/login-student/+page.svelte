@@ -160,7 +160,7 @@
 </head>
 
 <div class="relative flex h-full min-h-screen w-full justify-center">
-  <div class="square mt-16">
+  <div class="square mt-28">
     <h2 class="mini-title">STUDENT ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>
     <p class="subtitle">
