@@ -1,10 +1,9 @@
 <script lang="ts">
-    import type { PageServerData } from "./$types";
-    import { goto } from "$app/navigation";
-    import { Button } from "$lib/components/ui/button";
+    // import type { PageServerData } from "./$types";
+    // import { goto } from "$app/navigation";
+    // import { Button } from "$lib/components/ui/button";
     import { CalendarDays, FileTextIcon, LayoutDashboardIcon, LogOutIcon } from "lucide-svelte";
-      import { signInWithCustomToken } from "firebase/auth";
-  
+    // import { signInWithCustomToken } from "firebase/auth";
   </script>
   
   <head>
@@ -30,13 +29,13 @@
   </head>
   <body>
   <div class="flex absolute top-10 right-10">
-    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
+    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center rounded-full p-3 text-sm font-medium text-center text-gray-900 bg-white hover:bg-gray-300 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
         <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
         <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
         </svg>
     </button>
         
-        <div id="dropdownDots" class="absolute inset-2.5 z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+        <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
               <li>
                 <a href="/dashboard-admin" class="flex items-center px-4 py-2 text-black text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><LayoutDashboardIcon size={15} /><p class="ml-3">Dashboard</p></a>
@@ -49,7 +48,7 @@
               </li>
             </ul>
             <div class="py-2">
-              <a href="/login-admin" class="flex items-center  px-4 py-2 text-sm text-gray-700 text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"> <LogOutIcon size={15} /> <p class="ml-3">Log Out</p></a>
+              <a href="/login-admin" class="flex items-center  px-4 py-2 text-sm text-gray-900 text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"> <LogOutIcon size={15} /> <p class="ml-3">Log Out</p></a>
             </div>
         </div>
       <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>

@@ -1,9 +1,6 @@
 <script lang="ts">
-  import type { PageServerData } from "./$types";
   import { goto } from "$app/navigation";
   import { Button } from "$lib/components/ui/button";
-  import { AlignLeft, CalendarDays } from "lucide-svelte";
-    import { signInWithCustomToken } from "firebase/auth";
 </script>
 
 <head>
