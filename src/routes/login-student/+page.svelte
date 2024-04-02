@@ -80,7 +80,6 @@
     }
 
     .square {
-      position: relative;
       background-color: white;
       box-shadow:
         0 4px 6px -1px rgb(0 0 0 / 0.1),
@@ -93,8 +92,6 @@
       max-width: 768px;
       height: 35%;
       width: 30%;
-      align-items: left;
-      transform: translate(-70%, 15%);
     }
 
     .mini-title {
@@ -178,21 +175,17 @@
   </style>
 </head>
 
-<body class="mainbody">
-  <div class="square">
+<div class="relative flex h-full w-full justify-center">
+  <div class="square mt-16">
     <h2 class="mini-title">STUDENT ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>
-    <form action="#">
-      <p class="subtitle">
-        To log in to your account, please use your designated UP Mail
-        (your@up.edu.ph).
-      </p>
-      <button on:click={signInWithGoogle} class="google-button"
-        >Login with UP Mail</button
-      >
-    </form>
+    <p class="subtitle">
+      To log in to your account, please use your designated UP Mail
+      (your@up.edu.ph).
+    </p>
+    <button on:click={signInWithGoogle} class="google-button"
+      >Login with UP Mail</button
+    >
   </div>
-  <div class="box overlay">
-    <img style="width: 50%; height: 110%; " src="oble.png" alt="Logo" />
-  </div>
-</body>
+  <img class="" src="oble.png" alt="Logo" />
+</div>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import * as Form from "$lib/components/ui/form";
+  import * as Card from "$lib/components/ui/card";
   import { Input } from "$lib/components/ui/input";
   import { formSchema, type FormSchema } from "./schema";
   import {
@@ -29,7 +30,7 @@
  
   let value: DateValue | undefined = undefined;
 
-  export let data: SuperValidated<Infer<FormSchema>>;
+  export let data: any;
 
   const form = superForm(data, {
     validators: zodClient(formSchema),
@@ -45,39 +46,41 @@
   ];
 </script>
 
-<Card.Root>
+<Card.Root class="w-1/3">
   <Card.Header>
-    <Card.Title>Student Appointment Form</Card.Title>
-    <Card.Description>Please fill out the following form to schedule an appointment.</Card.Description>
+    <Card.Title>Book an Appointment</Card.Title>
   </Card.Header>
   <Card.Content>
-  <form method="POST" use:enhance>
-    <Form.Field {form} name="Student_ID">
-      <Form.Control let:attrs>
-        <Form.Label>Student Number</Form.Label>
-        <Input {...attrs} bind:value={$formData.Student_ID} />
-      </Form.Control>
-      <Form.Description>No hyphens.</Form.Description>
-      <Form.FieldErrors />
-    </Form.Field>
+    <form method="POST" use:enhance>
+      <Form.Field {form} name="Student_Name">
+        <Form.Control let:attrs>
+          <Form.Label>Student Name</Form.Label>
+          <Input disabled {...attrs} bind:value={$formData.Student_Name} />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-    <Form.Field {form} name="Student_Name">
-      <Form.Control let:attrs>
-        <Form.Label>Student Name</Form.Label>
-        <Input {...attrs} bind:value={$formData.Student_Name} />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
+      <Form.Field {form} name="Student_Email">
+        <Form.Control let:attrs>
+          <Form.Label>Student Email</Form.Label>
+          <Input {...attrs} disabled bind:value={$formData.Student_Email} />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-    <Form.Field {form} name="Student_Email">
-      <Form.Control let:attrs>
-        <Form.Label>Student Email</Form.Label>
-        <Input {...attrs} bind:value={$formData.Student_Email} />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
-
-    <Form.Field {form} name="Guidance_Counselor">
+      <Form.Field {form} name="Student_ID">
+        <Form.Control let:attrs>
+          <Form.Label>Student Number</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="20XXXXXXX"
+            bind:value={$formData.Student_ID}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+      
+      <Form.Field {form} name="Guidance_Counselor">
       <Form.Control let:attrs>
         <Form.Label>Guidance Counselor</Form.Label>
         <Select.Root>
@@ -133,21 +136,17 @@
       <Form.FieldErrors />
     </Form.Field>
 
+      <Form.Field {form} name="Nature_Of_Concern">
+        <Form.Control let:attrs>
+          <Form.Label>Nature of Concern</Form.Label>
+          <Input {...attrs} bind:value={$formData.Nature_Of_Concern} />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-    <Form.Field {form} name="Nature_Of_Concern">
-      <Form.Control let:attrs>
-        <Form.Label>Nature of Concern</Form.Label>
-        <Textarea placeholder="Type your concern here." {...attrs} bind:value={$formData.Nature_Of_Concern} />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>  
-
-    <Form.Button>Submit</Form.Button>
-  </form>
-</Card.Content>
-<Card.Footer>
-</Card.Footer>
-</Card.Root>
+      <Form.Button>Submit</Form.Button>
+    </form>
+  </Card.Content>
 
 <!-- CREATE TABLE Appointments(
     Appointment_ID INTEGER(12) NOT NULL UNIQUE,
