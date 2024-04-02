@@ -1,3 +1,11 @@
+<script lang="ts">
+  import type { PageServerData } from "./$types";
+  import { goto } from "$app/navigation";
+  import { Button } from "$lib/components/ui/button";
+  import { AlignLeft, CalendarDays } from "lucide-svelte";
+    import { signInWithCustomToken } from "firebase/auth";
+</script>
+
 <head>
   <link
     href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
@@ -132,7 +140,7 @@
     }
 
     .login-button:hover {
-      outline: none;
+      outline: solid;
       box-shadow: var(--tw-ring-inset) 0 0 0
         calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
       --tw-ring-offset-width: 2px;
@@ -140,7 +148,7 @@
         0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color),
         var(--tw-ring-shadow);
       --tw-ring-color: rgb(99 102 241);
-      background-color: gray;
+      background-color: #f5f5f5;
     }
 
     .box {
@@ -184,7 +192,8 @@
           required
         />
       </div>
-      <button type="submit" class="login-button">Login</button>
+      <Button on:click={() => goto("/dashboard-admin")} 
+        class="login-button">Login</Button>
       <div class="forgot">
         <a href="https://www.roblox.com/Login">Forgot Password?</a>
       </div>
