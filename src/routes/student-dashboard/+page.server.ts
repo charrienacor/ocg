@@ -6,5 +6,5 @@ export const load: PageServerLoad = ({ cookies }) => {
   const idToken = cookies.get("idToken");
   if (!idToken) return {};
   const payload = jose.decodeJwt(idToken);
-  return { picture: payload.picture, name: payload.name };
+  return { picture: payload.picture, name: payload.name, email: payload.email };
 };

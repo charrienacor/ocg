@@ -1,6 +1,6 @@
 import { redirect, type RequestHandler } from "@sveltejs/kit";
 import * as jose from "jose";
-import type { PageServerLoad, Actions } from "./$types";
+import type { Actions, PageServerLoad } from "./$types";
 import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema";
@@ -13,6 +13,7 @@ export const load: PageServerLoad = async ({ cookies }) => {
   return {
     picture: payload.picture,
     name: payload.name,
+    email: payload.email,
     form: await superValidate(zod(formSchema)),
   };
 };

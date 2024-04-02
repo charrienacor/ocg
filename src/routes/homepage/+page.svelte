@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
-  import { buttonVariants } from "$lib/components/ui/button";
+  import { UsersRound, GraduationCap } from "lucide-svelte";
 </script>
 
 <head>
@@ -10,14 +10,6 @@
   />
 
   <style>
-    /* header{
-		background-color: maroon;
-		color: white;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		font-weight: 500;
-	} */
-
     header {
       margin-top: 30px;
       margin-left: 25px;
@@ -28,98 +20,28 @@
     body {
       font-family: Urbanist, sans-serif;
     }
-
-    .container {
-      position: relative;
-    }
-
-    .user {
-      display: inline-block;
-      color: white;
-    }
-
-    .box {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      text-align: center;
-      top: 0;
-      left: 0;
-    }
-
-    .buttons {
-      width: 20vw;
-      height: 15vw;
-      text-align: center;
-      /* border-style: solid; */
-      border-width: 2px;
-      border-color: black;
-      border-radius: 0.75rem; /* 12px */
-      margin: 10px;
-      padding: 30px;
-      font-weight: 600;
-      background-color: #8e1537;
-      color: white;
-      transition-duration: 0.4s;
-      cursor: pointer;
-    }
-
-    .buttons:hover {
-      background-color: #045b62;
-    }
-
-    img {
-      width: 100px;
-      height: 100px;
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: fill;
-    }
-
-    .square {
-      position: relative;
-      background-color: white;
-      box-shadow:
-        0 4px 6px -1px rgb(0 0 0 / 0.1),
-        0 2px 4px -2px rgb(0 0 0 / 0.1);
-      border-radius: 0.5rem;
-      padding: 30px 30px 30px 30px;
-      max-width: 768px;
-      height: 55%;
-      width: 100%;
-      transform: translate(10%, 0%);
-    }
   </style>
 </head>
 
 <body class="relative">
-  <div class="center relative top-1/2 rounded-lg bg-white">
+  <div class="center relative top-1/2 rounded-lg bg-white px-8 py-8">
     <h1 class="center static">WELCOME!</h1>
     <div class="center static object-center text-center">
       <p>You have entered the OCG Patnubay Aguhon. Please select a category.</p>
     </div>
-    <div class="relative">
-      <a href="/login-admin" class="user">
-        <div class={buttonVariants({ variant: "default" })}>
-          <img src="admin-icon.png" alt="admin" style="icons" />
-          <br />
-          <span style="font-size: 33px;">ADMINISTRATOR</span>
-          <br />
-          <p>To gain full control and access rights.</p>
-        </div>
-      </a>
-
-      <a href="/login-student" class="user" style="translate: 0px 23px;">
-        <div class={buttonVariants({ variant: "default" })}>
-          <img src="student-icon.png" alt="student" style="icons" />
-          <br />
-          <span style="font-size: 33px;">STUDENT</span>
-          <br />
-          <p>
-            To fill in the Background Information Sheet or avail free services.
-          </p>
-        </div>
-      </a>
+    <div class="flex flex-row justify-center gap-3">
+      <Button variant="bigbutton" size="large">
+        <UsersRound size={100} class="inline-block" />
+        <h1 class="inline-block">ADMINISTRATOR</h1>
+        <p>To gain full control and access rights</p>
+      </Button>
+      <Button href="/login-student" variant="bigbutton" size="large">
+        <GraduationCap size={100} class="inline-block" />
+        <h1 class="inline-block">STUDENT</h1>
+        <p>
+          To fll out Backgorund Information Sheet (BIS) or avail free services
+        </p>
+      </Button>
     </div>
   </div>
 </body>
