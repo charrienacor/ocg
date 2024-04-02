@@ -24,7 +24,7 @@
     alt="Logo"
   />
 
-  <div class="static z-50">
+  <div class="static z-50 mt-28">
     <h1
       style="text-align:left; font-weight: 900; font-size: 60px; margin-top: 20px; background: -webkit-linear-gradient(#8e1537, #00573f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
     >
