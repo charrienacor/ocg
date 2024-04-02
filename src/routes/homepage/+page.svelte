@@ -24,7 +24,9 @@
 </head>
 
 <body class="relative">
-  <div class="center relative top-1/2 rounded-lg bg-white px-8 py-8">
+  <div
+    class="center relative top-1/2 flex flex-col gap-3 rounded-lg bg-white px-8 py-8"
+  >
     <h1 class="center static">WELCOME!</h1>
     <div class="center static object-center text-center">
       <p>You have entered the OCG Patnubay Aguhon. Please select a category.</p>
