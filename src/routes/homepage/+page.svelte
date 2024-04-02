@@ -31,8 +31,8 @@
     <div class="center static object-center text-center">
       <p>You have entered the OCG Patnubay Aguhon. Please select a category.</p>
     </div>
-    <div class="flex flex-row justify-center gap-3">
-      <Button variant="bigbutton" size="large">
+    <div class="flex flex-col lg:flex-row justify-center gap-3">
+      <Button href="/login-admin" variant="bigbutton" size="large">
         <UsersRound size={100} class="inline-block" />
         <h1 class="inline-block">ADMINISTRATOR</h1>
         <p>To gain full control and access rights</p>
@@ -40,8 +40,8 @@
       <Button href="/login-student" variant="bigbutton" size="large">
         <GraduationCap size={100} class="inline-block" />
         <h1 class="inline-block">STUDENT</h1>
-        <p>
-          To fll out Backgorund Information Sheet (BIS) or avail free services
+        <p class="text-center text-balance md:text-nowrap">
+          To fill out Backgorund Information Sheet (BIS) or avail free services
         </p>
       </Button>
     </div>

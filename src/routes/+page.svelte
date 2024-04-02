@@ -21,7 +21,7 @@
 
 <body class="relative">
   <img
-    class="absolute right-1 top-1 z-0 ms-auto h-auto max-w-lg"
+    class="absolute right-1 top-1 bottom-0 z-0 ms-auto h-min max-w-xs md:max-w-lg "
     src="oble.png"
     alt="Logo"
   />
