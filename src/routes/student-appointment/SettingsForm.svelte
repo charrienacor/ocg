@@ -1,6 +1,5 @@
 <script lang="ts">
   import * as Form from "$lib/components/ui/form";
-  import * as Card from "$lib/components/ui/card";
   import { Input } from "$lib/components/ui/input";
   import { formSchema, type FormSchema } from "./schema";
   import {
@@ -9,7 +8,6 @@
     superForm,
   } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
-  import { Textarea } from "$lib/components/ui/textarea";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
   import {
     DateFormatter,
@@ -21,6 +19,7 @@
   import { Calendar } from "$lib/components/ui/calendar/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
+  import FormLegend from "$lib/components/ui/form/form-legend.svelte";
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
@@ -29,6 +28,9 @@
   let value: DateValue | undefined = undefined;
 
   export let data: any;
+  export let counselors: any;
+  export let name: any;
+  export let email: any;
 
   const form = superForm(data, {
     validators: zodClient(formSchema),
@@ -36,15 +38,31 @@
 
   const { form: formData, enhance } = form;
 
-  const counselors = [
-    { value: "langiao", label: "Liza A. Ngiao, RGC" },
-    { value: "apparcasio", label: "Aurora P. Parcasio, RGC" },
-    { value: "jetuguinay", label: "Julie E. Tuguinay, RGC" },
-    { value: "mpticag", label: "Merjerie P. Ticag" },
-  ];
+  $: selectedCounselor = $formData.email
+    ? {
+        label: $formData.CName,
+        value: $formData.Counselor,
+      }
+    : undefined;
 </script>
 
 <form method="POST" use:enhance>
+  <Form.Field {form} name="Student_Name">
+    <Form.Control let:attrs>
+      <Form.Label>Student Name</Form.Label>
+      <Input {...attrs} disabled bind:value={name} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Student_Email">
+    <Form.Control let:attrs>
+      <Form.Label>Student Email</Form.Label>
+      <Input {...attrs} disabled bind:value={email} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
   <Form.Field {form} name="Student_ID">
     <Form.Control let:attrs>
       <Form.Label>Student Number</Form.Label>
@@ -60,30 +78,35 @@
   <Form.Field {form} name="Guidance_Counselor">
     <Form.Control let:attrs>
       <Form.Label>Guidance Counselor</Form.Label>
-      <Select.Root>
-        <Select.Trigger class="w-[180px]">
-          <Select.Value
-            placeholder="Select a guidance counselor of your choice."
-          />
+      <Select.Root
+        selected={selectedCounselor}
+        onSelectedChange={(v) => {
+          v && ($formData.Counselor = v.label);
+        }}
+      >
+        <Select.Trigger {...attrs}>
+          <Select.Value placeholder="Select a Guidance Counselor" />
         </Select.Trigger>
         <Select.Content>
           <Select.Group>
             {#each counselors as counselor}
-              <Select.Item value={counselor.value} label={counselor.label}
-                >{counselor.label}</Select.Item
+              <Select.Item
+                value={counselor.Counselor_Email}
+                label="{counselor.First_Name} {counselor.Last_Name}"
+                >{counselor.First_Name} {counselor.Last_Name}</Select.Item
               >
             {/each}
           </Select.Group>
         </Select.Content>
-        <Select.Input name="favoriteFruit" />
       </Select.Root>
+      <input hidden bind:value={$formData.Counselor} name={attrs.name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
   <Form.Field {form} name="Appointment_Date">
-    <Form.Control let:attrs>
-      <Form.Label>Appointment Date<br /></Form.Label>
+    <Form.Control>
+      <Form.Label>Appointment Schedule<br /></Form.Label>
       <Popover.Root>
         <Popover.Trigger asChild let:builder>
           <Button

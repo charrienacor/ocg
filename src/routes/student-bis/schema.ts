@@ -1,10 +1,10 @@
 import { z } from "zod";
 
 export const formSchema = z.object({
-// Preliminaries
+  // Preliminaries
   Semester: z.string().refine((value) => value !== "", {
-        message: "Please select a semester.",
-      }),
+    message: "Please select a semester.",
+  }),
 
   School_Year: z
     .string()
@@ -16,31 +16,31 @@ export const formSchema = z.object({
     .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(9, { message: "Must be 9 digits" }),
 
-  Degree_Program:  z.string().refine((value) => value !== "", {
+  Degree_Program: z.string().refine((value) => value !== "", {
     message: "Please select a course/degree program.",
   }),
 
-// Personal Information
+  // Personal Information
   Student_Name: z
     .string()
     .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
     .max(100),
 
-    Birth_Date: z
+  Birth_Date: z
     .string()
     .refine((v) => v, { message: "An appointment date is required." }),
 
-// Family Data
+  // Family Data
 
-// Children in the Familly
+  // Children in the Familly
 
-// Educational Background
+  // Educational Background
 
-// Financial Information
+  // Financial Information
 
-// Vocational Plans 
+  // Vocational Plans
 
-// Leisure Time Activities
+  // Leisure Time Activities
   Recreational_Activities: z
     .string()
     .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
@@ -66,7 +66,7 @@ export const formSchema = z.object({
     .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
     .max(200),
 
-// Closing Question
+  // Closing Question
   Dreams: z
     .string()
     .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })

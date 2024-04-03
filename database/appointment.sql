@@ -9,5 +9,5 @@ CREATE TABLE Appointments(
     Nature_Of_Concern VARCHAR(1000),
     Appointment_Status ENUM('Approved', 'Pending', 'Rejected', 'Completed'),
     PRIMARY KEY (Appointment_ID),
-    FOREIGN KEY (Counselor_Email) REFERENCES Counselors(Counselor_Email),
+    FOREIGN KEY (Counselor_Email) REFERENCES Counselors(Counselor_Email)
 );

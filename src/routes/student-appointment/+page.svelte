@@ -11,6 +11,9 @@
     LogOutIcon,
   } from "lucide-svelte";
   export let data: PageServerData;
+  let name = data.name;
+  let email = data.email;
+  let counselors = data.counselor;
 </script>
 
 <head>
@@ -107,12 +110,7 @@
       <Card.Title>Book an Appintment</Card.Title>
     </Card.Header>
     <Card.Content>
-      <Label>Student Name</Label>
-      <Input disabled bind:value={data.name} />
-
-      <Label>Email</Label>
-      <Input disabled bind:value={data.email} />
-      <SettingsForm data={data.form} />
+      <SettingsForm data={data.form} {name} {email} {counselors} />
     </Card.Content>
   </Card.Root>
 </div>

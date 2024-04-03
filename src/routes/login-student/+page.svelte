@@ -170,6 +170,10 @@
     <button on:click={signInWithGoogle} class="google-button"
       >Login with UP Mail</button
     >
+
+    <button class="google-button" on:click={() => goto("/google")}
+      >Login with UP Mail(1)</button
+    >
   </div>
   <img
     class="absolute -right-1 top-20 z-0 ms-auto h-auto max-w-sm md:right-1 md:top-1 md:max-w-lg"

@@ -189,8 +189,9 @@
           required
         />
       </div>
-      <Button on:click={() => goto("/dashboard-admin")} 
-        class="login-button">Login</Button>
+      <Button on:click={() => goto("/dashboard-admin")} class="login-button"
+        >Login</Button
+      >
       <div class="forgot">
         <a href="https://www.roblox.com/Login">Forgot Password?</a>
       </div>
