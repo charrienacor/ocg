@@ -14,7 +14,12 @@
   import { cn } from "$lib/utils.js";
   import { Button } from "$lib/components/ui/button/index.js";
   import { Calendar } from "$lib/components/ui/calendar/index.js";
-  import { CalendarDays,  FileTextIcon, LayoutDashboardIcon, LogOutIcon } from "lucide-svelte";
+  import {
+    CalendarDays,
+    FileTextIcon,
+    LayoutDashboardIcon,
+    LogOutIcon,
+  } from "lucide-svelte";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
 
@@ -48,13 +53,19 @@
     { value: "bs_cmsc", label: "Bachelor of Science in Computer Science" },
     { value: "bs_math", label: "Bachelor of Science in Mathematics" },
     { value: "bs_phys", label: "Bachelor of Science in Physics" },
-    { value: "ms_cre", label: "Master of Science in Conservation and Restoration Ecology" },
+    {
+      value: "ms_cre",
+      label: "Master of Science in Conservation and Restoration Ecology",
+    },
     { value: "ms_math", label: "Master of Science in Mathematics" },
     { value: "phd_math", label: "Ph.D. in Mathematics" },
     { value: "ba_ss", label: "Bachelor of Arts in Social Sciences" },
     { value: "bs_me", label: "Bachelor of Science in Management Economics" },
     { value: "mm", label: "Master of Management" },
-    { value: "ma_sds", label: "Master of Arts in Social and Development Studies" },
+    {
+      value: "ma_sds",
+      label: "Master of Arts in Social and Development Studies",
+    },
   ];
 
   const sex = [
@@ -196,51 +207,90 @@
   ];
 </script>
 
-  <head>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
-      rel="stylesheet"
-    />
-  
-    <style>
-      header {
-          display: flex;
-          font-family: Urbanist, sans-serif;
-          background-color:#8e1537;
-          color: white;
-          padding-bottom: 20px;
-        }
-  
-      body {
-        font-family: Urbanist, sans-serif;
-      }
-    </style>
-  </head>
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
+    rel="stylesheet"
+  />
 
-  <div class="flex absolute top-10 right-10">
-    <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex items-center rounded-full p-3 text-sm font-medium text-center text-gray-900 bg-white hover:bg-gray-300 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600" type="button">
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 4 15">
-        <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
-        </svg>
-    </button>
-        
-        <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
-              <li>
-              <a href="/student-dashboard" class="flex items-center px-4 py-2 text-black text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><LayoutDashboardIcon size={15} /><p class="ml-3">Dashboard</p></a>
-            </li>
-            <li>
-              <a href="/student-bis" class="flex items-center px-4 py-2 text-black text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"><FileTextIcon size={15} /> <p class="ml-3">Records</p></a>
-            </li>
-            <li>
-              <a href="/student-appointment" class="flex items-center px-4 py-2 text-black text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"> <CalendarDays size={15} /> <p class="ml-3">Calendar</p></a>
-            </li>
-          </ul>
-          <div class="py-2">
-            <a href="/login-student" class="flex items-center  px-4 py-2 text-sm text-gray-900 text-base hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"> <LogOutIcon size={15} /> <p class="ml-3">Log Out</p></a>
-          </div>
-      </div>
-    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+  <style>
+    header {
+      display: flex;
+      font-family: Urbanist, sans-serif;
+      background-color: #8e1537;
+      color: white;
+      padding-bottom: 20px;
+    }
+
+    body {
+      font-family: Urbanist, sans-serif;
+    }
+  </style>
+</head>
+
+<div class="absolute right-10 top-10 flex">
+  <button
+    id="dropdownMenuIconButton"
+    data-dropdown-toggle="dropdownDots"
+    class="inline-flex items-center rounded-full bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-50 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    type="button"
+  >
+    <svg
+      class="h-5 w-5"
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      viewBox="0 0 4 15"
+    >
+      <path
+        d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
+      />
+    </svg>
+  </button>
+
+  <div
+    id="dropdownDots"
+    class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+  >
+    <ul
+      class="py-2 text-sm text-gray-700 dark:text-gray-200"
+      aria-labelledby="dropdownMenuIconButton"
+    >
+      <li>
+        <a
+          href="/student-dashboard"
+          class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          ><LayoutDashboardIcon size={15} />
+          <p class="ml-3">Dashboard</p></a
+        >
+      </li>
+      <li>
+        <a
+          href="/student-bis"
+          class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          ><FileTextIcon size={15} />
+          <p class="ml-3">Records</p></a
+        >
+      </li>
+      <li>
+        <a
+          href="/student-appointment"
+          class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+        >
+          <CalendarDays size={15} />
+          <p class="ml-3">Calendar</p></a
+        >
+      </li>
+    </ul>
+    <div class="py-2">
+      <a
+        href="/login-student"
+        class="flex items-center px-4 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+      >
+        <LogOutIcon size={15} />
+        <p class="ml-3">Log Out</p></a
+      >
+    </div>
   </div>
 
   <body class="relative mt-5 mb-10">
@@ -2611,13 +2661,13 @@
         <p>What are your dreams and aspirations in life, your expectations of UP Baguio,
           and your objectives for studying in UPB? </p>
 
-        <Form.Field {form} name="Dreams">
-          <Form.Control let:attrs>
-            <Input {...attrs} bind:value={$formData.Dreams} />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-      </div>
-      <Form.Button class="w-full">Submit</Form.Button>
-    </form>
-  </body>
+      <Form.Field {form} name="Dreams">
+        <Form.Control let:attrs>
+          <Input {...attrs} bind:value={$formData.Dreams} />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+    </div>
+    <Form.Button class="w-full">Submit</Form.Button>
+  </form>
+</body>
