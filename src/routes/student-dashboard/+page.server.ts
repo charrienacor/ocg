@@ -1,10 +1,7 @@
 import { redirect, type RequestHandler } from "@sveltejs/kit";
-import * as jose from "jose";
 import type { PageServerLoad } from "./$types";
 
-export const load: PageServerLoad = ({ cookies }) => {
-  const idToken = cookies.get("idToken");
-  if (!idToken) return {};
-  const payload = jose.decodeJwt(idToken);
-  return { picture: payload.picture, name: payload.name, email: payload.email };
+export const load: PageServerLoad = async (event) => {
+  if (!event.locals.user) redirect(302, "/login-student");
+  return { name: event.locals.user.username, email: event.locals.user.email };
 };

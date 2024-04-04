@@ -15,7 +15,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 
   // store state verifier as cookie
   event.cookies.set("state", state, {
-    secure: true, // set to false in localhost
+    secure: import.meta.env.PROD, // set to false in localhost
     path: "/",
     httpOnly: true,
     maxAge: 60 * 10, // 10 min
@@ -23,7 +23,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
 
   // store code verifier as cookie
   event.cookies.set("code_verifier", codeVerifier, {
-    secure: true, // set to false in localhost
+    secure: import.meta.env.PROD, // set to false in localhost
     path: "/",
     httpOnly: true,
     maxAge: 60 * 10, // 10 min

@@ -69,7 +69,7 @@
 
   $: selectedCounselor = $formData.email
     ? {
-        label: $formData.CName,
+        label: $formData.CNamd,
         value: $formData.Counselor,
       }
     : undefined;
@@ -125,6 +125,7 @@
         selected={selectedCounselor}
         onSelectedChange={(v) => {
           v && ($formData.Counselor = v.value);
+          console.log(v);
         }}
       >
         <Select.Trigger {...attrs} class="w-[250px]">
@@ -142,7 +143,7 @@
           </Select.Group>
         </Select.Content>
       </Select.Root>
-      <input hidden bind:value={$formData.Counselor} name={attrs.name} />
+      <input hidden bind:value={$formData.email} name={attrs.name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>

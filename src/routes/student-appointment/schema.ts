@@ -11,9 +11,9 @@ export const formSchema = z.object({
     message: "Please select a guidance counselor.",
   }),
 
-  Appointment_Time: z.string().regex(/^([01]?[0-9]|2[0-3]):([0-5][0-9])$/, {
-    message: "Invalid time format.",
-  }),
+  // Appointment_Time: z.string().regex(/^([01]?[0-9]|2[0-3]):([0-5][0-9])$/, {
+  //   message: "Invalid time format.",
+  // }),
 
   Nature_Of_Concern: z
     .string()
