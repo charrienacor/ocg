@@ -4,8 +4,8 @@ export const formSchema = z.object({
   Student_ID: z
     .string()
     .regex(/[0-9]/, { message: "Only numbers allowed." })
-    .max(9, { message: "Must be 9 digits" })
-    .min(9, { message: "Must be 9 digits" }),
+    .max(9, { message: "Must be 9 digits." })
+    .min(9, { message: "Must be 9 digits." }),
 
   Guidance_Counselor: z.string().refine((value) => value !== "", {
     message: "Please select a guidance counselor.",
@@ -17,7 +17,7 @@ export const formSchema = z.object({
 
   Nature_Of_Concern: z
     .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
+    .regex(/^[a-zA-Z\s]+$/, { message: "Please write your concern here." })
     .max(1000),
 });
 

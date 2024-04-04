@@ -107,7 +107,7 @@
 <div class="relative">
   <Card.Root class="absolute right-1 w-[400px] ">
     <Card.Header>
-      <Card.Title>Book an Appintment</Card.Title>
+      <Card.Title>Book an Appointment</Card.Title>
     </Card.Header>
     <Card.Content>
       <SettingsForm data={data.form} {name} {email} {counselors} />
