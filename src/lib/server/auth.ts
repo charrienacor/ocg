@@ -30,6 +30,7 @@ export const lucia = new Lucia(adapter, {
     return {
       googleId: attributes.google_id,
       username: attributes.username,
+      email: attributes.email,
     };
   },
 });
@@ -42,12 +43,14 @@ declare module "lucia" {
 }
 
 interface DatabaseUserAttributes {
+  name: string;
+  email: string;
   google_id: number;
   username: string;
 }
 
 export const google = new Google(
-  import.meta.env.GOOGLE_CLIENT_ID,
-  import.meta.env.GOOGLE_CLIENT_SECRET,
-  "http://localhost:5173/student-login/google/callback",
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  "http://localhost:5173/login-student/google/callback",
 );

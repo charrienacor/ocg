@@ -32,6 +32,10 @@ export const handle: Handle = async ({ event, resolve }) => {
   return resolve(event);
 };
 
-start_mongo().then(() : void => {
-  console.log('Mongo started');
-}).catch(e => {console.error(e)})
+start_mongo()
+  .then((): void => {
+    console.log("Mongo started");
+  })
+  .catch((e) => {
+    console.error(e);
+  });

@@ -31,14 +31,15 @@ export async function GET(event: RequestEvent): Promise<Response> {
         },
       },
     );
+
     const user = await response.json();
 
     // Replace this with your own DB client.
     const existingUser = await db.execute(
-      `SELECT * FROM user WHERE google_id = ${user.id}`,
+      `SELECT * FROM user WHERE google_id = ${user.sub}`,
     );
 
-    if (existingUser) {
+    if (Object.keys(existingUser[0]).length !== 0) {
       const session = await lucia.createSession(existingUser[0][0].id, {});
       const sessionCookie = lucia.createSessionCookie(session.id);
       event.cookies.set(sessionCookie.name, sessionCookie.value, {
@@ -47,10 +48,9 @@ export async function GET(event: RequestEvent): Promise<Response> {
       });
     } else {
       const userId = generateId(15);
-
       // Replace this with your own DB client.
       await db.execute(
-        `INSERT INTO user VALUES (${userId}, ${user.google_id}, ${user.login})`,
+        `INSERT INTO user VALUES ('${userId}', '${user.sub}', '${user.name}', '${user.email}')`,
       );
 
       const session = await lucia.createSession(userId, {});
@@ -63,7 +63,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/",
+        Location: "/student-dashboard",
       },
     });
   } catch (e) {

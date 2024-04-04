@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { initializeApp, type FirebaseApp } from "firebase/app";
-
+  import { Button } from "$lib/components/ui/button/index.js";
   import {
     GoogleAuthProvider,
     initializeAuth,
@@ -126,53 +126,20 @@
       text-align: center;
       width: 110%;
     }
-
-    .google-button {
-      width: 110%;
-      display: flex;
-      justify-content: center;
-      padding-top: 0.5rem; /* 8px */
-      padding-bottom: 0.5rem; /* 8px */
-      padding-left: 1rem; /* 16px */
-      padding-right: 1rem; /* 16px */
-      border: transparent;
-      border-radius: 0.375rem; /* 6px */
-      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      font-size: 0.875rem; /* 14px */
-      line-height: 1.25rem; /* 20px */
-      font-weight: 500;
-      color: white;
-      background-color: maroon;
-    }
-
-    .google-button:hover {
-      outline: none;
-      box-shadow: var(--tw-ring-inset) 0 0 0
-        calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-      --tw-ring-offset-width: 2px;
-      box-shadow:
-        0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color),
-        var(--tw-ring-shadow);
-      --tw-ring-color: rgb(99 102 241);
-      background-color: gray;
-    }
   </style>
 </head>
 
 <div class="relative flex h-full min-h-screen w-full justify-center">
-  <div class="square mt-28">
-    <h2 class="mini-title">STUDENT ACCOUNT</h2>
-    <h1 class="title">LOG IN</h1>
+  <div class="square mt-28 flex flex-col gap-1">
+    <h2 class="mini-title static">STUDENT ACCOUNT</h2>
+    <h1 class="title center static">LOG IN</h1>
     <p class="subtitle">
       To log in to your account, please use your designated UP Mail
       (your@up.edu.ph).
     </p>
-    <button on:click={signInWithGoogle} class="google-button"
-      >Login with UP Mail</button
-    >
 
-    <button class="google-button" on:click={() => goto("/google")}
-      >Login with UP Mail(1)</button
+    <Button on:click={() => goto("/login-student/google")}
+      >Login with UP Mail</Button
     >
   </div>
   <img
