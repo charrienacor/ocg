@@ -1,8 +1,6 @@
 <script lang="ts">
   import type { PageServerData } from "./$types";
   import SettingsForm from "./SettingsForm.svelte";
-  import { Input } from "$lib/components/ui/input";
-  import { Label } from "$lib/components/ui/label";
   import * as Card from "$lib/components/ui/card";
   import {
     CalendarDays,

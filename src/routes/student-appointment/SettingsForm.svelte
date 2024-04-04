@@ -38,10 +38,53 @@
 
   const { form: formData, enhance } = form;
 
+  const hours = [
+    { value: "07", label: "7" },
+    { value: "08", label: "8" },
+    { value: "09", label: "9" },
+    { value: "10", label: "10" },
+    { value: "11", label: "11" },
+    { value: "12", label: "12" },
+    { value: "13", label: "13" },
+    { value: "14", label: "14" },
+    { value: "15", label: "15" },
+    { value: "16", label: "16" },
+    { value: "17", label: "17" },
+  ];
+
+  const minutes = [
+    { value: "00", label: "00" },
+    { value: "05", label: "05" },
+    { value: "10", label: "10" },
+    { value: "15", label: "15" },
+    { value: "20", label: "20" },
+    { value: "25", label: "25" },
+    { value: "30", label: "30" },
+    { value: "35", label: "35" },
+    { value: "40", label: "40" },
+    { value: "45", label: "45" },
+    { value: "50", label: "50" },
+    { value: "55", label: "55" },
+  ];
+
   $: selectedCounselor = $formData.email
     ? {
         label: $formData.CName,
         value: $formData.Counselor,
+      }
+    : undefined;
+
+  $: selectedHour = $formData.Hour
+    ? {
+        label: $formData.Hour,
+        value: $formData.Hour,
+      }
+    : undefined;
+
+  $: selectedMinute = $formData.Minute
+    ? {
+        label: $formData.Minute,
+        value: $formData.Minute,
       }
     : undefined;
 </script>
@@ -81,10 +124,10 @@
       <Select.Root
         selected={selectedCounselor}
         onSelectedChange={(v) => {
-          v && ($formData.Counselor = v.label);
+          v && ($formData.Counselor = v.value);
         }}
       >
-        <Select.Trigger {...attrs}>
+        <Select.Trigger {...attrs} class="w-[250px]">
           <Select.Value placeholder="Select a Guidance Counselor" />
         </Select.Trigger>
         <Select.Content>
@@ -106,7 +149,7 @@
 
   <Form.Field {form} name="Appointment_Date">
     <Form.Control>
-      <Form.Label>Appointment Schedule<br /></Form.Label>
+      <Form.Label>Appointment Date<br /></Form.Label>
       <Popover.Root>
         <Popover.Trigger asChild let:builder>
           <Button
@@ -134,9 +177,49 @@
   <Form.Field {form} name="Appointment_Time">
     <Form.Control let:attrs>
       <Form.Label>Appointment Time</Form.Label>
-      <Input {...attrs} bind:value={$formData.Appointment_Time} />
+      <div class="flex flex-row gap-1">
+        <Select.Root
+          selected={selectedHour}
+          onSelectedChange={(v) => {
+            v && ($formData.Hour = v.value);
+          }}
+        >
+          <Select.Trigger {...attrs} class="w-[100px]">
+            <Select.Value placeholder="HH" />
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Group>
+              {#each hours as hour}
+                <Select.Item value={hour.value} label={hour.label}
+                  >{hour.label}</Select.Item
+                >
+              {/each}
+            </Select.Group>
+          </Select.Content>
+        </Select.Root>
+
+        <Select.Root
+          selected={selectedMinute}
+          onSelectedChange={(v) => {
+            v && ($formData.Minute = v.value);
+          }}
+        >
+          <Select.Trigger {...attrs} class="w-[100px]">
+            <Select.Value placeholder="MM" />
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Group>
+              {#each minutes as minute}
+                <Select.Item value={minute.value} label={minute.label}
+                  >{minute.label}</Select.Item
+                >
+              {/each}
+            </Select.Group>
+          </Select.Content>
+        </Select.Root>
+      </div>
+      <input hidden bind:value={$formData.Appointment_Time} name={attrs.name} />
     </Form.Control>
-    <Form.Description>Please use HH:MM (24-hour format).</Form.Description>
     <Form.FieldErrors />
   </Form.Field>
 
