@@ -3,6 +3,7 @@
   import { Button } from "$lib/components/ui/button";
 </script>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
   <link
     href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
@@ -15,18 +16,13 @@
       font-family: Urbanist, sans-serif;
     }
 
-    .mainbody {
-      min-height: 100vh;
+    /* .mainbody {
       display: flex;
       position: relative;
-      text-align: left;
       justify-content: center;
-      width: 100%;
-      background-color: white;
-    }
-
+    } */
     .square {
-      position: relative;
+      z-index: 2;
       background-color: white;
       box-shadow:
         0 4px 6px -1px rgb(0 0 0 / 0.1),
@@ -36,11 +32,6 @@
       padding-right: 3.5rem; /* 32px */
       padding-top: 1.5rem; /* 24px */
       padding-bottom: 1.5rem; /* 24px */
-      max-width: 768px;
-      height: 55%;
-      width: 35%;
-      align-items: left;
-      transform: translate(-70%, 15%);
     }
 
     .mini-title {
@@ -53,7 +44,6 @@
     }
 
     .title {
-      font-size: 4vw;
       line-height: 2rem; /* 32px */
       font-weight: bold;
       text-align: center;
@@ -90,6 +80,10 @@
       --tw-ring-color: rgb(99 102 241);
       --tw-border-opacity: 1;
       border-color: rgba(99, 102, 241, var(--tw-border-opacity));
+    }
+
+    img {
+      z-index: 0;
     }
 
     a {
@@ -148,24 +142,40 @@
       background-color: #f5f5f5;
     }
 
-    .box {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
+     /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (min-width: 650px) {
+      .square {
+        position: absolute;
+        height: 35px;
+        width: 100%;
+        transform: translate(-70%, 15%);
+      }
 
-    .overlay {
-      z-index: 1;
-      margin: 30px;
-      transform: translate(40%, 5%);
+      .title{
+        font-size: 60px;
+        font-weight: 900;
+      }
+    }
+   
+    @media only screen and (min-width: 650px) {
+      .square {
+        position: relative;
+        max-width: 768px;
+        height: 35%;
+        width: 35%;
+        align-items: left;
+        transform: translate(-70%, 15%);
+      }
+
+      .title{
+        font-size: 4vw;
+      }
     }
   </style>
 </head>
 
-<body class="mainbody">
-  <div class="square">
+<div class="relative flex h-full min-h-screen w-full justify-center">
+  <div class="square absolute mt-32 sm:mt-10 sm:relative">
     <h2 class="mini-title">ADMIN ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>
     <form action="#">
@@ -198,8 +208,8 @@
     </form>
   </div>
   <img
-    class="absolute -right-1 top-20 z-0 ms-auto h-auto max-w-sm md:right-1 md:top-1 md:max-w-lg"
+    class="absolute -right-32 z-0 max-w-3xl md:right-1 md:top-1 md:max-w-lg opacity-40 sm:opacity-60 sm:mad-md:opacity-80"    
     src="oble.png"
     alt="Logo"
   />
-</body>
+</div>

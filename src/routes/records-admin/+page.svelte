@@ -1,8 +1,8 @@
 <script lang="ts">
-  // import type { PageServerData } from "./$types";
   import { goto } from "$app/navigation";
   import { Button } from "$lib/components/ui/button";
   import { buttonVariants } from "$lib/components/ui/button";
+    import { getHoursInDay } from "@internationalized/date";
   import {
     CalendarDays,
     DownloadIcon,
@@ -13,7 +13,6 @@
     ScanSearchIcon,
     SearchIcon,
   } from "lucide-svelte";
-  // import { signInWithCustomToken } from "firebase/auth";
 
   let query: string = "";
 </script>
@@ -36,10 +35,22 @@
     body {
       font-family: Urbanist, sans-serif;
     }
+    
+    @media only screen and (min-width: 735px) {
+      .threedots {
+        top: 112px;
+      }
+    }
+
+    @media only screen and (min-width: 736px) {
+      .threedots {
+        top: 40px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="absolute right-10 top-10 flex">
+  <div class="threedots absolute right-4 md:right-10">
     <button
       id="dropdownMenuIconButton"
       data-dropdown-toggle="dropdownDots"
@@ -106,7 +117,7 @@
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   </div>
 
-  <h1 class="pb-10 pt-5 font-bold">STUDENT RECORDS</h1>
+  <h1 class="pb-10 pt-16 sm:pt-5 font-bold">STUDENT RECORDS</h1>
 
   <form class="mx-auto w-full">
     <label

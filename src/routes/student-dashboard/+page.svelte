@@ -33,10 +33,22 @@
     body {
       font-family: Urbanist, sans-serif;
     }
+
+    @media only screen and (min-width: 735px) {
+      .threedots {
+        top: 112px;
+      }
+    }
+
+    @media only screen and (min-width: 736px) {
+      .threedots {
+        top: 40px;
+      }
+    }
   </style>
 </head>
 
-<div class="absolute right-10 top-10 flex">
+<div class="threedots absolute right-10 top-10 flex">
   <button
     id="dropdownMenuIconButton"
     data-dropdown-toggle="dropdownDots"
@@ -104,13 +116,13 @@
 </div>
 
 <div
-  class="center relative top-1/2 mt-20 flex flex-col gap-3 rounded-l bg-white px-8 py-8"
+  class="center relative top-1/2 mt-16 md:mt-20 flex flex-col gap-3 rounded-l bg-white px-8 py-8"
 >
   <h1 class="center static text-red-950">Welcome {name}!</h1>
   <div class="center static mb-5 object-center text-center text-red-950">
     <p>You have successfully logged in to your account.</p>
   </div>
-  <div class="relative flex flex-row justify-center gap-3">
+  <div class="relative flex flex-col justify-center gap-3 sm:flex-row">
     <Button
       variant="bigbutton"
       size="large"
