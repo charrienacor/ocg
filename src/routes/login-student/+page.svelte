@@ -68,6 +68,10 @@
       font-family: Urbanist, sans-serif;
     }
 
+    body {
+      font-family: Urbanist, sans-serif;
+    }
+    
     .mainbody {
       min-height: 100vh;
       display: flex;
@@ -152,7 +156,7 @@
   </style>
 </head>
 
-<div class="relative flex h-full min-h-screen w-full justify-center">
+<body class="relative flex justify-center overflow-hidden">
   <div class="square absolute mt-32 sm:relative sm:mt-28 flex flex-col gap-1 w-5/6">
     <h2 class="mini-title static">STUDENT ACCOUNT</h2>
     <h1 class="title center static">LOG IN</h1>
@@ -170,4 +174,4 @@
     src="oble.png"
     alt="Logo"
   />
-</div>
+</body>

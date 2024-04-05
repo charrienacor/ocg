@@ -16,6 +16,10 @@
       font-family: Urbanist, sans-serif;
     }
 
+    body {
+      font-family: Urbanist, sans-serif;
+    }
+
     /* .mainbody {
       display: flex;
       position: relative;
@@ -174,7 +178,7 @@
   </style>
 </head>
 
-<div class="relative flex h-full min-h-screen w-full justify-center">
+<body class="relative flex justify-center overflow-hidden">
   <div class="square absolute mt-32 sm:mt-10 sm:relative">
     <h2 class="mini-title">ADMIN ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>
@@ -212,4 +216,4 @@
     src="oble.png"
     alt="Logo"
   />
-</div>
+</body>
