@@ -17,7 +17,7 @@
   </style>
 </head>
 
-<body class="relative flex justify-center overflow-hidden">
+<body class="relative flex overflow-x-hidden justify-center">
   <img
     class="absolute z-0 max-w-3xl -right-32 sm:-right-28 md:-right-32 opacity-40 sm:opacity-60 sm:mad-md:opacity-80"
     src="oble.png"

@@ -178,7 +178,7 @@
   </style>
 </head>
 
-<body class="relative flex justify-center overflow-hidden">
+<body class="relative flex justify-center overflow-x-hidden">
   <div class="square absolute mt-32 sm:mt-10 sm:relative">
     <h2 class="mini-title">ADMIN ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>

@@ -156,7 +156,7 @@
   </style>
 </head>
 
-<body class="relative flex justify-center overflow-hidden">
+<body class="relative flex justify-center overflow-x-hidden">
   <div class="square absolute mt-32 sm:relative sm:mt-28 flex flex-col gap-1 w-5/6">
     <h2 class="mini-title static">STUDENT ACCOUNT</h2>
     <h1 class="title center static">LOG IN</h1>
