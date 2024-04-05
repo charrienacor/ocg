@@ -49,7 +49,7 @@
     }
   </style>
 </head>
-<body>
+<body class="overflow-hidden">
   <div class="threedots absolute right-4 md:right-10">
     <button
       id="dropdownMenuIconButton"
