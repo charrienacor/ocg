@@ -228,10 +228,22 @@
     body {
       font-family: Urbanist, sans-serif;
     }
+
+    @media only screen and (min-width: 735px) {
+      .threedots {
+        top: 112px;
+      }
+    }
+
+    @media only screen and (min-width: 736px) {
+      .threedots {
+        top: 40px;
+      }
+    }
   </style>
 </head>
 
-<div class="absolute right-10 top-10 flex">
+<div class="threedots absolute right-4 md:right-10">
   <button
     id="dropdownMenuIconButton"
     data-dropdown-toggle="dropdownDots"
@@ -250,18 +262,16 @@
       />
     </svg>
   </button>
-
   <div
     id="dropdownDots"
-    class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
-  >
+    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-50 dark:bg-gray-700 dark:divide-gray-600">
     <ul
-      class="py-2 text-sm text-gray-700 dark:text-gray-200"
+      class="py-2 text-sm mr-10 text-gray-700 dark:text-gray-200"
       aria-labelledby="dropdownMenuIconButton"
     >
       <li>
         <a
-          href="/student-dashboard"
+          href="/dashboard-admin"
           class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
           ><LayoutDashboardIcon size={15} />
           <p class="ml-3">Dashboard</p></a
@@ -269,7 +279,7 @@
       </li>
       <li>
         <a
-          href="/student-bis"
+          href="/records-admin"
           class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
           ><FileTextIcon size={15} />
           <p class="ml-3">Records</p></a
@@ -277,7 +287,7 @@
       </li>
       <li>
         <a
-          href="/student-appointment"
+          href="/calendar-admin"
           class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
         >
           <CalendarDays size={15} />
@@ -287,7 +297,7 @@
     </ul>
     <div class="py-2">
       <a
-        href="/login-student"
+        href="/login-admin"
         class="flex items-center px-4 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
       >
         <LogOutIcon size={15} />
@@ -298,7 +308,7 @@
 </div>
 
 <div class="relative mb-10 mt-5">
-  <h1 class="font-bold">BACKGROUND INFORMATION SHEET</h1>
+  <h1 class="font-bold pt-6 md:pt-0">BACKGROUND INFORMATION SHEET</h1>
   <form method="POST" use:enhance>
     <div
       class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
@@ -380,7 +390,7 @@
       class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
     >
       <h1>Personal Information</h1>
-      <p class="mb-7">
+      <p class="mb-4">
         <b>TO THE STUDENT:</b> The purpose of this form is to bring together all
         essential information that may enable us to help you meet your specific needs
         & future plans. The information will be kept confidential. Please answer

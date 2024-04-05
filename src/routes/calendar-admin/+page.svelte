@@ -25,10 +25,26 @@
     body {
       font-family: Urbanist, sans-serif;
     }
+
+    @media only screen and (min-width: 735px) {
+      .threedots {
+        top: 112px;
+      }
+
+      .pagetitle{
+
+      }
+    }
+
+    @media only screen and (min-width: 736px) {
+      .threedots {
+        top: 40px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="absolute right-10 top-10 flex">
+  <div class="threedots absolute right-4 md:right-10">
     <button
       id="dropdownMenuIconButton"
       data-dropdown-toggle="dropdownDots"
