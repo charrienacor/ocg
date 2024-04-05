@@ -21,7 +21,7 @@
   </style>
 </head>
 
-<body class="relative overflow-hidden sm:mt-20">
+<body class="relative overflow-x-hidden sm:mt-20">
   <div
     class="center relative top-1/2 flex flex-col gap-3 rounded-lg bg-white px-8 py-8"
   >
