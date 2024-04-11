@@ -7,6 +7,7 @@ import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "$env/static/private";
 
 const pool = mysql.createPool({
   host: "localhost",
+  port: "8080",
   user: "root",
   password: "",
   database: "PatnubayAguhon",
