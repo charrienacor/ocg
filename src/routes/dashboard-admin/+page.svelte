@@ -32,14 +32,12 @@
       font-family: Urbanist, sans-serif;
     }
 
-
     @media only screen and (min-width: 735px) {
       .threedots {
         top: 112px;
       }
 
-      .pagetitle{
-
+      .pagetitle {
       }
     }
 
@@ -72,15 +70,16 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   <div
     id="dropdownDots"
-    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+    class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+  >
     <ul
-      class="py-2 w-44 text-sm mr-10 text-gray-700 dark:text-gray-200"
+      class="mr-10 w-44 py-2 text-sm text-gray-700 dark:text-gray-200"
       aria-labelledby="dropdownMenuIconButton"
     >
       <li>
         <a
           href="/dashboard-admin"
-          class="flex items-center px-4 py-2 w-44 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="flex w-44 items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
           ><LayoutDashboardIcon size={15} />
           <p class="ml-3">Dashboard</p></a
         >
@@ -115,7 +114,7 @@
   </div>
 </div>
 <div
-  class="center relative top-1/2 mt-16 md:mt-20 flex flex-col gap-3 rounded-l bg-white px-8 py-8"
+  class="center relative top-1/2 mt-16 flex flex-col gap-3 rounded-l bg-white px-8 py-8 md:mt-20"
 >
   <h1 class="center static text-red-950">Welcome [Admin]!</h1>
   <div class="center static mb-5 object-center text-center text-red-950">

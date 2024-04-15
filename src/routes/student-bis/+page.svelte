@@ -264,9 +264,10 @@
   </button>
   <div
     id="dropdownDots"
-    class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-50 dark:bg-gray-700 dark:divide-gray-600">
+    class="w-50 z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+  >
     <ul
-      class="py-2 text-sm mr-10 text-gray-700 dark:text-gray-200"
+      class="mr-10 py-2 text-sm text-gray-700 dark:text-gray-200"
       aria-labelledby="dropdownMenuIconButton"
     >
       <li>
@@ -308,7 +309,7 @@
 </div>
 
 <div class="relative mb-10 mt-5">
-  <h1 class="font-bold pt-6 md:pt-0">BACKGROUND INFORMATION SHEET</h1>
+  <h1 class="pt-6 font-bold md:pt-0">BACKGROUND INFORMATION SHEET</h1>
   <form method="POST" use:enhance>
     <div
       class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"

@@ -1,23 +1,21 @@
 name: aguhon
-  
 
 services:
-  sql: 
+  sql:
     image: mysql:8.0
     restart: always
-    environment: 
-      MYSQL_DATABASE: 'PatnubayAguhon'
+    environment:
+      MYSQL_DATABASE: "PatnubayAguhon"
       MYSQL_ALLOW_EMPTY_PASSWORD: 1
     ports:
-      - '8080:3306'
+      - "8080:3306"
 
-    volumes: 
+    volumes:
       - sql:/var/lib/mysql
       - ./database/init.sql:/docker-entrypoint-initdb.d/1.sql
       - ./database/counselors.sql:/docker-entrypoint-initdb.d/2.sql
       - ./database/appointment.sql:/docker-entrypoint-initdb.d/3.sql
       - ./database/auth.sql:/docker-entrypoint-initdb.d/4.sql
-
 
   mongo:
     image: mongo
@@ -25,14 +23,8 @@ services:
     volumes:
       - mongodb:/data/db
     ports:
-      - '27017:27017'
-
-
+      - "27017:27017"
 
 volumes:
   sql:
   mongodb:
-
-
-
-

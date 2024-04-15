@@ -116,7 +116,7 @@
 </div>
 
 <div
-  class="center relative top-1/2 mt-16 md:mt-20 flex flex-col gap-3 rounded-l bg-white px-8 py-8"
+  class="center relative top-1/2 mt-16 flex flex-col gap-3 rounded-l bg-white px-8 py-8 md:mt-20"
 >
   <h1 class="center static text-red-950">Welcome {name}!</h1>
   <div class="center static mb-5 object-center text-center text-red-950">

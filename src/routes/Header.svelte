@@ -1,6 +1,8 @@
 <header>
   <div class="corner sm:w-36">
-    <a href="https://up.edu.ph/"><img src="UP Logo.png" alt="UP Logo" class="logo w-16 ml-6"/> </a>
+    <a href="https://up.edu.ph/"
+      ><img src="UP Logo.png" alt="UP Logo" class="logo ml-6 w-16" />
+    </a>
   </div>
   <div class="next-to-logo">
     <p class="school">
@@ -38,7 +40,7 @@
   }
 
   .school {
-    margin-top: 27px; 
+    margin-top: 27px;
     line-height: 1.2;
   }
 
@@ -49,11 +51,11 @@
       height: 5px;
     }
 
-    .school{
+    .school {
       font-size: 30px;
     }
 
-    .office{
+    .office {
       font-size: 50px;
     }
   }
@@ -64,7 +66,7 @@
     }
 
     .school {
-      font-size: 20px; 
+      font-size: 20px;
       margin-left: 13px;
     }
 
@@ -76,5 +78,5 @@
       width: 150px;
       height: 75px;
     }
-   } 
+  }
 </style>

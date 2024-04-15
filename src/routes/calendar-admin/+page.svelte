@@ -31,8 +31,7 @@
         top: 112px;
       }
 
-      .pagetitle{
-
+      .pagetitle {
       }
     }
 

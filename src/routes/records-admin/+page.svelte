@@ -2,7 +2,7 @@
   import { goto } from "$app/navigation";
   import { Button } from "$lib/components/ui/button";
   import { buttonVariants } from "$lib/components/ui/button";
-    import { getHoursInDay } from "@internationalized/date";
+  import { getHoursInDay } from "@internationalized/date";
   import {
     CalendarDays,
     DownloadIcon,
@@ -35,7 +35,7 @@
     body {
       font-family: Urbanist, sans-serif;
     }
-    
+
     @media only screen and (min-width: 735px) {
       .threedots {
         top: 112px;
@@ -117,7 +117,7 @@
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   </div>
 
-  <h1 class="pb-10 pt-16 sm:pt-5 font-bold">STUDENT RECORDS</h1>
+  <h1 class="pb-10 pt-16 font-bold sm:pt-5">STUDENT RECORDS</h1>
 
   <form class="mx-auto w-full">
     <label

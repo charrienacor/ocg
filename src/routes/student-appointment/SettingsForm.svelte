@@ -10,22 +10,26 @@
   import { zodClient } from "sveltekit-superforms/adapters";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
   import {
+    CalendarDate,
     DateFormatter,
     type DateValue,
     getLocalTimeZone,
+    parseDate,
+    today,
   } from "@internationalized/date";
   import { cn } from "$lib/utils.js";
-  import { Button } from "$lib/components/ui/button/index.js";
+  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
   import { Calendar } from "$lib/components/ui/calendar/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
-  import FormLegend from "$lib/components/ui/form/form-legend.svelte";
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
   });
 
   let value: DateValue | undefined = undefined;
+  $: value = $formData.App_Date ? parseDate($formData.App_Date) : undefined;
+  let placeholder: DateValue = today(getLocalTimeZone());
 
   export let data: any;
   export let counselors: any;
@@ -67,9 +71,9 @@
     { value: "55", label: "55" },
   ];
 
-  $: selectedCounselor = $formData.email
+  $: selectedCounselor = $formData.Counselor
     ? {
-        label: $formData.CNamd,
+        label: $formData.CName,
         value: $formData.Counselor,
       }
     : undefined;
@@ -93,7 +97,7 @@
   <Form.Field {form} name="Student_Name">
     <Form.Control let:attrs>
       <Form.Label>Student Name</Form.Label>
-      <Input {...attrs} disabled bind:value={name} />
+      <Input {...attrs} bind:value={name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
@@ -101,7 +105,7 @@
   <Form.Field {form} name="Student_Email">
     <Form.Control let:attrs>
       <Form.Label>Student Email</Form.Label>
-      <Input {...attrs} disabled bind:value={email} />
+      <Input {...attrs} bind:value={email} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
@@ -124,8 +128,7 @@
       <Select.Root
         selected={selectedCounselor}
         onSelectedChange={(v) => {
-          v && ($formData.Counselor = v.value);
-          console.log(v);
+          v && ($formData.Counselor = v.value) && ($formData.CName = v.label);
         }}
       >
         <Select.Trigger {...attrs} class="w-[250px]">
@@ -143,83 +146,98 @@
           </Select.Group>
         </Select.Content>
       </Select.Root>
-      <input hidden bind:value={$formData.email} name={attrs.name} />
+      <input hidden bind:value={$formData.Counselor} name={attrs.name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
-  <Form.Field {form} name="Appointment_Date">
-    <Form.Control>
+  <Form.Field {form} name="Appointment_Date" class="flex flex-col">
+    <Form.Control let:attrs>
       <Form.Label>Appointment Date<br /></Form.Label>
       <Popover.Root>
-        <Popover.Trigger asChild let:builder>
-          <Button
-            variant="outline"
-            class={cn(
-              "w-[240px] justify-start text-left font-normal",
-              !value && "text-muted-foreground",
-            )}
-            builders={[builder]}
-          >
-            <CalendarIcon class="mr-2 h-4 w-4" />
-            {value
-              ? df.format(value.toDate(getLocalTimeZone()))
-              : "Pick a date"}
-          </Button>
+        <Popover.Trigger
+          {...attrs}
+          class={cn(
+            buttonVariants({ variant: "outline" }),
+            "w-[180px] justify-start pl-4 text-left font-normal",
+            !value && "text-muted-foreground",
+          )}
+        >
+          {value ? df.format(value.toDate(getLocalTimeZone())) : "Pick a date"}
+          <CalendarIcon class="ml-auto h-4 w-4 opacity-50 " />
         </Popover.Trigger>
-        <Popover.Content class="w-auto p-0" align="start">
-          <Calendar bind:value />
+        <Popover.Content class="w-auto p-0" side="top">
+          <Calendar
+            {value}
+            bind:placeholder
+            minValue={today(getLocalTimeZone())}
+            calendarLabel="Appointment Date"
+            initialFocus
+            onValueChange={(v) => {
+              if (v) {
+                $formData.App_Date = v.toString();
+              } else {
+                $formData.App_Date = "";
+              }
+            }}
+          />
         </Popover.Content>
       </Popover.Root>
+
+      <Form.FieldErrors />
+      <input hidden value={$formData.App_Date} name={attrs.name} />
+    </Form.Control>
+  </Form.Field>
+
+  <Form.Field {form} name="Appointment_Hour">
+    <Form.Control let:attrs>
+      <Form.Label>Appointment Time</Form.Label>
+      <Select.Root
+        selected={selectedHour}
+        onSelectedChange={(v) => {
+          v && ($formData.Hour = v.value);
+        }}
+      >
+        <Select.Trigger {...attrs} class="w-[100px]">
+          <Select.Value placeholder="HH" />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each hours as hour}
+              <Select.Item value={hour.value} label={hour.label}
+                >{hour.label}</Select.Item
+              >
+            {/each}
+          </Select.Group>
+        </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.Hour} name={attrs.name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
-  <Form.Field {form} name="Appointment_Time">
+  <Form.Field {form} name="Appointment_Minute">
     <Form.Control let:attrs>
-      <Form.Label>Appointment Time</Form.Label>
-      <div class="flex flex-row gap-1">
-        <Select.Root
-          selected={selectedHour}
-          onSelectedChange={(v) => {
-            v && ($formData.Hour = v.value);
-          }}
-        >
-          <Select.Trigger {...attrs} class="w-[100px]">
-            <Select.Value placeholder="HH" />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each hours as hour}
-                <Select.Item value={hour.value} label={hour.label}
-                  >{hour.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-        </Select.Root>
-
-        <Select.Root
-          selected={selectedMinute}
-          onSelectedChange={(v) => {
-            v && ($formData.Minute = v.value);
-          }}
-        >
-          <Select.Trigger {...attrs} class="w-[100px]">
-            <Select.Value placeholder="MM" />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each minutes as minute}
-                <Select.Item value={minute.value} label={minute.label}
-                  >{minute.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-        </Select.Root>
-      </div>
-      <input hidden bind:value={$formData.Appointment_Time} name={attrs.name} />
+      <Select.Root
+        selected={selectedMinute}
+        onSelectedChange={(v) => {
+          v && ($formData.Minute = v.value);
+        }}
+      >
+        <Select.Trigger {...attrs} class="w-[100px]">
+          <Select.Value placeholder="MM" />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each minutes as minute}
+              <Select.Item value={minute.value} label={minute.label}
+                >{minute.label}</Select.Item
+              >
+            {/each}
+          </Select.Group>
+        </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.Minute} name={attrs.name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
@@ -234,17 +252,3 @@
 
   <Form.Button>Submit</Form.Button>
 </form>
-
-<!-- CREATE TABLE Appointments(
-    Appointment_ID INTEGER(12) NOT NULL UNIQUE,
-    Student_Name VARCHAR(100) NOT NULL,
-    Student_Email VARCHAR (30) NOT NULL,
-    Student_ID INTEGER(9) NOT NULL,
-    Counselor_Email VARCHAR(30) NOT NULL,
-    Appointment_Date DATE NOT NULL,
-    Appointment_Time TIME NOT NULL,
-    Nature_Of_Concern VARCHAR(1000),
-    Appointment_Status ENUM('Approved', 'Pending', 'Rejected', 'Completed'),
-    PRIMARY KEY (Appointment_ID),
-    FOREIGN KEY (Counselor_Email) REFERENCES Counselors(Counselor_Email),
-); -->

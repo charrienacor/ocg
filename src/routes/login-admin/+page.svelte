@@ -3,7 +3,7 @@
   import { Button } from "$lib/components/ui/button";
 </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <head>
   <link
     href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
@@ -146,7 +146,7 @@
       background-color: #f5f5f5;
     }
 
-     /* Small devices (portrait tablets and large phones, 600px and up) */
+    /* Small devices (portrait tablets and large phones, 600px and up) */
     @media only screen and (min-width: 650px) {
       .square {
         position: absolute;
@@ -155,12 +155,12 @@
         transform: translate(-70%, 15%);
       }
 
-      .title{
+      .title {
         font-size: 60px;
         font-weight: 900;
       }
     }
-   
+
     @media only screen and (min-width: 650px) {
       .square {
         position: relative;
@@ -171,7 +171,7 @@
         transform: translate(-70%, 15%);
       }
 
-      .title{
+      .title {
         font-size: 4vw;
       }
     }
@@ -179,7 +179,7 @@
 </head>
 
 <body class="relative flex justify-center overflow-x-hidden">
-  <div class="square absolute mt-32 sm:mt-10 sm:relative">
+  <div class="square absolute mt-32 sm:relative sm:mt-10">
     <h2 class="mini-title">ADMIN ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>
     <form action="#">
@@ -212,7 +212,7 @@
     </form>
   </div>
   <img
-    class="absolute -right-32 z-0 max-w-3xl md:right-1 md:top-1 md:max-w-lg opacity-40 sm:opacity-60 sm:mad-md:opacity-80"    
+    class="sm:mad-md:opacity-80 absolute -right-32 z-0 max-w-3xl opacity-40 sm:opacity-60 md:right-1 md:top-1 md:max-w-lg"
     src="oble.png"
     alt="Logo"
   />
