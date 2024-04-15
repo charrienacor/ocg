@@ -17,15 +17,16 @@
   </style>
 </head>
 
-<body class="relative flex overflow-x-hidden justify-center">
+<body class="relative flex justify-center overflow-x-hidden">
   <img
-    class="absolute z-0 max-w-3xl -right-32 sm:-right-28 md:-right-32 opacity-40 sm:opacity-60 sm:mad-md:opacity-80"
+    class="sm:mad-md:opacity-80 absolute -right-32 z-0 max-w-3xl opacity-40 sm:-right-28 sm:opacity-60 md:-right-32"
     src="oble.png"
     alt="Logo"
   />
 
   <div class="static z-50 ml-10 mt-28">
-    <h1 style="text-align:left; font-weight: 900; font-size: 60px; margin-top: 20px; margin-bottom:0px; line-height:80px; background: -webkit-linear-gradient(#8e1537, #00573f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
+    <h1
+      style="text-align:left; font-weight: 900; font-size: 60px; margin-top: 20px; margin-bottom:0px; line-height:80px; background: -webkit-linear-gradient(#8e1537, #00573f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"
     >
       UPB OCG PATNUBAY <br />
       <span
@@ -38,12 +39,15 @@
         <p
           style="font-size: 18px; line-height: 28px; color: rgb(55 65 81); padding: 10px 0px 30px 0px;"
         >
-          The Office of Counseling and Guidance (OCG) is a service-oriented unit, fundamental and integral partner to the academic programs of the University of the Philippines Baguio.
+          The Office of Counseling and Guidance (OCG) is a service-oriented
+          unit, fundamental and integral partner to the academic programs of the
+          University of the Philippines Baguio.
         </p>
       </div>
       <div class="static z-50">
-        <Button on:click={() => goto("/homepage")}
-          style="z-index: 50;">Enter Aguhon</Button>
+        <Button on:click={() => goto("/homepage")} style="z-index: 50;"
+          >Enter Aguhon</Button
+        >
         <a
           href="https://www.upb.edu.ph/office-of-counseling-and-guidance/"
           class={buttonVariants({ variant: "default" })}

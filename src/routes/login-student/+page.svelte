@@ -1,59 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { initializeApp, type FirebaseApp } from "firebase/app";
   import { Button } from "$lib/components/ui/button/index.js";
-  import {
-    GoogleAuthProvider,
-    initializeAuth,
-    type Auth,
-    browserSessionPersistence,
-    browserPopupRedirectResolver,
-    signInWithRedirect,
-    getRedirectResult,
-  } from "firebase/auth";
   import { goto } from "$app/navigation";
-
-  let app: FirebaseApp;
-  let auth: Auth;
-  const firebaseConfig = {
-    apiKey: "AIzaSyDrK6Sxkx91G9IhzrWzlwK5z8rvOT1Mj7k",
-    authDomain: "aguhon-c1026.firebaseapp.com",
-    projectId: "aguhon-c1026",
-    storageBucket: "aguhon-c1026.appspot.com",
-    messagingSenderId: "224957047205",
-    appId: "1:224957047205:web:2de2d3389bdb0589f9884c",
-  };
-  onMount(async () => {
-    app = initializeApp(firebaseConfig);
-    auth = initializeAuth(app, {
-      persistence: browserSessionPersistence,
-      popupRedirectResolver: browserPopupRedirectResolver,
-    });
-
-    const result = await getRedirectResult(auth, browserPopupRedirectResolver);
-    if (result) {
-      const idToken = await result.user.getIdToken();
-
-      const response = await fetch("api/sessionLogin", {
-        method: "POST",
-        body: JSON.stringify({ idToken }),
-        headers: {
-          "content-type": "application/json",
-        },
-      });
-
-      const { url, redirected } = response;
-      if (redirected) {
-        goto(url);
-      }
-    }
-  });
-
-  async function signInWithGoogle() {
-    const provider = new GoogleAuthProvider();
-
-    await signInWithRedirect(auth, provider);
-  }
 </script>
 
 <head>
@@ -71,7 +19,7 @@
     body {
       font-family: Urbanist, sans-serif;
     }
-    
+
     .mainbody {
       min-height: 100vh;
       display: flex;
@@ -133,12 +81,12 @@
         transform: translate(-70%, 15%);
       }
 
-      .title{
+      .title {
         font-size: 60px;
         font-weight: 900;
       }
     }
-   
+
     @media only screen and (min-width: 650px) {
       .square {
         position: relative;
@@ -149,7 +97,7 @@
         transform: translate(-70%, 15%);
       }
 
-      .title{
+      .title {
         font-size: 4vw;
       }
     }
@@ -157,7 +105,9 @@
 </head>
 
 <body class="relative flex justify-center overflow-x-hidden">
-  <div class="square absolute mt-32 sm:relative sm:mt-28 flex flex-col gap-1 w-5/6">
+  <div
+    class="square absolute mt-32 flex w-5/6 flex-col gap-1 sm:relative sm:mt-28"
+  >
     <h2 class="mini-title static">STUDENT ACCOUNT</h2>
     <h1 class="title center static">LOG IN</h1>
     <p class="subtitle">
@@ -170,7 +120,7 @@
     >
   </div>
   <img
-    class="absolute -right-32 z-0 max-w-3xl md:right-1 md:top-1 md:max-w-lg opacity-40 sm:opacity-60 sm:mad-md:opacity-80"
+    class="sm:mad-md:opacity-80 absolute -right-32 z-0 max-w-3xl opacity-40 sm:opacity-60 md:right-1 md:top-1 md:max-w-lg"
     src="oble.png"
     alt="Logo"
   />

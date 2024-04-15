@@ -21,7 +21,7 @@
   </style>
 </head>
 
-<body class="relative overflow-x-hidden sm:mt-20">
+<div class="relative overflow-x-hidden sm:mt-20">
   <div
     class="center relative top-1/2 flex flex-col gap-3 rounded-lg bg-white px-8 py-8"
   >
@@ -38,10 +38,10 @@
       <Button href="/login-student" variant="bigbutton" size="large">
         <GraduationCap size={100} class="inline-block" />
         <h1 class="inline-block">STUDENT</h1>
-        <p class="text-balance text-center text-wrap md:text-nowrap">
+        <p class="text-wrap text-balance text-center md:text-nowrap">
           To fill out Backgorund Information Sheet (BIS) or avail free services
         </p>
       </Button>
     </div>
   </div>
-</body>
+</div>
