@@ -805,7 +805,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Age">
+          <Form.Field {form} name="Father_Age">
             <Form.Control let:attrs>
               <Form.Label>Age</Form.Label>
               <Select.Root>
@@ -827,7 +827,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Living_Or_Dead">
+          <Form.Field {form} name="Father_Living_Or_Dead">
             <Form.Control let:attrs>
               <Form.Label>Living or Deceased</Form.Label>
               <Select.Root>
@@ -851,7 +851,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Place_Of_Birth">
+          <Form.Field {form} name="Father_Place_Of_Birth">
             <Form.Control let:attrs>
               <Form.Label>Birthplace</Form.Label>
               <Input
@@ -863,7 +863,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Address">
+          <Form.Field {form} name="Father_Address">
             <Form.Control let:attrs>
               <Form.Label>Address</Form.Label>
               <Input
@@ -875,7 +875,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Contact_Number">
+          <Form.Field {form} name="Father_Contact_Number">
             <Form.Control let:attrs>
               <Form.Label>Contact Number</Form.Label>
               <Input
@@ -887,7 +887,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Religion">
+          <Form.Field {form} name="Father_Religion">
             <Form.Control let:attrs>
               <Form.Label>Religion</Form.Label>
               <Select.Root>
@@ -909,7 +909,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Occupation">
+          <Form.Field {form} name="Father_Occupation">
             <Form.Control let:attrs>
               <Form.Label>Occupation</Form.Label>
               <Input
@@ -921,7 +921,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Monthly_Income">
+          <Form.Field {form} name="Father_Monthly_Income">
             <Form.Control let:attrs>
               <Form.Label>Monthly Income</Form.Label>
               <Input
@@ -933,7 +933,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Employer_Name">
+          <Form.Field {form} name="Father_Employer_Name">
             <Form.Control let:attrs>
               <Form.Label>Name of Employer</Form.Label>
               <Input
@@ -945,7 +945,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Employer_Address">
+          <Form.Field {form} name="Father_Employer_Address">
             <Form.Control let:attrs>
               <Form.Label>Address of Employer</Form.Label>
               <Input
@@ -957,7 +957,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Highest_Degree_Completed">
+          <Form.Field {form} name="Father_Highest_Degree_Completed">
             <Form.Control let:attrs>
               <Form.Label>Highest Grade/Degree Completed</Form.Label>
               <Select.Root>
@@ -980,7 +980,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="School">
+          <Form.Field {form} name="Father_School">
             <Form.Control let:attrs>
               <Form.Label>School or College</Form.Label>
               <Input
@@ -993,7 +993,7 @@
           </Form.Field>
 
           <!-- pwedeng drop down but multiple languages/dialects could be selected -->
-          <Form.Field {form} name="Languages">
+          <Form.Field {form} name="Father_Languages">
             <Form.Control let:attrs>
               <Form.Label>Dialects/Languages spoken at home</Form.Label>
               <Input
@@ -1018,7 +1018,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Age">
+          <Form.Field {form} name="Mother_Age">
             <Form.Control let:attrs>
               <Form.Label>Age</Form.Label>
               <Select.Root>
@@ -1040,7 +1040,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Living_Or_Dead">
+          <Form.Field {form} name="Mother_Living_Or_Dead">
             <Form.Control let:attrs>
               <Form.Label>Living or Deceased</Form.Label>
               <Select.Root>
@@ -1064,7 +1064,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Place_Of_Birth">
+          <Form.Field {form} name="Mother_Place_Of_Birth">
             <Form.Control let:attrs>
               <Form.Label>Birthplace</Form.Label>
               <Input
@@ -1076,7 +1076,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Address">
+          <Form.Field {form} name="Mother_Address">
             <Form.Control let:attrs>
               <Form.Label>Address</Form.Label>
               <Input
@@ -1088,7 +1088,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Contact_Number">
+          <Form.Field {form} name="Mother_Contact_Number">
             <Form.Control let:attrs>
               <Form.Label>Contact Number</Form.Label>
               <Input
@@ -1100,7 +1100,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Religion">
+          <Form.Field {form} name="Mother_Religion">
             <Form.Control let:attrs>
               <Form.Label>Religion</Form.Label>
               <Select.Root>
@@ -1122,7 +1122,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Occupation">
+          <Form.Field {form} name="Mother_Occupation">
             <Form.Control let:attrs>
               <Form.Label>Occupation</Form.Label>
               <Input
@@ -1134,7 +1134,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Monthly_Income">
+          <Form.Field {form} name="Mother_Monthly_Income">
             <Form.Control let:attrs>
               <Form.Label>Monthly Income</Form.Label>
               <Input
@@ -1146,7 +1146,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Employer_Name">
+          <Form.Field {form} name="Mother_Employer_Name">
             <Form.Control let:attrs>
               <Form.Label>Name of Employer</Form.Label>
               <Input
@@ -1158,7 +1158,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Employer_Address">
+          <Form.Field {form} name="Mother_Employer_Address">
             <Form.Control let:attrs>
               <Form.Label>Address of Employer</Form.Label>
               <Input
@@ -1170,7 +1170,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="Highest_Degree_Completed">
+          <Form.Field {form} name="Mother_Highest_Degree_Completed">
             <Form.Control let:attrs>
               <Form.Label>Highest Grade/Degree Completed</Form.Label>
               <Select.Root>
@@ -1193,7 +1193,7 @@
             <Form.FieldErrors />
           </Form.Field>
 
-          <Form.Field {form} name="School">
+          <Form.Field {form} name="Mother_School">
             <Form.Control let:attrs>
               <Form.Label>School or College</Form.Label>
               <Input
@@ -1206,7 +1206,7 @@
           </Form.Field>
 
           <!-- pwedeng drop down but multiple languages/dialects could be selected -->
-          <Form.Field {form} name="Languages">
+          <Form.Field {form} name="Mother_Languages">
             <Form.Control let:attrs>
               <Form.Label>Dialects/Languages spoken at home</Form.Label>
               <Input
@@ -2122,7 +2122,7 @@
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Number_Of_Students">
+      <Form.Field {form} name="Junior_Number_Of_Students">
         <Form.Control let:attrs>
           <Form.Label
             >The number of students in my Junior High School graduating class
@@ -2376,7 +2376,7 @@
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Number_Of_Students">
+      <Form.Field {form} name="Senior_Number_Of_Students">
         <Form.Control let:attrs>
           <Form.Label
             >The number of students in my Senior High School graduating class
@@ -2428,7 +2428,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="school_ave">
+        <Form.Field {form} name="School_Ave">
           <Form.Control let:attrs>
             <Form.Label>My overall school average was:</Form.Label>
             <Select.Root>
@@ -2444,13 +2444,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="school_ave" />
+              <Select.Input name="School_Ave" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="honors">
+        <Form.Field {form} name="Honors">
           <Form.Control let:attrs>
             <Form.Label>Honors Received:</Form.Label>
             <Select.Root>
@@ -2466,7 +2466,7 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="honors" />
+              <Select.Input name="Honors" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
@@ -2486,7 +2486,7 @@
       </div>
       <hr />
       <div class="gap-4 md:grid md:grid-cols-2">
-        <Form.Field {form} name="first_campus">
+        <Form.Field {form} name="First_Campus">
           <Form.Control let:attrs>
             <Form.Label>First Choice of Campus</Form.Label>
             <Select.Root>
@@ -2502,13 +2502,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="first_campus" />
+              <Select.Input name="First_Campus" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Reason">
+        <Form.Field {form} name="First_Campus_Reason">
           <Form.Control let:attrs>
             <Form.Label>Reason/s</Form.Label>
             <Input
@@ -2520,7 +2520,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="second_campus">
+        <Form.Field {form} name="Second_Campus">
           <Form.Control let:attrs>
             <Form.Label>Second Choice of Campus</Form.Label>
             <Select.Root>
@@ -2536,13 +2536,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="second_campus" />
+              <Select.Input name="Second_Campus" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Reason">
+        <Form.Field {form} name="Second_Campus_Reason">
           <Form.Control let:attrs>
             <Form.Label>Reason/s</Form.Label>
             <Input
@@ -2566,7 +2566,7 @@
         accurately as you can your family's <b>MONTHLY</b> income.
       </p>
 
-      <Form.Field {form} name="income">
+      <Form.Field {form} name="Income">
         <Form.Control let:attrs>
           <Form.Label>Family's Monthly Income</Form.Label>
           <Select.Root>
@@ -2584,13 +2584,13 @@
                 {/each}
               </Select.Group>
             </Select.Content>
-            <Select.Input name="income" />
+            <Select.Input name="Income" />
           </Select.Root>
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="source_of_income">
+      <Form.Field {form} name="Source_Of_Income">
         <Form.Control let:attrs>
           <Form.Label
             >What is/are the source/s of your family's income? (Check as many
@@ -2682,7 +2682,7 @@
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="other_sources">
+      <Form.Field {form} name="Other_Sources">
         <Form.Control let:attrs>
           <Form.Label
             >Other sources of income of your family that was not stated above.</Form.Label
@@ -2708,7 +2708,7 @@
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="source_of_allowance">
+      <Form.Field {form} name="Source_Of_Allowance">
         <Form.Control let:attrs>
           <Form.Label>Check below the source/s of your allowances</Form.Label>
           <div class="gap-4 md:grid md:grid-cols-2">
@@ -2847,7 +2847,7 @@
       </Form.Field>
 
       <div class="gap-4 md:grid md:grid-cols-2">
-        <Form.Field {form} name="specifics">
+        <Form.Field {form} name="Specifics">
           <Form.Control let:attrs>
             <Form.Label
               >Specify details of checked options stated above (ex.
@@ -2858,7 +2858,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="other_sources">
+        <Form.Field {form} name="Second_Other_Sources">
           <Form.Control let:attrs>
             <Form.Label
               >Other sources of allowance that was not stated above.</Form.Label
@@ -2879,7 +2879,7 @@
     >
       <h1>Vocational Plans</h1>
       <div class="gap-4 md:grid md:grid-cols-2">
-        <Form.Field {form} name="course">
+        <Form.Field {form} name="Course">
           <Form.Control let:attrs>
             <Form.Label>Course</Form.Label>
             <Select.Root>
@@ -2895,13 +2895,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="course" />
+              <Select.Input name="Course" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="major">
+        <Form.Field {form} name="Major">
           <Form.Control let:attrs>
             <Form.Label>Major</Form.Label>
             <Select.Root>
@@ -2917,14 +2917,14 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="major" />
+              <Select.Input name="Major" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
       </div>
 
-      <Form.Field {form} name="satisfaction">
+      <Form.Field {form} name="Satisfaction">
         <Form.Control let:attrs>
           <Form.Label>Are you satisfied with your course?</Form.Label>
           <Select.Root>
@@ -2940,7 +2940,7 @@
                 {/each}
               </Select.Group>
             </Select.Content>
-            <Select.Input name="satisfaction" />
+            <Select.Input name="Satisfaction" />
           </Select.Root>
         </Form.Control>
         <Form.FieldErrors />
@@ -3110,13 +3110,13 @@
                   >The course I like is not offered in UP Baguio.</label
                 >
               </div>
-              <Form.Field {form} name="other_course">
+              <Form.Field {form} name="Other_Course">
                 <Form.Control let:attrs>
                   <Form.Label>What course do you prefer?</Form.Label>
                   <Input
                     {...attrs}
                     placeholder=""
-                    bind:value={$formData.other_course}
+                    bind:value={$formData.Other_Course}
                   />
                 </Form.Control>
                 <Form.FieldErrors />
@@ -3128,31 +3128,31 @@
       </div>
 
       <div class="gap-4 md:grid md:grid-cols-2">
-        <Form.Field {form} name="other_yes_reasons">
+        <Form.Field {form} name="Other_Yes_Reasons">
           <Form.Control let:attrs>
             <Form.Label>Other reasons not stated above.</Form.Label>
             <Input
               {...attrs}
               placeholder=""
-              bind:value={$formData.other_yes_reasons}
+              bind:value={$formData.Other_Yes_Reasons}
             />
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="other_no_reasons">
+        <Form.Field {form} name="Other_No_Reasons">
           <Form.Control let:attrs>
             <Form.Label>Other reasons not stated above.</Form.Label>
             <Input
               {...attrs}
               placeholder=""
-              bind:value={$formData.other_no_reasons}
+              bind:value={$formData.Other_No_Reasons}
             />
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="finish_in_upb">
+        <Form.Field {form} name="Finish_In_UPB">
           <Form.Control let:attrs>
             <Form.Label
               >Do you intend to finish your course here at UP Baguio?</Form.Label
@@ -3170,13 +3170,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="finish_in_upb" />
+              <Select.Input name="Finish_In_UPB" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="No_Reasons">
+        <Form.Field {form} name="Second_No_Reasons">
           <Form.Control let:attrs>
             <Form.Label
               >If <b>NO</b>, where do you intend to transfer?
@@ -3184,7 +3184,7 @@
             <Input
               {...attrs}
               placeholder=""
-              bind:value={$formData.No_Reasons}
+              bind:value={$formData.Second_No_Reasons}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -3342,7 +3342,7 @@
                 >Set up own business/firm/private practice</label
               >
             </div>
-            <Form.Field {form} name="other_sources">
+            <Form.Field {form} name="Second_Other_Sources_V">
               <Form.Control let:attrs>
                 <Form.Label>Others (Please specify)</Form.Label>
                 <Input
