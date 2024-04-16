@@ -43,6 +43,13 @@
     { value: "midyear", label: "Midyear" },
   ];
 
+  $: selectedSem = $formData.Sem
+    ? {
+        label: $formData.Sem,
+        value: $formData.Sem,
+      }
+    : undefined;
+
   const course = [
     { value: "ba_comm", label: "Bachelor of Arts in Communication" },
     { value: "cert_fa", label: "Certificate in Fine Arts" },
@@ -320,8 +327,12 @@
         <Form.Field {form} name="Semester">
           <Form.Control let:attrs>
             <Form.Label>Semester</Form.Label>
-            <Select.Root>
-              <Select.Trigger>
+            <Select.Root
+            selected={selectedSem}
+            onSelectedChange={(v) => {
+            v && ($formData.Sem = v.value) && ($formData.SemLabel = v.label);
+        }}>
+              <Select.Trigger {...attrs}>
                 <Select.Value placeholder="Select a semester." />
               </Select.Trigger>
               <Select.Content>
@@ -333,8 +344,8 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="semester" />
             </Select.Root>
+            <input hidden bind:value={$formData.Sem} name = {attrs.name} />
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
@@ -351,13 +362,13 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Student_ID">
+        <Form.Field {form} name="Student_Number">
           <Form.Control let:attrs>
             <Form.Label>Student Number</Form.Label>
             <Input
               {...attrs}
               placeholder="20XXXXXXX"
-              bind:value={$formData.Student_ID}
+              bind:value={$formData.Student_Number}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -427,7 +438,7 @@
             <Form.Label>Sex</Form.Label>
             <Select.Root>
               <Select.Trigger>
-                <Select.Value placeholder="Select your sex." />
+                <Select.Value placeholder="Select your sex."/>
               </Select.Trigger>
               <Select.Content>
                 <Select.Group>
@@ -601,49 +612,49 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Address_While_In_UPBaguio">
+        <Form.Field {form} name="Baguio_Address">
           <Form.Control let:attrs>
             <Form.Label>Address While In UP Baguio</Form.Label>
             <Input
               {...attrs}
               placeholder="Baguio Address"
-              bind:value={$formData.Address_While_In_UPBaguio}
+              bind:value={$formData.Baguio_Address}
             />
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Telephone_Number">
+        <Form.Field {form} name="Baguio_Telephone_Number">
           <Form.Control let:attrs>
             <Form.Label>Telephone Number</Form.Label>
             <Input
               {...attrs}
               placeholder="Telephone Number of Baguio Residence"
-              bind:value={$formData.Telephone_Number}
+              bind:value={$formData.Baguio_Telephone_Number}
             />
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Permanent_Home_Address">
+        <Form.Field {form} name="Permanent_Address">
           <Form.Control let:attrs>
             <Form.Label>Permanent Home Address</Form.Label>
             <Input
               {...attrs}
               placeholder="Permanent Home Address"
-              bind:value={$formData.Permanent_Home_Address}
+              bind:value={$formData.Permanent_Address}
             />
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Telephone_Number">
+        <Form.Field {form} name="Permanent_Telephone_Number">
           <Form.Control let:attrs>
             <Form.Label>Telephone Number</Form.Label>
             <Input
               {...attrs}
               placeholder="Telephone Number of Permanent Residence"
-              bind:value={$formData.Telephone_Number}
+              bind:value={$formData.Permanent_Telephone_Number}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -744,7 +755,7 @@
       </Form.Field>
 
       <div class="gap-4 md:grid md:grid-cols-2">
-        <Form.Field {form} name="Address">
+        <Form.Field {form} name="Guardian_Address">
           <Form.Control let:attrs>
             <Form.Label>Address</Form.Label>
             <Input
@@ -756,7 +767,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Telephone_Number">
+        <Form.Field {form} name="Guardian_Telephone_Number">
           <Form.Control let:attrs>
             <Form.Label>Telephone Number</Form.Label>
             <Input

@@ -11,7 +11,7 @@ export const formSchema = z.object({
     .regex(/[0-9]+[0-9]/, { message: "Only numbers or hyphen allowed." })
     .max(9, { message: "Must be 9 digits" }),
 
-  Student_ID: z
+  Student_Number: z
     .string()
     .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(9, { message: "Must be 9 digits" }),
@@ -20,17 +20,93 @@ export const formSchema = z.object({
     message: "Please select a course/degree program.",
   }),
 
-  // Personal Information
+// Personal Information
+
   Student_Name: z
     .string()
     .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
     .max(100),
 
-  Birth_Date: z
+  Nickname: z
     .string()
-    .refine((v) => v, { message: "An appointment date is required." }),
+    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
+    .max(100),
 
-  // Family Data
+  Sex: z
+    .string(),
+
+  Age: z
+    .string(),
+  
+  Birth_Date: z
+    .string(),
+
+  Place_Of_Birth: z
+    .string()
+    .max(100),
+
+  Nationality: z
+    .string(),
+
+  Citizenship: z
+    .string(),
+
+  Religion: z
+    .string(),
+
+  Cellphone_Number: z
+    .string()
+    .max(11),
+
+  Email_Address: z
+    .string(),
+  
+  Baguio_Address: z
+    .string()
+    .max(100),
+  
+  Baguio_Telephone_Number: z
+    .string()
+    .max(30),
+  
+  Permanent_Address: z
+    .string(),
+
+  Permanent_Telephone_Number: z
+    .string()
+    .max(30),
+  
+// Family Data
+
+  Parent_Status: z
+    .string(),
+
+  Guardian: z
+    .string()
+    .max(50),
+
+  Guardian_Address: z
+    .string()
+    .max(100),
+  
+  Guardian_Telephone_Number: z
+    .string()
+    .max(30),
+
+  Father_Name: z
+    .string(),
+
+  Age: z
+  /
+  
+  
+  
+  
+
+  
+
+
+
 
   // Children in the Familly
 

@@ -30,7 +30,7 @@ export const actions: Actions = {
     }
     const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-    const generateRandomString = (length) => {
+    const generateRandomString = (length: number) => {
       let randomString = "";
 
       for (let i = 0; i < length; i++) {
