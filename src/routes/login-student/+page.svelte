@@ -1,41 +1,13 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import { Button } from "$lib/components/ui/button/index.js";
   import { goto } from "$app/navigation";
 </script>
 
-<head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    header {
-      display: flex;
-      font-family: Urbanist, sans-serif;
-    }
-
-    body {
-      font-family: Urbanist, sans-serif;
-    }
-
-    .mainbody {
-      min-height: 100vh;
-      display: flex;
-      position: relative;
-      text-align: left;
-      justify-content: center;
-      width: 100%;
-      background-color: white;
-    }
-
+<style>
     .square {
       z-index: 2;
       background-color: white;
-      box-shadow:
-        0 4px 6px -1px rgb(0 0 0 / 0.1),
-        0 2px 4px -2px rgb(0 0 0 / 0.1);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
       border-radius: 0.5rem;
       padding-left: 2rem; /* 32px */
       padding-right: 3.5rem; /* 32px */
@@ -101,27 +73,18 @@
         font-size: 4vw;
       }
     }
-  </style>
-</head>
+</style>
 
-<body class="relative flex justify-center overflow-x-hidden">
-  <div
-    class="square absolute mt-32 flex w-5/6 flex-col gap-1 sm:relative sm:mt-28"
-  >
+<div class="relative flex justify-center">
+  <div class="square absolute mt-32 flex w-5/6 flex-col gap-1 sm:relative sm:mt-28">
     <h2 class="mini-title static">STUDENT ACCOUNT</h2>
     <h1 class="title center static">LOG IN</h1>
-    <p class="subtitle">
-      To log in to your account, please use your designated UP Mail
-      (your@up.edu.ph).
-    </p>
-
-    <Button on:click={() => goto("/login-student/google")} style="width: 110%;"
-      >Login with UP Mail</Button
-    >
+    <p class="subtitle"> To log in to your account, please use your designated UP Mail (your@up.edu.ph). </p>
+    <Button on:click={() => goto("/login-student/google")} style="width: 110%;">Login with UP Mail</Button>
   </div>
   <img
     class="sm:mad-md:opacity-80 absolute -right-32 z-0 max-w-3xl opacity-40 sm:opacity-60 md:right-1 md:top-1 md:max-w-lg"
-    src="oble.png"
+    src="oble.png" 
     alt="Logo"
   />
-</body>
+</div>

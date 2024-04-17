@@ -3,28 +3,7 @@
   import { Button } from "$lib/components/ui/button";
 </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
-    rel="stylesheet"
-  />
-
-  <style>
-    header {
-      display: flex;
-      font-family: Urbanist, sans-serif;
-    }
-
-    body {
-      font-family: Urbanist, sans-serif;
-    }
-
-    /* .mainbody {
-      display: flex;
-      position: relative;
-      justify-content: center;
-    } */
+<style>
     .square {
       z-index: 2;
       background-color: white;
@@ -32,10 +11,7 @@
         0 4px 6px -1px rgb(0 0 0 / 0.1),
         0 2px 4px -2px rgb(0 0 0 / 0.1);
       border-radius: 0.5rem;
-      padding-left: 2rem; /* 32px */
-      padding-right: 3.5rem; /* 32px */
-      padding-top: 1.5rem; /* 24px */
-      padding-bottom: 1.5rem; /* 24px */
+      padding: 1.5rem 3.5rem 1.5rem 2rem;
     }
 
     .mini-title {
@@ -48,7 +24,7 @@
     }
 
     .title {
-      line-height: 2rem; /* 32px */
+      line-height: 2rem; 
       font-weight: bold;
       text-align: center;
       margin-top: 10px;
@@ -59,8 +35,8 @@
 
     .subtitle {
       display: block;
-      font-size: 0.875rem; /* 14px */
-      line-height: 1.25rem; /* 20px */
+      font-size: 0.875rem;
+      line-height: 1.25rem; 
       font-weight: 500;
       color: rgb(55 65 81);
       margin-bottom: 0.25rem;
@@ -116,37 +92,6 @@
       width: 110%;
     }
 
-    .login-button {
-      width: 110%;
-      display: flex;
-      justify-content: center;
-      padding-top: 0.5rem; /* 8px */
-      padding-bottom: 0.5rem; /* 8px */
-      padding-left: 1rem; /* 16px */
-      padding-right: 1rem; /* 16px */
-      border: transparent;
-      border-radius: 0.375rem; /* 6px */
-      box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-      font-size: 0.875rem; /* 14px */
-      line-height: 1.25rem; /* 20px */
-      font-weight: 500;
-      color: white;
-      background-color: maroon;
-    }
-
-    .login-button:hover {
-      outline: solid;
-      box-shadow: var(--tw-ring-inset) 0 0 0
-        calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-      --tw-ring-offset-width: 2px;
-      box-shadow:
-        0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color),
-        var(--tw-ring-shadow);
-      --tw-ring-color: rgb(99 102 241);
-      background-color: #f5f5f5;
-    }
-
-    /* Small devices (portrait tablets and large phones, 600px and up) */
     @media only screen and (min-width: 650px) {
       .square {
         position: absolute;
@@ -175,10 +120,9 @@
         font-size: 4vw;
       }
     }
-  </style>
-</head>
+</style>
 
-<body class="relative flex justify-center overflow-x-hidden">
+<div class="relative flex justify-center">
   <div class="square absolute mt-32 sm:relative sm:mt-10">
     <h2 class="mini-title">ADMIN ACCOUNT</h2>
     <h1 class="title">LOG IN</h1>
@@ -203,9 +147,7 @@
           required
         />
       </div>
-      <Button on:click={() => goto("/dashboard-admin")} class="login-button"
-        >Login</Button
-      >
+      <Button on:click={() => goto("/dashboard-admin")} style="width: 110%;">Login</Button>
       <div class="forgot">
         <a href="https://www.roblox.com/Login">Forgot Password?</a>
       </div>
@@ -216,4 +158,4 @@
     src="oble.png"
     alt="Logo"
   />
-</body>
+</div>

@@ -1,8 +1,6 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
   import { Button } from "$lib/components/ui/button";
-  import { buttonVariants } from "$lib/components/ui/button";
-  import { getHoursInDay } from "@internationalized/date";
   import {
     CalendarDays,
     DownloadIcon,
@@ -13,16 +11,9 @@
     ScanSearchIcon,
     SearchIcon,
   } from "lucide-svelte";
-
-  let query: string = "";
 </script>
 
 <head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
-    rel="stylesheet"
-  />
-
   <style>
     header {
       display: flex;
@@ -30,10 +21,6 @@
       background-color: #8e1537;
       color: white;
       padding-bottom: 20px;
-    }
-
-    body {
-      font-family: Urbanist, sans-serif;
     }
 
     @media only screen and (min-width: 735px) {
@@ -49,86 +36,60 @@
     }
   </style>
 </head>
-<body class="overflow-hidden">
+
+<div class="overflow-hidden">
   <div class="threedots absolute right-4 md:right-10">
     <button
       id="dropdownMenuIconButton"
       data-dropdown-toggle="dropdownDots"
       class="inline-flex items-center rounded-full bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-50 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-      type="button"
-    >
+      type="button">
       <svg
         class="h-5 w-5"
         aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
-        viewBox="0 0 4 15"
-      >
-        <path
-          d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
-        />
+        viewBox="0 0 4 15">
+        <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
       </svg>
     </button>
 
-    <div
-      id="dropdownDots"
-      class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
-    >
-      <ul
-        class="py-2 text-sm text-gray-700 dark:text-gray-200"
-        aria-labelledby="dropdownMenuIconButton"
-      >
+    <div id="dropdownDots" class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
+      <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
         <li>
-          <a
-            href="/dashboard-admin"
-            class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            ><LayoutDashboardIcon size={15} />
-            <p class="ml-3">Dashboard</p></a
-          >
+          <a href="/dashboard-admin" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <LayoutDashboardIcon size={15} />
+            <p class="ml-3">Dashboard</p>
+          </a>
         </li>
         <li>
-          <a
-            href="/records-admin"
-            class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-            ><FileTextIcon size={15} />
-            <p class="ml-3">Records</p></a
-          >
+          <a href="/records-admin" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+            <FileTextIcon size={15} />
+            <p class="ml-3">Records</p>
+          </a>
         </li>
         <li>
-          <a
-            href="/calendar-admin"
-            class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          >
+          <a href="/calendar-admin" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
             <CalendarDays size={15} />
-            <p class="ml-3">Calendar</p></a
-          >
+            <p class="ml-3">Calendar</p>
+          </a>
         </li>
       </ul>
       <div class="py-2">
-        <a
-          href="/login-admin"
-          class="flex items-center px-4 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-        >
+        <a href="/login-admin" class="flex items-center px-4 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">
           <LogOutIcon size={15} />
-          <p class="ml-3">Log Out</p></a
-        >
+          <p class="ml-3">Log Out</p>
+        </a>
       </div>
     </div>
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   </div>
 
   <h1 class="pb-10 pt-16 font-bold sm:pt-5">STUDENT RECORDS</h1>
-
   <form class="mx-auto w-full">
-    <label
-      for="default-search"
-      class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
-      >Search</label
-    >
+    <label for="default-search" class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white">Search</label>
     <div class="relative">
-      <div
-        class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
-      >
+      <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
         <SearchIcon size={20} />
       </div>
       <input
@@ -141,22 +102,15 @@
       <button
         type="submit"
         class="absolute bottom-2.5 end-2.5 rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-200 hover:text-black"
-        >Search</button
-      >
+        >Search</button>
     </div>
   </form>
 
   <!-- Temporary Table of Student Records -->
   <!-- To change kasi dapat connected sa sql database ung pagkuha ng values-->
-  <div
-    class="table-wrp relative block max-h-96 overflow-x-auto rounded-lg border border-none"
-  >
-    <table
-      class="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right"
-    >
-      <thead
-        class="sticky top-0 bg-rose-900 text-xs uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400"
-      >
+  <div class="table-wrp relative block max-h-96 overflow-x-auto rounded-lg border border-none">
+    <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
+      <thead class="sticky top-0 bg-rose-900 text-xs uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400">
         <tr>
           <th scope="col" class="px-6 py-5"> Student ID </th>
           <th scope="col" class="px-3 py-5"> First Name </th>
@@ -168,15 +122,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr
-          class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800"
-        >
-          <th
-            scope="row"
-            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
-          >
-            2021-00001
-          </th>
+        <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
+          <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">2021-00001</th>
           <td class="px-6 py-4"> Lester </td>
           <td class="px-6 py-4"> N/A </td>
           <td class="px-6 py-4"> Ignacio </td>
@@ -189,13 +136,11 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><DownloadIcon size={20} /></Button
-            >
+              on:click={() => goto("#")}><DownloadIcon size={20} /></Button>
             <div
               id="tooltip-light1"
               role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm"
-            >
+              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm">
               Download PDF
             </div>
             <Button
@@ -204,13 +149,11 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
-            >
+              on:click={() => goto("#")}><PencilIcon size={20} /></Button>
             <div
               id="tooltip-light2"
               role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm"
-            >
+              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm">
               Edit Data
             </div>
             <Button
@@ -219,26 +162,17 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
-            >
+              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button>
             <div
               id="tooltip-light3"
               role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm"
-            >
+              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm">
               View Data
             </div>
           </td>
         </tr>
-        <tr
-          class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800"
-        >
-          <th
-            scope="row"
-            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
-          >
-            2021-00002
-          </th>
+        <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
+          <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"> 2021-00002 </th>
           <td class="px-6 py-4"> John Kenneth </td>
           <td class="px-6 py-4"> E </td>
           <td class="px-6 py-4"> Herrera </td>
@@ -251,13 +185,11 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><DownloadIcon size={20} /></Button
-            >
+              on:click={() => goto("#")}><DownloadIcon size={20} /></Button>
             <div
               id="tooltip-light1"
               role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm"
-            >
+              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm">
               Download PDF
             </div>
             <Button
@@ -266,13 +198,11 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
-            >
+              on:click={() => goto("#")}><PencilIcon size={20} /></Button>
             <div
               id="tooltip-light2"
               role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm"
-            >
+              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm">
               Edit Data
             </div>
             <Button
@@ -281,26 +211,17 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
-            >
+              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button>
             <div
               id="tooltip-light3"
               role="tooltip"
-              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm"
-            >
+              class="tooltip invisible absolute z-10 inline-block rounded-lg border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-900 opacity-0 shadow-sm">
               View Data
             </div>
           </td>
         </tr>
-        <tr
-          class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800"
-        >
-          <th
-            scope="row"
-            class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white"
-          >
-            2021-00003
-          </th>
+        <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
+          <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">2021-00003</th>
           <td class="px-6 py-4"> Gideon Daniel </td>
           <td class="px-6 py-4"> T </td>
           <td class="px-6 py-4"> Orseno </td>
@@ -915,4 +836,4 @@
       </tbody>
     </table>
   </div>
-</body>
+</div>

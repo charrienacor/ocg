@@ -1,14 +1,12 @@
 <header>
   <div class="corner sm:w-36">
-    <a href="https://up.edu.ph/"
-      ><img src="UP Logo.png" alt="UP Logo" class="logo ml-6 w-16" />
+    <a href="https://up.edu.ph/">
+      <img src="UP Logo.png" alt="UP Logo" class="logo ml-6 w-16" />
     </a>
   </div>
   <div class="next-to-logo">
-    <p class="school">
-      University of the Philippines - Baguio<br /><b class="office"
-        >Office of Guidance and Counseling</b
-      >
+    <p class="school">University of the Philippines - Baguio<br />
+      <b class="office">Office of Guidance and Counseling</b>
     </p>
   </div>
 </header>
@@ -44,7 +42,6 @@
     line-height: 1.2;
   }
 
-  /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 610px) {
     .corner {
       width: 5px;
