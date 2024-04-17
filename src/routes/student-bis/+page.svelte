@@ -1,11 +1,10 @@
 <script lang="ts">
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
-  import { formSchema, type FormSchema } from "./schema";
+  import { formSchema } from "./schema";
   import { superForm } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
-  // import { Checkbox } from "$lib/components/ui/checkbox";
   import {
     DateFormatter,
     type DateValue,
@@ -218,11 +217,6 @@
 </script>
 
 <head>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
-    rel="stylesheet"
-  />
-
   <style>
     header {
       display: flex;
@@ -231,11 +225,6 @@
       color: white;
       padding-bottom: 20px;
     }
-
-    body {
-      font-family: Urbanist, sans-serif;
-    }
-
     @media only screen and (min-width: 735px) {
       .threedots {
         top: 112px;
@@ -250,69 +239,51 @@
   </style>
 </head>
 
-<div class="threedots absolute right-4 md:right-10">
+<div class="threedots absolute right-10 top-10 flex">
   <button
     id="dropdownMenuIconButton"
     data-dropdown-toggle="dropdownDots"
     class="inline-flex items-center rounded-full bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-50 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-    type="button"
-  >
+    type="button">
     <svg
       class="h-5 w-5"
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
-      viewBox="0 0 4 15"
-    >
-      <path
-        d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
-      />
+      viewBox="0 0 4 15">
+      <path d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"/>
     </svg>
   </button>
-  <div
-    id="dropdownDots"
-    class="w-50 z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
-  >
-    <ul
-      class="mr-10 py-2 text-sm text-gray-700 dark:text-gray-200"
-      aria-labelledby="dropdownMenuIconButton"
-    >
+
+  <div id="dropdownDots" class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
       <li>
-        <a
-          href="/dashboard-admin"
-          class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          ><LayoutDashboardIcon size={15} />
-          <p class="ml-3">Dashboard</p></a
-        >
+        <a href="/student-dashboard" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+          <LayoutDashboardIcon size={15} />
+          <p class="ml-3">Dashboard</p>
+        </a>
       </li>
       <li>
-        <a
-          href="/records-admin"
-          class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-          ><FileTextIcon size={15} />
-          <p class="ml-3">Records</p></a
-        >
+        <a href="/student-bis" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+          <FileTextIcon size={15} />
+          <p class="ml-3">BIS</p>
+        </a>
       </li>
       <li>
-        <a
-          href="/calendar-admin"
-          class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-        >
+        <a href="/student-appointment" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
           <CalendarDays size={15} />
-          <p class="ml-3">Calendar</p></a
-        >
+          <p class="ml-3">Calendar</p>
+        </a>
       </li>
     </ul>
     <div class="py-2">
-      <a
-        href="/login-admin"
-        class="flex items-center px-4 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-      >
+      <a href="/login-student" class="flex items-center px-4 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">
         <LogOutIcon size={15} />
-        <p class="ml-3">Log Out</p></a
-      >
+        <p class="ml-3">Log Out</p>
+      </a>
     </div>
   </div>
+  <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
 <div class="relative mb-10 mt-5">
