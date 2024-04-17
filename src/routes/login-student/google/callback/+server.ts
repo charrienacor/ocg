@@ -1,7 +1,7 @@
 import { OAuth2RequestError } from "arctic";
 import { generateId } from "lucia";
 import { google, lucia } from "$lib/server/auth";
-import db from "$lib/server/database";
+import db from "$db/mongo";
 
 import type { RequestEvent } from "@sveltejs/kit";
 
@@ -35,12 +35,12 @@ export async function GET(event: RequestEvent): Promise<Response> {
     const user = await response.json();
 
     // Replace this with your own DB client.
-    const existingUser = await db.execute(
-      `SELECT * FROM user WHERE google_id = ${user.sub}`,
+    const existingUser = await db.collection("users").findOne(
+      { google_id: `${user.sub}` },
     );
 
-    if (Object.keys(existingUser[0]).length !== 0) {
-      const session = await lucia.createSession(existingUser[0][0].id, {});
+    if (existingUser !== null) {
+      const session = await lucia.createSession(existingUser._id, {});
       const sessionCookie = lucia.createSessionCookie(session.id);
       event.cookies.set(sessionCookie.name, sessionCookie.value, {
         path: ".",
@@ -49,9 +49,12 @@ export async function GET(event: RequestEvent): Promise<Response> {
     } else {
       const userId = generateId(15);
       // Replace this with your own DB client.
-      await db.execute(
-        `INSERT INTO user VALUES ('${userId}', '${user.sub}', '${user.name}', '${user.email}')`,
-      );
+      await db.collection("users").insertOne({
+        _id: `${userId}`,
+        google_id: `${user.sub}`,
+        username: `${user.name}`,
+        email: `${user.email}`,
+      });
 
       const session = await lucia.createSession(userId, {});
       const sessionCookie = lucia.createSessionCookie(session.id);

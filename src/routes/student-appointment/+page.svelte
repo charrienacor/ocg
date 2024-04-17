@@ -12,6 +12,7 @@
   let name = data.name;
   let email = data.email;
   let counselors = data.counselor;
+  console.log(counselors);
 </script>
 
 <head>

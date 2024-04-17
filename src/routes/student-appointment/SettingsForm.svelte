@@ -138,7 +138,7 @@
           <Select.Group>
             {#each counselors as counselor}
               <Select.Item
-                value={counselor.Counselor_Email}
+                value={counselor._id}
                 label="{counselor.First_Name} {counselor.Last_Name}"
                 >{counselor.First_Name} {counselor.Last_Name}</Select.Item
               >
