@@ -62,36 +62,6 @@
       border-color: rgba(99, 102, 241, var(--tw-border-opacity));
     }
 
-    img {
-      z-index: 0;
-    }
-
-    a {
-      font-size: 0.75rem; /* 12px */
-      line-height: 1rem; /* 16px */
-      color: maroon;
-    }
-
-    a:hover {
-      color: gray;
-    }
-
-    a:focus {
-      outline: none;
-      box-shadow: var(--tw-ring-inset) 0 0 0
-        calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-      --tw-ring-offset-width: 2px;
-      box-shadow:
-        0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color),
-        var(--tw-ring-shadow);
-      --tw-ring-color: rgb(99 102 241);
-    }
-
-    .forgot {
-      text-align: center;
-      width: 110%;
-    }
-
     @media only screen and (min-width: 650px) {
       .square {
         position: absolute;
@@ -137,7 +107,7 @@
           required
         />
       </div>
-      <div style="margin-bottom: 3rem;">
+      <div style="margin-bottom: 40px;">
         <label for="password" class="subtitle">Password</label>
         <input
           type="password"
@@ -147,10 +117,7 @@
           required
         />
       </div>
-      <Button on:click={() => goto("/dashboard-admin")} style="width: 110%;">Login</Button>
-      <div class="forgot">
-        <a href="https://www.roblox.com/Login">Forgot Password?</a>
-      </div>
+      <Button on:click={() => goto("/dashboard-admin")} style="width: 110%; padding-bottom: 15px;">Login</Button>
     </form>
   </div>
   <img
