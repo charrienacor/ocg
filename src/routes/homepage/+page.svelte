@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
-  import { UsersRound, GraduationCap } from "lucide-svelte";
+  import { UsersRound, GraduationCap, LockKeyhole } from "lucide-svelte";
 </script>
 
 <div class="relative overflow-x-hidden sm:mt-20">
@@ -13,7 +13,7 @@
     </div>
     <div class="flex flex-col justify-center gap-3 lg:flex-row">
       <Button href="/admin/login" variant="bigbutton" size="large">
-        <UsersRound size={100} class="inline-block" />
+        <LockKeyhole size={100} class="inline-block" />
         <h1 class="inline-block">ADMINISTRATOR</h1>
         <p>To gain full control and access rights</p>
       </Button>
@@ -22,6 +22,15 @@
         <h1 class="inline-block">STUDENT</h1>
         <p class="text-wrap text-balance text-center md:text-nowrap">
           To fill out Backgorund Information Sheet (BIS) or avail free services
+        </p>
+      </Button>
+    </div>
+    <div class="flex flex-row justify-center">
+      <Button href="/visitor/login" variant="bigbutton" size="large">
+        <UsersRound size={100} class="inline-block" />
+        <h1 class="inline-block">Visitor</h1>
+        <p class="text-wrap text-balance text-center md:text-nowrap">
+          For non-UP students to avail services
         </p>
       </Button>
     </div>

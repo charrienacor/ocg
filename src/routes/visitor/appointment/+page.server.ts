@@ -7,7 +7,7 @@ import { zod } from "sveltekit-superforms/adapters";
 import db from "$db/mongo";
 
 export const load: PageServerLoad = async (event) => {
-  if (!event.locals.user) redirect(302, "/student/login");
+  if (!event.locals.user) redirect(302, "/visitor/login");
 
   let counselors = db.collection("Counselors").find(
     {
@@ -53,11 +53,10 @@ export const actions: Actions = {
     //   }', '${data.Student_Name}', '${data.Student_Email}', '${data.Student_ID}', '${data.Guidance_Counselor}', '${data.Appointment_Date}', '${data.Appointment_Hour}:${data.Appointment_Minute}', '${data.Nature_Of_Concern}', 'Pending');`,
     // );
     //
-    await db.collection("Appointments").insertOne({
-      _id: `${data.Student_ID}${generateRandomString(3)}`,
-      Student_Name: `${data.Student_Name}`,
-      Student_Email: `${data.Student_Email}`,
-      Student_ID: `${data.Student_ID}`,
+    await db.collection("Visitor_Appointments").insertOne({
+      _id: `${generateRandomString(10)}`,
+      Student_Name: `${data.Visitor_Name}`,
+      Student_Email: `${data.Visitor_Email}`,
       Counselor: `${data.Guidance_Counselor}`,
       Appointment_Date: `${data.Appointment_Date}`,
       Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,

@@ -70,3 +70,10 @@ export const google1 = new Google(
   GOOGLE_CLIENT_SECRET,
   "http://localhost:5173/admin/login/google/callback",
 );
+
+
+export const google2 = new Google(
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  "http://localhost:5173/visitor/login/google/callback",
+);

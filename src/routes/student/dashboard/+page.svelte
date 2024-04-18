@@ -96,7 +96,7 @@
     </ul>
     <div class="py-2">
       <a
-        href="/student/login"
+        href="/api/logout"
         class="flex items-center px-5 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
       >
         <LogOutIcon size={15} />
@@ -140,7 +140,7 @@
     variant="bigbutton"
     size="default"
     class="text-xl"
-    on:click={() => goto("/student/login")}
+    on:click={() => goto("/api/logout")}
   >
     Log Out
   </Button>
