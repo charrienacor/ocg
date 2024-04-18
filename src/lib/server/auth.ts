@@ -1,23 +1,32 @@
 import { Lucia } from "lucia";
-import { Mysql2Adapter } from "@lucia-auth/adapter-mysql";
-import mysql from "mysql2/promise";
+import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
+import { Collection, MongoClient } from "mongodb";
 import { dev } from "$app/environment";
 import { Google } from "arctic";
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "$env/static/private";
 
-const pool = mysql.createPool({
-  host: "localhost",
-  port: "8080",
-  user: "root",
-  password: "",
-  database: "PatnubayAguhon",
-  multipleStatements: true,
-});
+const client = new MongoClient("mongodb://localhost:27017");
+await client.connect();
 
-const adapter = new Mysql2Adapter(pool, {
-  user: "user",
-  session: "user_session",
-});
+const db = client.db("Aguhon");
+
+const User = db.collection<UserDoc>("users");
+const Session = db.collection<SessionDoc>("sessions");
+
+const adapter = new MongodbAdapter(Session, User);
+
+interface UserDoc {
+  _id: string;
+  google_id: string;
+  username: string;
+  email: string;
+}
+
+interface SessionDoc {
+  _id: string;
+  expires_at: Date;
+  user_id: string;
+}
 
 export const lucia = new Lucia(adapter, {
   sessionCookie: {
