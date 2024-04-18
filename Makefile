@@ -4,3 +4,4 @@ run:
 
 reset:
 	docker compose down
+	docker volume ls -f dangling=true 
