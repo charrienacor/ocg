@@ -82,7 +82,7 @@
 </div>
 
 <div class="relative">
-  <Card.Root class="absolute right-1 w-[400px] ">
+  <Card.Root class="absolute right-0 w-[400px] ">
     <Card.Header>
       <Card.Title>Book an Appointment</Card.Title>
     </Card.Header>
@@ -90,4 +90,5 @@
       <SettingsForm data={data.form} {name} {email} {counselors} />
     </Card.Content>
   </Card.Root>
+  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 </div>
