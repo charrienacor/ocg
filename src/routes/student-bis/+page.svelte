@@ -239,11 +239,11 @@
   </style>
 </head>
 
-<div class="threedots absolute right-10 top-10 flex">
+<div class="threedots absolute right-10 top-10">
   <button
     id="dropdownMenuIconButton"
     data-dropdown-toggle="dropdownDots"
-    class="inline-flex items-center rounded-full bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-50 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    class="rounded-full bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-50 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
     type="button">
     <svg
       class="h-5 w-5"
@@ -255,29 +255,29 @@
     </svg>
   </button>
 
-  <div id="dropdownDots" class="z-10 hidden w-44 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
+  <div id="dropdownDots" class="z-10 hidden -right-14 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
       <li>
-        <a href="/student-dashboard" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <a href="/student-dashboard" class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
           <LayoutDashboardIcon size={15} />
           <p class="ml-3">Dashboard</p>
         </a>
       </li>
       <li>
-        <a href="/student-bis" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <a href="/student-bis" class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
           <FileTextIcon size={15} />
           <p class="ml-3">BIS</p>
         </a>
       </li>
       <li>
-        <a href="/student-appointment" class="flex items-center px-4 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
+        <a href="/student-appointment" class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
           <CalendarDays size={15} />
           <p class="ml-3">Calendar</p>
         </a>
       </li>
     </ul>
     <div class="py-2">
-      <a href="/login-student" class="flex items-center px-4 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">
+      <a href="/login-student" class="flex items-center px-5 py-2 text-base text-sm text-gray-900 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white">
         <LogOutIcon size={15} />
         <p class="ml-3">Log Out</p>
       </a>
