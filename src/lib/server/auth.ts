@@ -62,5 +62,11 @@ interface DatabaseUserAttributes {
 export const google = new Google(
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  "http://localhost:5173/login-student/google/callback",
+  "http://localhost:5173/student/login/google/callback",
+);
+
+export const google1 = new Google(
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+  "http://localhost:5173/admin/login/google/callback",
 );

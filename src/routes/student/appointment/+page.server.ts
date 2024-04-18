@@ -61,7 +61,7 @@ export const actions: Actions = {
       Counselor: `${data.Guidance_Counselor}`,
       Appointment_Date: `${data.Appointment_Date}`,
       Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
-      Nature_Of_Concern: `${data.NAture_Of_Concern}`,
+      Nature_Of_Concern: `${data.Nature_Of_Concern}`,
       Status: "Pending",
     });
     return {

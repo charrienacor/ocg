@@ -66,7 +66,7 @@ export async function GET(event: RequestEvent): Promise<Response> {
     return new Response(null, {
       status: 302,
       headers: {
-        Location: "/student-dashboard",
+        Location: "/student/dashboard",
       },
     });
   } catch (e) {
