@@ -2,9 +2,7 @@ import { z } from "zod";
 
 export const formSchema = z.object({
   // Preliminaries
-  Semester: z.string().refine((value) => value !== "", {
-    message: "Please select a semester.",
-  }),
+  Semester: z.string(),
 
   School_Year: z
     .string()
@@ -20,7 +18,7 @@ export const formSchema = z.object({
     message: "Please select a course/degree program.",
   }),
 
-// Personal Information
+  // Personal Information
 
   Student_Name: z
     .string()
@@ -37,7 +35,7 @@ export const formSchema = z.object({
 
   Age: z
     .string(),
-  
+
   Birth_Date: z
     .string(),
 
@@ -60,23 +58,23 @@ export const formSchema = z.object({
 
   Email_Address: z
     .string(),
-  
+
   Baguio_Address: z
     .string()
     .max(100),
-  
+
   Baguio_Telephone_Number: z
     .string()
     .max(30),
-  
+
   Permanent_Address: z
     .string(),
 
   Permanent_Telephone_Number: z
     .string()
     .max(30),
-  
-// Family Data
+
+  // Family Data
 
   Parent_Status: z
     .string(),
@@ -88,7 +86,7 @@ export const formSchema = z.object({
   Guardian_Address: z
     .string()
     .max(100),
-  
+
   Guardian_Telephone_Number: z
     .string()
     .max(30),
@@ -116,13 +114,13 @@ export const formSchema = z.object({
 
   Father_Occupation: z
     .string(),
-  
+
   Father_Monthly_Income: z
     .string(),
-  
+
   Father_Employer_Name: z
     .string(),
-  
+
   Father_Employer_Address: z
     .string(),
 
@@ -131,7 +129,7 @@ export const formSchema = z.object({
 
   Father_School: z
     .string(),
-  
+
   Father_Languages: z
     .string(),
 
@@ -140,48 +138,48 @@ export const formSchema = z.object({
 
   Mother_Age: z
     .string(),
-  
+
   Mother_Living_Or_Dead: z
     .string(),
-  
+
   Mother_Place_Of_Birth: z
     .string(),
-  
+
   Mother_Address: z
     .string(),
-  
+
   Mother_Contact_Number: z
     .string(),
-  
+
   Mother_Religion: z
     .string(),
-  
+
   Mother_Occupation: z
     .string(),
-    
+
   Mother_Monthly_Income: z
     .string(),
-    
+
   Mother_Employer_Name: z
     .string(),
-    
+
   Mother_Employer_Address: z
     .string(),
-  
+
   Mother_Highest_Degree_Completed: z
     .string(),
-  
+
   Mother_School: z
     .string(),
-    
+
   Mother_Languages: z
     .string(),
-  
-// Children in the Familly
 
-// Educational Background
+  // Children in the Familly
 
-  Elementary_School: z 
+  // Educational Background
+
+  Elementary_School: z
     .string(),
 
   Elementary_School_Location: z
@@ -193,7 +191,7 @@ export const formSchema = z.object({
   Junior_High_School_Location: z
     .string(),
 
-  JHS_Type: z 
+  JHS_Type: z
     .string(),
 
   Junior_Number_Of_Students: z
@@ -205,15 +203,15 @@ export const formSchema = z.object({
   Senior_High_School_Location: z
     .string(),
 
-  SHS_Type: z 
+  SHS_Type: z
     .string(),
 
   Senior_Number_Of_Students: z
     .string(),
 
-  HS_Rank: z 
+  HS_Rank: z
     .string(),
-  
+
   School_Ave: z
     .string(),
 
@@ -225,26 +223,26 @@ export const formSchema = z.object({
 
   First_Campus: z
     .string(),
-  
+
   First_Campus_Reason: z
     .string(),
-  
+
   Second_Campus: z
     .string(),
-  
+
   Second_Campus_Reason: z
     .string(),
-    
-// Financial Information
+
+  // Financial Information
   Income: z
     .string(),
 
   Source_Of_Income: z
     .string(),
 
-  Other_Sources: z 
+  Other_Sources: z
     .string(),
-  
+
   Allowance: z
     .string(),
 
@@ -256,8 +254,8 @@ export const formSchema = z.object({
 
   Second_Other_Sources: z
     .string(),
-  
-// Vocational Plans
+
+  // Vocational Plans
   Course: z
     .string(),
 
@@ -275,7 +273,7 @@ export const formSchema = z.object({
 
   Other_Course: z
     .string(),
-  
+
   Other_Yes_Reasons: z
     .string(),
 
@@ -284,14 +282,14 @@ export const formSchema = z.object({
 
   Finish_In_UPB: z
     .string(),
-  
+
   Second_No_Reasons: z
     .string(),
 
   Second_Other_Sources_V: z
     .string(),
 
-// Leisure Time Activities
+  // Leisure Time Activities
 
   Recreational_Activities: z
     .string()

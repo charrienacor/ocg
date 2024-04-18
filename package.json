@@ -33,6 +33,7 @@
   "type": "module",
   "dependencies": {
     "@internationalized/date": "^3.5.2",
+    "@lucia-auth/adapter-mongodb": "^1.0.3",
     "@lucia-auth/adapter-mysql": "^3.0.2",
     "@preline/dropdown": "^2.0.2",
     "arctic": "^1.5.0",

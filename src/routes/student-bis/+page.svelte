@@ -44,7 +44,7 @@
 
   $: selectedSem = $formData.Sem
     ? {
-        label: $formData.Sem,
+        label: $formData.SemLabel,
         value: $formData.Sem,
       }
     : undefined;
