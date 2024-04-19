@@ -28,7 +28,7 @@
 
     @media only screen and (min-width: 736px) {
       .threedots {
-        top: 40px;
+        top: 30px;
       }
     }
   </style>
