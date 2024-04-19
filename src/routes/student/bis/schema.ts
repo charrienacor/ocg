@@ -14,9 +14,13 @@ export const formSchema = z.object({
     .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(9, { message: "Must be 9 digits" }),
 
-  Degree_Program: z.string().refine((value) => value !== "", {
-    message: "Please select a course/degree program.",
-  }),
+  Degree_Program: z.string(),
+
+  // Degree_Program: z.string().refine((value) => value !== "", {
+  //   message: "Please select a course/degree program.",
+  // }),
+
+  College: z.string(),
 
   // Personal Information
 

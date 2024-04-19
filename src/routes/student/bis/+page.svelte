@@ -74,6 +74,12 @@
     },
   ];
 
+  const college = [
+    { value: "arts_and_comm", label: "College of Arts and Communication" },
+    { value: "science", label: "College of Science" },
+    { value: "social_sciences", label: "College of Social Sciences" },
+  ];
+
   const sex = [
     { value: "female", label: "Female" },
     { value: "male", label: "Male" },
@@ -171,6 +177,7 @@
     { value: "salutatorian", label: "Salutatorian" },
     { value: "honorable mention", label: "Honorable Mention" },
   ];
+
 
   const campus = [
     { value: "upd", label: "UP Diliman" },
@@ -367,6 +374,27 @@
           <Form.FieldErrors />
         </Form.Field>
       </div>
+      <Form.Field {form} name="College">
+        <Form.Control let:attrs>
+          <Form.Label>College</Form.Label>
+          <Select.Root>
+            <Select.Trigger>
+              <Select.Value placeholder="Select a college." />
+            </Select.Trigger>
+            <Select.Content>
+              <Select.Group>
+                {#each college as college}
+                  <Select.Item value={college.value} label={college.label}
+                    >{college.label}</Select.Item
+                  >
+                {/each}
+              </Select.Group>
+            </Select.Content>
+            <Select.Input name="college" />
+          </Select.Root>
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
     </div>
 
     <div
