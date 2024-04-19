@@ -1,6 +1,5 @@
 import { lucia } from "$lib/server/auth";
 import type { Handle } from "@sveltejs/kit";
-import { start_mongo } from "$db/mongo";
 
 export const handle: Handle = async ({ event, resolve }) => {
   const sessionId = event.cookies.get(lucia.sessionCookieName);
@@ -32,10 +31,3 @@ export const handle: Handle = async ({ event, resolve }) => {
   return resolve(event);
 };
 
-start_mongo()
-  .then((): void => {
-    console.log("Mongo started");
-  })
-  .catch((e) => {
-    console.error(e);
-  });

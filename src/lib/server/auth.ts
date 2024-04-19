@@ -29,7 +29,7 @@ interface SessionDoc {
 }
 
 export const lucia = new Lucia(adapter, {
-  sessionExpiresIn: new TimeSpan(2, "d"),
+  sessionExpiresIn: new TimeSpan(1, "d"),
   sessionCookie: {
     attributes: {
       // set to `true` when using HTTPS
