@@ -7,7 +7,7 @@
   <div class="next-to-logo">
     <p class="school">
       University of the Philippines - Baguio<br />
-      <b class="office">Office of Guidance and Counseling</b>
+      <b class="office">Office of Counseling and Guidance</b>
     </p>
   </div>
 </header>

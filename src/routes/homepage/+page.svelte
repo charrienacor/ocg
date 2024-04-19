@@ -3,7 +3,7 @@
   import { UsersRound, GraduationCap, LockKeyhole } from "lucide-svelte";
 </script>
 
-<div class="relative overflow-x-hidden sm:mt-20">
+<div class="relative overflow-x-hidden sm:mt-2">
   <div
     class="center relative top-1/2 flex flex-col gap-3 rounded-lg bg-white px-8 py-8"
   >
@@ -21,16 +21,16 @@
         <GraduationCap size={100} class="inline-block" />
         <h1 class="inline-block">STUDENT</h1>
         <p class="text-wrap text-balance text-center md:text-nowrap">
-          To fill out Backgorund Information Sheet (BIS) or avail free services
+          To fill out the Background Information Sheet or avail free services
         </p>
       </Button>
     </div>
-    <div class="flex flex-row justify-center">
+    <div class="flex flex-col justify-center gap-3 lg:flex-row">
       <Button href="/visitor/login" variant="bigbutton" size="large">
         <UsersRound size={100} class="inline-block" />
-        <h1 class="inline-block">Visitor</h1>
+        <h1 class="inline-block">VISITOR</h1>
         <p class="text-wrap text-balance text-center md:text-nowrap">
-          For non-UP students to avail services
+          For non-UP students to avail free services
         </p>
       </Button>
     </div>
