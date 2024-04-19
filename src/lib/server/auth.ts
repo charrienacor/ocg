@@ -1,4 +1,4 @@
-import { Lucia } from "lucia";
+import { Lucia, TimeSpan } from "lucia";
 import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
 import { Collection, MongoClient } from "mongodb";
 import { dev } from "$app/environment";
@@ -29,6 +29,7 @@ interface SessionDoc {
 }
 
 export const lucia = new Lucia(adapter, {
+  sessionExpiresIn: new TimeSpan(2, "d"),
   sessionCookie: {
     attributes: {
       // set to `true` when using HTTPS

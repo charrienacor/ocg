@@ -4,4 +4,5 @@ run:
 
 reset:
 	docker compose down
-	docker volume ls -f dangling=true 
+	docker volume prune 
+	docker volume rm aguhon_mongodb
