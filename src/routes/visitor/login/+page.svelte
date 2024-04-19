@@ -7,11 +7,11 @@
   <div
     class="square absolute mt-32 flex w-5/6 flex-col gap-1 sm:relative sm:mt-28"
   >
-    <h2 class="mini-title static">EMAIL ACCOUNT</h2>
+    <h2 class="mini-title static">GUEST ACCOUNT</h2>
     <h1 class="title center static">LOG IN</h1>
     <p class="subtitle">Log in to your Google account.</p>
     <Button on:click={() => goto("/visitor/login/google")} style="width: 110%;"
-      >Login with UP Mail</Button
+      >Login with GMail</Button
     >
   </div>
   <img
