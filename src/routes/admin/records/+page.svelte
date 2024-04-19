@@ -170,7 +170,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button>
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button>
             <div
               id="tooltip-light2"
               role="tooltip"
@@ -183,7 +183,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button>
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button>
             <div
               id="tooltip-light3"
               role="tooltip"
@@ -219,7 +219,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button>
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button>
             <div
               id="tooltip-light2"
               role="tooltip"
@@ -232,7 +232,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button>
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button>
             <div
               id="tooltip-light3"
               role="tooltip"
@@ -270,7 +270,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -285,7 +285,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -332,7 +332,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -347,7 +347,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -394,7 +394,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -409,7 +409,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -456,7 +456,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -471,7 +471,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -518,7 +518,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -533,7 +533,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -580,7 +580,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -595,7 +595,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -642,7 +642,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -657,7 +657,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -704,7 +704,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -719,7 +719,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -766,7 +766,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -781,7 +781,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
@@ -828,7 +828,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><PencilIcon size={20} /></Button
+              on:click={() => goto("/admin/records/edit")}><PencilIcon size={20} /></Button
             >
             <div
               id="tooltip-light2"
@@ -843,7 +843,7 @@
               variant="bigbutton"
               size="icon"
               class="mr-1"
-              on:click={() => goto("#")}><ScanSearchIcon size={20} /></Button
+              on:click={() => goto("/admin/records/view")}><ScanSearchIcon size={20} /></Button
             >
             <div
               id="tooltip-light3"
