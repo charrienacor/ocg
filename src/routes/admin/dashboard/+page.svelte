@@ -5,6 +5,7 @@
     CalendarDays,
     FileTextIcon,
     LayoutDashboardIcon,
+    UserIcon,
     LogOutIcon,
   } from "lucide-svelte";
   import type { PageServerData } from "./$types";
@@ -92,6 +93,15 @@
           <p class="ml-3">Calendar</p>
         </a>
       </li>
+      <li>
+        <a
+          href="/admin/profiles"
+          class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+        >
+          <UserIcon size={15} />
+          <p class="ml-3">Accounts</p>
+        </a>
+      </li>
     </ul>
     <div class="py-2">
       <a
@@ -131,13 +141,23 @@
       <p class="text-wrap text-xl">Check Calendar of Appointments</p>
     </Button>
   </div>
-  <Button
-    variant="bigbutton"
-    size="default"
-    class="text-xl"
-    on:click={() => goto("/api/logout")}
-  >
-    Log Out
-  </Button>
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Button
+      variant="bigbutton"
+      size="default"
+      class="text-xl w-full"
+      on:click={() => goto("/admin/profiles")}
+    >
+      Manage Admin Accounts
+    </Button>
+    <Button
+      variant="bigbutton"
+      size="default"
+      class="text-xl w-full"
+      on:click={() => goto("/api/logout")}
+    >
+      Log Out
+    </Button>
+  </div>
 </div>
 

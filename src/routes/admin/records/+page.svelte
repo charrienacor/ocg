@@ -9,6 +9,7 @@
     LogOutIcon,
     PencilIcon,
     ScanSearchIcon,
+    UserIcon,
     SearchIcon,
   } from "lucide-svelte";
 </script>
@@ -90,6 +91,15 @@
         >
           <CalendarDays size={15} />
           <p class="ml-3">Calendar</p>
+        </a>
+      </li>
+      <li>
+        <a
+          href="/admin/profiles"
+          class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+        >
+          <UserIcon size={15} />
+          <p class="ml-3">Accounts</p>
         </a>
       </li>
     </ul>
