@@ -12,6 +12,7 @@ export const load: PageServerLoad = async (event) => {
   let counselors = db.collection("Counselors").find(
     {
       Status: "Active",
+      Suffix: "RGC",
     },
   );
 
@@ -55,8 +56,10 @@ export const actions: Actions = {
     //
     await db.collection("Visitor_Appointments").insertOne({
       _id: `${generateRandomString(10)}`,
-      Student_Name: `${data.Visitor_Name}`,
-      Student_Email: `${data.Visitor_Email}`,
+      Visitor_Name: `${data.Visitor_Name}`,
+      Visitor_Email: `${data.Visitor_Email}`,
+      Contact_Num: `${data.Contact_Num}`,
+      Visitor_Institution: `${data.Visitor_Institution}`,
       Counselor: `${data.Guidance_Counselor}`,
       Appointment_Date: `${data.Appointment_Date}`,
       Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
