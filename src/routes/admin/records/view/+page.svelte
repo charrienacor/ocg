@@ -231,10 +231,32 @@
         color: white;
         padding-bottom: 20px;
       }
+
+      .longtext {
+        line-height: 42px; 
+        text-align: center;
+      }
+
+      .text {
+        line-height: 42px; 
+        text-align: center;
+      }
   
       @media only screen and (min-width: 735px) {
         .threedots {
           top: 112px;
+        }
+      }
+  
+      @media only screen and (min-width: 768px) and (max-width: 938px){
+        .longtext {
+          line-height: 21px;
+        }
+      }
+
+      @media only screen and (min-width: 768px) and (max-width: 872px){
+        .text {
+          line-height: 21px;
         }
       }
   
@@ -326,7 +348,7 @@
   
   <div class="relative mb-10 mt-5">
     <div class="flow-root">
-      <h1 class="float-left font-bold sm:pt-5">RECORDS OF [STUDENT'S FIRST NAME]</h1>
+      <h1 class="float-left pb-0 pt-12 font-bold sm:pt-5">RECORDS OF [STUDENT'S FIRST NAME]</h1>
       <div class="float-right flex pt-8">
         <Button
           data-tooltip-target="tooltip-light1"
@@ -358,14 +380,14 @@
     </div>
     <form method="POST" use:enhance>
       <div
-        class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+        class="center relative top-1/2 mt-4 sm:mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
       >
         <h1>UPCAT Grades</h1>
   
-        <div class="md:grid md:grid-cols-6 md:gap-3">
+        <div class="text-center md:grid md:grid-cols-6 md:gap-3">
           <Form.Field {form} name="Sci">
             <Form.Control let:attrs>
-              <Form.Label><p style="line-height: 42px; text-align: center;">Science</p></Form.Label>
+              <Form.Label><p style="line-height: 42px;">Science</p></Form.Label>
               <Input
                 {...attrs}
                 placeholder="XXX"
@@ -377,7 +399,7 @@
   
           <Form.Field {form} name="Math">
             <Form.Control let:attrs>
-              <Form.Label><p style="line-height: 42px; text-align: center;">Mathematics</p></Form.Label>
+              <Form.Label><p style="line-height: 42px;">Mathematics</p></Form.Label>
               <Input
                 {...attrs}
                 placeholder="XXX"
@@ -389,7 +411,7 @@
   
           <Form.Field {form} name="Read_Comp">
             <Form.Control let:attrs>
-              <Form.Label><p style="text-align: center;">Reading Comprehension</p></Form.Label>
+              <Form.Label><p>Reading Comprehension</p></Form.Label>
               <Input
                 {...attrs}
                 placeholder="XXX"
@@ -401,7 +423,7 @@
   
           <Form.Field {form} name="Lang_Prof">
             <Form.Control let:attrs>
-                <Form.Label><p style="line-height: 42px; text-align: center;">Language Proficiency</p></Form.Label>
+                <Form.Label><p class="longtext">Language Proficiency</p></Form.Label>
                 <Input
                   {...attrs}
                   placeholder="XXX"
@@ -412,7 +434,7 @@
 
           <Form.Field {form} name="X">
             <Form.Control let:attrs>
-              <Form.Label><p style="line-height: 42px; text-align: center;">Abstract Reasoning</p></Form.Label>
+              <Form.Label><p class="text">Abstract Reasoning</p></Form.Label>
               <Input
                 {...attrs}
                 placeholder="XXX"
@@ -423,7 +445,7 @@
   
           <Form.Field {form} name="UPG">
             <Form.Control let:attrs>
-              <Form.Label><p style="line-height: 42px; text-align: center;">Total UP Grade</p></Form.Label>
+              <Form.Label><p style="line-height: 42px;">Total UP Grade</p></Form.Label>
               <Input
                 {...attrs}
                 placeholder="XXX"
@@ -3622,7 +3644,7 @@
           data-tooltip-style="light"
           variant="bigbutton"
           size="icon"
-          class="mr-1 w-full"
+          class="mr-1 w-full mb-3"
           on:click={() => goto("#")}>DOWNLOAD</Button>
         <Button
           data-tooltip-target="tooltip-light2"

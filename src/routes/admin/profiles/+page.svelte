@@ -132,7 +132,7 @@
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   </div>
   
-  <h1 class="pb-5 pt-16 font-bold sm:pt-5">ADMIN ACCOUNTS</h1>
+  <h1 class="pb-5 pt-12 font-bold sm:pt-5">ADMIN ACCOUNTS</h1>
     <form class="mx-auto w-full">
       <label for="default-search" class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white">Search</label>
       <div class="relative">
