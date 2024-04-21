@@ -87,7 +87,7 @@
       <li>
         <a
           href="/admin/dashboard"
-          class="text flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
         >
           <LayoutDashboardIcon size={15} />
           <p class="ml-3">Dashboard</p>
