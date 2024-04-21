@@ -4,7 +4,7 @@
   import Calendar from "$lib/components/ui/calendar/calendar.svelte";
   import * as Card from "$lib/components/ui/card";
   import { Button } from "$lib/components/ui/button/index.js";
-  import { CircleArrowLeftIcon, CircleArrowRightIcon, LogOutIcon } from "lucide-svelte";
+  import { LogOutIcon } from "lucide-svelte";
   export let data: PageServerData;
   let name = data.name;
   let email = data.email;
@@ -56,16 +56,16 @@
 
 <div class="w-full flex flex-col lg:flex-row gap-3">
   <div class="box bg-white rounded shadow-xl w-full lg:p-1 lg:mr-5 lg:w-1/3">
-    <h1 class="p-4 text-xl text-bold">WELCOME!</h1>
-    <p class="pt-0.5 pr-4 pl-4">Here you can schedule an appointment for consultation in the OCG. To book an appointment:</p>
+    <h1 class="p-4 text-xl text-center">WELCOME!</h1>
+    <p class="pt-0.5 px-4">Here you can schedule an appointment for consultation in the OCG. To book an appointment:</p>
       <br>
-    <p class="pt-0.5 pr-4 pl-4"><b>Step 1:</b> Click on a specific day to see the available time and counselor.</p>
+    <p class="pt-0.5 px-4"><b>Step 1:</b> Click on a specific day to see the available time and counselor.</p>
       <br>
-    <p class="pt-0.5 pr-4 pl-4"><b>Step 2:</b> Click on the "Book an appointment" button to schedule an appointment.</p>
+    <p class="pt-0.5 px-4"><b>Step 2:</b> Click on the "Book an appointment" button to schedule an appointment.</p>
       <br>
-    <p class="pt-0.5 pr-4 pl-4"><b>Step 3:</b> Submit the request form. </p>
+    <p class="pt-0.5 px-4"><b>Step 3:</b> Submit the request form. </p>
       <br>
-    <p class="pt-0.5 pr-4 pl-4 pb-4"><b>Step 4:</b> Wait for an email updating you on the status (accepted/rejected) of your appointment.</p>
+    <p class="pt-0.5 px-4 pb-4"><b>Step 4:</b> Wait for an email updating you on the status (accepted/rejected) of your appointment.</p>
   </div>
 
   <div class="box flex flex-col items-center">
