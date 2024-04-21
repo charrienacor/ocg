@@ -16,11 +16,20 @@ export const load: PageServerLoad = async (event) => {
     },
   );
 
+  let appointments = db.collection("Visitor_Appointments").find(
+    { Status: "Accepted" }).project(
+      {
+        _id: 0,
+        Appointment_Date: 1,
+        Appointment_Time: 1,
+        Counselor: 1,
+      });
   return {
     name: event.locals.user.username,
     email: event.locals.user.email,
     form: await superValidate(zod(formSchema)),
     counselor: await counselors.toArray(),
+    appointments: await appointments.toArray(),
   };
 };
 
@@ -46,14 +55,6 @@ export const actions: Actions = {
     };
 
     const data = form.data;
-    // await db.execute(
-    //   `INSERT INTO Appointments VALUES ('${data.Student_ID}${
-    //     generateRandomString(
-    //       3,
-    //     )
-    //   }', '${data.Student_Name}', '${data.Student_Email}', '${data.Student_ID}', '${data.Guidance_Counselor}', '${data.Appointment_Date}', '${data.Appointment_Hour}:${data.Appointment_Minute}', '${data.Nature_Of_Concern}', 'Pending');`,
-    // );
-    //
     await db.collection("Visitor_Appointments").insertOne({
       _id: `${generateRandomString(10)}`,
       Visitor_Name: `${data.Visitor_Name}`,
