@@ -184,6 +184,7 @@
             onValueChange={(v) => {
               if (v) {
                 $formData.App_Date = v.toString();
+                console.log(v.toString());
               } else {
                 $formData.App_Date = "";
               }

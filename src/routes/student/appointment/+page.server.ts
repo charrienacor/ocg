@@ -45,14 +45,6 @@ export const actions: Actions = {
     };
 
     const data = form.data;
-    // await db.execute(
-    //   `INSERT INTO Appointments VALUES ('${data.Student_ID}${
-    //     generateRandomString(
-    //       3,
-    //     )
-    //   }', '${data.Student_Name}', '${data.Student_Email}', '${data.Student_ID}', '${data.Guidance_Counselor}', '${data.Appointment_Date}', '${data.Appointment_Hour}:${data.Appointment_Minute}', '${data.Nature_Of_Concern}', 'Pending');`,
-    // );
-    //
     await db.collection("Appointments").insertOne({
       _id: `${data.Student_ID}${generateRandomString(3)}`,
       Student_Name: `${data.Student_Name}`,
