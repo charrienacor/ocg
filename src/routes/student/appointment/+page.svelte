@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { PageServerData } from "./$types";
   import SettingsForm from "./SettingsForm.svelte";
+  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
+  import { Button } from "$lib/components/ui/button/index.js";
   import * as Card from "$lib/components/ui/card";
   import { CalendarDays, FileTextIcon, LayoutDashboardIcon, LogOutIcon } from "lucide-svelte";
   export let data: PageServerData;
@@ -81,14 +83,64 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<div class="relative">
-  <Card.Root class="absolute right-0 w-[400px] ">
-    <Card.Header>
-      <Card.Title>Book an Appointment</Card.Title>
-    </Card.Header>
-    <Card.Content>
-      <SettingsForm data={data.form} {name} {email} {counselors} />
-    </Card.Content>
-  </Card.Root>
-  <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div class="w-full flex flex-col lg:flex-row gap-3 mt-7">
+  <div class="box bg-white rounded shadow-xl w-full lg:p-1 lg:mr-5 lg:w-1/3">
+    <h1 class="p-4 text-xl text-center">WELCOME!</h1>
+    <p class="pt-0.5 px-4">Here you can schedule an appointment for consultation in the OCG. To book an appointment:</p>
+      <br>
+    <p class="pt-0.5 px-4"><b>Step 1:</b> Click on a specific day to see the available time and counselor.</p>
+      <br>
+    <p class="pt-0.5 px-4"><b>Step 2:</b> Click on the "Book an appointment" button to schedule an appointment.</p>
+      <br>
+    <p class="pt-0.5 px-4"><b>Step 3:</b> Submit the request form. </p>
+      <br>
+    <p class="pt-0.5 px-4 pb-4"><b>Step 4:</b> Wait for an email updating you on the status (accepted/rejected) of your appointment.</p>
+  </div>
+
+  <div class="box flex flex-col items-center">
+    <div class="bg-white p-2 rounded shadow-xl w-[290px]">
+      <Calendar></Calendar>
+    </div> 
+
+    <button 
+      id="dropdown1"
+      data-dropdown-toggle="dropdownDots1"
+      type="button">
+        <Button class="relative text-wrap text-xl top-10 mb-2 sm:mb-10 lg:w-[290px]">Book an Appointment</Button>
+    </button>
+
+    <div id="dropdownDots1" class="relative hidden">
+      <Card.Root class="absolute w-[380px] -right-48 top-6 sm:top-0 xl:right-44 lg:-top-[440px] ">
+        <Card.Header>
+          <Card.Title>Book an Appointment</Card.Title>
+        </Card.Header>
+        <Card.Content>
+          <SettingsForm data={data.form} {name} {email} {counselors} />
+        </Card.Content>
+      </Card.Root>
+    </div>
+    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+  </div>
+
+  <div class="box bg-white rounded shadow-xl w-full lg:p-1 lg:ml-5 lg:w-1/3">
+    <h1 class="p-4 text-xl text-left lg:text-center">Counselor Schedules for [Current Date]</h1>
+      <hr class="mx-4 h-3">
+    <p class="pl-5"><b>Ma'am Liza Ngaio </b></p>
+      <p class="pl-10 text-sm">9:00 - Unavailable </p>
+      <p class="pl-10 text-sm">10:30 - Available </p>
+      <p class="pl-10 text-sm">2:00 - Unavailable </p>
+      <p class="pl-10 text-sm">3:00 - Unavailable </p>
+      <br>
+    <p class="pl-5"><b>Ma'am Au Parcasio </b> <br></p>
+      <p class="pl-10 text-sm">8:15 - Unavailable </p>
+      <p class="pl-10 text-sm">10:15 - Available </p>
+      <p class="pl-10 text-sm">2:15 - Unavailable </p>
+      <br>
+    <p class="pl-5"><b>Ma'am Julie Tuguinay</b></p>
+    <p class="pl-10 text-sm">8:30 - Unavailable </p>
+    <p class="pl-10 text-sm">9:30 - Available </p>
+    <p class="pl-10 text-sm">10:30 - Unavailable </p>
+    <p class="pl-10 text-sm">2:00 - Unavailable </p>
+    <p class="pl-10 text-sm pb-4">3:30 - Unavailable </p>
+  </div>
 </div>
