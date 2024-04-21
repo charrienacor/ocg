@@ -232,9 +232,11 @@
       color: white;
       padding-bottom: 20px;
     }
-    @media only screen and (min-width: 735px) {
+    
+    @media only screen and (min-width: 0px) {
       .threedots {
-        top: 112px;
+        top: 124px;
+        right: 15px;
       }
     }
 

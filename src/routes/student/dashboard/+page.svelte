@@ -9,6 +9,7 @@
     LayoutDashboardIcon,
     LogOutIcon,
   } from "lucide-svelte";
+    import { redirect } from "@sveltejs/kit";
 
   export let data: PageServerData;
   const name = data.name;
@@ -24,11 +25,26 @@
       padding-bottom: 20px;
     }
 
-    @media only screen and (min-width: 735px) {
+    @media only screen and (min-width: 0px) {
       .threedots {
-        top: 112px;
+        top: 115px;
+        right: 15px;
       }
     }
+
+    @media only screen and (min-width: 610px) and (max-width: 650px) {
+      .threedots {
+        top: 158px;
+        right: 15px;
+      }
+    }
+
+    @media only screen and (min-width: 651px) and (max-width: 735px) {
+      .threedots {
+        top: 125px;
+        right: 15px;
+      }
+    } 
 
     @media only screen and (min-width: 736px) {
       .threedots {
