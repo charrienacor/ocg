@@ -145,7 +145,7 @@
     <Button
       variant="bigbutton"
       size="default"
-      class="text-xl w-full"
+      class="text-xl w-full mb-3"
       on:click={() => goto("/admin/profiles")}
     >
       Manage Admin Accounts

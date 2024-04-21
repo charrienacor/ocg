@@ -22,11 +22,26 @@
       padding-bottom: 20px;
     }
 
-    @media only screen and (min-width: 735px) {
+    @media only screen and (min-width: 0px) {
       .threedots {
-        top: 112px;
+        top: 115px;
+        right: 15px;
       }
     }
+
+    @media only screen and (min-width: 610px) and (max-width: 650px) {
+      .threedots {
+        top: 158px;
+        right: 15px;
+      }
+    }
+
+    @media only screen and (min-width: 651px) and (max-width: 735px) {
+      .threedots {
+        top: 125px;
+        right: 15px;
+      }
+    } 
 
     @media only screen and (min-width: 736px) {
       .threedots {
@@ -83,8 +98,8 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<div class="w-full flex flex-col lg:flex-row gap-3 mt-7">
-  <div class="box bg-white rounded shadow-xl w-full lg:p-1 lg:mr-5 lg:w-1/3">
+<div class="w-full flex flex-col lg:flex-row gap-3 mt-20 md:mt-7">
+  <div class="box bg-white rounded shadow-xl mb-5 w-full lg:p-1 lg:mr-5 lg:w-1/3">
     <h1 class="p-4 text-xl text-center">WELCOME!</h1>
     <p class="pt-0.5 px-4">Here you can schedule an appointment for consultation in the OCG. To book an appointment:</p>
       <br>
@@ -106,7 +121,7 @@
       id="dropdown1"
       data-dropdown-toggle="dropdownDots1"
       type="button">
-        <Button class="relative text-wrap text-xl top-10 mb-2 sm:mb-10 lg:w-[290px]">Book an Appointment</Button>
+        <Button class="relative text-wrap text-xl top-10 mb-5 md:mb-14 lg:w-[290px]">Book an Appointment</Button>
     </button>
 
     <div id="dropdownDots1" class="relative hidden">
@@ -122,7 +137,7 @@
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   </div>
 
-  <div class="box bg-white rounded shadow-xl w-full lg:p-1 lg:ml-5 lg:w-1/3">
+  <div class="box bg-white rounded shadow-xl w-full mt-10 md:mt-0 lg:p-1 lg:ml-5 lg:w-1/3">
     <h1 class="p-4 text-xl text-left lg:text-center">Counselor Schedules for [Current Date]</h1>
       <hr class="mx-4 h-3">
     <p class="pl-5"><b>Ma'am Liza Ngaio </b></p>
