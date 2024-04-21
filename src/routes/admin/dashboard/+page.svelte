@@ -9,6 +9,7 @@
     LogOutIcon,
   } from "lucide-svelte";
   import type { PageServerData } from "./$types";
+    import { redirect } from "@sveltejs/kit";
 
   export let data: PageServerData;
   const name = data.name;
@@ -22,6 +23,23 @@
       background-color: #8e1537;
       color: white;
       padding-bottom: 20px;
+    }
+
+    .menu {
+        right: -55px;
+      }
+
+    @media only screen and (max-width: 639px){
+      .menu {
+        right: -115px;
+        top: 10px;
+      }
+    } 
+
+    @media only screen and (min-width: 640px) and (max-width: 1439px) {
+      .menu {
+        right: -137px;
+      }
     }
 
     @media only screen and (min-width: 735px) {
@@ -38,7 +56,7 @@
   </style>
 </head>
 
-<div class="threedots absolute right-4 md:right-10">
+<div class="threedots absolute right-5 sm:right-10">
   <button
     id="dropdownMenuIconButton"
     data-dropdown-toggle="dropdownDots"
@@ -60,7 +78,7 @@
 
   <div
     id="dropdownDots"
-    class="-right-14 z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+    class="menu z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
   >
     <ul
       class="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -69,7 +87,7 @@
       <li>
         <a
           href="/admin/dashboard"
-          class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+          class="text flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
         >
           <LayoutDashboardIcon size={15} />
           <p class="ml-3">Dashboard</p>
