@@ -205,7 +205,7 @@
 
     <div id="dropdownDots1" class="relative hidden">
       <Card.Root
-        class="absolute -right-48 top-6 w-[380px] sm:top-0 lg:-top-[440px] xl:right-44 "
+        class="absolute -right-48 top-6 w-[380px] sm:top-0 lg:-top-[460px] xl:right-44 "
       >
         <Card.Header>
           <Card.Title>Book an Appointment</Card.Title>
