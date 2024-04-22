@@ -29,34 +29,73 @@
         right: -55px;
       }
 
-    @media only screen and (max-width: 639px){
+    @media only screen and (max-width: 635px){
       .menu {
         right: -115px;
         top: 10px;
       }
     } 
 
-    @media only screen and (min-width: 640px) and (max-width: 1439px) {
+    @media only screen and (min-width: 636px) and (max-width: 1025px) {
       .menu {
-        right: -137px;
+        right: -110px;
+      }
+    }
+
+    @media only screen and (min-width: 1020px) and (max-width: 1050px) {
+      .menu {
+        right: -105px;
+      }
+    }
+
+    @media only screen and (min-width: 1051px) and (max-width: 1068px) {
+      .menu {
+        right: -93px;
+      }
+    }
+
+    @media only screen and (min-width: 1069px) and (max-width: 1095px) {
+      .menu {
+        right: -83px;
+      }
+    }
+
+    @media only screen and (min-width: 1096px) and (max-width: 1115px) {
+      .menu {
+        right: -70px;
+      }
+    }
+    
+    @media only screen and (min-width: 0px) {
+      .threedots {
+        top: 110px;
+        right: 15px;
+      }
+    }
+
+    @media only screen and (min-width: 500px) {
+      .threedots {
+        top: 30px;
+      }
+    }
+
+    @media only screen and (min-width: 654px) {
+      .threedots {
+        top: 120px;
+        right: 15px;
       }
     }
 
     @media only screen and (min-width: 735px) {
       .threedots {
-        top: 112px;
-      }
-    }
-
-    @media only screen and (min-width: 736px) {
-      .threedots {
         top: 30px;
+        right: 15px;
       }
     }
   </style>
 </head>
 
-<div class="threedots absolute right-5 sm:right-10">
+<div class="threedots absolute right-10 top-10">
   <button
     id="dropdownMenuIconButton"
     data-dropdown-toggle="dropdownDots"
