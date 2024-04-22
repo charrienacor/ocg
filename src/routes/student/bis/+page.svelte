@@ -303,6 +303,7 @@
   </style>
 </head>
 
+
 <div class="threedots absolute right-10 top-10">
   <button
     id="dropdownMenuIconButton"
@@ -319,7 +320,7 @@
     </svg>
   </button>
 
-  <div id="dropdownDots" class="menu z-10 hidden -right-14 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
+  <div id="dropdownDots" class="z-10 hidden -right-14 divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700">
     <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
       <li>
         <a href="/student/dashboard" class="flex items-center px-5 py-2 text-base text-black hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
@@ -1318,7 +1319,7 @@
           RESIDENCE
         </div>
 
-        <Form.Field {form} name="Name">
+        <Form.Field {form} name="Name_1">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
@@ -1326,7 +1327,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Sex">
+        <Form.Field {form} name="Sex_1">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1342,13 +1343,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Sex" />
+              <Select.Input name="Sex_1" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Age">
+        <Form.Field {form} name="Age_1">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1364,13 +1365,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Age" />
+              <Select.Input name="Age_1" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Civil_Status">
+        <Form.Field {form} name="Civil_Status_1">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1386,13 +1387,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Civil_Status" />
+              <Select.Input name="Civil_Status_1" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Educational_Attainment">
+        <Form.Field {form} name="Educational_Attainment_1">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1408,13 +1409,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Educational_Attainment" />
+              <Select.Input name="Educational_Attainment_1" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Occupation">
+        <Form.Field {form} name="Occupation_1">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -1426,7 +1427,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Residence">
+        <Form.Field {form} name="Residence_1">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -1438,7 +1439,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Name">
+        <Form.Field {form} name="Name_2">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
@@ -1446,7 +1447,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Sex">
+        <Form.Field {form} name="Sex_2">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1462,13 +1463,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Sex" />
+              <Select.Input name="Sex_2" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Age">
+        <Form.Field {form} name="Age_2">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1484,13 +1485,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Age" />
+              <Select.Input name="Age_2" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Civil_Status">
+        <Form.Field {form} name="Civil_Status_2">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1506,13 +1507,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Civil_Status" />
+              <Select.Input name="Civil_Status_2" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Educational_Attainment">
+        <Form.Field {form} name="Educational_Attainment_2">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1528,13 +1529,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Educational_Attainment" />
+              <Select.Input name="Educational_Attainment_2" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Occupation">
+        <Form.Field {form} name="Occupation_2">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -1546,7 +1547,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Residence">
+        <Form.Field {form} name="Residence_2">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -1557,7 +1558,7 @@
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
-        <Form.Field {form} name="Name">
+        <Form.Field {form} name="Name_3">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
@@ -1565,7 +1566,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Sex">
+        <Form.Field {form} name="Sex_3">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1581,13 +1582,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Sex" />
+              <Select.Input name="Sex_3" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Age">
+        <Form.Field {form} name="Age_3">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1603,13 +1604,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Age" />
+              <Select.Input name="Age_3" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Civil_Status">
+        <Form.Field {form} name="Civil_Status_3">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1625,13 +1626,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Civil_Status" />
+              <Select.Input name="Civil_Status_3" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Educational_Attainment">
+        <Form.Field {form} name="Educational_Attainment_3">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1647,13 +1648,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Educational_Attainment" />
+              <Select.Input name="Educational_Attainment_3" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Occupation">
+        <Form.Field {form} name="Occupation_3">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -1665,127 +1666,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Residence">
-          <Form.Control let:attrs>
-            <Form.Label></Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Residence"
-              bind:value={$formData.Occupation}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Name">
-          <Form.Control let:attrs>
-            <Form.Label></Form.Label>
-            <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Sex">
-          <Form.Control let:attrs>
-            <Form.Label></Form.Label>
-            <Select.Root>
-              <Select.Trigger>
-                <Select.Value placeholder="Select" />
-              </Select.Trigger>
-              <Select.Content>
-                <Select.Group>
-                  {#each sex as sex}
-                    <Select.Item value={sex.value} label={sex.label}
-                      >{sex.label}</Select.Item
-                    >
-                  {/each}
-                </Select.Group>
-              </Select.Content>
-              <Select.Input name="Sex" />
-            </Select.Root>
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Age">
-          <Form.Control let:attrs>
-            <Form.Label></Form.Label>
-            <Select.Root>
-              <Select.Trigger>
-                <Select.Value placeholder="Select" />
-              </Select.Trigger>
-              <Select.Content>
-                <Select.Group>
-                  {#each age as age}
-                    <Select.Item value={age.value} label={age.label}
-                      >{age.label}</Select.Item
-                    >
-                  {/each}
-                </Select.Group>
-              </Select.Content>
-              <Select.Input name="Age" />
-            </Select.Root>
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Civil_Status">
-          <Form.Control let:attrs>
-            <Form.Label></Form.Label>
-            <Select.Root>
-              <Select.Trigger>
-                <Select.Value placeholder="Select" />
-              </Select.Trigger>
-              <Select.Content>
-                <Select.Group>
-                  {#each Cstatus as Cstatus}
-                    <Select.Item value={Cstatus.value} label={Cstatus.label}
-                      >{Cstatus.label}</Select.Item
-                    >
-                  {/each}
-                </Select.Group>
-              </Select.Content>
-              <Select.Input name="Civil_Status" />
-            </Select.Root>
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Educational_Attainment">
-          <Form.Control let:attrs>
-            <Form.Label></Form.Label>
-            <Select.Root>
-              <Select.Trigger>
-                <Select.Value placeholder="Select" />
-              </Select.Trigger>
-              <Select.Content>
-                <Select.Group>
-                  {#each education as education}
-                    <Select.Item value={education.value} label={education.label}
-                      >{education.label}</Select.Item
-                    >
-                  {/each}
-                </Select.Group>
-              </Select.Content>
-              <Select.Input name="Educational_Attainment" />
-            </Select.Root>
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Occupation">
-          <Form.Control let:attrs>
-            <Form.Label></Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Occupation"
-              bind:value={$formData.Occupation}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Residence">
+        <Form.Field {form} name="Residence_3">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -1797,7 +1678,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Name">
+        <Form.Field {form} name="Name_4">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
@@ -1805,7 +1686,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Sex">
+        <Form.Field {form} name="Sex_4">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1821,13 +1702,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Sex" />
+              <Select.Input name="Sex_4" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Age">
+        <Form.Field {form} name="Age_4">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1843,13 +1724,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Age" />
+              <Select.Input name="Age_4" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Civil_Status">
+        <Form.Field {form} name="Civil_Status_4">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1865,13 +1746,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Civil_Status" />
+              <Select.Input name="Civil_Status_4" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Educational_Attainment">
+        <Form.Field {form} name="Educational_Attainment_4">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Select.Root>
@@ -1887,13 +1768,13 @@
                   {/each}
                 </Select.Group>
               </Select.Content>
-              <Select.Input name="Educational_Attainment" />
+              <Select.Input name="Educational_Attainment_4" />
             </Select.Root>
           </Form.Control>
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Occupation">
+        <Form.Field {form} name="Occupation_4">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -1905,7 +1786,127 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Residence">
+        <Form.Field {form} name="Residence_4">
+          <Form.Control let:attrs>
+            <Form.Label></Form.Label>
+            <Input
+              {...attrs}
+              placeholder="Residence"
+              bind:value={$formData.Occupation}
+            />
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+
+        <Form.Field {form} name="Name_5">
+          <Form.Control let:attrs>
+            <Form.Label></Form.Label>
+            <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+
+        <Form.Field {form} name="Sex_5">
+          <Form.Control let:attrs>
+            <Form.Label></Form.Label>
+            <Select.Root>
+              <Select.Trigger>
+                <Select.Value placeholder="Select" />
+              </Select.Trigger>
+              <Select.Content>
+                <Select.Group>
+                  {#each sex as sex}
+                    <Select.Item value={sex.value} label={sex.label}
+                      >{sex.label}</Select.Item
+                    >
+                  {/each}
+                </Select.Group>
+              </Select.Content>
+              <Select.Input name="Sex_5" />
+            </Select.Root>
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+
+        <Form.Field {form} name="Age_5">
+          <Form.Control let:attrs>
+            <Form.Label></Form.Label>
+            <Select.Root>
+              <Select.Trigger>
+                <Select.Value placeholder="Select" />
+              </Select.Trigger>
+              <Select.Content>
+                <Select.Group>
+                  {#each age as age}
+                    <Select.Item value={age.value} label={age.label}
+                      >{age.label}</Select.Item
+                    >
+                  {/each}
+                </Select.Group>
+              </Select.Content>
+              <Select.Input name="Age_5" />
+            </Select.Root>
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+
+        <Form.Field {form} name="Civil_Status_5">
+          <Form.Control let:attrs>
+            <Form.Label></Form.Label>
+            <Select.Root>
+              <Select.Trigger>
+                <Select.Value placeholder="Select" />
+              </Select.Trigger>
+              <Select.Content>
+                <Select.Group>
+                  {#each Cstatus as Cstatus}
+                    <Select.Item value={Cstatus.value} label={Cstatus.label}
+                      >{Cstatus.label}</Select.Item
+                    >
+                  {/each}
+                </Select.Group>
+              </Select.Content>
+              <Select.Input name="Civil_Status_5" />
+            </Select.Root>
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+
+        <Form.Field {form} name="Educational_Attainment_5">
+          <Form.Control let:attrs>
+            <Form.Label></Form.Label>
+            <Select.Root>
+              <Select.Trigger>
+                <Select.Value placeholder="Select" />
+              </Select.Trigger>
+              <Select.Content>
+                <Select.Group>
+                  {#each education as education}
+                    <Select.Item value={education.value} label={education.label}
+                      >{education.label}</Select.Item
+                    >
+                  {/each}
+                </Select.Group>
+              </Select.Content>
+              <Select.Input name="Educational_Attainment_5" />
+            </Select.Root>
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+
+        <Form.Field {form} name="Occupation_5">
+          <Form.Control let:attrs>
+            <Form.Label></Form.Label>
+            <Input
+              {...attrs}
+              placeholder="Occupation"
+              bind:value={$formData.Occupation}
+            />
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+
+        <Form.Field {form} name="Residence_5">
           <Form.Control let:attrs>
             <Form.Label></Form.Label>
             <Input
@@ -2738,7 +2739,7 @@
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Other_Sources">
+      <Form.Field {form} name="Other_Sources_Of_Income">
         <Form.Control let:attrs>
           <Form.Label
             >Other sources of income of your family that was not stated above.</Form.Label
@@ -2914,7 +2915,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Second_Other_Sources">
+        <Form.Field {form} name="Other_Sources_Of_Allowance">
           <Form.Control let:attrs>
             <Form.Label
               >Other sources of allowance that was not stated above.</Form.Label
@@ -3232,7 +3233,7 @@
           <Form.FieldErrors />
         </Form.Field>
 
-        <Form.Field {form} name="Second_No_Reasons">
+        <Form.Field {form} name="Transfer_Reasons">
           <Form.Control let:attrs>
             <Form.Label
               >If <b>NO</b>, where do you intend to transfer?
@@ -3240,7 +3241,7 @@
             <Input
               {...attrs}
               placeholder=""
-              bind:value={$formData.Second_No_Reasons}
+              bind:value={$formData.Transfer_Reasons}
             />
           </Form.Control>
           <Form.FieldErrors />

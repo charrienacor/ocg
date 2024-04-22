@@ -2,7 +2,10 @@ import { z } from "zod";
 
 export const formSchema = z.object({
   // Preliminaries
-  Semester: z.string(),
+  Semester: z
+    .string({
+      required_error: "Please select a semester",
+  }),
 
   School_Year: z
     .string()
@@ -14,15 +17,16 @@ export const formSchema = z.object({
     .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(9, { message: "Must be 9 digits" }),
 
-  Degree_Program: z.string(),
+  Degree_Program: z
+    .string({
+      required_error: "Please select a degree program",
+  }),
 
-  // Degree_Program: z.string().refine((value) => value !== "", {
-  //   message: "Please select a course/degree program.",
-  // }),
-
-  College: z.string(),
-
-  // Personal Information
+  College: z
+    .string({
+      required_error: "Please select a college",
+}),
+//   // Personal Information
 
   Student_Name: z
     .string()
@@ -181,6 +185,111 @@ export const formSchema = z.object({
 
   // Children in the Familly
 
+  Name_1: z
+    .string(),
+
+  Sex_1: z
+    .string(),
+
+  Age_1: z
+    .string(),
+
+  Civil_Status_1: z
+    .string(),
+
+  Educational_Attainment_1: z
+    .string(),
+
+  Occupation_1: z
+    .string(),
+
+  Residence_1: z
+    .string(),
+
+  Name_2: z
+    .string(),
+
+  Sex_2: z
+    .string(),
+
+  Age_2: z
+    .string(),
+
+  Civil_Status_2: z
+    .string(),
+
+  Educational_Attainment_2: z
+    .string(),
+
+  Occupation_2: z
+    .string(),
+
+  Residence_2: z
+    .string(),
+
+  Name_3: z
+    .string(),
+
+  Sex_3: z
+    .string(),
+
+  Age_3: z
+    .string(),
+
+  Civil_Status_3: z
+    .string(),
+
+  Educational_Attainment_3: z
+    .string(),
+
+  Occupation_3: z
+    .string(),
+
+  Residence_3: z
+    .string(),
+
+  Name_4: z
+    .string(),
+
+  Sex_4: z
+    .string(),
+
+  Age_4: z
+    .string(),
+
+  Civil_Status_4: z
+    .string(),
+
+  Educational_Attainment_4: z
+    .string(),
+
+  Occupation_4: z
+    .string(),
+
+  Residence_4: z
+    .string(),
+
+  Name_5: z
+    .string(),
+
+  Sex_5: z
+    .string(),
+
+  Age_5: z
+    .string(),
+
+  Civil_Status_5: z
+    .string(),
+
+  Educational_Attainment_5: z
+    .string(),
+
+  Occupation_5: z
+    .string(),
+
+  Residence_5: z
+    .string(),
+  
   // Educational Background
 
   Elementary_School: z
@@ -244,7 +353,7 @@ export const formSchema = z.object({
   Source_Of_Income: z
     .string(),
 
-  Other_Sources: z
+  Other_Sources_Of_Income: z
     .string(),
 
   Allowance: z
@@ -256,7 +365,7 @@ export const formSchema = z.object({
   Specifics: z
     .string(),
 
-  Second_Other_Sources: z
+  Other_Sources_Of_Allowance: z
     .string(),
 
   // Vocational Plans
@@ -287,10 +396,10 @@ export const formSchema = z.object({
   Finish_In_UPB: z
     .string(),
 
-  Second_No_Reasons: z
+  Transfer_Reasons: z
     .string(),
 
-  Second_Other_Sources_V: z
+  Future_Plans: z
     .string(),
 
   // Leisure Time Activities
