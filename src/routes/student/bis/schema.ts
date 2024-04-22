@@ -1,7 +1,18 @@
 import { z } from "zod";
 
+// export const semesters = {
+//   First: "First Semester",
+//   Second: "Second Semester",
+//   Midyear: "Midyear",
+// } as const; 
+
+// type Semester = keyof typeof semesters;
+
 export const formSchema = z.object({
   // Preliminaries
+  // Semester: z
+  //   .enum(Object.keys(semesters) as [Semester, ...Semester[]]),
+  
   Semester: z
     .string({
       required_error: "Please select a semester",
