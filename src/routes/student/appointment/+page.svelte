@@ -26,30 +26,71 @@
       padding-bottom: 20px;
     }
 
+    .menu {
+        right: -55px;
+      }
+
+    @media only screen and (max-width: 635px){
+      .menu {
+        right: -115px;
+        top: 10px;
+      }
+    } 
+
+    @media only screen and (min-width: 636px) and (max-width: 1025px) {
+      .menu {
+        right: -110px;
+      }
+    }
+
+    @media only screen and (min-width: 1020px) and (max-width: 1050px) {
+      .menu {
+        right: -105px;
+      }
+    }
+
+    @media only screen and (min-width: 1051px) and (max-width: 1068px) {
+      .menu {
+        right: -93px;
+      }
+    }
+
+    @media only screen and (min-width: 1069px) and (max-width: 1095px) {
+      .menu {
+        right: -83px;
+      }
+    }
+
+    @media only screen and (min-width: 1096px) and (max-width: 1115px) {
+      .menu {
+        right: -70px;
+      }
+    }
+    
     @media only screen and (min-width: 0px) {
       .threedots {
-        top: 115px;
+        top: 110px;
         right: 15px;
       }
     }
 
-    @media only screen and (min-width: 610px) and (max-width: 650px) {
-      .threedots {
-        top: 158px;
-        right: 15px;
-      }
-    }
-
-    @media only screen and (min-width: 651px) and (max-width: 735px) {
-      .threedots {
-        top: 125px;
-        right: 15px;
-      }
-    }
-
-    @media only screen and (min-width: 736px) {
+    @media only screen and (min-width: 500px) {
       .threedots {
         top: 30px;
+      }
+    }
+
+    @media only screen and (min-width: 655px) {
+      .threedots {
+        top: 120px;
+        right: 15px;
+      }
+    }
+
+    @media only screen and (min-width: 735px) {
+      .threedots {
+        top: 30px;
+        right: 15px;
       }
     }
   </style>
@@ -77,7 +118,7 @@
 
   <div
     id="dropdownDots"
-    class="-right-14 z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+    class="menu z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
   >
     <ul
       class="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -124,7 +165,7 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<div class="mt-20 flex w-full flex-col gap-3 md:mt-7 lg:flex-row">
+<div class="mt-7 sm:mt-14 flex w-full flex-col gap-3 md:mt-7 lg:flex-row">
   <div
     class="box mb-5 w-full rounded bg-white shadow-xl lg:mr-5 lg:w-1/3 lg:p-1"
   >
