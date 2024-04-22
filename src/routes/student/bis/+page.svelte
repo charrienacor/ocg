@@ -21,6 +21,20 @@
   } from "lucide-svelte";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
+  // import { semesters } from "./schema";
+
+  // export let data: any;
+
+  // const form = superForm(data, {
+  //   validators: zodClient(formSchema),
+  // });
+
+  // const { form: formData, enhance } = form;
+
+  // $: selectedSem = {
+	// 	label: semesters[$formData.Semester],
+	// 	value: $formData.Semester,
+	// };
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
@@ -360,6 +374,29 @@
       <h1>Preliminaries</h1>
 
       <div class="md:grid md:grid-cols-2 md:gap-4">
+
+        <!-- <Form.Field {form} name="semesters">
+          <Form.Control let:attrs>
+            <Form.Label>Semester</Form.Label>
+            <Select.Root
+            selected={selectedSem}
+            onSelectedChange={(s) => {
+              s && ($formData.Semester = s.value);
+        }}>
+            <Select.Input name={attrs.name} />
+            <Select.Trigger {...attrs}>
+              <Select.Value placeholder="Select a semester" />
+            </Select.Trigger>
+            <Select.Content>
+              {#each Object.entries(semesters) as [value, label]}
+                <Select.Item {value} {label} />
+              {/each}
+            </Select.Content>
+            </Select.Root>
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field> -->
+
         <Form.Field {form} name="Semester">
           <Form.Control let:attrs>
             <Form.Label>Semester</Form.Label>
