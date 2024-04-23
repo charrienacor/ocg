@@ -9,13 +9,12 @@
     LayoutDashboardIcon,
     LogOutIcon,
   } from "lucide-svelte";
-    import { redirect } from "@sveltejs/kit";
 
   export let data: PageServerData;
   const name = data.name;
 </script>
 
-<head>
+<head> 
   <style>
     header {
       display: flex;
@@ -23,74 +22,6 @@
       background-color: #8e1537;
       color: white;
       padding-bottom: 20px;
-    }
-
-    .menu {
-        right: -55px;
-      }
-
-    @media only screen and (max-width: 635px){
-      .menu {
-        right: -115px;
-        top: 10px;
-      }
-    } 
-
-    @media only screen and (min-width: 636px) and (max-width: 1025px) {
-      .menu {
-        right: -110px;
-      }
-    }
-
-    @media only screen and (min-width: 1020px) and (max-width: 1050px) {
-      .menu {
-        right: -105px;
-      }
-    }
-
-    @media only screen and (min-width: 1051px) and (max-width: 1068px) {
-      .menu {
-        right: -93px;
-      }
-    }
-
-    @media only screen and (min-width: 1069px) and (max-width: 1095px) {
-      .menu {
-        right: -83px;
-      }
-    }
-
-    @media only screen and (min-width: 1096px) and (max-width: 1115px) {
-      .menu {
-        right: -70px;
-      }
-    }
-    
-    @media only screen and (min-width: 0px) {
-      .threedots {
-        top: 110px;
-        right: 15px;
-      }
-    }
-
-    @media only screen and (min-width: 500px) {
-      .threedots {
-        top: 30px;
-      }
-    }
-
-    @media only screen and (min-width: 655px) {
-      .threedots {
-        top: 120px;
-        right: 15px;
-      }
-    }
-
-    @media only screen and (min-width: 735px) {
-      .threedots {
-        top: 30px;
-        right: 15px;
-      }
     }
   </style>
 </head>
