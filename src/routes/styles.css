@@ -149,11 +149,7 @@ head {
   }
 }
 
-@media only screen and (min-width: 610px) {
-  .corner {
-    width: 5px;
-    height: 5px;
-  }
+@media only screen and (min-width: 611px) {
 
   .school {
     font-size: 30px;
@@ -165,6 +161,26 @@ head {
 }
 
 @media only screen and (min-width: 611px) {
+  .corner {
+    width: 150px;
+  }
+
+  .school {
+    font-size: 20px;
+    margin-left: 13px;
+  }
+
+  .office {
+    font-size: 25px;
+  }
+
+  .logo {
+    width: 150px;
+    height: 75px;
+  }
+}
+
+@media only screen and (min-width: 690px) {
   .corner {
     width: 150px;
   }
@@ -238,9 +254,9 @@ head {
   }
 }
 
-@media only screen and (min-width: 655px) {
+@media only screen and (min-width: 610px) {
   .threedots {
-    top: 120px;
+    top: 132px;
     right: 15px;
   }
 }
