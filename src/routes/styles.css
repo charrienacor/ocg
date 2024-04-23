@@ -110,3 +110,144 @@ button:focus:not(:focus-visible) {
   width: 1px;
   white-space: nowrap;
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 100%;
+  max-width: 64rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-family: Urbanist, sans-serif;
+  overflow: hidden;
+}
+
+head {
+  font-family: Urbanist, sans-serif;
+}
+
+
+.school {
+  line-height: 1.2;
+}
+
+@media only screen and (min-width: 500px) {
+  .school {
+    font-size: 20px;
+  }
+
+  .office {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 610px) {
+  .corner {
+    width: 5px;
+    height: 5px;
+  }
+
+  .school {
+    font-size: 30px;
+  }
+
+  .office {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-width: 611px) {
+  .corner {
+    width: 150px;
+  }
+
+  .school {
+    font-size: 20px;
+    margin-left: 13px;
+  }
+
+  .office {
+    font-size: 30px;
+  }
+
+  .logo {
+    width: 150px;
+    height: 75px;
+  }
+}
+
+.menu {
+    right: -56px;
+  }
+
+@media only screen and (max-width: 635px){
+  .menu {
+    right: -115px;
+    top: 10px;
+  }
+} 
+
+@media only screen and (min-width: 636px) and (max-width: 1025px) {
+  .menu {
+    right: -110px;
+  }
+}
+
+@media only screen and (min-width: 1020px) and (max-width: 1050px) {
+  .menu {
+    right: -105px;
+  }
+}
+
+@media only screen and (min-width: 1051px) and (max-width: 1068px) {
+  .menu {
+    right: -93px;
+  }
+}
+
+@media only screen and (min-width: 1069px) and (max-width: 1095px) {
+  .menu {
+    right: -83px;
+  }
+}
+
+@media only screen and (min-width: 1096px) and (max-width: 1115px) {
+  .menu {
+    right: -70px;
+  }
+}
+
+@media only screen and (min-width: 0px) {
+  .threedots {
+    top: 110px;
+    right: 15px;
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .threedots {
+    top: 30px;
+  }
+}
+
+@media only screen and (min-width: 655px) {
+  .threedots {
+    top: 120px;
+    right: 15px;
+  }
+}
+
+@media only screen and (min-width: 735px) {
+  .threedots {
+    top: 30px;
+    right: 15px;
+  }
+}
