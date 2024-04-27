@@ -35,6 +35,7 @@
   export let counselors: any;
   export let name: any;
   export let email: any;
+  export let colleges: any;
 
   const form = superForm(data, {
     validators: zodClient(formSchema),
@@ -91,6 +92,13 @@
         value: $formData.Minute,
       }
     : undefined;
+
+  $: selectedCollege = $formData.College
+    ? {
+        label: $formData.College,
+        value: $formData.College,
+      }
+    : undefined;
 </script>
 
 <form method="POST" use:enhance>
@@ -118,6 +126,54 @@
         placeholder="20XXXXXXX"
         bind:value={$formData.Student_ID}
       />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Contact_Number">
+    <Form.Control let:attrs>
+      <Form.Label>Contact Number</Form.Label>
+      <Input
+        {...attrs}
+        placeholder="09XXXXXXXXX"
+        bind:value={$formData.Contact_Number}
+      />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="College">
+    <Form.Control let:attrs>
+      <Form.Label>College</Form.Label>
+      <Select.Root
+        selected={selectedCollege}
+        onSelectedChange={(v) => {
+          v && ($formData.College = v.value);
+        }}
+      >
+        <Select.Trigger {...attrs} class="w-[250px]">
+          <Select.Value placeholder="Select a College" />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each colleges as college}
+              <Select.Item
+                value={college.College}
+                label="College of {college.College}"
+              ></Select.Item>
+            {/each}
+          </Select.Group>
+        </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.College} name={attrs.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Course">
+    <Form.Control let:attrs>
+      <Form.Label>Course</Form.Label>
+      <Input {...attrs} bind:value={$formData.Course} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>

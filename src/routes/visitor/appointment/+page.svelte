@@ -26,7 +26,6 @@
     dateStyle: "long",
   });
 
-  console.log(appointments);
 </script>
 
 <head>
@@ -143,7 +142,7 @@
     {#each counselors as counselor}
       <p class="pl-5">
         <b
-          >Ms. {counselor.First_Name}
+          >{counselor.First_Name}
           {counselor.Middle_Name}
           {counselor.Last_Name}</b
         >

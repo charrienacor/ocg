@@ -44,3 +44,21 @@ db.Counselors.insertMany([
     Status: "Active",
   },
 ]);
+
+
+db.createCollection("College");
+db.College.insertMany([
+  {
+    College: "Science",
+  },
+
+  {
+    College: "Social Science",
+  },
+
+  {
+    College: "Arts and Communication",
+  },
+])
+
+

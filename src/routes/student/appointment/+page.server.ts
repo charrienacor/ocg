@@ -12,14 +12,30 @@ export const load: PageServerLoad = async (event) => {
   let counselors = db.collection("Counselors").find(
     {
       Status: "Active",
+      Suffix: "RGC",
     },
   );
+
+  let appointments = db.collection("Appointments").find(
+    { Status: "Accepted" }).project(
+      {
+        _id: 0,
+        Appointment_Date: 1,
+        Appointment_Time: 1,
+        Counselor: 1,
+      });
+
+
+  let college = db.collection("College").find().project({ _id: 0 });
+
 
   return {
     name: event.locals.user.username,
     email: event.locals.user.email,
     form: await superValidate(zod(formSchema)),
     counselor: await counselors.toArray(),
+    college: await college.toArray(),
+    appointments: await appointments.toArray(),
   };
 };
 

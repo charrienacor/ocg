@@ -8,6 +8,9 @@ export const formSchema = z.object({
     .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(9, { message: "Must be 9 digits." })
     .min(9, { message: "Must be 9 digits." }),
+  Contact_Number: z.string(),
+  College: z.string(),
+  Course: z.string(),
 
   Guidance_Counselor: z.string(),
 
