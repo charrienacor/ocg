@@ -1,20 +1,12 @@
 <script lang="ts">
+    import Button from "$lib/components/ui/button/button.svelte";
     import {
       CalendarDays,
       FileTextIcon,
       LayoutDashboardIcon,
-      SearchIcon,
       UserIcon,
       LogOutIcon,
     } from "lucide-svelte";
-
-    import DataTable from "./data-table.svelte";
-    import * as Dialog from "$lib/components/ui/dialog";
-    import { Button } from "$lib/components/ui/button/index.js";
-    import type { PageServerData } from "./$types";
-
-    export let data: PageServerData;
-    let counselors = data.counselor;
   </script>
   
   <head> 
@@ -107,41 +99,6 @@
     <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
   </div>
   
-  <h1 class="pb-5 pt-12 font-bold sm:pt-5">ADMIN ACCOUNTS</h1>
-    <form class="mx-auto w-full">
-      <label for="default-search" class="sr-only text-sm font-medium text-gray-900 dark:text-white">Search</label>
-      <div class="relative">
-        <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
-          <SearchIcon size={20} />
-        </div>
-        <input
-          type="search"
-          id="default-search"
-          class="text-md mb-10 block w-full rounded-md border p-4 ps-10 text-gray-800 focus:border-blue-500 focus:ring-blue-500"
-          placeholder="Search"
-          required
-        />
-        <button
-          type="submit"
-          class="absolute bottom-2.5 end-2.5 rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-200 hover:text-black"
-          >Search</button>
-      </div>
-    </form>
-  
-    <div class="table-wrap relative block max-h-96 overflow-x-auto rounded-lg border border-none">
-      <DataTable {counselors}/>
-    </div>
-
-    <Dialog.Root>
-      <Dialog.Trigger>
-        <Button class="w-full mt-7 text-md">
-          Add Admin Account
-        </Button>
-      </Dialog.Trigger>
-      <Dialog.Content>
-        <Dialog.Header>
-          <Dialog.Title>Add Admin Profile</Dialog.Title>
-        </Dialog.Header>
-        <!-- <SettingsForm data={data.form} />  -->
-      </Dialog.Content>
-    </Dialog.Root>
+  <h1 class="pb-5 pt-12 font-bold sm:pt-5">EDIT ADMIN ACCOUNTS</h1>
+  <p class="text-center">Insert Settings From hehe </p>
+  <Button> UPDATE </Button>
