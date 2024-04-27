@@ -13,6 +13,7 @@
     parseDate,
     today,
   } from "@internationalized/date";
+  import * as Dialog from "$lib/components/ui/dialog";
   export let data: PageServerData;
   let name = data.name;
   let email = data.email;
@@ -99,7 +100,7 @@
     </p>
   </div>
 
-  <div class="box flex flex-col items-center">
+  <div class="box flex flex-col items-center gap-10">
     <div class="w-[290px] rounded bg-white p-2 shadow-xl">
       <Calendar
         minValue={today(getLocalTimeZone())}
@@ -119,26 +120,19 @@
       />
     </div>
 
-    <button id="dropdown" data-dropdown-toggle="dropdownDots" type="button">
-      <Button
-        class="relative top-10 mb-2 text-wrap text-xl sm:mb-10 lg:w-[290px]"
-        >Book an Appointment</Button
-      >
-    </button>
-
-    <div id="dropdownDots" class="relative hidden">
-      <Card.Root
-        class="absolute -right-48 top-6 w-[380px] sm:top-0 lg:-top-[440px] xl:right-44 "
-      >
-        <Card.Header>
-          <Card.Title>Book an Appointment</Card.Title>
-        </Card.Header>
-        <Card.Content>
-          <SettingsForm data={data.form} {name} {email} {counselors} />
-        </Card.Content>
-      </Card.Root>
-    </div>
-    <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
+    <Dialog.Root>
+      <Dialog.Trigger>
+        <Button size = "long">
+          <p class="text-lg">Book an Appointment</p>
+        </Button>
+      </Dialog.Trigger>
+      <Dialog.Content>
+        <Dialog.Header>
+          <Dialog.Title>Book an Appointment</Dialog.Title>
+        </Dialog.Header>
+        <SettingsForm data={data.form} {name} {email} {counselors} />
+      </Dialog.Content>
+    </Dialog.Root>
   </div>
 
   <div class="box w-full rounded bg-white shadow-xl lg:ml-5 lg:w-1/3 lg:p-1">
