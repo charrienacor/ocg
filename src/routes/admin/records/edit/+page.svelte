@@ -9,213 +9,213 @@
     } from "lucide-svelte";
 
     import * as Form from "$lib/components/ui/form";
-  import { Input } from "$lib/components/ui/input";
-  import { superForm } from "sveltekit-superforms";
-  
-  import { formSchema } from "./schema";
-  import { zodClient } from "sveltekit-superforms/adapters";
-  import CalendarIcon from "svelte-radix/Calendar.svelte";
-  import {
-    DateFormatter,
-    type DateValue,
-    getLocalTimeZone,
-  } from "@internationalized/date";
-  import { cn } from "$lib/utils.js";
-  import { Calendar } from "$lib/components/ui/calendar/index.js";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import * as Select from "$lib/components/ui/select/index.js";
+    import { Input } from "$lib/components/ui/input";
+    import { superForm } from "sveltekit-superforms";
+    import { formSchema } from "./schema";
+    import { zodClient } from "sveltekit-superforms/adapters";
+    import CalendarIcon from "svelte-radix/Calendar.svelte";
+    import DataTable from "./data-table.svelte";
+    import {
+      DateFormatter,
+      type DateValue,
+      getLocalTimeZone,
+    } from "@internationalized/date";
+    import { cn } from "$lib/utils.js";
+    import { Calendar } from "$lib/components/ui/calendar/index.js";
+    import * as Popover from "$lib/components/ui/popover/index.js";
+    import * as Select from "$lib/components/ui/select/index.js";
 
-  const df = new DateFormatter("en-US", {
-    dateStyle: "long",
-  });
+    const df = new DateFormatter("en-US", {
+      dateStyle: "long",
+    });
 
-  let value: DateValue | undefined = undefined;
+    let value: DateValue | undefined = undefined;
 
-  export let data: any;
+    export let data: any;
 
-  const form = superForm(data, {
-    validators: zodClient(formSchema),
-  });
+    const form = superForm(data, {
+      validators: zodClient(formSchema),
+    });
 
-  const { form: formData, enhance } = form;
+    const { form: formData, enhance } = form;
 
-  const semester = [
-    { value: "first", label: "First Semester" },
-    { value: "second", label: "Second Semester" },
-    { value: "midyear", label: "Midyear" },
-  ];
+    const semester = [
+      { value: "first", label: "First Semester" },
+      { value: "second", label: "Second Semester" },
+      { value: "midyear", label: "Midyear" },
+    ];
 
-  $: selectedSem = $formData.Sem
-    ? {
-        label: $formData.SemLabel,
-        value: $formData.Sem,
-      }
-    : undefined;
+    $: selectedSem = $formData.Sem
+      ? {
+          label: $formData.SemLabel,
+          value: $formData.Sem,
+        }
+      : undefined;
 
-    const course = [
-    { value: "ba_comm", label: "Bachelor of Arts in Communication" },
-    { value: "cert_fa", label: "Certificate in Fine Arts" },
-    { value: "bfa", label: "Bachelor of Fine Arts" },
-    { value: "ba_ll", label: "Bachelor of Arts in Language and Literature" },
-    { value: "ma_ll", label: "Master of Arts in Language and Literature" },
-    { value: "bs_bio", label: "Bachelor of Science in Biology" },
-    { value: "bs_cmsc", label: "Bachelor of Science in Computer Science" },
-    { value: "bs_math", label: "Bachelor of Science in Mathematics" },
-    { value: "bs_phys", label: "Bachelor of Science in Physics" },
-    {
-      value: "ms_cre",
-      label: "Master of Science in Conservation and Restoration Ecology",
-    },
-    { value: "ms_math", label: "Master of Science in Mathematics" },
-    { value: "phd_math", label: "Ph.D. in Mathematics" },
-    { value: "ba_ss", label: "Bachelor of Arts in Social Sciences" },
-    { value: "bs_me", label: "Bachelor of Science in Management Economics" },
-    { value: "mm", label: "Master of Management" },
-    {
-      value: "ma_sds",
-      label: "Master of Arts in Social and Development Studies",
-    },
-  ];
+      const course = [
+      { value: "ba_comm", label: "Bachelor of Arts in Communication" },
+      { value: "cert_fa", label: "Certificate in Fine Arts" },
+      { value: "bfa", label: "Bachelor of Fine Arts" },
+      { value: "ba_ll", label: "Bachelor of Arts in Language and Literature" },
+      { value: "ma_ll", label: "Master of Arts in Language and Literature" },
+      { value: "bs_bio", label: "Bachelor of Science in Biology" },
+      { value: "bs_cmsc", label: "Bachelor of Science in Computer Science" },
+      { value: "bs_math", label: "Bachelor of Science in Mathematics" },
+      { value: "bs_phys", label: "Bachelor of Science in Physics" },
+      {
+        value: "ms_cre",
+        label: "Master of Science in Conservation and Restoration Ecology",
+      },
+      { value: "ms_math", label: "Master of Science in Mathematics" },
+      { value: "phd_math", label: "Ph.D. in Mathematics" },
+      { value: "ba_ss", label: "Bachelor of Arts in Social Sciences" },
+      { value: "bs_me", label: "Bachelor of Science in Management Economics" },
+      { value: "mm", label: "Master of Management" },
+      {
+        value: "ma_sds",
+        label: "Master of Arts in Social and Development Studies",
+      },
+    ];
 
-  const status = [
-    { value: "graduate", label: "Graduate" },
-    { value: "enrolled", label: "Enrolled" },
-    { value: "transfer_in", label: "Transferred-In" },
-    { value: "transfer_out", label: "Transferred-Out" },
-    { value: "readmitted", label: "Readmitted" },
-    { value: "loa", label: "On Leave of Absence" },
-    { value: "exit", label: "Exit" },
-  ];
+    const status = [
+      { value: "graduate", label: "Graduate" },
+      { value: "enrolled", label: "Enrolled" },
+      { value: "transfer_in", label: "Transferred-In" },
+      { value: "transfer_out", label: "Transferred-Out" },
+      { value: "readmitted", label: "Readmitted" },
+      { value: "loa", label: "On Leave of Absence" },
+      { value: "exit", label: "Exit" },
+    ];
 
-  const college = [
-    { value: "cac", label: "College of Arts and Communication" },
-    { value: "cs", label: "College of Science" },
-    { value: "css", label: "College of Social Sciences" },
-  ];
+    const college = [
+      { value: "cac", label: "College of Arts and Communication" },
+      { value: "cs", label: "College of Science" },
+      { value: "css", label: "College of Social Sciences" },
+    ];
 
-  const sex = [
-    { value: "female", label: "Female" },
-    { value: "male", label: "Male" },
-  ];
+    const sex = [
+      { value: "female", label: "Female" },
+      { value: "male", label: "Male" },
+    ];
 
-  // add more options
-  const nationality = [
-    { value: "Filipino", label: "Filipino" },
-    { value: "American", label: "American" },
-    { value: "Australian", label: "Australian" },
-    { value: "Canadian", label: "Canadian" },
-    { value: "Japanese", label: "Japanese" },
-    { value: "Korean", label: "Korean" },
-  ];
+    // add more options
+    const nationality = [
+      { value: "Filipino", label: "Filipino" },
+      { value: "American", label: "American" },
+      { value: "Australian", label: "Australian" },
+      { value: "Canadian", label: "Canadian" },
+      { value: "Japanese", label: "Japanese" },
+      { value: "Korean", label: "Korean" },
+    ];
 
-  //add more options
-  const citizenship = [
-    { value: "Filipino", label: "Filipino" },
-    { value: "American", label: "American" },
-    { value: "Australian", label: "Australian" },
-    { value: "Canadian", label: "Canadian" },
-    { value: "Japanese", label: "Japanese" },
-  ];
+    //add more options
+    const citizenship = [
+      { value: "Filipino", label: "Filipino" },
+      { value: "American", label: "American" },
+      { value: "Australian", label: "Australian" },
+      { value: "Canadian", label: "Canadian" },
+      { value: "Japanese", label: "Japanese" },
+    ];
 
-  //add more options
-  const religion = [
-    { value: "Buddhism", label: "Buddhism" },
-    { value: "Judaism", label: "Judaism" },
-    { value: "Hinduism", label: "Hinduism" },
-    { value: "Islam", label: "Islam" },
-    { value: "Catholic", label: "Catholic" },
-    { value: "Iglesia ni Cristo", label: "Iglesia ni Cristo" },
-    {
-      value: "Philippine Independent Church",
-      label: "Philippine Independent Church",
-    },
-  ];
+    //add more options
+    const religion = [
+      { value: "Buddhism", label: "Buddhism" },
+      { value: "Judaism", label: "Judaism" },
+      { value: "Hinduism", label: "Hinduism" },
+      { value: "Islam", label: "Islam" },
+      { value: "Catholic", label: "Catholic" },
+      { value: "Iglesia ni Cristo", label: "Iglesia ni Cristo" },
+      {
+        value: "Philippine Independent Church",
+        label: "Philippine Independent Church",
+      },
+    ];
 
-  const life_status = [
-    { value: "living", label: "Living" },
-    { value: "deceased", label: "Deceased" },
-  ];
+    const life_status = [
+      { value: "living", label: "Living" },
+      { value: "deceased", label: "Deceased" },
+    ];
 
-  const education = [
-    { value: "elem", label: "Elementary Graduate" },
-    { value: "hs", label: "High School Graduate" },
-    { value: "college", label: "College Graduate" },
-    { value: "ma", label: "Master's Graduate" },
-    { value: "phd", label: "Doctorate's Graduate" },
-    { value: "voc", label: "Vocational" },
-  ];
+    const education = [
+      { value: "elem", label: "Elementary Graduate" },
+      { value: "hs", label: "High School Graduate" },
+      { value: "college", label: "College Graduate" },
+      { value: "ma", label: "Master's Graduate" },
+      { value: "phd", label: "Doctorate's Graduate" },
+      { value: "voc", label: "Vocational" },
+    ];
 
-  const numberstud = [
-    { value: "less than 25", label: "Less than 25" },
-    { value: "25-99", label: "25-99" },
-    { value: "100-199", label: "100-199" },
-    { value: "200-399", label: "200-399" },
-    { value: "400-599", label: "400-599" },
-    { value: "600 or more", label: "600 or more" },
-  ];
+    const numberstud = [
+      { value: "less than 25", label: "Less than 25" },
+      { value: "25-99", label: "25-99" },
+      { value: "100-199", label: "100-199" },
+      { value: "200-399", label: "200-399" },
+      { value: "400-599", label: "400-599" },
+      { value: "600 or more", label: "600 or more" },
+    ];
 
-  const HSrank = [
-    { value: "upper 25%", label: "Upper 25%" },
-    { value: "average", label: "Average" },
-    { value: "lower 25%", label: "Lower 25%" },
-  ];
+    const HSrank = [
+      { value: "upper 25%", label: "Upper 25%" },
+      { value: "average", label: "Average" },
+      { value: "lower 25%", label: "Lower 25%" },
+    ];
 
-  const SchoolAve = [
-    { value: "95-100", label: "95-100" },
-    { value: "90-94", label: "90-94" },
-    { value: "85-89", label: "85-89" },
-    { value: "80-84", label: "80-84" },
-    { value: "75-79", label: "75-79" },
-  ];
+    const SchoolAve = [
+      { value: "95-100", label: "95-100" },
+      { value: "90-94", label: "90-94" },
+      { value: "85-89", label: "85-89" },
+      { value: "80-84", label: "80-84" },
+      { value: "75-79", label: "75-79" },
+    ];
 
-  const honors = [
-    { value: "valedictorian", label: "Valedictorian" },
-    { value: "salutatorian", label: "Salutatorian" },
-    { value: "honorable mention", label: "Honorable Mention" },
-  ];
+    const honors = [
+      { value: "valedictorian", label: "Valedictorian" },
+      { value: "salutatorian", label: "Salutatorian" },
+      { value: "honorable mention", label: "Honorable Mention" },
+    ];
 
-  const campus = [
-    { value: "upd", label: "UP Diliman" },
-    { value: "uplb", label: "UP Los Banos" },
-    { value: "upb", label: "UP Baguio" },
-    { value: "upou", label: "UP Open University" },
-    { value: "upv", label: "UP Visayas" },
-    { value: "upc", label: "UP Cebu" },
-    { value: "upt", label: "UP Tacloban" },
-    { value: "upm", label: "UP Mindanao" },
-  ];
+    const campus = [
+      { value: "upd", label: "UP Diliman" },
+      { value: "uplb", label: "UP Los Banos" },
+      { value: "upb", label: "UP Baguio" },
+      { value: "upou", label: "UP Open University" },
+      { value: "upv", label: "UP Visayas" },
+      { value: "upc", label: "UP Cebu" },
+      { value: "upt", label: "UP Tacloban" },
+      { value: "upm", label: "UP Mindanao" },
+    ];
 
-  const income = [
-    { value: "less than 10,000", label: "less than 10,000" },
-    { value: "10,001 - 20,000", label: "10,001 - 20,000" },
-    { value: "20,001 - 30,000", label: "20,001 - 30,000" },
-    { value: "30,001 - 40,000", label: "30,001 - 40,000" },
-    { value: "40,001 - 45,000", label: "40,001 - 45,000" },
-    { value: "45,001 - 50,000", label: "45,001 - 50,000" },
-    { value: "50,001 - 55,000", label: "50,001 - 55,000" },
-    { value: "55,001 - 60,000", label: "55,001 - 60,000" },
-    { value: "60,000 - above", label: "60,000 - above" },
-  ];
+    const income = [
+      { value: "less than 10,000", label: "less than 10,000" },
+      { value: "10,001 - 20,000", label: "10,001 - 20,000" },
+      { value: "20,001 - 30,000", label: "20,001 - 30,000" },
+      { value: "30,001 - 40,000", label: "30,001 - 40,000" },
+      { value: "40,001 - 45,000", label: "40,001 - 45,000" },
+      { value: "45,001 - 50,000", label: "45,001 - 50,000" },
+      { value: "50,001 - 55,000", label: "50,001 - 55,000" },
+      { value: "55,001 - 60,000", label: "55,001 - 60,000" },
+      { value: "60,000 - above", label: "60,000 - above" },
+    ];
 
-  const major = [
-    { value: "none", label: "N/A" },
-    { value: "Economics", label: "Economics" },
-    { value: "History", label: "History" },
-    { value: "Anthropology", label: "Anthropology" },
-  ];
+    const major = [
+      { value: "none", label: "N/A" },
+      { value: "Economics", label: "Economics" },
+      { value: "History", label: "History" },
+      { value: "Anthropology", label: "Anthropology" },
+    ];
 
-  const YN = [
-    { value: "yes", label: "Yes" },
-    { value: "no", label: "No" },
-  ];
+    const YN = [
+      { value: "yes", label: "Yes" },
+      { value: "no", label: "No" },
+    ];
 
-  const Cstatus = [
-    { value: "single", label: "Single" },
-    { value: "married", label: "Married" },
-    { value: "widowed", label: "Widowed" },
-    { value: "separated", label: "Separated" },
-    { value: "divorced", label: "Divorced" },
-  ];
+    const Cstatus = [
+      { value: "single", label: "Single" },
+      { value: "married", label: "Married" },
+      { value: "widowed", label: "Widowed" },
+      { value: "separated", label: "Separated" },
+      { value: "divorced", label: "Divorced" },
+    ];
 
   </script>
   
@@ -3519,91 +3519,9 @@
 
       <div class="center relative top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8">
         <h1> Appointment History</h1>
-        <div class="table-wrp relative block max-h-96 overflow-x-auto rounded-lg border border-none">
-          <table class="w-full text-left text-sm text-gray-500 dark:text-gray-400 rtl:text-right">
-            <thead class="sticky top-0 bg-rose-900 text-xs uppercase text-gray-700 text-white dark:bg-gray-700 dark:text-gray-400">
-              <tr>
-                <th scope="col" class="px-6 py-5"> Appointment ID </th>
-                <th scope="col" class="px-3 py-5"> Date</th>
-                <th scope="col" class="px-3 py-5"> Time </th>
-                <th scope="col" class="px-3 py-5"> Nature of Concern </th>
-                <th scope="col" class="px-6 py-5"> Remarks </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">00001</th>
-                <td class="px-6 py-4"> 02-14-24 </td>
-                <td class="px-6 py-4"> 2:30 PM </td>
-                <td class="px-6 py-4"> Secret </td>
-                <td class="px-6 py-4">
-                  <Form.Field {form} name="Remarks">
-                    <Form.Control let:attrs>
-                      <Input {...attrs} bind:value={$formData.Remarks1} />
-                    </Form.Control>
-                    <Form.FieldErrors />
-                  </Form.Field>
-                </td>
-              </tr>
-              <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">00042</th>
-                <td class="px-6 py-4"> 03-10-24 </td>
-                <td class="px-6 py-4"> 3:30 AM </td>
-                <td class="px-6 py-4"> Secret nga </td>
-                <td class="px-6 py-4">
-                  <Form.Field {form} name="Remarks">
-                    <Form.Control let:attrs>
-                      <Input {...attrs} bind:value={$formData.Remarks2} />
-                    </Form.Control>
-                    <Form.FieldErrors />
-                  </Form.Field>
-                </td>
-              </tr>
-              <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">00095</th>
-                <td class="px-6 py-4"> 04-13-24 </td>
-                <td class="px-6 py-4"> 11:30 AM </td>
-                <td class="px-6 py-4"> Kulet nmn </td>
-                <td class="px-6 py-4">
-                  <Form.Field {form} name="Remarks">
-                    <Form.Control let:attrs>
-                      <Input {...attrs} bind:value={$formData.Remarks3} />
-                    </Form.Control>
-                    <Form.FieldErrors />
-                  </Form.Field>
-                </td>
-              </tr>
-              <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">00112</th>
-                <td class="px-6 py-4"> 04-12-24 </td>
-                <td class="px-6 py-4"> 1:30 PM </td>
-                <td class="px-6 py-4"> SECRET NGA!! </td>
-                <td class="px-6 py-4">
-                  <Form.Field {form} name="Remarks">
-                    <Form.Control let:attrs>
-                      <Input {...attrs} bind:value={$formData.Remarks4} />
-                    </Form.Control>
-                    <Form.FieldErrors />
-                  </Form.Field>
-                </td>
-              </tr>
-              <tr class="border-b odd:bg-white even:bg-gray-200 dark:border-gray-700 dark:bg-gray-800">
-                <th scope="row" class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">00120</th>
-                <td class="px-6 py-4"> 04-24-24 </td>
-                <td class="px-6 py-4"> 10:30 AM </td>
-                <td class="px-6 py-4"> SECREEET!!! </td>
-                <td class="px-6 py-4">
-                  <Form.Field {form} name="Remarks">
-                    <Form.Control let:attrs>
-                      <Input {...attrs} bind:value={$formData.Remarks5} />
-                    </Form.Control>
-                    <Form.FieldErrors />
-                  </Form.Field>
-                </td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
+        <div class="container mx-auto py-5">
+          <DataTable />
+        </div>
       </div>
       <Form.Button class="w-full">UPDATE</Form.Button>
     </form>
