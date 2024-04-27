@@ -8,7 +8,7 @@
 	export { className as class };
 </script>
 
-<div class="relative w-full overflow-auto">
+<div class="relative block w-full overflow-x-auto table-warp max-h-96 border-2 rounded-md">
 	<table class={cn("w-full caption-bottom text-sm", className)} {...$$restProps}>
 		<slot />
 	</table>

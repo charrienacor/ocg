@@ -2,7 +2,6 @@
   import type { PageServerData } from "./$types";
   import SettingsForm from "./SettingsForm.svelte";
   import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import * as Card from "$lib/components/ui/card";
   import { Button } from "$lib/components/ui/button/index.js";
   import { LogOutIcon } from "lucide-svelte";
   import {
