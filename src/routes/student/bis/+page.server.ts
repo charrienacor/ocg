@@ -1,9 +1,20 @@
-import type { Actions} from "./$types";
+import { redirect, type RequestHandler } from "@sveltejs/kit";
+import type { Actions, PageServerLoad } from "./$types";
 import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema";
 import { zod } from "sveltekit-superforms/adapters";
 import db from "$db/mongo";
+
+export const load: PageServerLoad = async (event) => {
+  if (!event.locals.user) redirect(302, "/student/login");
+
+  return {
+    name: event.locals.user.username,
+    email: event.locals.user.email,
+    form: await superValidate(zod(formSchema)),
+  };
+};
 
 export const actions: Actions = {
   default: async (event) => {
@@ -13,7 +24,7 @@ export const actions: Actions = {
         form,
       });
     }
-    
+  
     const data = form.data;
 
     await db.collection("BIS").insertOne({
