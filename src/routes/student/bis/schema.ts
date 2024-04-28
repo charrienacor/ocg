@@ -1,12 +1,5 @@
 import { z } from "zod";
 
-// export const semesters = {
-//   First: "First Semester",
-//   Second: "Second Semester",
-//   Midyear: "Midyear",
-// } as const; 
-
-// type Semester = keyof typeof semesters;
 
 export const formSchema = z.object({
   // Preliminaries
@@ -14,13 +7,11 @@ export const formSchema = z.object({
   //   .enum(Object.keys(semesters) as [Semester, ...Semester[]]),
   
   Semester: z
-    .string({
-      required_error: "Please select a semester",
-  }),
+    .string(),
 
   School_Year: z
     .string()
-    .regex(/[0-9]+[0-9]/, { message: "Only numbers or hyphen allowed." })
+    .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
     .max(9, { message: "Must be 9 digits" }),
 
   Student_Number: z
@@ -36,30 +27,34 @@ export const formSchema = z.object({
   College: z
     .string({
       required_error: "Please select a college",
-}),
-//   // Personal Information
+  }),
+  
+  // Personal Information
 
   Student_Name: z
     .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
+    .regex(/^[a-zA-Z,\s]+$/, { message: "This is required." })
     .max(100),
 
   Nickname: z
     .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
+    .regex(/^[a-zA-Z\s]+$/, { message: "This is required." })
     .max(100),
 
   Sex: z
     .string(),
 
   Age: z
-    .string(),
+    .string()
+    .regex(/[0-9]/, { message: "Only numbers allowed." })
+    .max(2),
 
   Birth_Date: z
     .string(),
 
   Place_Of_Birth: z
     .string()
+    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
     .max(100),
 
   Nationality: z
@@ -73,24 +68,30 @@ export const formSchema = z.object({
 
   Cellphone_Number: z
     .string()
-    .max(11),
+    .regex(/[0-9]/, { message: "This is required." })
+    .max(11, { message: "Must be 11 digits" }),
 
   Email_Address: z
-    .string(),
+    .string()
+    .regex(/^[a-z0-9,@\s.]+$/, { message: "This is required." }),
 
   Baguio_Address: z
     .string()
+    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
     .max(100),
 
   Baguio_Telephone_Number: z
     .string()
+    .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
     .max(30),
 
   Permanent_Address: z
-    .string(),
+    .string()
+    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." }),
 
   Permanent_Telephone_Number: z
     .string()
+    .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
     .max(30),
 
   // Family Data
@@ -114,16 +115,20 @@ export const formSchema = z.object({
     .string(),
 
   Father_Age: z
-    .string(),
+    .number({ invalid_type_error: "Age must be a number." }),
 
   Father_Living_Or_Dead: z
     .string(),
 
   Father_Place_Of_Birth: z
-    .string(),
+    .string()
+    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
+    .max(100),
 
   Father_Address: z
-    .string(),
+    .string()
+    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
+    .max(100),
 
   Father_Contact_Number: z
     .string(),
@@ -156,13 +161,15 @@ export const formSchema = z.object({
     .string(),
 
   Mother_Age: z
-    .string(),
+    .number({ invalid_type_error: "Age must be a number." }),
 
   Mother_Living_Or_Dead: z
     .string(),
 
   Mother_Place_Of_Birth: z
-    .string(),
+    .string()
+    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
+    .max(100),
 
   Mother_Address: z
     .string(),
@@ -203,7 +210,7 @@ export const formSchema = z.object({
     .string(),
 
   Age_1: z
-    .string(),
+    .number({ invalid_type_error: "Age must be a number." }),
 
   Civil_Status_1: z
     .string(),
@@ -224,7 +231,7 @@ export const formSchema = z.object({
     .string(),
 
   Age_2: z
-    .string(),
+    .number({ invalid_type_error: "Age must be a number." }),
 
   Civil_Status_2: z
     .string(),
@@ -245,7 +252,7 @@ export const formSchema = z.object({
     .string(),
 
   Age_3: z
-    .string(),
+    .number({ invalid_type_error: "Age must be a number." }),
 
   Civil_Status_3: z
     .string(),
@@ -266,7 +273,7 @@ export const formSchema = z.object({
     .string(),
 
   Age_4: z
-    .string(),
+    .number({ invalid_type_error: "Age must be a number." }),
 
   Civil_Status_4: z
     .string(),
@@ -287,7 +294,7 @@ export const formSchema = z.object({
     .string(),
 
   Age_5: z
-    .string(),
+    .number({ invalid_type_error: "Age must be a number." }),
 
   Civil_Status_5: z
     .string(),
@@ -435,7 +442,10 @@ export const formSchema = z.object({
     .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
     .max(200),
 
-  Reading: z
+  Reading: z.
+    string(),
+
+  YesReading: z
     .string()
     .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
     .max(200),
