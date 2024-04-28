@@ -22,6 +22,7 @@
   import { Calendar } from "$lib/components/ui/calendar/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
+  import FormDescription from "$lib/components/ui/form/form-description.svelte";
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
@@ -33,7 +34,6 @@
 
   export let data: any;
   export let counselors: any;
-  export let colleges: any;
 
   const form = superForm(data, {
     validators: zodClient(formSchema),
@@ -90,88 +90,40 @@
         value: $formData.Minute,
       }
     : undefined;
-
-  $: selectedCollege = $formData.College
-    ? {
-        label: $formData.College,
-        value: $formData.College,
-      }
-    : undefined;
 </script>
 
 <form method="POST" use:enhance>
-  <Form.Field {form} name="Student_Name">
+  <Form.Field {form} name="Visitor_Name">
     <Form.Control let:attrs>
-      <Form.Label>Student Name</Form.Label>
+      <Form.Label>Name</Form.Label>
       <Input {...attrs} bind:value={$formData.name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
-  <Form.Field {form} name="Student_Email">
+  <Form.Field {form} name="Visitor_Email">
     <Form.Control let:attrs>
-      <Form.Label>Student Email</Form.Label>
+      <Form.Label>Email</Form.Label>
       <Input {...attrs} bind:value={$formData.email} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
-  <Form.Field {form} name="Student_ID">
-    <Form.Control let:attrs>
-      <Form.Label>Student Number</Form.Label>
-      <Input
-        {...attrs}
-        placeholder="20XXXXXXX"
-        bind:value={$formData.Student_ID}
-      />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
-  <Form.Field {form} name="Contact_Number">
+  <Form.Field {form} name="Contact_Num">
     <Form.Control let:attrs>
       <Form.Label>Contact Number</Form.Label>
-      <Input
-        {...attrs}
-        placeholder="09XXXXXXXXX"
-        bind:value={$formData.Contact_Number}
-      />
+      <Input {...attrs} bind:value={$formData.Contact} />
     </Form.Control>
+    <Form.Description
+      >If more than one contact number, seperate with " | "</Form.Description
+    >
     <Form.FieldErrors />
   </Form.Field>
 
-  <Form.Field {form} name="College">
+  <Form.Field {form} name="Visitor_Institution">
     <Form.Control let:attrs>
-      <Form.Label>College</Form.Label>
-      <Select.Root
-        selected={selectedCollege}
-        onSelectedChange={(v) => {
-          v && ($formData.College = v.value);
-        }}
-      >
-        <Select.Trigger {...attrs} class="w-[250px]">
-          <Select.Value placeholder="Select a College" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each colleges as college}
-              <Select.Item
-                value={college.College}
-                label="College of {college.College}"
-              ></Select.Item>
-            {/each}
-          </Select.Group>
-        </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.College} name={attrs.name} />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
-  <Form.Field {form} name="Course">
-    <Form.Control let:attrs>
-      <Form.Label>Course</Form.Label>
-      <Input {...attrs} bind:value={$formData.Course} />
+      <Form.Label>Associated Institution</Form.Label>
+      <Input {...attrs} bind:value={$formData.Institution} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
@@ -230,6 +182,7 @@
             onValueChange={(v) => {
               if (v) {
                 $formData.App_Date = v.toString();
+                console.log(v.toString());
               } else {
                 $formData.App_Date = "";
               }
@@ -242,65 +195,68 @@
       <input hidden value={$formData.App_Date} name={attrs.name} />
     </Form.Control>
   </Form.Field>
+  <div class="flex flex-row">
+    <Form.Field {form} name="Appointment_Hour">
+      <Form.Control let:attrs>
+        <Form.Label>Appointment Time</Form.Label>
+        <Select.Root
+          selected={selectedHour}
+          onSelectedChange={(v) => {
+            v && ($formData.Hour = v.value);
+          }}
+        >
+          <Select.Trigger {...attrs} class="w-[100px]">
+            <Select.Value placeholder="HH" />
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Group>
+              {#each hours as hour}
+                <Select.Item value={hour.value} label={hour.label}
+                  >{hour.label}</Select.Item
+                >
+              {/each}
+            </Select.Group>
+          </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.Hour} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
 
-  <Form.Field {form} name="Appointment_Hour">
-    <Form.Control let:attrs>
-      <Form.Label>Appointment Time</Form.Label>
-      <Select.Root
-        selected={selectedHour}
-        onSelectedChange={(v) => {
-          v && ($formData.Hour = v.value);
-        }}
-      >
-        <Select.Trigger {...attrs} class="w-[100px]">
-          <Select.Value placeholder="HH" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each hours as hour}
-              <Select.Item value={hour.value} label={hour.label}
-                >{hour.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.Hour} name={attrs.name} />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
-  <Form.Field {form} name="Appointment_Minute">
-    <Form.Control let:attrs>
-      <Select.Root
-        selected={selectedMinute}
-        onSelectedChange={(v) => {
-          v && ($formData.Minute = v.value);
-        }}
-      >
-        <Select.Trigger {...attrs} class="w-[100px]">
-          <Select.Value placeholder="MM" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each minutes as minute}
-              <Select.Item value={minute.value} label={minute.label}
-                >{minute.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.Minute} name={attrs.name} />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
+    <Form.Field {form} name="Appointment_Minute">
+      <Form.Control let:attrs>
+        <Form.Label><br /></Form.Label>
+        <Select.Root
+          selected={selectedMinute}
+          onSelectedChange={(v) => {
+            v && ($formData.Minute = v.value);
+          }}
+        >
+          <Select.Trigger {...attrs} class="w-[100px]">
+            <Select.Value placeholder="MM" />
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Group>
+              {#each minutes as minute}
+                <Select.Item value={minute.value} label={minute.label}
+                  >{minute.label}</Select.Item
+                >
+              {/each}
+            </Select.Group>
+          </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.Minute} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
 
   <Form.Field {form} name="Nature_Of_Concern">
     <Form.Control let:attrs>
       <Form.Label>Nature of Concern</Form.Label>
       <Input {...attrs} bind:value={$formData.Nature_Of_Concern} />
     </Form.Control>
+    <Form.Description>Kindly indicate if urgent</Form.Description>
     <Form.FieldErrors />
   </Form.Field>
 
