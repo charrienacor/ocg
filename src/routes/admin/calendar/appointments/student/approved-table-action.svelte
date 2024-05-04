@@ -3,4 +3,7 @@
   export let _id: any;
 </script>
 
-<Button on:click={() => console.log(_id)}>Approved</Button>
+<form method="POST" action="?/approve">
+  <input hidden name="id" value={_id} />
+  <Button type="submit">Approved</Button>
+</form>
