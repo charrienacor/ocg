@@ -3,18 +3,17 @@
     CalendarDays,
     FileTextIcon,
     LayoutDashboardIcon,
-    SearchIcon,
     UserIcon,
     LogOutIcon,
   } from "lucide-svelte";
-
   import type { PageServerData } from "./$types";
+  import * as Tabs from "$lib/components/ui/tabs";
+  import Student from "./student/data-table.svelte";
+  import Visitor from "./visitor/data-table.svelte";
 
   export let data: PageServerData;
   let appointments = data.appointment;
   let v_appointments = data.v_appointment;
-
-  import DataTable from "./data-table.svelte";
 </script>
 
 <head>
@@ -110,6 +109,18 @@
 <h1 class="pt-12 font-bold sm:pt-5">MANAGE APPOINTMENTS</h1>
 
 <div class="container mx-auto py-5">
-  <DataTable {appointments} {v_appointments} />
+  <Tabs.Root value="student" class="mx-auto">
+    <div class="mx-auto flex flex-row justify-center">
+      <Tabs.List class="">
+        <Tabs.Trigger value="student">Student</Tabs.Trigger>
+        <Tabs.Trigger value="visitor">Visitor</Tabs.Trigger>
+      </Tabs.List>
+    </div>
+    <Tabs.Content value="student">
+      <Student {appointments} />
+    </Tabs.Content>
+    <Tabs.Content value="visitor">
+      <Visitor {v_appointments} />
+    </Tabs.Content>
+  </Tabs.Root>
 </div>
-
