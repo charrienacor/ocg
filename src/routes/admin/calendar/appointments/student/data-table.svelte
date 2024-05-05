@@ -17,7 +17,7 @@
   import { Button } from "$lib/components/ui/button/index.js";
   import { cn } from "$lib/utils.js";
   import { Input } from "$lib/components/ui/input";
-  import ApprovedAppointment from "./approved-table-action.svelte";
+  import Actions from "./data-table-actions.svelte";
 
   export let appointments: any;
 
@@ -54,9 +54,9 @@
     }),
     table.column({
       accessor: ({ _id }) => _id,
-      header: "",
+      header: "Actions",
       cell: ({ value }) => {
-        return createRender(ApprovedAppointment, { _id: value });
+        return createRender(Actions, { _id: value });
       },
     }),
   ]);
@@ -101,11 +101,11 @@
                     {...attrs}
                     class={cn("[&:has([role=checkbox])]:pl-3")}
                   >
-                    {#if cell.id === "amount"}
-                      <div class="text-right font-medium">
+                    {#if cell.id === "Action"}
+                      <div class="text-center">
                         <Render of={cell.render()} />
                       </div>
-                    {:else if cell.id === "email"}
+                    {:else if cell.id === "Date"}
                       <Button variant="ghost" on:click={props.sort.toggle}>
                         <Render of={cell.render()} />
                         <ArrowUpDown
@@ -135,8 +135,8 @@
               {#each row.cells as cell (cell.id)}
                 <Subscribe attrs={cell.attrs()} let:attrs>
                   <Table.Cell class="[&:has([role=checkbox])]:pl-3" {...attrs}>
-                    {#if cell.id === "amount"}
-                      <div class="text-right font-medium">
+                    {#if cell.id === "Actions"}
+                      <div class="justify-between">
                         <Render of={cell.render()} />
                       </div>
                     {:else if cell.id === "status"}
