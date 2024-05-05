@@ -67,6 +67,8 @@ export const actions: Actions = {
       Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
       Nature_Of_Concern: `${data.Nature_Of_Concern}`,
       Status: "Pending",
+      Denial_Remark: "",
+      Session_Remarks: "",
     });
     return {
       form,
