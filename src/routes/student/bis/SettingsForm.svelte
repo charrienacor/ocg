@@ -924,7 +924,7 @@ export { className as class };
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Birth_Date">
+            <Form.Field {form} name="Birth_Date">
         <Form.Control let:attrs>
           <Form.Label>Date of Birth<br /></Form.Label>
           <Popover.Root>
@@ -1304,7 +1304,7 @@ export { className as class };
           <Input
             {...attrs}
             placeholder="Address"
-            bind:value={$formData.Address}
+            bind:value={$formData.GuardianAddress}
           />
         </Form.Control>
         <Form.FieldErrors />
@@ -1394,7 +1394,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Birthplace"
-              bind:value={$formData.Place_Of_Birth}
+              bind:value={$formData.Father_Place_Of_Birth}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1406,7 +1406,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Address"
-              bind:value={$formData.Address}
+              bind:value={$formData.FatherAddress}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1418,7 +1418,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="09XXXXXXXXX"
-              bind:value={$formData.Contact_Number}
+              bind:value={$formData.Father_Contact_Number}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1458,7 +1458,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Occupation"
-              bind:value={$formData.Occupation}
+              bind:value={$formData.FatherOccupation}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1470,7 +1470,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Monthly Income"
-              bind:value={$formData.Monthly_Income}
+              bind:value={$formData.Father_Monthly_Income}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1482,7 +1482,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Name of Employer"
-              bind:value={$formData.Employer_Name}
+              bind:value={$formData.Father_Employer_Name}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1494,7 +1494,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Address of Employer"
-              bind:value={$formData.Employer_Address}
+              bind:value={$formData.Father_Employer_Address}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1534,7 +1534,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="School or College"
-              bind:value={$formData.School}
+              bind:value={$formData.Father_School}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1546,7 +1546,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Dialects (ex. Bisaya, Ilocano) or Languages (ex. Filipino, English)"
-              bind:value={$formData.Languages}
+              bind:value={$formData.Father_Languages}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1612,7 +1612,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Birthplace"
-              bind:value={$formData.Place_Of_Birth}
+              bind:value={$formData.Mother_Place_Of_Birth}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1624,7 +1624,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Address"
-              bind:value={$formData.Address}
+              bind:value={$formData.Mother_Address}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1636,7 +1636,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="09XXXXXXXXX"
-              bind:value={$formData.Contact_Number}
+              bind:value={$formData.Mother_Contact_Number}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1676,7 +1676,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Occupation"
-              bind:value={$formData.Occupation}
+              bind:value={$formData.Mother_Occupation}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1688,7 +1688,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Monthly Income"
-              bind:value={$formData.Monthly_Income}
+              bind:value={$formData.Mother_Monthly_Income}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1700,7 +1700,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Name of Employer"
-              bind:value={$formData.Employer_Name}
+              bind:value={$formData.Mother_Employer_Name}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1752,7 +1752,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="School or College"
-              bind:value={$formData.School}
+              bind:value={$formData.Mother_School}
             />
           </Form.Control>
           <Form.FieldErrors />
@@ -1766,7 +1766,7 @@ export { className as class };
             <Input
               {...attrs}
               placeholder="Dialects (ex. Bisaya, Ilocano) or Languages (ex. Filipino, English)"
-              bind:value={$formData.Languages}
+              bind:value={$formData.Mother_Languages}
             />
           </Form.Control>
           <Form.FieldErrors />
