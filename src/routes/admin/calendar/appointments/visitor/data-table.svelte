@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { Render, Subscribe, createTable } from "svelte-headless-table";
+  import {
+    Render,
+    Subscribe,
+    createTable,
+    createRender,
+  } from "svelte-headless-table";
   import {
     addHiddenColumns,
     addSelectedRows,
@@ -13,6 +18,7 @@
   import { cn } from "$lib/utils.js";
   import { DateFormatter, type DateValue } from "@internationalized/date";
   import { Input } from "$lib/components/ui/input";
+  import Actions from "./data-table-actions.svelte";
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
@@ -53,7 +59,10 @@
     }),
     table.column({
       accessor: ({ _id }) => _id,
-      header: "",
+      header: "Actions",
+      cell: ({ value }) => {
+        return createRender(Actions, { _id: value });
+      },
     }),
   ]);
 
