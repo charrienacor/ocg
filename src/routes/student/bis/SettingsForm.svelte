@@ -3241,6 +3241,7 @@ let children = [
     <Form.FieldErrors />
   </Form.Field>
 </div>
+<Form.Button class="w-full mt-[20px] mb-[20px]">Upload Student Image</Form.Button>
 <Form.Button class="w-full">Submit</Form.Button>
 </form>
 </div>
