@@ -3,9 +3,7 @@ import { z } from "zod";
 
 export const formSchema = z.object({
   // Preliminaries
-  // Semester: z
-  //   .enum(Object.keys(semesters) as [Semester, ...Semester[]]),
-  
+
   Semester: z
     .string(),
 
@@ -41,10 +39,10 @@ export const formSchema = z.object({
     .regex(/^[a-zA-Z\s]+$/, { message: "This is required." })
     .max(100),
 
-  Sex: z
+  Student_Sex: z
     .string(),
 
-  Age: z
+  Student_Age: z
     .string()
     .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(2),
@@ -203,110 +201,20 @@ export const formSchema = z.object({
 
   // Children in the Familly
 
-  Name_1: z
-    .string(),
+  Name: z.array(z.string()),
 
-  Sex_1: z
-    .string(),
+  Sex: z.array(z.string()),
 
-  Age_1: z
-    .number({ invalid_type_error: "Age must be a number." }),
+  Age: z.array(z.string()),
 
-  Civil_Status_1: z
-    .string(),
+  Civil_Status: z.array(z.string()),
 
-  Educational_Attainment_1: z
-    .string(),
+  Educational_Attainment: z.array(z.string()),
 
-  Occupation_1: z
-    .string(),
+  Occupation: z.array(z.string()),
 
-  Residence_1: z
-    .string(),
+  Residence: z.array(z.string()),
 
-  Name_2: z
-    .string(),
-
-  Sex_2: z
-    .string(),
-
-  Age_2: z
-    .number({ invalid_type_error: "Age must be a number." }),
-
-  Civil_Status_2: z
-    .string(),
-
-  Educational_Attainment_2: z
-    .string(),
-
-  Occupation_2: z
-    .string(),
-
-  Residence_2: z
-    .string(),
-
-  Name_3: z
-    .string(),
-
-  Sex_3: z
-    .string(),
-
-  Age_3: z
-    .number({ invalid_type_error: "Age must be a number." }),
-
-  Civil_Status_3: z
-    .string(),
-
-  Educational_Attainment_3: z
-    .string(),
-
-  Occupation_3: z
-    .string(),
-
-  Residence_3: z
-    .string(),
-
-  Name_4: z
-    .string(),
-
-  Sex_4: z
-    .string(),
-
-  Age_4: z
-    .number({ invalid_type_error: "Age must be a number." }),
-
-  Civil_Status_4: z
-    .string(),
-
-  Educational_Attainment_4: z
-    .string(),
-
-  Occupation_4: z
-    .string(),
-
-  Residence_4: z
-    .string(),
-
-  Name_5: z
-    .string(),
-
-  Sex_5: z
-    .string(),
-
-  Age_5: z
-    .number({ invalid_type_error: "Age must be a number." }),
-
-  Civil_Status_5: z
-    .string(),
-
-  Educational_Attainment_5: z
-    .string(),
-
-  Occupation_5: z
-    .string(),
-
-  Residence_5: z
-    .string(),
   
   // Educational Background
 

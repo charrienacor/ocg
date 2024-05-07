@@ -106,7 +106,6 @@ const sexes = [
   { value: "male", label: "Male" },
 ];
 
-// add more options
 const nationalities = [
   { value: "Filipino", label: "Filipino" },
   { value: "American", label: "American" },
@@ -114,15 +113,6 @@ const nationalities = [
   { value: "Canadian", label: "Canadian" },
   { value: "Japanese", label: "Japanese" },
   { value: "Korean", label: "Korean" },
-];
-
-//add more options
-const citizenships = [
-  { value: "Filipino", label: "Filipino" },
-  { value: "American", label: "American" },
-  { value: "Australian", label: "Australian" },
-  { value: "Canadian", label: "Canadian" },
-  { value: "Japanese", label: "Japanese" },
 ];
 
 //add more options
@@ -139,25 +129,12 @@ const religions = [
   },
 ];
 
-const fatherLifeStatuses = [
+const lifeStatuses = [
   { value: "living", label: "Living" },
   { value: "deceased", label: "Deceased" },
 ];
 
-const fatherReligions = [
-  { value: "Buddhism", label: "Buddhism" },
-  { value: "Judaism", label: "Judaism" },
-  { value: "Hinduism", label: "Hinduism" },
-  { value: "Islam", label: "Islam" },
-  { value: "Catholic", label: "Catholic" },
-  { value: "Iglesia ni Cristo", label: "Iglesia ni Cristo" },
-  {
-    value: "Philippine Independent Church",
-    label: "Philippine Independent Church",
-  },
-];
-
-const fatherEducations = [
+const educations = [
   { value: "elem", label: "Elementary Graduate" },
   { value: "hs", label: "High School Graduate" },
   { value: "college", label: "College Graduate" },
@@ -166,59 +143,8 @@ const fatherEducations = [
   { value: "voc", label: "Vocational" },
 ];
 
-const motherLifeStatuses = [
-  { value: "living", label: "Living" },
-  { value: "deceased", label: "Deceased" },
-];
 
-const motherReligions = [
-  { value: "Buddhism", label: "Buddhism" },
-  { value: "Judaism", label: "Judaism" },
-  { value: "Hinduism", label: "Hinduism" },
-  { value: "Islam", label: "Islam" },
-  { value: "Catholic", label: "Catholic" },
-  { value: "Iglesia ni Cristo", label: "Iglesia ni Cristo" },
-  {
-    value: "Philippine Independent Church",
-    label: "Philippine Independent Church",
-  },
-];
-
-const motherEducations = [
-  { value: "elem", label: "Elementary Graduate" },
-  { value: "hs", label: "High School Graduate" },
-  { value: "college", label: "College Graduate" },
-  { value: "ma", label: "Master's Graduate" },
-  { value: "phd", label: "Doctorate's Graduate" },
-  { value: "voc", label: "Vocational" },
-];
-
-const sexes1 = [
-  { value: "female", label: "Female" },
-  { value: "male", label: "Male" },
-];
-
-const sexes2 = [
-  { value: "female", label: "Female" },
-  { value: "male", label: "Male" },
-];
-
-const sexes3 = [
-  { value: "female", label: "Female" },
-  { value: "male", label: "Male" },
-];
-
-const sexes4 = [
-  { value: "female", label: "Female" },
-  { value: "male", label: "Male" },
-];
-
-const sexes5 = [
-  { value: "female", label: "Female" },
-  { value: "male", label: "Male" },
-];
-
-const civilStatuses1 = [
+const civilStatuses = [
   { value: "single", label: "Single" },
   { value: "married", label: "Married" },
   { value: "widowed", label: "Widowed" },
@@ -226,75 +152,7 @@ const civilStatuses1 = [
   { value: "divorced", label: "Divorced" },
 ];
 
-const civilStatuses2 = [
-  { value: "single", label: "Single" },
-  { value: "married", label: "Married" },
-  { value: "widowed", label: "Widowed" },
-  { value: "separated", label: "Separated" },
-  { value: "divorced", label: "Divorced" },
-];
-
-const civilStatuses3 = [
-  { value: "single", label: "Single" },
-  { value: "married", label: "Married" },
-  { value: "widowed", label: "Widowed" },
-  { value: "separated", label: "Separated" },
-  { value: "divorced", label: "Divorced" },
-];
-
-const civilStatuses4 = [
-  { value: "single", label: "Single" },
-  { value: "married", label: "Married" },
-  { value: "widowed", label: "Widowed" },
-  { value: "separated", label: "Separated" },
-  { value: "divorced", label: "Divorced" },
-];
-
-const civilStatuses5 = [
-  { value: "single", label: "Single" },
-  { value: "married", label: "Married" },
-  { value: "widowed", label: "Widowed" },
-  { value: "separated", label: "Separated" },
-  { value: "divorced", label: "Divorced" },
-];
-
-const educationalAttainments1 = [
-{ value: "elem", label: "Elementary Graduate" },
-{ value: "hs", label: "High School Graduate" },
-{ value: "college", label: "College Graduate" },
-{ value: "ma", label: "Master's Graduate" },
-{ value: "phd", label: "Doctorate's Graduate" },
-{ value: "voc", label: "Vocational" },
-];
-
-const educationalAttainments2 = [
-{ value: "elem", label: "Elementary Graduate" },
-{ value: "hs", label: "High School Graduate" },
-{ value: "college", label: "College Graduate" },
-{ value: "ma", label: "Master's Graduate" },
-{ value: "phd", label: "Doctorate's Graduate" },
-{ value: "voc", label: "Vocational" },
-];
-
-const educationalAttainments3 = [
-{ value: "elem", label: "Elementary Graduate" },
-{ value: "hs", label: "High School Graduate" },
-{ value: "college", label: "College Graduate" },
-{ value: "ma", label: "Master's Graduate" },
-{ value: "phd", label: "Doctorate's Graduate" },
-{ value: "voc", label: "Vocational" },
-];
-
-const educationalAttainments4 = [
-{ value: "elem", label: "Elementary Graduate" },
-{ value: "hs", label: "High School Graduate" },
-{ value: "college", label: "College Graduate" },
-{ value: "ma", label: "Master's Graduate" },
-{ value: "phd", label: "Doctorate's Graduate" },
-{ value: "voc", label: "Vocational" },
-];
-
-const educationalAttainments5 = [
+const educationalAttainments = [
 { value: "elem", label: "Elementary Graduate" },
 { value: "hs", label: "High School Graduate" },
 { value: "college", label: "College Graduate" },
@@ -323,7 +181,7 @@ const honors = [
   { value: "honorable mention", label: "Honorable Mention" },
 ];
 
-const jhsNumStuds = [
+const numStuds = [
   { value: "less than 25", label: "Less than 25" },
   { value: "25-99", label: "25-99" },
   { value: "100-199", label: "100-199" },
@@ -332,27 +190,7 @@ const jhsNumStuds = [
   { value: "600 or more", label: "600 or more" },
 ];
 
-const shsNumStuds = [
-  { value: "less than 25", label: "Less than 25" },
-  { value: "25-99", label: "25-99" },
-  { value: "100-199", label: "100-199" },
-  { value: "200-399", label: "200-399" },
-  { value: "400-599", label: "400-599" },
-  { value: "600 or more", label: "600 or more" },
-];
-
-const firstCampuses = [
-  { value: "upd", label: "UP Diliman" },
-  { value: "uplb", label: "UP Los Banos" },
-  { value: "upb", label: "UP Baguio" },
-  { value: "upou", label: "UP Open University" },
-  { value: "upv", label: "UP Visayas" },
-  { value: "upc", label: "UP Cebu" },
-  { value: "upt", label: "UP Tacloban" },
-  { value: "upm", label: "UP Mindanao" },
-];
-
-const secondCampuses = [
+const campuses = [
   { value: "upd", label: "UP Diliman" },
   { value: "uplb", label: "UP Los Banos" },
   { value: "upb", label: "UP Baguio" },
@@ -375,34 +213,9 @@ const incomes = [
   { value: "60,000 - above", label: "60,000 - above" },
 ];
 
-const finishInUPBYNs = [
+const yesOrNos = [
   { value: "yes", label: "Yes" },
   { value: "no", label: "No" },
-];
-
-const courses = [
-  { value: "ba_comm", label: "Bachelor of Arts in Communication" },
-  { value: "cert_fa", label: "Certificate in Fine Arts" },
-  { value: "bfa", label: "Bachelor of Fine Arts" },
-  { value: "ba_ll", label: "Bachelor of Arts in Language and Literature" },
-  { value: "ma_ll", label: "Master of Arts in Language and Literature" },
-  { value: "bs_bio", label: "Bachelor of Science in Biology" },
-  { value: "bs_cmsc", label: "Bachelor of Science in Computer Science" },
-  { value: "bs_math", label: "Bachelor of Science in Mathematics" },
-  { value: "bs_phys", label: "Bachelor of Science in Physics" },
-  {
-    value: "ms_cre",
-    label: "Master of Science in Conservation and Restoration Ecology",
-  },
-  { value: "ms_math", label: "Master of Science in Mathematics" },
-  { value: "phd_math", label: "Ph.D. in Mathematics" },
-  { value: "ba_ss", label: "Bachelor of Arts in Social Sciences" },
-  { value: "bs_me", label: "Bachelor of Science in Management Economics" },
-  { value: "mm", label: "Master of Management" },
-  {
-    value: "ma_sds",
-    label: "Master of Arts in Social and Development Studies",
-  },
 ];
 
 const majors = [
@@ -410,16 +223,6 @@ const majors = [
   { value: "Economics", label: "Economics" },
   { value: "History", label: "History" },
   { value: "Anthropology", label: "Anthropology" },
-];
-
-const satisfactionYNs = [
-  { value: "yes", label: "Yes" },
-  { value: "no", label: "No" },
-];
-
-const readingYNs = [
-  { value: "yes", label: "Yes" },
-  { value: "no", label: "No" },
 ];
 
 $: selectedSem = $formData.Sem
@@ -443,10 +246,10 @@ $: selectedCollege = $formData.College
   }
 : undefined;
 
-$: selectedSex = $formData.Sex
+$: selectedStudentSex = $formData.StudentSex
 ? {
-    label: $formData.SexLabel,
-    value: $formData.Sex,
+    label: $formData.StudentSexLabel,
+    value: $formData.StudentSex,
   }
 : undefined;
 
@@ -514,110 +317,6 @@ $: selectedMotherHighestDegree = $formData.MotherHighestDegree
   }
 : undefined;
 
-$: selectedSex1 = $formData.Sex1
-  ? {
-      label: $formData.Sex1Label,
-      value: $formData.Sex1,
-    }
-  : undefined;
-
-$: selectedSex2 = $formData.Sex2
-  ? {
-      label: $formData.Sex2Label,
-      value: $formData.Sex2,
-    }
-  : undefined;
-
-$: selectedSex3 = $formData.Sex3
-  ? {
-      label: $formData.Sex3Label,
-      value: $formData.Sex3,
-    }
-  : undefined;
-
-$: selectedSex4 = $formData.Sex4
-  ? {
-      label: $formData.Sex4Label,
-      value: $formData.Sex4,
-    }
-  : undefined;
-
-$: selectedSex5 = $formData.Sex5
-  ? {
-      label: $formData.Sex5Label,
-      value: $formData.Sex5,
-    }
-  : undefined;
-
-$: selectedCivilStatus1 = $formData.CivilStatus1
-  ? {
-      label: $formData.CivilStatus1Label,
-      value: $formData.CivilStatus1,
-    }
-  : undefined;
-
-$: selectedCivilStatus2 = $formData.CivilStatus2
-  ? {
-      label: $formData.CivilStatus2Label,
-      value: $formData.CivilStatus2,
-    }
-  : undefined;
-
-$: selectedCivilStatus3 = $formData.CivilStatus3
-  ? {
-      label: $formData.CivilStatus3Label,
-      value: $formData.CivilStatus3,
-    }
-  : undefined;
-
-$: selectedCivilStatus4 = $formData.CivilStatus4
-  ? {
-      label: $formData.CivilStatus4Label,
-      value: $formData.CivilStatus4,
-    }
-  : undefined;
-
-$: selectedCivilStatus5 = $formData.CivilStatus5
-  ? {
-      label: $formData.CivilStatus5Label,
-      value: $formData.CivilStatus5,
-    }
-  : undefined;
-
-$: selectedEducAttain1 = $formData.EducAttain1
-  ? {
-      label: $formData.EducAttain1Label,
-      value: $formData.EducAttain1,
-    }
-  : undefined;
-
-$: selectedEducAttain2 = $formData.EducAttain2
-  ? {
-      label: $formData.EducAttain2Label,
-      value: $formData.EducAttain2,
-    }
-  : undefined;
-
-$: selectedEducAttain3 = $formData.EducAttain3
-  ? {
-      label: $formData.EducAttain3Label,
-      value: $formData.EducAttain3,
-    }
-  : undefined;
-
-$: selectedEducAttain4 = $formData.EducAttain4
-  ? {
-      label: $formData.EducAttain4Label,
-      value: $formData.EducAttain4,
-    }
-  : undefined;
-
-$: selectedEducAttain5 = $formData.EducAttain5
-  ? {
-      label: $formData.EducAttain5Label,
-      value: $formData.EducAttain5,
-    }
-  : undefined;
 
 $: selectedHSrank = $formData.HSrank
 ? {
@@ -727,6 +426,18 @@ $: defaultMonth = placeholder
 let className: $$Props["class"] = undefined;
 export { className as class };
 
+let children = [
+    { cName: "", 
+		  cSex: "", 
+		  cAge: "", 
+		  cCivil_Status: "", 
+		  cEducational_Attainment: "", 
+		  cOccupation: "", 
+		  cResidence: ""},
+  ];
+
+  const addChild = () => {
+  children = [...children, { cName: '', cSex: '', cAge: '', cCivil_Status: '', cEducational_Attainment: '', cOccupation: '', cResidence: '' }];};
 </script>
 
 <div class="relative mb-10 mt-5">
@@ -884,13 +595,13 @@ export { className as class };
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Sex">
+      <Form.Field {form} name="Student_Sex">
         <Form.Control let:attrs>
           <Form.Label>Sex</Form.Label>
           <Select.Root
-          selected={selectedSex}
+          selected={selectedStudentSex}
           onSelectedChange={(v) => {
-          v && ($formData.Sex = v.value) && ($formData.SexLabel = v.label);
+          v && ($formData.StudentSex = v.value) && ($formData.StudentSexLabel = v.label);
       }}>
         <Select.Trigger {...attrs}>
           <Select.Value placeholder="Select your sex." />
@@ -907,24 +618,24 @@ export { className as class };
           </Select.Group>
         </Select.Content>
         </Select.Root>
-        <input hidden bind:value={$formData.Sex} name={attrs.name} />
+        <input hidden bind:value={$formData.StudentSex} name={attrs.name} />
         </Form.Control>
         <Form.FieldErrors />
         </Form.Field> 
 
-      <Form.Field {form} name="Age">
+      <Form.Field {form} name="Student_Age">
         <Form.Control let:attrs>
           <Form.Label>Age</Form.Label>
           <Input
             {...attrs}
             placeholder="XX"
-            bind:value={$formData.Age}
+            bind:value={$formData.StudentAge}
           />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-            <Form.Field {form} name="Birth_Date">
+      <Form.Field {form} name="Birth_Date">
         <Form.Control let:attrs>
           <Form.Label>Date of Birth<br /></Form.Label>
           <Popover.Root>
@@ -1086,13 +797,13 @@ export { className as class };
           </Select.Trigger>
           <Select.Content>
             <Select.Group>
-              {#each citizenships as citizenship}
-                <Select.Item
-                  value={citizenship.value}
-                  label={citizenship.label}
-                  >{citizenship.label}</Select.Item
-                >
-              {/each}
+              {#each nationalities as nationality}
+              <Select.Item
+                value={nationality.value}
+                label={nationality.label}
+                >{nationality.label}</Select.Item
+              >
+            {/each}
             </Select.Group>
           </Select.Content>
           </Select.Root>
@@ -1206,574 +917,575 @@ export { className as class };
   </div> 
 
   <div
-    class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
-  >
-    <h1>Family Data</h1>
+  class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Family Data</h1>
 
-    <Form.Field {form} name="Parent_Status">
-      <Form.Control let:attrs>
-        <Form.Label
-          >Check any of the following that is applicable.(Checkbox)</Form.Label
+  <Form.Field {form} name="Parent_Status">
+    <Form.Control let:attrs>
+      <Form.Label
+        >Check any of the following that is applicable.(Checkbox)</Form.Label
+      >
+      <div class="gap-4 md:grid md:grid-cols-4">
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
         >
-        <div class="gap-4 md:grid md:grid-cols-4">
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Parents still married</label
           >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Parents still married</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Parents Separated</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Father re-married</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Mother re-married</label
-            >
-          </div>
         </div>
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Parents Separated</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Father re-married</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Mother re-married</label
+          >
+        </div>
+      </div>
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
 
-    <Form.Field {form} name="Guardian">
+  <Form.Field {form} name="Guardian">
+    <Form.Control let:attrs>
+      <Form.Label>Guardian (If not living with parents)</Form.Label>
+      <Input
+        {...attrs}
+        placeholder="Name of your Guardian"
+        bind:value={$formData.Guardian}
+      />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Guardian_Address">
       <Form.Control let:attrs>
-        <Form.Label>Guardian (If not living with parents)</Form.Label>
+        <Form.Label>Address</Form.Label>
         <Input
           {...attrs}
-          placeholder="Name of your Guardian"
-          bind:value={$formData.Guardian}
+          placeholder="Address"
+          bind:value={$formData.GuardianAddress}
         />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
 
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Guardian_Address">
+    <Form.Field {form} name="Guardian_Telephone_Number">
+      <Form.Control let:attrs>
+        <Form.Label>Telephone Number</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="09XXXXXXXXX"
+          bind:value={$formData.Telephone_Number}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
+
+  <hr />
+  <div class="grid grid-cols-2 gap-4">
+    <div
+      class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+    >
+      FATHER
+    </div>
+    <div
+      class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+    >
+      MOTHER
+    </div>
+
+    <div>
+      <Form.Field {form} name="Father_Name">
+        <Form.Control let:attrs>
+          <Form.Label>Name</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Name of Father"
+            bind:value={$formData.Father_Name}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Age">
+        <Form.Control let:attrs>
+          <Form.Label>Age</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="XX"
+            bind:value={$formData.FatherAge}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Living_Or_Dead">
+        <Form.Control let:attrs>
+          <Form.Label>Living or Deceased</Form.Label>
+          <Select.Root
+          selected={selectedFatherLifeStatus}
+          onSelectedChange={(v) => {
+          v && ($formData.FatherLifeStatus = v.value) && ($formData.FatherLifeStatusLabel = v.label);
+      }}>
+        <Select.Trigger {...attrs}>
+          <Select.Value placeholder="Select a status." />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each lifeStatuses as lifeStatus}
+              <Select.Item
+                value={lifeStatus.value}
+                label={lifeStatus.label}
+                >{lifeStatus.label}</Select.Item
+              >
+            {/each}
+          </Select.Group>
+        </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.FatherLifeStatus} name={attrs.name} />
+        </Form.Control>
+        <Form.FieldErrors />
+        </Form.Field> 
+
+      <Form.Field {form} name="Father_Place_Of_Birth">
+        <Form.Control let:attrs>
+          <Form.Label>Birthplace</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Birthplace"
+            bind:value={$formData.Father_Place_Of_Birth}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Address">
         <Form.Control let:attrs>
           <Form.Label>Address</Form.Label>
           <Input
             {...attrs}
             placeholder="Address"
-            bind:value={$formData.GuardianAddress}
+            bind:value={$formData.FatherAddress}
           />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Guardian_Telephone_Number">
+      <Form.Field {form} name="Father_Contact_Number">
         <Form.Control let:attrs>
-          <Form.Label>Telephone Number</Form.Label>
+          <Form.Label>Contact Number</Form.Label>
           <Input
             {...attrs}
             placeholder="09XXXXXXXXX"
-            bind:value={$formData.Telephone_Number}
+            bind:value={$formData.Father_Contact_Number}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Religion">
+        <Form.Control let:attrs>
+          <Form.Label>Religion</Form.Label>
+          <Select.Root
+          selected={selectedFatherReligion}
+          onSelectedChange={(v) => {
+          v && ($formData.FatherReligion = v.value) && ($formData.FatherReligionLabel = v.label);
+      }}>
+        <Select.Trigger {...attrs}>
+          <Select.Value placeholder="Select your father's religion." />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each religions as religion}
+            <Select.Item
+              value={religion.value}
+              label={religion.label}
+              >{religion.label}</Select.Item
+            >
+          {/each}
+          </Select.Group>
+        </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.FatherReligion} name={attrs.name} />
+        </Form.Control>
+        <Form.FieldErrors />
+        </Form.Field> 
+
+      <Form.Field {form} name="Father_Occupation">
+        <Form.Control let:attrs>
+          <Form.Label>Occupation</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Occupation"
+            bind:value={$formData.FatherOccupation}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Monthly_Income">
+        <Form.Control let:attrs>
+          <Form.Label>Monthly Income</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Monthly Income"
+            bind:value={$formData.Father_Monthly_Income}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Employer_Name">
+        <Form.Control let:attrs>
+          <Form.Label>Name of Employer</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Name of Employer"
+            bind:value={$formData.Father_Employer_Name}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Employer_Address">
+        <Form.Control let:attrs>
+          <Form.Label>Address of Employer</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Address of Employer"
+            bind:value={$formData.Father_Employer_Address}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+
+      <Form.Field {form} name="Father_Highest_Degree_Completed">
+        <Form.Control let:attrs>
+          <Form.Label>Highest Grade/Degree Completed</Form.Label>
+          <Select.Root
+          selected={selectedFatherHighestDegree}
+          onSelectedChange={(v) => {
+          v && ($formData.FatherHighestDegree = v.value) && ($formData.FatherHighestDegreeLabel = v.label);
+      }}>
+        <Select.Trigger {...attrs}>
+          <Select.Value placeholder="Select an option." />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each educations as education}
+              <Select.Item
+                value={education.value}
+                label={education.label}
+                >{education.label}</Select.Item
+              >
+            {/each}
+          </Select.Group>
+        </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.FatherHighestDegree} name={attrs.name} />
+        </Form.Control>
+        <Form.FieldErrors />
+        </Form.Field> 
+
+      <Form.Field {form} name="Father_School">
+        <Form.Control let:attrs>
+          <Form.Label>School or College</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="School or College"
+            bind:value={$formData.Father_School}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+      
+      <Form.Field {form} name="Father_Languages">
+        <Form.Control let:attrs>
+          <Form.Label>Dialects/Languages spoken at home</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Dialects (ex. Bisaya, Ilocano) or Languages (ex. Filipino, English)"
+            bind:value={$formData.Father_Languages}
           />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
     </div>
+    <div>
+      <Form.Field {form} name="Mother_Name">
+        <Form.Control let:attrs>
+          <Form.Label>Name</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Name of Mother"
+            bind:value={$formData.Mother_Name}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-    <hr />
-    <div class="grid grid-cols-2 gap-4">
-      <div
-        class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-      >
-        FATHER
-      </div>
-      <div
-        class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-      >
-        MOTHER
-      </div>
-      <div>
-        <Form.Field {form} name="Father_Name">
-          <Form.Control let:attrs>
-            <Form.Label>Name</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Name of Father"
-              bind:value={$formData.Father_Name}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Age">
+        <Form.Control let:attrs>
+          <Form.Label>Age</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="XX"
+            bind:value={$formData.MotherAge}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Father_Age">
-          <Form.Control let:attrs>
-            <Form.Label>Age</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="XX"
-              bind:value={$formData.FatherAge}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Living_Or_Dead">
-          <Form.Control let:attrs>
-            <Form.Label>Living or Deceased</Form.Label>
-            <Select.Root
-            selected={selectedFatherLifeStatus}
-            onSelectedChange={(v) => {
-            v && ($formData.FatherLifeStatus = v.value) && ($formData.FatherLifeStatusLabel = v.label);
-        }}>
-          <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select a status." />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each fatherLifeStatuses as fatherLifeStatus}
-                <Select.Item
-                  value={fatherLifeStatus.value}
-                  label={fatherLifeStatus.label}
-                  >{fatherLifeStatus.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.FatherLifeStatus} name={attrs.name} />
-          </Form.Control>
-          <Form.FieldErrors />
-          </Form.Field> 
-
-        <Form.Field {form} name="Father_Place_Of_Birth">
-          <Form.Control let:attrs>
-            <Form.Label>Birthplace</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Birthplace"
-              bind:value={$formData.Father_Place_Of_Birth}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Address">
-          <Form.Control let:attrs>
-            <Form.Label>Address</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Address"
-              bind:value={$formData.FatherAddress}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Contact_Number">
-          <Form.Control let:attrs>
-            <Form.Label>Contact Number</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="09XXXXXXXXX"
-              bind:value={$formData.Father_Contact_Number}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Religion">
-          <Form.Control let:attrs>
-            <Form.Label>Religion</Form.Label>
-            <Select.Root
-            selected={selectedFatherReligion}
-            onSelectedChange={(v) => {
-            v && ($formData.FatherReligion = v.value) && ($formData.FatherReligionLabel = v.label);
-        }}>
-          <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select your father's religion." />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each fatherReligions as fatherReligion}
-                <Select.Item
-                  value={fatherReligion.value}
-                  label={fatherReligion.label}
-                  >{fatherReligion.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.FatherReligion} name={attrs.name} />
-          </Form.Control>
-          <Form.FieldErrors />
-          </Form.Field> 
-
-        <Form.Field {form} name="Father_Occupation">
-          <Form.Control let:attrs>
-            <Form.Label>Occupation</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Occupation"
-              bind:value={$formData.FatherOccupation}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Monthly_Income">
-          <Form.Control let:attrs>
-            <Form.Label>Monthly Income</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Monthly Income"
-              bind:value={$formData.Father_Monthly_Income}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Employer_Name">
-          <Form.Control let:attrs>
-            <Form.Label>Name of Employer</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Name of Employer"
-              bind:value={$formData.Father_Employer_Name}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Employer_Address">
-          <Form.Control let:attrs>
-            <Form.Label>Address of Employer</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Address of Employer"
-              bind:value={$formData.Father_Employer_Address}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Father_Highest_Degree_Completed">
-          <Form.Control let:attrs>
-            <Form.Label>Highest Grade/Degree Completed</Form.Label>
-            <Select.Root
-            selected={selectedFatherHighestDegree}
-            onSelectedChange={(v) => {
-            v && ($formData.FatherHighestDegree = v.value) && ($formData.FatherHighestDegreeLabel = v.label);
-        }}>
-          <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select an option." />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each fatherEducations as fatherEducation}
-                <Select.Item
-                  value={fatherEducation.value}
-                  label={fatherEducation.label}
-                  >{fatherEducation.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.FatherHighestDegree} name={attrs.name} />
-          </Form.Control>
-          <Form.FieldErrors />
-          </Form.Field> 
-
-        <Form.Field {form} name="Father_School">
-          <Form.Control let:attrs>
-            <Form.Label>School or College</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="School or College"
-              bind:value={$formData.Father_School}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-        
-        <Form.Field {form} name="Father_Languages">
-          <Form.Control let:attrs>
-            <Form.Label>Dialects/Languages spoken at home</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Dialects (ex. Bisaya, Ilocano) or Languages (ex. Filipino, English)"
-              bind:value={$formData.Father_Languages}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-      </div>
-      <div>
-        <Form.Field {form} name="Mother_Name">
-          <Form.Control let:attrs>
-            <Form.Label>Name</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Name of Mother"
-              bind:value={$formData.Mother_Name}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Mother_Age">
-          <Form.Control let:attrs>
-            <Form.Label>Age</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="XX"
-              bind:value={$formData.MotherAge}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Mother_Living_Or_Dead">
-          <Form.Control let:attrs>
-            <Form.Label>Living or Deceased</Form.Label>
-            <Select.Root
-            selected={selectedMotherLifeStatus}
-            onSelectedChange={(v) => {
-            v && ($formData.MotherLifeStatus = v.value) && ($formData.MotherLifeStatusLabel = v.label);
-        }}>
-          <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select a status." />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each motherLifeStatuses as motherLifeStatus}
-                <Select.Item
-                  value={motherLifeStatus.value}
-                  label={motherLifeStatus.label}
-                  >{motherLifeStatus.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.MotherLifeStatus} name={attrs.name} />
-          </Form.Control>
-          <Form.FieldErrors />
-          </Form.Field> 
+      <Form.Field {form} name="Mother_Living_Or_Dead">
+        <Form.Control let:attrs>
+          <Form.Label>Living or Deceased</Form.Label>
+          <Select.Root
+          selected={selectedMotherLifeStatus}
+          onSelectedChange={(v) => {
+          v && ($formData.MotherLifeStatus = v.value) && ($formData.MotherLifeStatusLabel = v.label);
+      }}>
+        <Select.Trigger {...attrs}>
+          <Select.Value placeholder="Select a status." />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each lifeStatuses as lifeStatus}
+              <Select.Item
+                value={lifeStatus.value}
+                label={lifeStatus.label}
+                >{lifeStatus.label}</Select.Item
+              >
+            {/each}
+          </Select.Group>
+        </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.MotherLifeStatus} name={attrs.name} />
+        </Form.Control>
+        <Form.FieldErrors />
+        </Form.Field> 
 
 
-        <Form.Field {form} name="Mother_Place_Of_Birth">
-          <Form.Control let:attrs>
-            <Form.Label>Birthplace</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Birthplace"
-              bind:value={$formData.Mother_Place_Of_Birth}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Place_Of_Birth">
+        <Form.Control let:attrs>
+          <Form.Label>Birthplace</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Birthplace"
+            bind:value={$formData.Mother_Place_Of_Birth}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Mother_Address">
-          <Form.Control let:attrs>
-            <Form.Label>Address</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Address"
-              bind:value={$formData.Mother_Address}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Address">
+        <Form.Control let:attrs>
+          <Form.Label>Address</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Address"
+            bind:value={$formData.Mother_Address}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Mother_Contact_Number">
-          <Form.Control let:attrs>
-            <Form.Label>Contact Number</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="09XXXXXXXXX"
-              bind:value={$formData.Mother_Contact_Number}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Contact_Number">
+        <Form.Control let:attrs>
+          <Form.Label>Contact Number</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="09XXXXXXXXX"
+            bind:value={$formData.Mother_Contact_Number}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Mother_Religion">
-          <Form.Control let:attrs>
-            <Form.Label>Religion</Form.Label>
-            <Select.Root
-            selected={selectedMotherReligion}
-            onSelectedChange={(v) => {
-            v && ($formData.MotherReligion = v.value) && ($formData.MotherReligionLabel = v.label);
-        }}>
-          <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select your mother's religion." />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each motherReligions as motherReligion}
-                <Select.Item
-                  value={motherReligion.value}
-                  label={motherReligion.label}
-                  >{motherReligion.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.MotherReligion} name={attrs.name} />
-          </Form.Control>
-          <Form.FieldErrors />
-          </Form.Field> 
+      <Form.Field {form} name="Mother_Religion">
+        <Form.Control let:attrs>
+          <Form.Label>Religion</Form.Label>
+          <Select.Root
+          selected={selectedMotherReligion}
+          onSelectedChange={(v) => {
+          v && ($formData.MotherReligion = v.value) && ($formData.MotherReligionLabel = v.label);
+      }}>
+        <Select.Trigger {...attrs}>
+          <Select.Value placeholder="Select your mother's religion." />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each religions as religion}
+              <Select.Item
+                value={religion.value}
+                label={religion.label}
+                >{religion.label}</Select.Item
+              >
+            {/each}
+          </Select.Group>
+        </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.MotherReligion} name={attrs.name} />
+        </Form.Control>
+        <Form.FieldErrors />
+        </Form.Field> 
 
-        <Form.Field {form} name="Mother_Occupation">
-          <Form.Control let:attrs>
-            <Form.Label>Occupation</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Occupation"
-              bind:value={$formData.Mother_Occupation}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Occupation">
+        <Form.Control let:attrs>
+          <Form.Label>Occupation</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Occupation"
+            bind:value={$formData.Mother_Occupation}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Mother_Monthly_Income">
-          <Form.Control let:attrs>
-            <Form.Label>Monthly Income</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Monthly Income"
-              bind:value={$formData.Mother_Monthly_Income}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Monthly_Income">
+        <Form.Control let:attrs>
+          <Form.Label>Monthly Income</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Monthly Income"
+            bind:value={$formData.Mother_Monthly_Income}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Mother_Employer_Name">
-          <Form.Control let:attrs>
-            <Form.Label>Name of Employer</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Name of Employer"
-              bind:value={$formData.Mother_Employer_Name}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Employer_Name">
+        <Form.Control let:attrs>
+          <Form.Label>Name of Employer</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Name of Employer"
+            bind:value={$formData.Mother_Employer_Name}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Mother_Employer_Address">
-          <Form.Control let:attrs>
-            <Form.Label>Address of Employer</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Address of Employer"
-              bind:value={$formData.Employer_Address}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_Employer_Address">
+        <Form.Control let:attrs>
+          <Form.Label>Address of Employer</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Address of Employer"
+            bind:value={$formData.Employer_Address}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-        <Form.Field {form} name="Mother_Highest_Degree_Completed">
-          <Form.Control let:attrs>
-            <Form.Label>Highest Grade/Degree Completed</Form.Label>
-            <Select.Root
-            selected={selectedMotherHighestDegree}
-            onSelectedChange={(v) => {
-            v && ($formData.MotherHighestDegree = v.value) && ($formData.MotherHighestDegreeLabel = v.label);
-        }}>
-          <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select an option." />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each motherEducations as motherEducations}
-                <Select.Item
-                  value={motherEducations.value}
-                  label={motherEducations.label}
-                  >{motherEducations.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.MotherHighestDegree} name={attrs.name} />
-          </Form.Control>
-          <Form.FieldErrors />
-          </Form.Field> 
+      <Form.Field {form} name="Mother_Highest_Degree_Completed">
+        <Form.Control let:attrs>
+          <Form.Label>Highest Grade/Degree Completed</Form.Label>
+          <Select.Root
+          selected={selectedMotherHighestDegree}
+          onSelectedChange={(v) => {
+          v && ($formData.MotherHighestDegree = v.value) && ($formData.MotherHighestDegreeLabel = v.label);
+      }}>
+        <Select.Trigger {...attrs}>
+          <Select.Value placeholder="Select an option." />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each educations as education}
+              <Select.Item
+                value={education.value}
+                label={education.label}
+                >{education.label}</Select.Item
+              >
+            {/each}
+          </Select.Group>
+        </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.MotherHighestDegree} name={attrs.name} />
+        </Form.Control>
+        <Form.FieldErrors />
+        </Form.Field> 
 
-        <Form.Field {form} name="Mother_School">
-          <Form.Control let:attrs>
-            <Form.Label>School or College</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="School or College"
-              bind:value={$formData.Mother_School}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
+      <Form.Field {form} name="Mother_School">
+        <Form.Control let:attrs>
+          <Form.Label>School or College</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="School or College"
+            bind:value={$formData.Mother_School}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
 
-      <!-- pwedeng drop down but multiple languages/dialects could be selected -->
+    <!-- pwedeng drop down but multiple languages/dialects could be selected -->
 
-        <Form.Field {form} name="Mother_Languages">
-          <Form.Control let:attrs>
-            <Form.Label>Dialects/Languages spoken at home</Form.Label>
-            <Input
-              {...attrs}
-              placeholder="Dialects (ex. Bisaya, Ilocano) or Languages (ex. Filipino, English)"
-              bind:value={$formData.Mother_Languages}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-      </div>
+      <Form.Field {form} name="Mother_Languages">
+        <Form.Control let:attrs>
+          <Form.Label>Dialects/Languages spoken at home</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="Dialects (ex. Bisaya, Ilocano) or Languages (ex. Filipino, English)"
+            bind:value={$formData.Mother_Languages}
+          />
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
     </div>
   </div>
+</div>
 
   <div
     class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
@@ -1816,1334 +1528,144 @@ export { className as class };
         RESIDENCE
       </div>
 
-      <Form.Field {form} name="Name_1">
+      {#each children as child}
+      <Form.Field {form} name="Name">
         <Form.Control let:attrs>
           <Form.Label></Form.Label>
-          <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
+          <Input {...attrs} placeholder="Name" bind:value={child.cName} />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Sex_1">
-        <Form.Control let:attrs>
-          <Select.Root
-          selected={selectedSex1}
-          onSelectedChange={(v) => {
-          v && ($formData.Sex1 = v.value) && ($formData.Sex1Label = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each sexes1 as sex1}
-              <Select.Item
-                value={sex1.value}
-                label={sex1.label}
-                >{sex1.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.Sex1} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field>
-
-      <Form.Field {form} name="Age_1">
+      <Form.Field {form} name="Sex">
         <Form.Control let:attrs>
           <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="XX"
-            bind:value={$formData.Age1}
-          />
+          <Input {...attrs} placeholder="Sex" bind:value={child.cSex} />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Civil_Status_1">
-        <Form.Control let:attrs>
-          <Select.Root
-          selected={selectedCivilStatus1}
-          onSelectedChange={(v) => {
-          v && ($formData.CivilStatus1 = v.value) && ($formData.CivilStatus1Label = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each civilStatuses1 as civilStatus1}
-              <Select.Item
-                value={civilStatus1.value}
-                label={civilStatus1.label}
-                >{civilStatus1.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.CivilStatus1} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field>
-
-        <Form.Field {form} name="Educational_Attainment_1">
-          <Form.Control let:attrs>
-            <Select.Root
-            selected={selectedEducAttain1}
-            onSelectedChange={(v) => {
-            v && ($formData.EducAttain1 = v.value) && ($formData.EducAttain1Label = v.label);
-        }}>
-          <Select.Trigger {...attrs}>
-            <Select.Value placeholder="Select" />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each educationalAttainments1 as educationalAttainment1}
-                <Select.Item
-                  value={educationalAttainment1.value}
-                  label={educationalAttainment1.label}
-                  >{educationalAttainment1.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.EducAttain1} name={attrs.name} />
-          </Form.Control>
-          <Form.FieldErrors />
-          </Form.Field>
-
-      <Form.Field {form} name="Occupation_1">
+      <Form.Field {form} name="Age">
         <Form.Control let:attrs>
           <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Occupation"
-            bind:value={$formData.Occupation1}
-          />
+          <Input {...attrs} placeholder="XX" bind:value={child.cAge} />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Residence_1">
+      <Form.Field {form} name="Civil_Status">
         <Form.Control let:attrs>
           <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Residence"
-            bind:value={$formData.Residence1}
-          />
+          <Input {...attrs} placeholder="Civil Status" bind:value={child.cCivil_Status} />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Name_2">
+      <Form.Field {form} name="Educational_Attainment">
         <Form.Control let:attrs>
           <Form.Label></Form.Label>
-          <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
+          <Input {...attrs} placeholder="Educational Attainment" bind:value={child.cEducational_Attainment} />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Sex_2">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedSex2} onSelectedChange={(v) => {
-            v && ($formData.Sex2 = v.value) && ($formData.Sex2Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each sexes2 as sex2}
-                  <Select.Item value={sex2.value} label={sex2.label}>{sex2.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.Sex2} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-      
-      <Form.Field {form} name="Age_2">
+      <Form.Field {form} name="Occupation">
         <Form.Control let:attrs>
           <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="XX"
-            bind:value={$formData.Age2}
-          />
+          <Input {...attrs} placeholder="Occupation" bind:value={child.cOccupation} />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Civil_Status_2">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedCivilStatus2} onSelectedChange={(v) => {
-            v && ($formData.CivilStatus2 = v.value) && ($formData.CivilStatus2Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each civilStatuses2 as civilStatus2}
-                  <Select.Item value={civilStatus2.value} label={civilStatus2.label}>{civilStatus2.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.CivilStatus2} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Educational_Attainment_2">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedEducAttain2} onSelectedChange={(v) => {
-            v && ($formData.EducAttain2 = v.value) && ($formData.EducAttain2Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each educationalAttainments2 as educationalAttainment2}
-                  <Select.Item value={educationalAttainment2.value} label={educationalAttainment2.label}>{educationalAttainment2.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.EducAttain2} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Occupation_2">
+      <Form.Field {form} name="Residence">
         <Form.Control let:attrs>
           <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Occupation"
-            bind:value={$formData.Occupation2}
-          />
+          <Input {...attrs} placeholder="Residence" bind:value={child.cResidence} />
         </Form.Control>
         <Form.FieldErrors />
       </Form.Field>
 
-      <Form.Field {form} name="Residence_2">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Residence"
-            bind:value={$formData.Residence2}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-      <Form.Field {form} name="Name_3">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
+      {/each}
+    
+      <Button on:click={addChild} class="w-full">Add</Button> 
 
-      <Form.Field {form} name="Sex_3">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedSex3} onSelectedChange={(v) => {
-            v && ($formData.Sex3 = v.value) && ($formData.Sex3Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each sexes3 as sex3}
-                  <Select.Item value={sex3.value} label={sex3.label}>{sex3.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.Sex3} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Age_3">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="XX"
-            bind:value={$formData.Age3}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Civil_Status_3">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedCivilStatus3} onSelectedChange={(v) => {
-            v && ($formData.CivilStatus3 = v.value) && ($formData.CivilStatus3Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each civilStatuses3 as civilStatus3}
-                  <Select.Item value={civilStatus3.value} label={civilStatus3.label}>{civilStatus3.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.CivilStatus3} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Educational_Attainment_3">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedEducAttain3} onSelectedChange={(v) => {
-            v && ($formData.EducAttain3 = v.value) && ($formData.EducAttain3Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each educationalAttainments3 as educationalAttainment3}
-                  <Select.Item value={educationalAttainment3.value} label={educationalAttainment3.label}>{educationalAttainment3.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.EducAttain3} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Occupation_3">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Occupation"
-            bind:value={$formData.Occupation3}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Residence_3">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Residence"
-            bind:value={$formData.Residence3}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Name_4">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Sex_4">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedSex4} onSelectedChange={(v) => {
-            v && ($formData.Sex4 = v.value) && ($formData.Sex4Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each sexes4 as sex4}
-                  <Select.Item value={sex4.value} label={sex4.label}>{sex4.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.Sex4} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Age_4">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="XX"
-            bind:value={$formData.Age4}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Civil_Status_4">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedCivilStatus4} onSelectedChange={(v) => {
-            v && ($formData.CivilStatus4 = v.value) && ($formData.CivilStatus4Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each civilStatuses4 as civilStatus4}
-                  <Select.Item value={civilStatus4.value} label={civilStatus4.label}>{civilStatus4.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.CivilStatus4} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-      
-      <Form.Field {form} name="Educational_Attainment_4">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedEducAttain4} onSelectedChange={(v) => {
-            v && ($formData.EducAttain4 = v.value) && ($formData.EducAttain4Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each educationalAttainments4 as educationalAttainment4}
-                  <Select.Item value={educationalAttainment4.value} label={educationalAttainment4.label}>{educationalAttainment4.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.EducAttain4} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Occupation_4">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Occupation"
-            bind:value={$formData.Occupation4}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Residence_4">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Residence"
-            bind:value={$formData.Residence4}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Name_5">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input {...attrs} placeholder="Name" bind:value={$formData.Name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Sex_5">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedSex5} onSelectedChange={(v) => {
-            v && ($formData.Sex5 = v.value) && ($formData.Sex5Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each sexes5 as sex5}
-                  <Select.Item value={sex5.value} label={sex5.label}>{sex5.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.Sex5} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Age_5">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="XX"
-            bind:value={$formData.Age5}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Civil_Status_5">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedCivilStatus5} onSelectedChange={(v) => {
-            v && ($formData.CivilStatus5 = v.value) && ($formData.CivilStatus5Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each civilStatuses5 as civilStatus5}
-                  <Select.Item value={civilStatus5.value} label={civilStatus5.label}>{civilStatus5.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.CivilStatus5} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Educational_Attainment_5">
-        <Form.Control let:attrs>
-          <Select.Root selected={selectedEducAttain5} onSelectedChange={(v) => {
-            v && ($formData.EducAttain5 = v.value) && ($formData.EducAttain5Label = v.label);
-          }}>
-            <Select.Trigger {...attrs}>
-              <Select.Value placeholder="Select" />
-            </Select.Trigger>
-            <Select.Content>
-              <Select.Group>
-                {#each educationalAttainments5 as educationalAttainment5}
-                  <Select.Item value={educationalAttainment5.value} label={educationalAttainment5.label}>{educationalAttainment5.label}</Select.Item>
-                {/each}
-              </Select.Group>
-            </Select.Content>
-          </Select.Root>
-          <input hidden bind:value={$formData.EducAttain5} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Occupation_5">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Occupation"
-            bind:value={$formData.Occupation5}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Residence_5">
-        <Form.Control let:attrs>
-          <Form.Label></Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Residence"
-            bind:value={$formData.Residence5}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
     </div>
   </div>
 
   <div
-    class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
-  >
-    <h1>Educational Background</h1>
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Elementary_School">
-        <Form.Control let:attrs>
-          <Form.Label>Elementary School</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Name of School"
-            bind:value={$formData.Elementary_School}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Elementary_School_Location">
-        <Form.Control let:attrs>
-          <Form.Label>Location</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Location of Elementary School"
-            bind:value={$formData.Elementary_School_Location}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-
-    <hr />
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Junior_High_School">
-        <Form.Control let:attrs>
-          <Form.Label>Junior High School</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Name of Junior High School"
-            bind:value={$formData.Junior_High_School}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Junior_High_School_Location">
-        <Form.Control let:attrs>
-          <Form.Label>Location</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Location of Junior High School"
-            bind:value={$formData.Junior_High_School_Location}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-
-    <Form.Field {form} name="JHS_Type">
+  class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Educational Background</h1>
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Elementary_School">
       <Form.Control let:attrs>
-        <Form.Label>Type of Junior High School</Form.Label>
-        <div class="grid grid-cols-2 gap-4">
-          <div
-            class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-          >
-            PRIVATE
-          </div>
-          <div
-            class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-          >
-            PUBLIC
-          </div>
-        </div>
-        <div class="gap-4 md:grid md:grid-cols-2">
-          <div class="gap-4 md:grid md:grid-cols-2">
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Exclusive</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Co-ed</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Sectarian</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Non-sectarian</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Vocational/Technical</label
-              >
-            </div>
-          </div>
-
-          <div class="gap-4 md:grid md:grid-cols-2">
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >City</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >National</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Provincial</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Barangay</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Agricultural</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Technical/Vocational</label
-              >
-            </div>
-          </div>
-        </div>
+        <Form.Label>Elementary School</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Name of School"
+          bind:value={$formData.Elementary_School}
+        />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
 
-    <Form.Field {form} name="Junior_Number_Of_Students">
+    <Form.Field {form} name="Elementary_School_Location">
       <Form.Control let:attrs>
-        <Form.Label>The number of students in my Junior High School graduating class
-          was:</Form.Label>
-        <Select.Root
-        selected={selectedJHSNumStud}
-        onSelectedChange={(v) => {
-        v && ($formData.JHSNumStud = v.value) && ($formData.JHSNumStudLabel = v.label);
-    }}>
-      <Select.Trigger {...attrs}>
-        <Select.Value placeholder="Select an option." />
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Group>
-          {#each jhsNumStuds as jhsNumStud}
-            <Select.Item
-              value={jhsNumStud.value}
-              label={jhsNumStud.label}
-              >{jhsNumStud.label}</Select.Item
-            >
-          {/each}
-        </Select.Group>
-      </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.JHSNumStud} name={attrs.name} />
-      </Form.Control>
-      <Form.FieldErrors />
-      </Form.Field> 
-
-    <hr />
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Senior_High_School">
-        <Form.Control let:attrs>
-          <Form.Label>Senior High School</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Name of Senior High School"
-            bind:value={$formData.Senior_High_School}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Senior_High_School_Location">
-        <Form.Control let:attrs>
-          <Form.Label>Location</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Location of Senior High School"
-            bind:value={$formData.Senior_High_School_Location}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-
-    <Form.Field {form} name="SHS_Type">
-      <Form.Control let:attrs>
-        <Form.Label>Type of Senior High School</Form.Label>
-        <div class="grid grid-cols-2 gap-4">
-          <div
-            class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-          >
-            PRIVATE
-          </div>
-          <div
-            class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-          >
-            PUBLIC
-          </div>
-        </div>
-        <div class="gap-4 md:grid md:grid-cols-2">
-          <div class="gap-4 md:grid md:grid-cols-2">
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Exclusive</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Co-ed</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Sectarian</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Non-sectarian</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Vocational/Technical</label
-              >
-            </div>
-          </div>
-
-          <div class="gap-4 md:grid md:grid-cols-2">
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >City</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >National</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Provincial</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Barangay</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Agricultural</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Technical/Vocational</label
-              >
-            </div>
-          </div>
-        </div>
+        <Form.Label>Location</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Location of Elementary School"
+          bind:value={$formData.Elementary_School_Location}
+        />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
-
-    <Form.Field {form} name="Senior_Number_Of_Students">
-      <Form.Control let:attrs>
-        <Form.Label>The number of students in my Senior High School graduating class
-          was:</Form.Label>
-        <Select.Root
-        selected={selectedSHSNumStud}
-        onSelectedChange={(v) => {
-        v && ($formData.SHSNumStud = v.value) && ($formData.SHSNumStudLabel = v.label);
-    }}>
-      <Select.Trigger {...attrs}>
-        <Select.Value placeholder="Select an option." />
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Group>
-          {#each shsNumStuds as shsNumStud}
-            <Select.Item
-              value={shsNumStud.value}
-              label={shsNumStud.label}
-              >{shsNumStud.label}</Select.Item
-            >
-          {/each}
-        </Select.Group>
-      </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.SHSNumStud} name={attrs.name} />
-      </Form.Control>
-      <Form.FieldErrors />
-      </Form.Field> 
-
-    <hr />
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="HS_Rank">
-        <Form.Control let:attrs>
-          <Form.Label>My rank in High School was (if not sure, give your best
-            estimate):</Form.Label>
-          <Select.Root
-          selected={selectedHSrank}
-          onSelectedChange={(v) => {
-          v && ($formData.HSrank = v.value) && ($formData.HSrankLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select an option." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each hsRanks as hsRank}
-              <Select.Item
-                value={hsRank.value}
-                label={hsRank.label}
-                >{hsRank.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.HSrank} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="School_Ave">
-        <Form.Control let:attrs>
-          <Form.Label>My overall school average was:</Form.Label>
-          <Select.Root
-          selected={selectedSchoolAve}
-          onSelectedChange={(v) => {
-          v && ($formData.SchoolAve = v.value) && ($formData.SchoolAveLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select an option." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each schoolAves as schoolAve}
-              <Select.Item
-                value={schoolAve.value}
-                label={schoolAve.label}
-                >{schoolAve.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.SchoolAve} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="Honors">
-        <Form.Control let:attrs>
-          <Form.Label>Honors Received:</Form.Label>
-          <Select.Root
-          selected={selectedHonor}
-          onSelectedChange={(v) => {
-          v && ($formData.Honor = v.value) && ($formData.HonorLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select an option." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each honors as honor}
-              <Select.Item
-                value={honor.value}
-                label={honor.label}
-                >{honor.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.Honor} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="Awards">
-        <Form.Control let:attrs>
-          <Form.Label>Other Awards/Honors Received:</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Awards/Honors"
-            bind:value={$formData.Awards}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-    <hr />
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="First_Campus">
-        <Form.Control let:attrs>
-          <Form.Label>First Choice of Campus</Form.Label>
-          <Select.Root
-          selected={selectedFirstCampus}
-          onSelectedChange={(v) => {
-          v && ($formData.FirstCampus = v.value) && ($formData.FirstCampusLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select your second choice." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each firstCampuses as firstCampus}
-              <Select.Item
-                value={firstCampus.value}
-                label={firstCampus.label}
-                >{firstCampus.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.FirstCampus} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="First_Campus_Reason">
-        <Form.Control let:attrs>
-          <Form.Label>Reason/s</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Reason/s"
-            bind:value={$formData.Reason}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Second_Campus">
-        <Form.Control let:attrs>
-          <Form.Label>Second Choice of Campus</Form.Label>
-          <Select.Root
-          selected={selectedSecondCampus}
-          onSelectedChange={(v) => {
-          v && ($formData.SecondCampus = v.value) && ($formData.SecondCampusLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select your second choice." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each secondCampuses as secondCampus}
-              <Select.Item
-                value={secondCampus.value}
-                label={secondCampus.label}
-                >{secondCampus.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.SecondCampus} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="Second_Campus_Reason">
-        <Form.Control let:attrs>
-          <Form.Label>Reason/s</Form.Label>
-          <Input
-            {...attrs}
-            placeholder="Reason/s"
-            bind:value={$formData.Reason}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
   </div>
 
-  <div
-    class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
-  >
-    <h1>Financial Information</h1>
-    <p class="mb-4">
-      To plan financial programs for entering students, schools need to know
-      the financial background of their students. Please estimate as
-      accurately as you can your family's <b>MONTHLY</b> income.
-    </p>
-
-    <Form.Field {form} name="Income">
+  <hr />
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Junior_High_School">
       <Form.Control let:attrs>
-        <Form.Label>Family's Monthly Income</Form.Label>
-        <Select.Root
-        selected={selectedIncome}
-        onSelectedChange={(v) => {
-        v && ($formData.Income = v.value) && ($formData.IncomeLabel = v.label);
-    }}>
-      <Select.Trigger {...attrs}>
-        <Select.Value placeholder="Select your family's monthly income." />
-      </Select.Trigger>
-      <Select.Content>
-        <Select.Group>
-          {#each incomes as income}
-            <Select.Item
-              value={income.value}
-              label={income.label}
-              >{income.label}</Select.Item
-            >
-          {/each}
-        </Select.Group>
-      </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.Income} name={attrs.name} />
+        <Form.Label>Junior High School</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Name of Junior High School"
+          bind:value={$formData.Junior_High_School}
+        />
       </Form.Control>
       <Form.FieldErrors />
-      </Form.Field> 
+    </Form.Field>
 
-    <Form.Field {form} name="Source_Of_Income">
+    <Form.Field {form} name="Junior_High_School_Location">
       <Form.Control let:attrs>
-        <Form.Label
-          >What is/are the source/s of your family's income? (Check as many
-          that applies)</Form.Label
+        <Form.Label>Location</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Location of Junior High School"
+          bind:value={$formData.Junior_High_School_Location}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
+
+  <Form.Field {form} name="JHS_Type">
+    <Form.Control let:attrs>
+      <Form.Label>Type of Junior High School</Form.Label>
+      <div class="grid grid-cols-2 gap-4">
+        <div
+          class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
         >
-        <div class="gap-4 md:grid md:grid-cols-5">
+          PRIVATE
+        </div>
+        <div
+          class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+        >
+          PUBLIC
+        </div>
+      </div>
+      <div class="gap-4 md:grid md:grid-cols-2">
+        <div class="gap-4 md:grid md:grid-cols-2">
           <div
             class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
           >
@@ -3157,7 +1679,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >None</label
+              >Exclusive</label
             >
           </div>
           <div
@@ -3173,7 +1695,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Salaries/Wages</label
+              >Co-ed</label
             >
           </div>
           <div
@@ -3189,7 +1711,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Farming/Fishing</label
+              >Sectarian</label
             >
           </div>
           <div
@@ -3205,7 +1727,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Own Business</label
+              >Non-sectarian</label
             >
           </div>
           <div
@@ -3221,18 +1743,894 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Pension</label
+              >Vocational/Technical</label
             >
           </div>
         </div>
+
+        <div class="gap-4 md:grid md:grid-cols-2">
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >City</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >National</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Provincial</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Barangay</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Agricultural</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Technical/Vocational</label
+            >
+          </div>
+        </div>
+      </div>
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Junior_Number_Of_Students">
+    <Form.Control let:attrs>
+      <Form.Label>The number of students in my Junior High School graduating class
+        was:</Form.Label>
+      <Select.Root
+      selected={selectedJHSNumStud}
+      onSelectedChange={(v) => {
+      v && ($formData.JHSNumStud = v.value) && ($formData.JHSNumStudLabel = v.label);
+  }}>
+    <Select.Trigger {...attrs}>
+      <Select.Value placeholder="Select an option." />
+    </Select.Trigger>
+    <Select.Content>
+      <Select.Group>
+        {#each numStuds as numStud}
+          <Select.Item
+            value={numStud.value}
+            label={numStud.label}
+            >{numStud.label}</Select.Item
+          >
+        {/each}
+      </Select.Group>
+    </Select.Content>
+    </Select.Root>
+    <input hidden bind:value={$formData.JHSNumStud} name={attrs.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+    </Form.Field> 
+
+  <hr />
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Senior_High_School">
+      <Form.Control let:attrs>
+        <Form.Label>Senior High School</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Name of Senior High School"
+          bind:value={$formData.Senior_High_School}
+        />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
 
-    <Form.Field {form} name="Other_Sources_Of_Income">
+    <Form.Field {form} name="Senior_High_School_Location">
+      <Form.Control let:attrs>
+        <Form.Label>Location</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Location of Senior High School"
+          bind:value={$formData.Senior_High_School_Location}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
+
+  <Form.Field {form} name="SHS_Type">
+    <Form.Control let:attrs>
+      <Form.Label>Type of Senior High School</Form.Label>
+      <div class="grid grid-cols-2 gap-4">
+        <div
+          class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+        >
+          PRIVATE
+        </div>
+        <div
+          class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+        >
+          PUBLIC
+        </div>
+      </div>
+      <div class="gap-4 md:grid md:grid-cols-2">
+        <div class="gap-4 md:grid md:grid-cols-2">
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Exclusive</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Co-ed</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Sectarian</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Non-sectarian</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Vocational/Technical</label
+            >
+          </div>
+        </div>
+
+        <div class="gap-4 md:grid md:grid-cols-2">
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >City</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >National</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Provincial</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Barangay</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Agricultural</label
+            >
+          </div>
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Technical/Vocational</label
+            >
+          </div>
+        </div>
+      </div>
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Senior_Number_Of_Students">
+    <Form.Control let:attrs>
+      <Form.Label>The number of students in my Senior High School graduating class
+        was:</Form.Label>
+      <Select.Root
+      selected={selectedSHSNumStud}
+      onSelectedChange={(v) => {
+      v && ($formData.SHSNumStud = v.value) && ($formData.SHSNumStudLabel = v.label);
+  }}>
+    <Select.Trigger {...attrs}>
+      <Select.Value placeholder="Select an option." />
+    </Select.Trigger>
+    <Select.Content>
+      <Select.Group>
+        {#each numStuds as numStud}
+          <Select.Item
+            value={numStud.value}
+            label={numStud.label}
+            >{numStud.label}</Select.Item
+          >
+        {/each}
+      </Select.Group>
+    </Select.Content>
+    </Select.Root>
+    <input hidden bind:value={$formData.SHSNumStud} name={attrs.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+    </Form.Field> 
+
+  <hr />
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="HS_Rank">
+      <Form.Control let:attrs>
+        <Form.Label>My rank in High School was (if not sure, give your best
+          estimate):</Form.Label>
+        <Select.Root
+        selected={selectedHSrank}
+        onSelectedChange={(v) => {
+        v && ($formData.HSrank = v.value) && ($formData.HSrankLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select an option." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each hsRanks as hsRank}
+            <Select.Item
+              value={hsRank.value}
+              label={hsRank.label}
+              >{hsRank.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.HSrank} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+
+    <Form.Field {form} name="School_Ave">
+      <Form.Control let:attrs>
+        <Form.Label>My overall school average was:</Form.Label>
+        <Select.Root
+        selected={selectedSchoolAve}
+        onSelectedChange={(v) => {
+        v && ($formData.SchoolAve = v.value) && ($formData.SchoolAveLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select an option." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each schoolAves as schoolAve}
+            <Select.Item
+              value={schoolAve.value}
+              label={schoolAve.label}
+              >{schoolAve.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.SchoolAve} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+
+    <Form.Field {form} name="Honors">
+      <Form.Control let:attrs>
+        <Form.Label>Honors Received:</Form.Label>
+        <Select.Root
+        selected={selectedHonor}
+        onSelectedChange={(v) => {
+        v && ($formData.Honor = v.value) && ($formData.HonorLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select an option." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each honors as honor}
+            <Select.Item
+              value={honor.value}
+              label={honor.label}
+              >{honor.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.Honor} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+
+    <Form.Field {form} name="Awards">
+      <Form.Control let:attrs>
+        <Form.Label>Other Awards/Honors Received:</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Awards/Honors"
+          bind:value={$formData.Awards}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
+  <hr />
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="First_Campus">
+      <Form.Control let:attrs>
+        <Form.Label>First Choice of Campus</Form.Label>
+        <Select.Root
+        selected={selectedFirstCampus}
+        onSelectedChange={(v) => {
+        v && ($formData.FirstCampus = v.value) && ($formData.FirstCampusLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select your second choice." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each campuses as campus}
+            <Select.Item
+              value={campus.value}
+              label={campus.label}
+              >{campus.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.FirstCampus} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+
+    <Form.Field {form} name="First_Campus_Reason">
+      <Form.Control let:attrs>
+        <Form.Label>Reason/s</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Reason/s"
+          bind:value={$formData.Reason}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Second_Campus">
+      <Form.Control let:attrs>
+        <Form.Label>Second Choice of Campus</Form.Label>
+        <Select.Root
+        selected={selectedSecondCampus}
+        onSelectedChange={(v) => {
+        v && ($formData.SecondCampus = v.value) && ($formData.SecondCampusLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select your second choice." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each campuses as campus}
+            <Select.Item
+              value={campus.value}
+              label={campus.label}
+              >{campus.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.SecondCampus} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+
+    <Form.Field {form} name="Second_Campus_Reason">
+      <Form.Control let:attrs>
+        <Form.Label>Reason/s</Form.Label>
+        <Input
+          {...attrs}
+          placeholder="Reason/s"
+          bind:value={$formData.Reason}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
+</div>
+
+<div
+  class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Financial Information</h1>
+  <p class="mb-4">
+    To plan financial programs for entering students, schools need to know
+    the financial background of their students. Please estimate as
+    accurately as you can your family's <b>MONTHLY</b> income.
+  </p>
+
+  <Form.Field {form} name="Income">
+    <Form.Control let:attrs>
+      <Form.Label>Family's Monthly Income</Form.Label>
+      <Select.Root
+      selected={selectedIncome}
+      onSelectedChange={(v) => {
+      v && ($formData.Income = v.value) && ($formData.IncomeLabel = v.label);
+  }}>
+    <Select.Trigger {...attrs}>
+      <Select.Value placeholder="Select your family's monthly income." />
+    </Select.Trigger>
+    <Select.Content>
+      <Select.Group>
+        {#each incomes as income}
+          <Select.Item
+            value={income.value}
+            label={income.label}
+            >{income.label}</Select.Item
+          >
+        {/each}
+      </Select.Group>
+    </Select.Content>
+    </Select.Root>
+    <input hidden bind:value={$formData.Income} name={attrs.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+    </Form.Field> 
+
+  <Form.Field {form} name="Source_Of_Income">
+    <Form.Control let:attrs>
+      <Form.Label
+        >What is/are the source/s of your family's income? (Check as many
+        that applies)</Form.Label
+      >
+      <div class="gap-4 md:grid md:grid-cols-5">
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >None</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Salaries/Wages</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Farming/Fishing</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Own Business</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Pension</label
+          >
+        </div>
+      </div>
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Other_Sources_Of_Income">
+    <Form.Control let:attrs>
+      <Form.Label
+        >Other sources of income of your family that was not stated above.</Form.Label
+      >
+      <Input
+        {...attrs}
+        placeholder=""
+        bind:value={$formData.other_sources}
+      />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Allowance">
+    <Form.Control let:attrs>
+      <Form.Label
+        >Indicate the allowance you expect to receive <b
+          >monthly (EXCLUDING</b
+        > board & lodging)
+      </Form.Label>
+      <Input {...attrs} placeholder="PhP" bind:value={$formData.Guardian} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Source_Of_Allowance">
+    <Form.Control let:attrs>
+      <Form.Label>Check below the source/s of your allowances</Form.Label>
+      <div class="gap-4 md:grid md:grid-cols-2">
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Parents and/or relatives</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Study-now-pay-later plan</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Student Assistantship</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Scholarship/Fellowship (specify)</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Part-time work outside of UP</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Savings from previous earnings</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >STFAP (specify bracket)</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Other forms of financial aid from outside sources (e.g. private
+            endowment)</label
+          >
+        </div>
+      </div>
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Specifics">
       <Form.Control let:attrs>
         <Form.Label
-          >Other sources of income of your family that was not stated above.</Form.Label
+          >Specify details of checked options stated above (ex.
+          Scholarship/STFAP).</Form.Label
+        >
+        <Input {...attrs} placeholder="" bind:value={$formData.specifics} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Other_Sources_Of_Allowance">
+      <Form.Control let:attrs>
+        <Form.Label
+          >Other sources of allowance that was not stated above.</Form.Label
         >
         <Input
           {...attrs}
@@ -3242,529 +2640,105 @@ export { className as class };
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
-
-    <Form.Field {form} name="Allowance">
-      <Form.Control let:attrs>
-        <Form.Label
-          >Indicate the allowance you expect to receive <b
-            >monthly (EXCLUDING</b
-          > board & lodging)
-        </Form.Label>
-        <Input {...attrs} placeholder="PhP" bind:value={$formData.Guardian} />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
-
-    <Form.Field {form} name="Source_Of_Allowance">
-      <Form.Control let:attrs>
-        <Form.Label>Check below the source/s of your allowances</Form.Label>
-        <div class="gap-4 md:grid md:grid-cols-2">
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Parents and/or relatives</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Study-now-pay-later plan</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Student Assistantship</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Scholarship/Fellowship (specify)</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Part-time work outside of UP</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Savings from previous earnings</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >STFAP (specify bracket)</label
-            >
-          </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Other forms of financial aid from outside sources (e.g. private
-              endowment)</label
-            >
-          </div>
-        </div>
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
-
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Specifics">
-        <Form.Control let:attrs>
-          <Form.Label
-            >Specify details of checked options stated above (ex.
-            Scholarship/STFAP).</Form.Label
-          >
-          <Input {...attrs} placeholder="" bind:value={$formData.specifics} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Other_Sources_Of_Allowance">
-        <Form.Control let:attrs>
-          <Form.Label
-            >Other sources of allowance that was not stated above.</Form.Label
-          >
-          <Input
-            {...attrs}
-            placeholder=""
-            bind:value={$formData.other_sources}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
   </div>
+</div>
 
-  <div
-    class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
-  >
-    <h1>Vocational Plans</h1>
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Course">
-        <Form.Control let:attrs>
-          <Form.Label>Course</Form.Label>
-          <Select.Root
-          selected={selectedCourse}
-          onSelectedChange={(v) => {
-          v && ($formData.Course = v.value) && ($formData.CourseLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select a course." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each courses as course}
-              <Select.Item
-                value={course.value}
-                label={course.label}
-                >{course.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.Course} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="Major">
-        <Form.Control let:attrs>
-          <Form.Label>Major</Form.Label>
-          <Select.Root
-          selected={selectedMajor}
-          onSelectedChange={(v) => {
-          v && ($formData.Major = v.value) && ($formData.MajorLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select a major." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each majors as major}
-              <Select.Item
-                value={major.value}
-                label={major.label}
-                >{major.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.Major} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-    </div>
-
-    <Form.Field {form} name="Satisfaction">
+<div
+  class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Vocational Plans</h1>
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Course">
       <Form.Control let:attrs>
-        <Form.Label>Are you satisfied with your course?</Form.Label>
+        <Form.Label>Course</Form.Label>
         <Select.Root
-        selected={selectedSatisfactionYN}
+        selected={selectedCourse}
         onSelectedChange={(v) => {
-        v && ($formData.satisfactionYN = v.value) && ($formData.satisfactionYNLabel = v.label);
+        v && ($formData.Course = v.value) && ($formData.CourseLabel = v.label);
     }}>
       <Select.Trigger {...attrs}>
-        <Select.Value placeholder="Select your answer." />
+        <Select.Value placeholder="Select a course." />
       </Select.Trigger>
       <Select.Content>
         <Select.Group>
-          {#each satisfactionYNs as satisfactionYN}
+          {#each degprogs as degprog}
             <Select.Item
-              value={satisfactionYN.value}
-              label={satisfactionYN.label}
-              >{satisfactionYN.label}</Select.Item
+              value={degprog.value}
+              label={degprog.label}
+              >{degprog.label}</Select.Item
             >
           {/each}
         </Select.Group>
       </Select.Content>
       </Select.Root>
-      <input hidden bind:value={$formData.satisfactionYN} name={attrs.name} />
+      <input hidden bind:value={$formData.Course} name={attrs.name} />
       </Form.Control>
       <Form.FieldErrors />
       </Form.Field> 
 
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Yes_Reasons">
-        <Form.Control let:attrs>
-          <Form.Label
-            >If <b>YES</b>, check the reasons for choosing this course.
-            (Checkbox)</Form.Label
+    <Form.Field {form} name="Major">
+      <Form.Control let:attrs>
+        <Form.Label>Major</Form.Label>
+        <Select.Root
+        selected={selectedMajor}
+        onSelectedChange={(v) => {
+        v && ($formData.Major = v.value) && ($formData.MajorLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select a major." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each majors as major}
+            <Select.Item
+              value={major.value}
+              label={major.label}
+              >{major.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.Major} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+  </div>
+
+  <Form.Field {form} name="Satisfaction">
+    <Form.Control let:attrs>
+      <Form.Label>Are you satisfied with your course?</Form.Label>
+      <Select.Root
+      selected={selectedSatisfactionYN}
+      onSelectedChange={(v) => {
+      v && ($formData.satisfactionYN = v.value) && ($formData.satisfactionYNLabel = v.label);
+  }}>
+    <Select.Trigger {...attrs}>
+      <Select.Value placeholder="Select your answer." />
+    </Select.Trigger>
+    <Select.Content>
+      <Select.Group>
+        {#each yesOrNos as yesOrNo}
+          <Select.Item
+            value={yesOrNo.value}
+            label={yesOrNo.label}
+            >{yesOrNo.label}</Select.Item
           >
-          <div class="gap-4 md:grid md:grid-cols-2">
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >It is my interest.</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >There is a great opportunity to serve others.</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >I will be able to utilize my talents.</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >There is a great demand for graduates of this course.</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Prospect of good salary after graduation.</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >It is prestigious.</label
-              >
-            </div>
-          </div>
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
+        {/each}
+      </Select.Group>
+    </Select.Content>
+    </Select.Root>
+    <input hidden bind:value={$formData.satisfactionYN} name={attrs.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+    </Form.Field> 
 
-      <Form.Field {form} name="No_Reasons">
-        <Form.Control let:attrs>
-          <Form.Label
-            >If <b>NO</b>, check your reasons why you do not like your course.
-            (Checkbox)</Form.Label
-          >
-          <div class="gap-4 md:grid md:grid-cols-2">
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >Still undecided.</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >It was my parents' <br />or others' choice.</label
-              >
-            </div>
-            <div
-              class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-            >
-              <input
-                id="bordered-checkbox-1"
-                type="checkbox"
-                value=""
-                name="bordered-checkbox"
-                class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-              />
-              <label
-                for="bordered-checkbox-1"
-                class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-                >The course I like is not offered in UP Baguio.</label
-              >
-            </div>
-            <Form.Field {form} name="Other_Course">
-              <Form.Control let:attrs>
-                <Form.Label>What course do you prefer?</Form.Label>
-                <Input
-                  {...attrs}
-                  placeholder=""
-                  bind:value={$formData.Other_Course}
-                />
-              </Form.Control>
-              <Form.FieldErrors />
-            </Form.Field>
-          </div>
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Other_Yes_Reasons">
-        <Form.Control let:attrs>
-          <Form.Label>Other reasons not stated above.</Form.Label>
-          <Input
-            {...attrs}
-            placeholder=""
-            bind:value={$formData.Other_Yes_Reasons}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Other_No_Reasons">
-        <Form.Control let:attrs>
-          <Form.Label>Other reasons not stated above.</Form.Label>
-          <Input
-            {...attrs}
-            placeholder=""
-            bind:value={$formData.Other_No_Reasons}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Finish_In_UPB">
-        <Form.Control let:attrs>
-          <Form.Label>Do you intend to finish your course here at UP Baguio?</Form.Label>
-          <Select.Root
-          selected={selectedFinishInUPBYN}
-          onSelectedChange={(v) => {
-          v && ($formData.FinishInUPBYN = v.value) && ($formData.FinishInUPBYNLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select your answer." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each finishInUPBYNs as finishInUPBYN}
-              <Select.Item
-                value={finishInUPBYN.value}
-                label={finishInUPBYN.label}
-                >{finishInUPBYN.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.FinishInUPBYN} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="Transfer_Reasons">
-        <Form.Control let:attrs>
-          <Form.Label
-            >If <b>NO</b>, where do you intend to transfer?
-          </Form.Label>
-          <Input
-            {...attrs}
-            placeholder=""
-            bind:value={$formData.Transfer_Reasons}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-
-    <Form.Field {form} name="Future_Plans">
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Yes_Reasons">
       <Form.Control let:attrs>
         <Form.Label
-          >What are your plans after graduation? (Please check as many as
-          appropriate)(Checkbox)</Form.Label
+          >If <b>YES</b>, check the reasons for choosing this course.
+          (Checkbox)</Form.Label
         >
         <div class="gap-4 md:grid md:grid-cols-2">
           <div
@@ -3780,7 +2754,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Work in hometown</label
+              >It is my interest.</label
             >
           </div>
           <div
@@ -3796,7 +2770,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Work in private sector</label
+              >There is a great opportunity to serve others.</label
             >
           </div>
           <div
@@ -3812,7 +2786,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Work in the government</label
+              >I will be able to utilize my talents.</label
             >
           </div>
           <div
@@ -3828,7 +2802,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Work anywhere in the Philippines</label
+              >There is a great demand for graduates of this course.</label
             >
           </div>
           <div
@@ -3844,7 +2818,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Work abroad</label
+              >Prospect of good salary after graduation.</label
             >
           </div>
           <div
@@ -3860,7 +2834,35 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Pursue graduate studies in UP.</label
+              >It is prestigious.</label
+            >
+          </div>
+        </div>
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="No_Reasons">
+      <Form.Control let:attrs>
+        <Form.Label
+          >If <b>NO</b>, check your reasons why you do not like your course.
+          (Checkbox)</Form.Label
+        >
+        <div class="gap-4 md:grid md:grid-cols-2">
+          <div
+            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+          >
+            <input
+              id="bordered-checkbox-1"
+              type="checkbox"
+              value=""
+              name="bordered-checkbox"
+              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+            />
+            <label
+              for="bordered-checkbox-1"
+              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >Still undecided.</label
             >
           </div>
           <div
@@ -3876,7 +2878,7 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Pursue graduate studies abroad.</label
+              >It was my parents' <br />or others' choice.</label
             >
           </div>
           <div
@@ -3892,32 +2894,16 @@ export { className as class };
             <label
               for="bordered-checkbox-1"
               class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Pursue graduate studies in other school in PH.</label
+              >The course I like is not offered in UP Baguio.</label
             >
           </div>
-          <div
-            class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-          >
-            <input
-              id="bordered-checkbox-1"
-              type="checkbox"
-              value=""
-              name="bordered-checkbox"
-              class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-            />
-            <label
-              for="bordered-checkbox-1"
-              class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >Set up own business/firm/private practice</label
-            >
-          </div>
-          <Form.Field {form} name="Second_Other_Sources_V">
+          <Form.Field {form} name="Other_Course">
             <Form.Control let:attrs>
-              <Form.Label>Others (Please specify)</Form.Label>
+              <Form.Label>What course do you prefer?</Form.Label>
               <Input
                 {...attrs}
                 placeholder=""
-                bind:value={$formData.other_sources}
+                bind:value={$formData.Other_Course}
               />
             </Form.Control>
             <Form.FieldErrors />
@@ -3928,97 +2914,333 @@ export { className as class };
     </Form.Field>
   </div>
 
-  <div
-    class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
-  >
-    <h1>Leisure Time Activities</h1>
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <Form.Field {form} name="Recreational_Activities">
-        <Form.Control let:attrs>
-          <Form.Label>Recreation/social activities:</Form.Label>
-          <Input {...attrs} bind:value={$formData.Recreational_Activities} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Interests">
-        <Form.Control let:attrs>
-          <Form.Label>Special interests/hobbies:</Form.Label>
-          <Input {...attrs} bind:value={$formData.Interests} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Clubs_Joined">
-        <Form.Control let:attrs>
-          <Form.Label>Clubs/Organization you belong to:</Form.Label>
-          <Input {...attrs} bind:value={$formData.Clubs_Joined} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Clubs_To_Join">
-        <Form.Control let:attrs>
-          <Form.Label>Clubs/Organization you would like to join:</Form.Label>
-          <Input {...attrs} bind:value={$formData.Clubs_To_Join} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-
-      <Form.Field {form} name="Reading">
-        <Form.Control let:attrs>
-          <Form.Label>Do you like reading?</Form.Label>
-          <Select.Root
-          selected={selectedReadingYN}
-          onSelectedChange={(v) => {
-          v && ($formData.readingYN = v.value) && ($formData.readingYNLabel = v.label);
-      }}>
-        <Select.Trigger {...attrs}>
-          <Select.Value placeholder="Select your answer." />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each readingYNs as readingYN}
-              <Select.Item
-                value={readingYN.value}
-                label={readingYN.label}
-                >{readingYN.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.readingYN} name={attrs.name} />
-        </Form.Control>
-        <Form.FieldErrors />
-        </Form.Field> 
-
-      <Form.Field {form} name="YesReading">
-        <Form.Control let:attrs>
-          <Form.Label>If yes, what do you like to read?</Form.Label>
-          <Input {...attrs} bind:value={$formData.Reading} />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-  </div>
-
-  <div
-    class="center relative top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
-  >
-    <h1>Closing Question</h1>
-    <p>
-      What are your dreams and aspirations in life, your expectations of UP
-      Baguio, and your objectives for studying in UPB?
-    </p>
-
-    <Form.Field {form} name="Dreams">
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Other_Yes_Reasons">
       <Form.Control let:attrs>
-        <Input {...attrs} bind:value={$formData.Dreams} />
+        <Form.Label>Other reasons not stated above.</Form.Label>
+        <Input
+          {...attrs}
+          placeholder=""
+          bind:value={$formData.Other_Yes_Reasons}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Other_No_Reasons">
+      <Form.Control let:attrs>
+        <Form.Label>Other reasons not stated above.</Form.Label>
+        <Input
+          {...attrs}
+          placeholder=""
+          bind:value={$formData.Other_No_Reasons}
+        />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Finish_In_UPB">
+      <Form.Control let:attrs>
+        <Form.Label>Do you intend to finish your course here at UP Baguio?</Form.Label>
+        <Select.Root
+        selected={selectedFinishInUPBYN}
+        onSelectedChange={(v) => {
+        v && ($formData.FinishInUPBYN = v.value) && ($formData.FinishInUPBYNLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select your answer." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each yesOrNos as yesOrNo}
+            <Select.Item
+              value={yesOrNo.value}
+              label={yesOrNo.label}
+              >{yesOrNo.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.FinishInUPBYN} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+
+    <Form.Field {form} name="Transfer_Reasons">
+      <Form.Control let:attrs>
+        <Form.Label
+          >If <b>NO</b>, where do you intend to transfer?
+        </Form.Label>
+        <Input
+          {...attrs}
+          placeholder=""
+          bind:value={$formData.Transfer_Reasons}
+        />
       </Form.Control>
       <Form.FieldErrors />
     </Form.Field>
   </div>
-  <Form.Button class="w-full">Submit</Form.Button>
+
+  <Form.Field {form} name="Future_Plans">
+    <Form.Control let:attrs>
+      <Form.Label
+        >What are your plans after graduation? (Please check as many as
+        appropriate)(Checkbox)</Form.Label
+      >
+      <div class="gap-4 md:grid md:grid-cols-2">
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Work in hometown</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Work in private sector</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Work in the government</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Work anywhere in the Philippines</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Work abroad</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Pursue graduate studies in UP.</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Pursue graduate studies abroad.</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Pursue graduate studies in other school in PH.</label
+          >
+        </div>
+        <div
+          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
+        >
+          <input
+            id="bordered-checkbox-1"
+            type="checkbox"
+            value=""
+            name="bordered-checkbox"
+            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+          />
+          <label
+            for="bordered-checkbox-1"
+            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >Set up own business/firm/private practice</label
+          >
+        </div>
+        <Form.Field {form} name="Second_Other_Sources_V">
+          <Form.Control let:attrs>
+            <Form.Label>Others (Please specify)</Form.Label>
+            <Input
+              {...attrs}
+              placeholder=""
+              bind:value={$formData.other_sources}
+            />
+          </Form.Control>
+          <Form.FieldErrors />
+        </Form.Field>
+      </div>
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+</div>
+
+<div
+  class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Leisure Time Activities</h1>
+  <div class="gap-4 md:grid md:grid-cols-2">
+    <Form.Field {form} name="Recreational_Activities">
+      <Form.Control let:attrs>
+        <Form.Label>Recreation/social activities:</Form.Label>
+        <Input {...attrs} bind:value={$formData.Recreational_Activities} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Interests">
+      <Form.Control let:attrs>
+        <Form.Label>Special interests/hobbies:</Form.Label>
+        <Input {...attrs} bind:value={$formData.Interests} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Clubs_Joined">
+      <Form.Control let:attrs>
+        <Form.Label>Clubs/Organization you belong to:</Form.Label>
+        <Input {...attrs} bind:value={$formData.Clubs_Joined} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Clubs_To_Join">
+      <Form.Control let:attrs>
+        <Form.Label>Clubs/Organization you would like to join:</Form.Label>
+        <Input {...attrs} bind:value={$formData.Clubs_To_Join} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.Field {form} name="Reading">
+      <Form.Control let:attrs>
+        <Form.Label>Do you like reading?</Form.Label>
+        <Select.Root
+        selected={selectedReadingYN}
+        onSelectedChange={(v) => {
+        v && ($formData.readingYN = v.value) && ($formData.readingYNLabel = v.label);
+    }}>
+      <Select.Trigger {...attrs}>
+        <Select.Value placeholder="Select your answer." />
+      </Select.Trigger>
+      <Select.Content>
+        <Select.Group>
+          {#each yesOrNos as yesOrNo}
+            <Select.Item
+              value={yesOrNo.value}
+              label={yesOrNo.label}
+              >{yesOrNo.label}</Select.Item
+            >
+          {/each}
+        </Select.Group>
+      </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.readingYN} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+      </Form.Field> 
+
+    <Form.Field {form} name="YesReading">
+      <Form.Control let:attrs>
+        <Form.Label>If yes, what do you like to read?</Form.Label>
+        <Input {...attrs} bind:value={$formData.Reading} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
+</div>
+
+<div
+  class="center relative top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Closing Question</h1>
+  <p>
+    What are your dreams and aspirations in life, your expectations of UP
+    Baguio, and your objectives for studying in UPB?
+  </p>
+
+  <Form.Field {form} name="Dreams">
+    <Form.Control let:attrs>
+      <Input {...attrs} bind:value={$formData.Dreams} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+</div>
+<Form.Button class="w-full">Submit</Form.Button>
 </form>
 </div>
