@@ -9,12 +9,12 @@
   <form method="POST" action="?/approve">
     <input hidden name="id" value={_id} />
     <input hidden name="table" value="Appointments" />
-    <Button type="submit">Approved</Button>
+    <Button type="submit">Approve</Button>
   </form>
 
   <Dialog.Root>
     <Dialog.Trigger>
-      <Button>Rejected</Button>
+      <Button>Reject</Button>
     </Dialog.Trigger>
     <Dialog.Content>
       <Dialog.Header>

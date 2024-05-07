@@ -14,18 +14,37 @@
   import { readable } from "svelte/store";
   import ArrowUpDown from "lucide-svelte/icons/arrow-up-down";
   import * as Table from "$lib/components/ui/table/index.js";
-  import { Button } from "$lib/components/ui/button/index.js";
+  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
   import { cn } from "$lib/utils.js";
   import { Input } from "$lib/components/ui/input";
   import Actions from "./data-table-actions.svelte";
+  import { Calendar } from "$lib/components/ui/calendar/index.js";
+  import * as Popover from "$lib/components/ui/popover/index.js";
+  import CalendarIcon from "svelte-radix/Calendar.svelte";
+  import {
+    CalendarDate,
+    DateFormatter,
+    type DateValue,
+    getLocalTimeZone,
+    parseDate,
+    today,
+  } from "@internationalized/date";
 
   export let appointments: any;
 
+  $: selectedDate = today(getLocalTimeZone());
+  let filterDate = "";
+
+  const df = new DateFormatter("en-US", {
+    dateStyle: "long",
+  });
+
   const table = createTable(readable(appointments), {
-    sort: addSortBy({ disableMultiSort: true }),
+    sort: addSortBy({ disableMultiSort: false }),
     filter: addTableFilter({
       fn: ({ filterValue, value }) =>
-        value.toLowerCase().includes(filterValue.toLowerCase()),
+        value.toLowerCase().includes(filterValue.toLowerCase()) ||
+        value.includes(filterDate),
     }),
     select: addSelectedRows(),
     hide: addHiddenColumns(),
@@ -76,13 +95,42 @@
 </script>
 
 <div class="w-full">
-  <div class="flex items-center py-4">
+  <div class="flex flex-row justify-between py-4">
     <Input
       class="max-w-sm"
       placeholder="Search"
       type="text"
       bind:value={$filterValue}
     />
+    <Popover.Root>
+      <Popover.Trigger
+        class={cn(
+          buttonVariants({ variant: "outline" }),
+          "w-[180px] justify-start pl-4 text-left font-normal",
+          !selectedDate && "text-muted-foreground",
+        )}
+      >
+        {selectedDate
+          ? df.format(selectedDate.toDate(getLocalTimeZone()))
+          : "Pick a date"}
+        <CalendarIcon class="ml-auto h-4 w-4 opacity-50 " />
+      </Popover.Trigger>
+      <Popover.Content class="w-auto p-0" side="top">
+        <Calendar
+          onValueChange={(v) => {
+            if (v) {
+              selectedDate = v;
+              filterDate = v.toString();
+              // filterAppointments = appointments.filter(
+              //   (e) => e.Appointment_Date === filterDate,
+              // );
+            } else {
+              console.log(v);
+            }
+          }}
+        />
+      </Popover.Content>
+    </Popover.Root>
   </div>
   <div class="rounded-md border">
     <Table.Root {...$tableAttrs}>
