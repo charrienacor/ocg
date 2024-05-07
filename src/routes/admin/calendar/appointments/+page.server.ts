@@ -5,7 +5,13 @@ import db from "$db/mongo";
 export const load: PageServerLoad = async (event) => {
   let appointments = db.collection("Appointments").find({});
   let v_appointments = db.collection("Visitor_Appointments").find({});
-  return { appointment: await appointments.toArray(), v_appointment: await v_appointments.toArray(), };
+  let counselors = db.collection("Counselors").find(
+    {
+      Status: "Active",
+      Suffix: "RGC",
+    },
+  );
+  return { appointment: await appointments.toArray(), v_appointment: await v_appointments.toArray(), counselor: await counselors.toArray(), };
 };
 
 export const actions: Actions = {

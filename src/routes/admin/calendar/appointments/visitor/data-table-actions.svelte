@@ -1,4 +1,3 @@
-
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
   export let _id: any;
@@ -9,7 +8,7 @@
 <div class="flex flex-row gap-1">
   <form method="POST" action="?/approve">
     <input hidden name="id" value={_id} />
-    <input hidden name="table" value="Appointments" />
+    <input hidden name="table" value="Visitor_Appointments" />
     <Button type="submit">Approved</Button>
   </form>
 
@@ -27,7 +26,7 @@
       </Dialog.Header>
       <form method="POST" action="?/rejected">
         <input hidden name="id" value={_id} />
-        <input hidden name="table" value="Appointments" />
+        <input hidden name="table" value="Visitor_Appointments" />
         <div class="py-1">
           <Textarea placeholder="Type your remark here." name="reject_remark" />
         </div>

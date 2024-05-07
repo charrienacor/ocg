@@ -14,6 +14,7 @@
   export let data: PageServerData;
   let appointments = data.appointment;
   let v_appointments = data.v_appointment;
+  let counselors = data.counselor;
 </script>
 
 <head>
@@ -117,10 +118,10 @@
       </Tabs.List>
     </div>
     <Tabs.Content value="student">
-      <Student {appointments} />
+      <Student {appointments} {counselors} />
     </Tabs.Content>
     <Tabs.Content value="visitor">
-      <Visitor {v_appointments} />
+      <Visitor {v_appointments} {counselors} />
     </Tabs.Content>
   </Tabs.Root>
 </div>
