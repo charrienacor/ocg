@@ -37,7 +37,7 @@
     "@lucia-auth/adapter-mongodb": "^1.0.3",
     "@preline/dropdown": "^2.0.2",
     "arctic": "^1.5.0",
-    "bits-ui": "^0.21.6",
+    "bits-ui": "^0.21.7",
     "clsx": "^2.1.0",
     "cmdk-sv": "^0.0.17",
     "formsnap": "^1.0.0",
