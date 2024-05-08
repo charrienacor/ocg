@@ -228,40 +228,6 @@
         color: white;
         padding-bottom: 20px;
       }
-
-      .longtext {
-        line-height: 42px; 
-        text-align: center;
-      }
-
-      .text {
-        line-height: 42px; 
-        text-align: center;
-      }
-  
-      @media only screen and (min-width: 735px) {
-        .threedots {
-          top: 112px;
-        }
-      }
-  
-      @media only screen and (min-width: 768px) and (max-width: 938px){
-        .longtext {
-          line-height: 21px;
-        }
-      }
-
-      @media only screen and (min-width: 768px) and (max-width: 872px){
-        .text {
-          line-height: 21px;
-        }
-      }
-  
-      @media only screen and (min-width: 736px) {
-        .threedots {
-          top: 30px;
-        }
-      }
     </style>
   </head>
   
@@ -287,7 +253,7 @@
   
     <div
       id="dropdownDots"
-      class="-right-14 z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+      class="menu z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
     >
       <ul
         class="py-2 text-sm text-gray-700 dark:text-gray-200"

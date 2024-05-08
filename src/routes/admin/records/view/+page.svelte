@@ -231,40 +231,6 @@
         color: white;
         padding-bottom: 20px;
       }
-
-      .longtext {
-        line-height: 42px; 
-        text-align: center;
-      }
-
-      .text {
-        line-height: 42px; 
-        text-align: center;
-      }
-  
-      @media only screen and (min-width: 735px) {
-        .threedots {
-          top: 112px;
-        }
-      }
-  
-      @media only screen and (min-width: 768px) and (max-width: 938px){
-        .longtext {
-          line-height: 21px;
-        }
-      }
-
-      @media only screen and (min-width: 768px) and (max-width: 872px){
-        .text {
-          line-height: 21px;
-        }
-      }
-  
-      @media only screen and (min-width: 736px) {
-        .threedots {
-          top: 30px;
-        }
-      }
     </style>
   </head>
   
@@ -290,7 +256,7 @@
   
     <div
       id="dropdownDots"
-      class="-right-14 z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
+      class="menu z-10 hidden divide-y divide-gray-100 rounded-lg bg-white shadow dark:divide-gray-600 dark:bg-gray-700"
     >
       <ul
         class="py-2 text-sm text-gray-700 dark:text-gray-200"
@@ -379,6 +345,16 @@
       </div>
     </div>
     <form method="POST" use:enhance>
+      <div class="flex flex-row gap-2">
+        <div class="center relative w-1/2 top-1/2 mt-4 sm:mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8">
+        <h1>1 x 1 ID Picture</h1>
+        <p class="flex justify-center h-60"> Insert Image Here</p>
+        </div>
+        <div class="center relative w-1/2 top-1/2 mt-4 sm:mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8">
+          <h1>Digital Signature</h1>
+          <p class="flex justify-center h-60"> Insert Image Here</p>
+        </div>
+      </div>
       <div
         class="center relative top-1/2 mt-4 sm:mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
       >

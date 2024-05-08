@@ -83,6 +83,16 @@ pre {
   margin: 0 auto;
 }
 
+.longtext {
+  line-height: 42px; 
+  text-align: center;
+}
+
+.text {
+  line-height: 42px; 
+  text-align: center;
+}
+
 input,
 button {
   font-size: inherit;
@@ -133,7 +143,6 @@ main {
 head {
   font-family: Urbanist, sans-serif;
 }
-
 
 .school {
   line-height: 1.2;
