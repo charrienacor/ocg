@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
+  import { Label } from "$lib/components/ui/label";
   import { formSchema, type FormSchema } from "./schema";
   import {
     type SuperValidated,
@@ -3226,7 +3227,7 @@ let children = [
 </div>
 
 <div
-  class="center relative top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+  class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
 >
   <h1>Closing Question</h1>
   <p>
@@ -3241,7 +3242,20 @@ let children = [
     <Form.FieldErrors />
   </Form.Field>
 </div>
-<Form.Button class="w-full mt-[20px] mb-[20px]">Upload Student Image</Form.Button>
+<div class="flex flex-row gap-2">
+  <div
+      class="center relative w-1/2 top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+    >
+    <Label>Upload Student Image</Label>
+    <Input id="picture" type="file" />
+  </div>
+  <div
+      class="center relative w-1/2 top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+    >
+    <Label>Upload Digital Signature</Label>
+    <Input id="picture" type="file" />
+  </div>
+</div>
 <Form.Button class="w-full">Submit</Form.Button>
 </form>
 </div>

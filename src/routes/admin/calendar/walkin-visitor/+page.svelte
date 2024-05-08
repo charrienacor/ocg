@@ -121,7 +121,7 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<div class="flex w-full flex-col justify-center gap-3 lg:flex-row">
+<div class="flex w-full flex-col justify-center gap-3 md:mt-10 lg:flex-row">
   <div class="box flex flex-col items-center gap-10">
     <div class="w-[290px] rounded bg-white p-2 shadow-xl">
       <Calendar

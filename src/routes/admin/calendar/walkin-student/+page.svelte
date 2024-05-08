@@ -124,7 +124,7 @@
 </div>
 
 <div
-  class="mt-7 flex w-full flex-col justify-center gap-3 sm:mt-14 md:mt-7 lg:flex-row"
+  class="mt-14 flex w-full flex-col justify-center gap-3 md:mt-10 lg:flex-row"
 >
   <div class="box flex flex-col items-center gap-10">
     <div class="w-[290px] rounded bg-white p-2 shadow-xl">
@@ -161,7 +161,7 @@
     </Dialog.Root>
   </div>
 
-  <div class="box w-full rounded bg-white shadow-xl lg:ml-5 lg:w-1/3 lg:p-1">
+  <div class="box w-full rounded bg-white shadow-xl mt-10 md:mt-0 lg:ml-5 lg:w-1/3 lg:p-1">
     <h1 class="p-4 text-left text-xl lg:text-center">
       Counselor Schedules for<br />
       {df.format(selectedDate.toDate(getLocalTimeZone()))}

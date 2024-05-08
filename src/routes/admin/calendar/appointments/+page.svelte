@@ -107,21 +107,23 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<h1 class="pt-12 font-bold sm:pt-5">MANAGE APPOINTMENTS</h1>
-
-<div class="container mx-auto py-5">
-  <Tabs.Root value="student" class="mx-auto">
-    <div class="mx-auto flex flex-row justify-center">
+<Tabs.Root value="student" class="mx-auto">
+  <div class="flex justify-between mx-auto px-9">
+    <h1 class="pt-12 font-bold sm:pt-5">MANAGE APPOINTMENTS</h1>
+    <div class="pt-8">
       <Tabs.List class="">
         <Tabs.Trigger value="student">Student</Tabs.Trigger>
         <Tabs.Trigger value="visitor">Visitor</Tabs.Trigger>
       </Tabs.List>
     </div>
+  </div>
+
+  <div class="container mx-auto py-5">  
     <Tabs.Content value="student">
       <Student {appointments} {counselors} />
     </Tabs.Content>
     <Tabs.Content value="visitor">
       <Visitor {v_appointments} {counselors} />
     </Tabs.Content>
-  </Tabs.Root>
-</div>
+  </div>
+</Tabs.Root>
