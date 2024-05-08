@@ -72,6 +72,11 @@
     table.column({
       header: "Date",
       accessor: "Appointment_Date",
+      plugins: {
+        sort: {
+          disable: false,
+        },
+      },
     }),
     table.column({
       header: "Time",
@@ -129,7 +134,7 @@
 </script>
 
 <div class="w-full">
-  <div class="flex flex-row justify-between py-4 gap-1">
+  <div class="flex flex-row justify-between gap-1 py-4">
     <Input
       class="max-w-sm"
       placeholder="Search"
