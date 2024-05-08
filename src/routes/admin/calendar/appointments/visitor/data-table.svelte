@@ -41,7 +41,7 @@
   export let counselors: any;
 
   const table = createTable(readable(v_appointments), {
-    sort: addSortBy({ disableMultiSort: true }),
+    sort: addSortBy({ disableMultiSort: false }),
     filter: addTableFilter({
       fn: ({ filterValue, value }) =>
         value.toLowerCase().includes(filterValue.toLowerCase()),
@@ -60,7 +60,10 @@
       accessor: ({ Counselor }) => Counselor,
       cell: ({ value }) => {
         let counselor = counselors.filter((v) => v._id === value);
-        let counselorName = `${counselor[0].First_Name} ${counselor[0].Middle_Name} ${counselor[0].Last_Name}`;
+        let counselorName = "";
+        if (Object.entries(counselor) != 0) {
+          counselorName = `${counselor[0].First_Name} ${counselor[0].Middle_Name} ${counselor[0].Last_Name}`;
+        }
         return counselorName;
       },
     }),
@@ -117,7 +120,7 @@
 </script>
 
 <div class="w-full">
-  <div class="flex items-center py-4 gap-1">
+  <div class="flex items-center gap-1 py-4">
     <Input
       class="max-w-sm"
       placeholder="Search"
