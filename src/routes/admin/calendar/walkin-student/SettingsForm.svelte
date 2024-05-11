@@ -93,8 +93,8 @@
 
   $: selectedCollege = $formData.College
     ? {
-        label: $formData.College,
-        value: $formData.College,
+        label: $formData.college,
+        value: $formData.college,
       }
     : undefined;
 </script>

@@ -40,7 +40,7 @@ db.Counselors.insertMany([
     First_Name: "Merjerie",
     Middle_Name: "P.",
     Last_Name: "Ticag",
-    RGC: "true",
+    RGC: "false",
     Status: "Active",
   },
 ]);

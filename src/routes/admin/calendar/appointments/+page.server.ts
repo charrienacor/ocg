@@ -8,7 +8,7 @@ export const load: PageServerLoad = async (event) => {
   let counselors = db.collection("Counselors").find(
     {
       Status: "Active",
-      Suffix: "RGC",
+      RGC: "true",
     },
   );
   return { appointment: await appointments.toArray(), v_appointment: await v_appointments.toArray(), counselor: await counselors.toArray(), };

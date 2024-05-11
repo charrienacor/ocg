@@ -23,32 +23,15 @@ export const actions: Actions = {
         form,
       });
     }
-    const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
-
-    const generateRandomString = (length: number) => {
-      let randomString = "";
-
-      for (let i = 0; i < length; i++) {
-        randomString +=
-          characters[Math.floor(Math.random() * characters.length)];
-      }
-
-      return randomString;
-    };
 
     const data = form.data;
-    await db.collection("Appointments").insertOne({
-      _id: `${data.Student_ID}${generateRandomString(3)}`,
-      Student_Name: `${data.Student_Name}`,
-      Student_Email: `${data.Student_Email}`,
-      Student_ID: `${data.Student_ID}`,
-      Counselor: `${data.Guidance_Counselor}`,
-      Appointment_Date: `${data.Appointment_Date}`,
-      Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
-      Nature_Of_Concern: `${data.Nature_Of_Concern}`,
-      Status: "Pending",
-      Denial_Remark: "",
-      Session_Remarks: "",
+    await db.collection("Counselors").insertOne({
+      _id: `${data.Admin_Email}`,
+      First_Name: `${data.First_Name}`,
+      Middle_Name: `${data.Middle_Name}`,
+      Last_Name: `${data.Last_Name}`,
+      RGC: `${data.RGC}`,
+      Status: `${data.Status}`,
     });
     return {
       form,
