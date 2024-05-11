@@ -41,7 +41,7 @@
   export let counselors: any;
 
   const table = createTable(readable(v_appointments), {
-    sort: addSortBy({ disableMultiSort: false }),
+    sort: addSortBy({ disableMultiSort: true }),
     filter: addTableFilter({
       fn: ({ filterValue, value }) =>
         value.toLowerCase().includes(filterValue.toLowerCase()),
@@ -54,6 +54,11 @@
     table.column({
       header: "Name",
       accessor: "Visitor_Name",
+      plugins: {
+        sort: {
+          disable: true,
+        },
+      },
     }),
     table.column({
       header: "Counselor",
@@ -66,28 +71,58 @@
         }
         return counselorName;
       },
+      plugins: {
+        sort: {
+          disable: false,
+        },
+      },
     }),
     table.column({
       header: "Date",
       accessor: "Appointment_Date",
+      plugins: {
+        sort: {
+          disable: false,
+        },
+      },
     }),
     table.column({
       header: "Time",
       accessor: "Appointment_Time",
+      plugins: {
+        sort: {
+          disable: false,
+        },
+      },
     }),
     table.column({
       header: "Nature of Concern",
       accessor: "Nature_Of_Concern",
+      plugins: {
+        sort: {
+          disable: true,
+        },
+      },
     }),
     table.column({
       header: "Status",
       accessor: "Status",
+      plugins: {
+        sort: {
+          disable: false,
+        },
+      },
     }),
     table.column({
       accessor: ({ _id }) => _id,
       header: "Actions",
       cell: ({ value }) => {
         return createRender(Actions, { _id: value });
+      },
+      plugins: {
+        sort: {
+          disable: true,
+        },
       },
     }),
   ]);
@@ -195,7 +230,7 @@
       </Popover.Content>
     </Popover.Root>
   </div>
-  <div class="rounded-md border">
+  <div class="w-full rounded-md border">
     <Table.Root {...$tableAttrs}>
       <Table.Header>
         {#each $headerRows as headerRow}
@@ -216,16 +251,21 @@
                       <div class="text-right font-medium">
                         <Render of={cell.render()} />
                       </div>
-                    {:else if cell.id === "email"}
-                      <Button variant="ghost" on:click={props.sort.toggle}>
-                        <Render of={cell.render()} />
-                        <ArrowUpDown
-                          class={cn(
-                            $sortKeys[0]?.id === cell.id && "text-foreground",
-                            "ml-2 h-4 w-4",
-                          )}
-                        />
-                      </Button>
+                    {:else if cell.id === "Counselor" || cell.id === "Appointment_Date" || cell.id === "Appointment_Time" || cell.id === "Status"}
+                      <div
+                        class="flex flex-row content-center items-center justify-center gap-1 align-middle"
+                      >
+                        <div>
+                          <Render of={cell.render()} />
+                        </div>
+                        <Button
+                          variant="ghost"
+                          class="m-0 p-0"
+                          on:click={props.sort.toggle}
+                        >
+                          <ArrowUpDown class="m-0 h-5 w-5 p-0" />
+                        </Button>
+                      </div>
                     {:else}
                       <Render of={cell.render()} />
                     {/if}

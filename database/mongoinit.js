@@ -8,7 +8,7 @@ db.Counselors.insertMany([
     First_Name: "Lester",
     Middle_Name: "",
     Last_Name: "Ignacio",
-    Suffix: "",
+    RGC: "false",
     Status: "Active",
   },
   {
@@ -16,7 +16,7 @@ db.Counselors.insertMany([
     First_Name: "Liza",
     Middle_Name: "A.",
     Last_Name: "Ngiao",
-    Suffix: "RGC",
+    RGC: "true",
     Status: "Active",
   },
   {
@@ -24,7 +24,7 @@ db.Counselors.insertMany([
     First_Name: "Aurora",
     Middle_Name: "P.",
     Last_Name: "Parcasio",
-    Suffix: "RGC",
+    RGC: "true",
     Status: "Active",
   },
   {
@@ -32,7 +32,7 @@ db.Counselors.insertMany([
     First_Name: "Julie",
     Middle_Name: "E.",
     Last_Name: "Tuguinay",
-    Suffix: "RGC",
+    RGC: "true",
     Status: "Active",
   },
   {
@@ -40,7 +40,7 @@ db.Counselors.insertMany([
     First_Name: "Merjerie",
     Middle_Name: "P.",
     Last_Name: "Ticag",
-    Suffix: "",
+    RGC: "true",
     Status: "Active",
   },
 ]);

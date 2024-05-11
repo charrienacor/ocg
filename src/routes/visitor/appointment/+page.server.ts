@@ -12,7 +12,7 @@ export const load: PageServerLoad = async (event) => {
   let counselors = db.collection("Counselors").find(
     {
       Status: "Active",
-      Suffix: "RGC",
+      RGC: "true",
     },
   );
 
