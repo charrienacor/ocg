@@ -13,8 +13,11 @@
   export let data: PageServerData;
   let appointment = data.appointments;
   let counselor = data.counselors;
+  let counselorName = "";
+  if (counselor != null) {
+    counselorName = `${counselor.First_Name} ${counselor.Middle_Name} ${counselor.Last_Name}`;
+  }
 </script>
-
 
 <head>
   <style>
@@ -106,7 +109,7 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<h1 class="pt-12 pb-4 font-bold sm:pt-5">Student Appointment</h1>
+<h1 class="pb-4 pt-12 font-bold sm:pt-5">Student Appointment</h1>
 
 <div>
   <Card.Root>
@@ -115,56 +118,74 @@
     </Card.Header>
     <Card.Content>
       <div class="space-y-1">
-      <div class="flex">
-        <Card.Title>Student Name: </Card.Title>
-        <p class="leading-5" style="padding-left: 50px;">{appointment.Student_Name}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Student Email: </Card.Title>
-        <p class="leading-5" style="padding-left: 53px;">{appointment.Student_Email}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Student ID: </Card.Title>
-        <p class="leading-5" style="padding-left: 80px;">{appointment.Student_ID}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Counselor: </Card.Title>
-        <p class="leading-5" style="padding-left: 84px;">{counselor.First_Name} {counselor.Middle_Name} {counselor.Last_Name}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Appointment Date: </Card.Title>
-        <p class="leading-5" style="padding-left: 15px;">{appointment.Appointment_Date}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Appointment Time: </Card.Title>
-        <p class="leading-5" style="padding-left: 15px;">{appointment.Appointment_Time}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Nature of Concern: </Card.Title>
-        <p class="leading-5" style="padding-left: 19px;">{appointment.Nature_Of_Concern}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Status: </Card.Title>
-        <p class="leading-5" style="padding-left: 108px;">{appointment.Status}</p>
-      </div>
-      <div class="flex">
-        <Card.Title>Denial Remark: </Card.Title>
-        <p class="leading-5" style="padding-left: 30px;">{appointment.Denial_Remark}</p>
-      </div>
-      <Card.Title>Session Remarks: </Card.Title>
-      <form method="POST" action="?/remark">
-        <div class="py-1">
-          <Textarea
-            placeholder="Type your remarks here."
-            name="session_remarks"
-            bind:value={appointment.Session_Remarks}
-          />
+        <div class="flex">
+          <Card.Title>Student Name:</Card.Title>
+          <p class="leading-5" style="padding-left: 50px;">
+            {appointment.Student_Name}
+          </p>
         </div>
-        <div class="py-2">
-          <Button type="submit">Add Remarks</Button>
+        <div class="flex">
+          <Card.Title>Student Email:</Card.Title>
+          <p class="leading-5" style="padding-left: 53px;">
+            {appointment.Student_Email}
+          </p>
         </div>
-      </form>
-    </div>
+        <div class="flex">
+          <Card.Title>Student ID:</Card.Title>
+          <p class="leading-5" style="padding-left: 80px;">
+            {appointment.Student_ID}
+          </p>
+        </div>
+        <div class="flex">
+          <Card.Title>Counselor:</Card.Title>
+          <p class="leading-5" style="padding-left: 84px;">
+            {counselorName}
+          </p>
+        </div>
+        <div class="flex">
+          <Card.Title>Appointment Date:</Card.Title>
+          <p class="leading-5" style="padding-left: 15px;">
+            {appointment.Appointment_Date}
+          </p>
+        </div>
+        <div class="flex">
+          <Card.Title>Appointment Time:</Card.Title>
+          <p class="leading-5" style="padding-left: 15px;">
+            {appointment.Appointment_Time}
+          </p>
+        </div>
+        <div class="flex">
+          <Card.Title>Nature of Concern:</Card.Title>
+          <p class="leading-5" style="padding-left: 19px;">
+            {appointment.Nature_Of_Concern}
+          </p>
+        </div>
+        <div class="flex">
+          <Card.Title>Status:</Card.Title>
+          <p class="leading-5" style="padding-left: 108px;">
+            {appointment.Status}
+          </p>
+        </div>
+        <div class="flex">
+          <Card.Title>Denial Remark:</Card.Title>
+          <p class="leading-5" style="padding-left: 45px;">
+            {appointment.Denial_Remark}
+          </p>
+        </div>
+        <Card.Title>Session Remarks:</Card.Title>
+        <form method="POST" action="?/remark">
+          <div class="py-1">
+            <Textarea
+              placeholder="Type your remarks here."
+              name="session_remarks"
+              bind:value={appointment.Session_Remarks}
+            />
+          </div>
+          <div class="py-2">
+            <Button type="submit">Add Remarks</Button>
+          </div>
+        </form>
+      </div>
     </Card.Content>
   </Card.Root>
 </div>

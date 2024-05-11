@@ -8,6 +8,7 @@
     superForm,
   } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
+  import { Checkbox } from "$lib/components/ui/checkbox/index.js";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
   import {
     CalendarDate,
@@ -35,12 +36,46 @@
 </script>
 
 <form method="POST" use:enhance>
-  <Form.Field {form} name="Student_Name">
+  <Form.Field {form} name="Admin_Email">
     <Form.Control let:attrs>
-      <Form.Label>Student Name</Form.Label>
+      <Form.Label>Email</Form.Label>
       <Input {...attrs} bind:value={$formData.name} />
     </Form.Control>
     <Form.FieldErrors />
+  </Form.Field>
+  <Form.Field {form} name="First_Name">
+    <Form.Control let:attrs>
+      <Form.Label>First Name</Form.Label>
+      <Input {...attrs} bind:value={$formData.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+  <Form.Field {form} name="Middle_Name">
+    <Form.Control let:attrs>
+      <Form.Label>Middle Name</Form.Label>
+      <Input {...attrs} bind:value={$formData.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+  <Form.Field {form} name="Last_Name">
+    <Form.Control let:attrs>
+      <Form.Label>Last Name</Form.Label>
+      <Input {...attrs} bind:value={$formData.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+  <Form.Field
+    {form}
+    name="RGC"
+    class="flex flex-row items-start space-x-3 space-y-0 rounded-md p-4"
+  >
+    <Form.Control let:attrs>
+      <Checkbox {...attrs} bind:checked={$formData.mobile} />
+      <div class="space-y-1 leading-none">
+        <Form.Label>Registered Guidance Counselor (RGC)?</Form.Label>
+      </div>
+      <input name={attrs.name} value={$formData.mobile} hidden />
+    </Form.Control>
   </Form.Field>
 
   <Form.Button>Submit</Form.Button>

@@ -28,8 +28,7 @@ export const actions: Actions = {
     const id = data.get('id');
     const table = data.get('table');
     const reject_remark = data.get('reject_remark');
-    console.log(reject_remark);
-    await db.collection(`${table}`).updateOne({ _id: `${id}` }, { $set: { Status: 'Rejected' } },);
+    await db.collection(`${table}`).updateOne({ _id: `${id}` }, { $set: { Status: 'Rejected', Denial_Remark: `${reject_remark}` } },);
     redirect(302, "./appointments");
   },
 };

@@ -42,7 +42,7 @@
   });
 
   const table = createTable(readable(appointments), {
-    sort: addSortBy({ disableMultiSort: false }),
+    sort: addSortBy({ disableMultiSort: true }),
     filter: addTableFilter({
       fn: ({ filterValue, value }) =>
         value.toLowerCase().includes(filterValue.toLowerCase()),
@@ -55,18 +55,36 @@
     table.column({
       header: "Student Number",
       accessor: "Student_ID",
+      plugins: {
+        sort: {
+          disable: true,
+        },
+      },
     }),
     table.column({
       header: "Name",
       accessor: "Student_Name",
+      plugins: {
+        sort: {
+          disable: true,
+        },
+      },
     }),
     table.column({
       header: "Counselor",
       accessor: ({ Counselor }) => Counselor,
       cell: ({ value }) => {
         let counselor = counselors.filter((v) => v._id === value);
-        let counselorName = `${counselor[0].First_Name} ${counselor[0].Middle_Name} ${counselor[0].Last_Name}`;
+        let counselorName = "";
+        if (Object.entries(counselor) != 0) {
+          counselorName = `${counselor[0].First_Name} ${counselor[0].Middle_Name} ${counselor[0].Last_Name}`;
+        }
         return counselorName;
+      },
+      plugins: {
+        sort: {
+          disable: false,
+        },
       },
     }),
     table.column({
@@ -81,20 +99,40 @@
     table.column({
       header: "Time",
       accessor: "Appointment_Time",
+      plugins: {
+        sort: {
+          disable: false,
+        },
+      },
     }),
     table.column({
       header: "Nature of Concern",
       accessor: "Nature_Of_Concern",
+      plugins: {
+        sort: {
+          disable: true,
+        },
+      },
     }),
     table.column({
       header: "Status",
       accessor: "Status",
+      plugins: {
+        sort: {
+          disable: false,
+        },
+      },
     }),
     table.column({
       accessor: ({ _id }) => _id,
       header: "Actions",
       cell: ({ value }) => {
         return createRender(Actions, { _id: value });
+      },
+      plugins: {
+        sort: {
+          disable: true,
+        },
       },
     }),
   ]);
@@ -226,22 +264,29 @@
                     {...attrs}
                     class={cn("[&:has([role=checkbox])]:pl-3")}
                   >
-                    {#if cell.id === "Action"}
+                    {#if cell.id === "Actions"}
+                      <div class="justify-center text-center">
+                        <Render of={cell.render()} />
+                      </div>
+                    {:else if cell.id === "Counselor" || cell.id === "Appointment_Date" || cell.id === "Appointment_Time" || cell.id === "Status"}
+                      <div
+                        class="flex flex-row content-center items-center justify-center gap-1 align-middle"
+                      >
+                        <div>
+                          <Render of={cell.render()} />
+                        </div>
+                        <Button
+                          variant="ghost"
+                          class="m-0 p-0"
+                          on:click={props.sort.toggle}
+                        >
+                          <ArrowUpDown class="m-0 h-5 w-5 p-0" />
+                        </Button>
+                      </div>
+                    {:else}
                       <div class="text-center">
                         <Render of={cell.render()} />
                       </div>
-                    {:else if cell.id === "Date"}
-                      <Button variant="ghost" on:click={props.sort.toggle}>
-                        <Render of={cell.render()} />
-                        <ArrowUpDown
-                          class={cn(
-                            $sortKeys[0]?.id === cell.id && "text-foreground",
-                            "ml-2 h-4 w-4",
-                          )}
-                        />
-                      </Button>
-                    {:else}
-                      <Render of={cell.render()} />
                     {/if}
                   </Table.Head>
                 </Subscribe>
@@ -269,7 +314,9 @@
                         <Render of={cell.render()} />
                       </div>
                     {:else}
-                      <Render of={cell.render()} />
+                      <div class="flex items-center justify-start">
+                        <Render of={cell.render()} />
+                      </div>
                     {/if}
                   </Table.Cell>
                 </Subscribe>
