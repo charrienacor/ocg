@@ -1,6 +1,6 @@
-import { fail, redirect } from "@sveltejs/kit";
+import { fail } from "@sveltejs/kit";
 import { lucia } from "$lib/server/auth";
-
+import { redirect } from 'sveltekit-flash-message/server';
 import type { RequestEvent } from "@sveltejs/kit";
 
 export async function GET(event: RequestEvent): Promise<Response> {
@@ -16,5 +16,5 @@ export async function GET(event: RequestEvent): Promise<Response> {
     path: ".",
     ...sessionCookie.attributes,
   });
-  redirect(302, "/homepage");
+  redirect("/homepage", { type: 'loggedOut', message: 'You have been logged out' }, event);
 }

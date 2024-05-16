@@ -2,6 +2,7 @@ import { OAuth2RequestError } from "arctic";
 import { generateId } from "lucia";
 import { google1, lucia } from "$lib/server/auth";
 import db from "$db/mongo";
+import { redirect } from 'sveltekit-flash-message/server'
 
 import type { RequestEvent } from "@sveltejs/kit";
 
@@ -63,25 +64,10 @@ export async function GET(event: RequestEvent): Promise<Response> {
         ...sessionCookie.attributes,
       });
     }
-    return new Response(null, {
-      status: 302,
-      headers: {
-        Location: "/admin/dashboard",
-      },
-    });
   } catch (e) {
-    console.log(e);
-    // the specific error message depends on the provider
-    if (e instanceof OAuth2RequestError) {
-      // invalid code
-      return new Response(null, {
-        status: 400,
-      });
-    }
-    return new Response(null, {
-      status: 500,
-    });
+    redirect("/admin/login", { type: 'somethingWentWrong', message: 'Log-in failed, please try again.' }, event);
   }
+  redirect("/admin/dashboard", { type: 'loggedIn', message: 'You have successfully logged in!' }, event);
 }
 
 interface user {

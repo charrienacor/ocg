@@ -1,12 +1,34 @@
-import { redirect, type RequestHandler } from "@sveltejs/kit";
+import { type RequestHandler } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
 import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema";
 import { zod } from "sveltekit-superforms/adapters";
 import db from "$db/mongo";
+import { redirect, setFlash } from 'sveltekit-flash-message/server'
+import {
+  CalendarDate,
+  DateFormatter,
+  type DateValue,
+  getLocalTimeZone,
+  parseDate,
+  today,
+} from "@internationalized/date";
+
+let rawdate: Date;
+let date = "";
+let time = "";
 
 export const load: PageServerLoad = async (event) => {
+  if (!event.locals.user) redirect("/admin/login", { type: 'loggedOut', message: 'You have been logged out' }, event);
+
+  let whitelist = await db.collection("Counselors").findOne({
+    _id: `${event.locals.user.email}`,
+    Status: { $in: ["Active", "On-leave"] }
+  });
+
+  if (!whitelist) redirect("/homepage", { type: 'unauthorizedAccess', message: "You are not authorized to access admin pages." }, event);
+
   let counselors = db.collection("Counselors").find(
     {
       Status: "Active",
@@ -56,20 +78,35 @@ export const actions: Actions = {
       return randomString;
     };
 
-    const data = form.data;
-    await db.collection("Appointments").insertOne({
-      _id: `${data.Student_ID}${generateRandomString(3)}`,
-      Student_Name: `${data.Student_Name}`,
-      Student_Email: `${data.Student_Email}`,
-      Student_ID: `${data.Student_ID}`,
-      Counselor: `${data.Guidance_Counselor}`,
-      Appointment_Date: `${data.Appointment_Date}`,
-      Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
-      Nature_Of_Concern: `${data.Nature_Of_Concern}`,
-      Status: "Pending",
-      Denial_Remark: "",
-      Session_Remarks: "",
-    });
+    try {
+      const data = form.data;
+      await db.collection("Appointments").insertOne({
+        _id: `${data.Student_ID}${generateRandomString(3)}`,
+        Student_Name: `${data.Student_Name}`,
+        Student_Email: `${data.Student_Email}`,
+        Student_ID: `${data.Student_ID}`,
+        Counselor: `${data.Guidance_Counselor}`,
+        Appointment_Date: `${data.Appointment_Date}`,
+        Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
+        Nature_Of_Concern: `${data.Nature_Of_Concern}`,
+        Status: "Pending",
+        Denial_Remark: "",
+        Session_Remarks: "",
+      });
+      const df = new DateFormatter("en-US", {
+        dateStyle: "long",
+      });
+      rawdate = new Date(data.Appointment_Date);
+      date = df.format(rawdate);
+      time = `${data.Appointment_Hour}:${data.Appointment_Minute}`
+    } catch (e) {
+
+      setFlash({ type: 'appointmentError', message: 'Please check your input and try again.' }, event);
+    }
+    redirect("./walkin-student", {
+      type: "appointmentSuccess",
+      message: `You have booked an appointment on ${date} at ${time}.`
+    }, event);
     return {
       form,
     };

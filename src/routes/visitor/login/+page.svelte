@@ -1,6 +1,5 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
-  import { goto } from "$app/navigation";
 </script>
 
 <div class="relative flex justify-center">
@@ -10,7 +9,7 @@
     <h2 class="mini-title static">GUEST ACCOUNT</h2>
     <h1 class="title center static">LOG IN</h1>
     <p class="subtitle">Log in to your Google account.</p>
-    <Button on:click={() => goto("/visitor/login/google")} style="width: 110%;"
+    <Button href="/visitor/login/google" style="width: 110%;"
       >Login with GMail</Button
     >
   </div>

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button/index.js";
   import { buttonVariants } from "$lib/components/ui/button";
-  import { goto } from "$app/navigation";
 </script>
 
 <div class="relative flex justify-center">
@@ -26,7 +25,7 @@
         </p>
       </div>
       <div class="static z-50">
-        <Button on:click={() => goto("/homepage")} style="z-index: 50;">Enter Aguhon</Button>
+        <Button href="/homepage" style="z-index: 50;">Enter Aguhon</Button>
         <a
           href="https://www.upb.edu.ph/office-of-counseling-and-guidance/"
           class={buttonVariants({ variant: "default" })}

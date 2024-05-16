@@ -48,6 +48,9 @@ const config = {
           DEFAULT: "hsl(var(--card) / <alpha-value>)",
           foreground: "hsl(var(--card-foreground) / <alpha-value>)",
         },
+        up: {
+          'forest-green': "#014421",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
