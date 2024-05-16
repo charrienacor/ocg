@@ -27,13 +27,13 @@
 
   $: selectedStatus = $formData.Status
     ? {
-        label: $formData.College,
-        value: $formData.College,
+        label: $formData.Status,
+        value: $formData.Status,
       }
     : undefined;
 </script>
 
-<form method="POST" use:enhance>
+<form method="POST" action="?/add" use:enhance>
   <Form.Field {form} name="Admin_Email">
     <Form.Control let:attrs>
       <Form.Label>Email</Form.Label>

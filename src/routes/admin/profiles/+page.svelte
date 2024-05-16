@@ -110,7 +110,7 @@
 
 <h1 class="pb-5 pt-12 font-bold sm:pt-5">ADMIN ACCOUNTS</h1>
 <div
-  class="table-wrap relative block max-h-96 overflow-x-auto rounded-lg border border-none"
+  class="table-wrap max-h relative block overflow-x-auto rounded-lg border border-none"
 >
   <DataTable {counselors} />
 </div>
@@ -126,4 +126,3 @@
     <SettingsForm data={data.form} />
   </Dialog.Content>
 </Dialog.Root>
-

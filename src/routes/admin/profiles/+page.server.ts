@@ -16,7 +16,7 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-  default: async (event) => {
+  add: async (event) => {
     const form = await superValidate(event, zod(formSchema));
     if (!form.valid) {
       return fail(400, {
@@ -36,5 +36,20 @@ export const actions: Actions = {
     return {
       form,
     };
+  },
+  status: async ({ request }) => {
+    const data = await request.formData();
+    const id = data.get('id');
+    const table = data.get('table');
+    const status = data.get('status');
+    await db.collection(`${table}`).updateOne({ _id: `${id}` }, { $set: { Status: `${status}` } },);
+    redirect(302, "./profiles");
+  },
+  delete: async ({ request }) => {
+    const data = await request.formData();
+    const id = data.get('id');
+    const table = data.get('table');
+    await db.collection(`${table}`).deleteOne({ _id: `${id}` });
+    redirect(302, "./profiles");
   },
 };
