@@ -3,7 +3,7 @@
   export let _id: any;
   import * as Dialog from "$lib/components/ui/dialog";
   import { Textarea } from "$lib/components/ui/textarea";
-  import { Check, X, Eye } from "lucide-svelte";
+  import { Check, X, Eye, Trash2 } from "lucide-svelte";
   import * as Tooltip from "$lib/components/ui/tooltip";
   import { goto } from "$app/navigation";
 </script>
@@ -53,6 +53,18 @@
       </form>
     </Dialog.Content>
   </Dialog.Root>
+  <form method="POST" action="?/delete">
+    <input hidden name="id" value={_id} />
+    <input hidden name="table" value="Appointments" />
+    <Button type="submit" size="icon">
+      <Tooltip.Root>
+        <Tooltip.Trigger><Trash2 /></Tooltip.Trigger>
+        <Tooltip.Content>
+          <p></p>
+        </Tooltip.Content>
+      </Tooltip.Root>
+    </Button>
+  </form>
   <Button size="icon" on:click={() => goto(`./appointments/student/${_id}`)}>
     <Tooltip.Root>
       <Tooltip.Trigger><Eye /></Tooltip.Trigger>

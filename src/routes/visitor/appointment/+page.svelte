@@ -13,6 +13,7 @@
     today,
   } from "@internationalized/date";
   import * as Dialog from "$lib/components/ui/dialog";
+  import { toast } from "svelte-sonner";
   export let data: PageServerData;
   let name = data.name;
   let email = data.email;
@@ -25,7 +26,6 @@
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
   });
-
 </script>
 
 <head>
@@ -120,7 +120,7 @@
 
     <Dialog.Root>
       <Dialog.Trigger>
-        <Button size = "long">
+        <Button size="long">
           <p class="text-lg">Book an Appointment</p>
         </Button>
       </Dialog.Trigger>

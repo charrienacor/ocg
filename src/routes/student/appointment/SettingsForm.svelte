@@ -244,59 +244,61 @@
       <input hidden value={$formData.App_Date} name={attrs.name} />
     </Form.Control>
   </Form.Field>
+  <div class="flex flex-row gap-0">
+    <Form.Field {form} name="Appointment_Hour">
+      <Form.Control let:attrs>
+        <Form.Label>Appointment Time</Form.Label>
+        <Select.Root
+          selected={selectedHour}
+          onSelectedChange={(v) => {
+            v && ($formData.Hour = v.value);
+          }}
+        >
+          <Select.Trigger {...attrs} class="w-[100px]">
+            <Select.Value placeholder="HH" />
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Group>
+              {#each hours as hour}
+                <Select.Item value={hour.value} label={hour.label}
+                  >{hour.label}</Select.Item
+                >
+              {/each}
+            </Select.Group>
+          </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.Hour} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
 
-  <Form.Field {form} name="Appointment_Hour">
-    <Form.Control let:attrs>
-      <Form.Label>Appointment Time</Form.Label>
-      <Select.Root
-        selected={selectedHour}
-        onSelectedChange={(v) => {
-          v && ($formData.Hour = v.value);
-        }}
-      >
-        <Select.Trigger {...attrs} class="w-[100px]">
-          <Select.Value placeholder="HH" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each hours as hour}
-              <Select.Item value={hour.value} label={hour.label}
-                >{hour.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.Hour} name={attrs.name} />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
-  <Form.Field {form} name="Appointment_Minute">
-    <Form.Control let:attrs>
-      <Select.Root
-        selected={selectedMinute}
-        onSelectedChange={(v) => {
-          v && ($formData.Minute = v.value);
-        }}
-      >
-        <Select.Trigger {...attrs} class="w-[100px]">
-          <Select.Value placeholder="MM" />
-        </Select.Trigger>
-        <Select.Content>
-          <Select.Group>
-            {#each minutes as minute}
-              <Select.Item value={minute.value} label={minute.label}
-                >{minute.label}</Select.Item
-              >
-            {/each}
-          </Select.Group>
-        </Select.Content>
-      </Select.Root>
-      <input hidden bind:value={$formData.Minute} name={attrs.name} />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
+    <Form.Field {form} name="Appointment_Minute">
+      <Form.Control let:attrs>
+        <Form.Label><br /></Form.Label>
+        <Select.Root
+          selected={selectedMinute}
+          onSelectedChange={(v) => {
+            v && ($formData.Minute = v.value);
+          }}
+        >
+          <Select.Trigger {...attrs} class="w-[100px]">
+            <Select.Value placeholder="MM" />
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Group>
+              {#each minutes as minute}
+                <Select.Item value={minute.value} label={minute.label}
+                  >{minute.label}</Select.Item
+                >
+              {/each}
+            </Select.Group>
+          </Select.Content>
+        </Select.Root>
+        <input hidden bind:value={$formData.Minute} name={attrs.name} />
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+  </div>
 
   <Form.Field {form} name="Nature_Of_Concern">
     <Form.Control let:attrs>
