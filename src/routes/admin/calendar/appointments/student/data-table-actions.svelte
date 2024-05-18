@@ -6,22 +6,40 @@
   import { Check, X, Eye, Trash2 } from "lucide-svelte";
   import * as Tooltip from "$lib/components/ui/tooltip";
   import { goto } from "$app/navigation";
+  import * as AlertDialog from "$lib/components/ui/alert-dialog";
 </script>
 
 <div class="flex flex-row gap-1">
-  <form method="POST" action="?/approve">
-    <input hidden name="id" value={_id} />
-    <input hidden name="table" value="Appointments" />
-    <Button type="submit" size="icon">
-      <Tooltip.Root>
-        <Tooltip.Trigger><Check /></Tooltip.Trigger>
-        <Tooltip.Content>
-          <p>Accept</p>
-        </Tooltip.Content>
-      </Tooltip.Root>
-    </Button>
-  </form>
+  <AlertDialog.Root>
+    <AlertDialog.Trigger>
+      <Button size="icon">
+        <Tooltip.Root>
+          <Tooltip.Trigger><Check /></Tooltip.Trigger>
+          <Tooltip.Content>
+            <p>Accept</p>
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Button>
+    </AlertDialog.Trigger>
+    <AlertDialog.Content>
+      <AlertDialog.Header>
+        <AlertDialog.Title>Approve Appointment?</AlertDialog.Title>
+        <AlertDialog.Description>
+          Appointment shall be approved and will send email notification of
+          approval.
+        </AlertDialog.Description>
+      </AlertDialog.Header>
+      <AlertDialog.Footer>
+        <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+        <form method="POST" action="?/approve">
+          <input hidden name="id" value={_id} />
+          <input hidden name="table" value="Appointments" />
 
+          <AlertDialog.Action type="submit">Continue</AlertDialog.Action>
+        </form>
+      </AlertDialog.Footer>
+    </AlertDialog.Content>
+  </AlertDialog.Root>
   <Dialog.Root>
     <Dialog.Trigger>
       <Button size="icon">
@@ -56,15 +74,35 @@
   <form method="POST" action="?/delete">
     <input hidden name="id" value={_id} />
     <input hidden name="table" value="Appointments" />
-    <Button type="submit" size="icon">
-      <Tooltip.Root>
-        <Tooltip.Trigger><Trash2 /></Tooltip.Trigger>
-        <Tooltip.Content>
-          <p></p>
-        </Tooltip.Content>
-      </Tooltip.Root>
-    </Button>
   </form>
+  <AlertDialog.Root>
+    <AlertDialog.Trigger>
+      <Button size="icon">
+        <Tooltip.Root>
+          <Tooltip.Trigger><Trash2 /></Tooltip.Trigger>
+          <Tooltip.Content>
+            <p>Delete Appointment</p>
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Button>
+    </AlertDialog.Trigger>
+    <AlertDialog.Content>
+      <AlertDialog.Header>
+        <AlertDialog.Title>Delete Appointment?</AlertDialog.Title>
+        <AlertDialog.Description>
+          Appointment shall be deleted from records.
+        </AlertDialog.Description>
+      </AlertDialog.Header>
+      <AlertDialog.Footer>
+        <AlertDialog.Cancel>Cancel</AlertDialog.Cancel>
+        <form method="POST" action="?/delete">
+          <input hidden name="id" value={_id} />
+          <input hidden name="table" value="Appointments" />
+          <AlertDialog.Action type="submit">Continue</AlertDialog.Action>
+        </form>
+      </AlertDialog.Footer>
+    </AlertDialog.Content>
+  </AlertDialog.Root>
   <Button size="icon" on:click={() => goto(`./appointments/student/${_id}`)}>
     <Tooltip.Root>
       <Tooltip.Trigger><Eye /></Tooltip.Trigger>

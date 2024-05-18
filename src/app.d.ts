@@ -5,7 +5,9 @@ declare global {
       session: import("lucia").Session | null;
     }
     interface PageData {
-      flash?: { type: 'success' | 'error' | 'somethingWentWrong' | 'unauthorizedAccess' | 'appointmentSuccess' | 'appointmentError' | 'loggedOut' | 'loggedIn'; message: string };
+      flash?: {
+        type: 'success' | 'error' | 'somethingWentWrong' | 'remarkAdded' | 'approvedAppointment' | 'rejectedAppointment' | 'deletedAppointment' | 'unauthorizedAccess' | 'appointmentSuccess' | 'appointmentError' | 'addedAccount' | 'ActiveAdmin' | 'On-leaveAdmin' | 'Deny-AccessAdmin' | 'deletedAdmin' | 'loggedOut' | 'loggedIn'; message: string
+      };
     }
   }
 }
