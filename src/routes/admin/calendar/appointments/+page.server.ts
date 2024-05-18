@@ -24,27 +24,39 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-  approve: async ({ request }) => {
-    const data = await request.formData();
+  approve: async (event) => {
+    const data = await event.request.formData();
     const id = data.get('id');
     const table = data.get('table');
-    await db.collection(`${table}`).updateOne({ _id: `${id}` }, { $set: { Status: 'Approved' } },);
-    redirect(302, "./appointments");
+    try {
+      await db.collection(`${table}`).updateOne({ _id: `${id}` }, { $set: { Status: 'Approved' } },);
+    } catch (e) {
+      redirect("./appointments", { type: 'somethingWentWrong', message: 'Could not perform action, please try again.' }, event);
+    }
+    redirect("./appointments", { type: "approvedAppointment", message: "Approval of appointment has been confirmed through email to the sender." }, event);
 
   },
-  rejected: async ({ request }) => {
-    const data = await request.formData();
+  rejected: async (event) => {
+    const data = await event.request.formData();
     const id = data.get('id');
     const table = data.get('table');
     const reject_remark = data.get('reject_remark');
-    await db.collection(`${table}`).updateOne({ _id: `${id}` }, { $set: { Status: 'Rejected', Denial_Remark: `${reject_remark}` } },);
-    redirect(302, "./appointments");
+    try {
+      await db.collection(`${table}`).updateOne({ _id: `${id}` }, { $set: { Status: 'Rejected', Denial_Remark: `${reject_remark}` } },);
+    } catch (e) {
+      redirect("./appointments", { type: 'somethingWentWrong', message: 'Could not perform action, please try again.' }, event);
+    }
+    redirect("./appointments", { type: 'rejectedAppointment', message: `Appointment has been rejected with the following remark: "${reject_remark}"` }, event);
   },
-  delete: async ({ request }) => {
-    const data = await request.formData();
+  delete: async (event) => {
+    const data = await event.request.formData();
     const id = data.get('id');
     const table = data.get('table');
-    await db.collection(`${table}`).deleteOne({ _id: `${id}` },);
-    redirect(302, "./appointments");
+    try {
+      await db.collection(`${table}`).deleteOne({ _id: `${id}` },);
+    } catch (e) {
+      redirect("./appointments", { type: 'somethingWentWrong', message: 'Could not perform action, please try again.' }, event);
+    }
+    redirect("./appointments", { type: 'deletedAppointment', message: 'Appointment has been deleted from records.' }, event);
   },
 };

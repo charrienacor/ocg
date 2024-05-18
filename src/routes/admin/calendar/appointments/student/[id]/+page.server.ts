@@ -17,11 +17,15 @@ export const load: PageServerLoad = async (event) => {
 };
 
 export const actions: Actions = {
-  remark: async ({ request, params }) => {
-    const data = await request.formData();
+  remark: async (event) => {
+    const data = await event.request.formData();
     const remark = data.get('session_remarks');
-    await db.collection(`Appointments`).updateOne({ _id: `${params.id}` }, { $set: { Session_Remarks: `${remark}` } },);
-    redirect(302, "../");
+    try {
+      await db.collection(`Appointments`).updateOne({ _id: `${event.params.id}` }, { $set: { Session_Remarks: `${remark}` } },);
+    } catch (e) {
+      redirect("../", { type: 'somethingWentWrong', message: 'Could not add remarks to session.' }, event)
+    }
+    redirect("../", { type: 'remarkAdded', message: 'Remarks to the session has been updated.' }, event)
   },
 };
 
