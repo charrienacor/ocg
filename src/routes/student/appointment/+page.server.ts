@@ -14,6 +14,11 @@ import {
   parseDate,
   today,
 } from "@internationalized/date";
+import { GOOGLE_EMAIL } from "$env/static/private";
+import { render } from 'svelte-email';
+import transporter from "$lib/email/email.server";
+import RequestEmail from "$lib/email/RequestEmail.svelte";
+import ConfirmationEmail from "$lib/email/ConfirmationEmail.svelte";
 
 let rawdate: Date;
 let date = "";
@@ -93,6 +98,69 @@ export const actions: Actions = {
       rawdate = new Date(data.Appointment_Date);
       date = df.format(rawdate);
       time = `${data.Appointment_Hour}:${data.Appointment_Minute}`
+      const emailhtml = render({
+        template: RequestEmail,
+        props: {
+          name: data.Student_Name,
+          date: date,
+          time: time,
+          email: data.Student_Email,
+          concern: data.Nature_Of_Concern,
+        }
+      });
+      const message = {
+        from: GOOGLE_EMAIL,
+        to: GOOGLE_EMAIL,
+        subject: `New Requested Appointment by Student ${data.Student_Name}`,
+        html: emailhtml
+      };
+
+      const sendEmail = async (message) => {
+        await new Promise((resolve, reject) => {
+          transporter.sendMail(message, (err, info) => {
+            if (err) {
+              console.error(err);
+              reject(err);
+            } else {
+              resolve(info);
+            }
+          });
+        });
+      };
+
+      await sendEmail(message);
+
+      const emailhtml1 = render({
+        template: ConfirmationEmail,
+        props: {
+          name: data.Student_Name,
+          date: date,
+          time: time,
+          email: data.Student_Email,
+          concern: data.Nature_Of_Concern,
+        }
+      });
+      const message1 = {
+        from: GOOGLE_EMAIL,
+        to: data.Student_Email,
+        subject: `Confirmation of Requested Appointment`,
+        html: emailhtml1
+      };
+
+      const sendEmail1 = async (message1) => {
+        await new Promise((resolve, reject) => {
+          transporter.sendMail(message1, (err, info) => {
+            if (err) {
+              console.error(err);
+              reject(err);
+            } else {
+              resolve(info);
+            }
+          });
+        });
+      };
+
+      await sendEmail1(message1);
     } catch (e) {
 
       setFlash({ type: 'appointmentError', message: 'Please check your input and try again.' }, event);
