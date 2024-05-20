@@ -1,9 +1,6 @@
 <script lang="ts">
   import type { PageServerData } from "./$types";
   import SettingsForm from "./SettingsForm.svelte";
-  import Calendar from "$lib/components/ui/calendar/calendar.svelte";
-  import { Button } from "$lib/components/ui/button/index.js";
-  import * as Card from "$lib/components/ui/card";
   import {
     CalendarDays,
     FileTextIcon,
@@ -11,8 +8,6 @@
     LogOutIcon,
   } from "lucide-svelte";
   export let data: PageServerData;
-  let name = data.name;
-  let email = data.email;
 </script>
 
 <head> 

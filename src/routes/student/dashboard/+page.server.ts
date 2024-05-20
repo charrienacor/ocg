@@ -1,4 +1,3 @@
-import { type RequestHandler } from "@sveltejs/kit";
 import { redirect } from 'sveltekit-flash-message/server'
 import type { PageServerLoad } from "./$types";
 

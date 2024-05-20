@@ -3,7 +3,6 @@
   import SettingsForm from "./SettingsForm.svelte";
   import Calendar from "$lib/components/ui/calendar/calendar.svelte";
   import { Button } from "$lib/components/ui/button/index.js";
-  import * as Card from "$lib/components/ui/card";
   import {
     CalendarDays,
     FileTextIcon,
@@ -12,11 +11,8 @@
     UserIcon,
   } from "lucide-svelte";
   import {
-    CalendarDate,
     DateFormatter,
-    type DateValue,
     getLocalTimeZone,
-    parseDate,
     today,
   } from "@internationalized/date";
   import * as Dialog from "$lib/components/ui/dialog";

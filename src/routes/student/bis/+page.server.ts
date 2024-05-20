@@ -1,4 +1,4 @@
-import { redirect, type RequestHandler } from "@sveltejs/kit";
+import { redirect } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
 import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";

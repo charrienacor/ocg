@@ -1,7 +1,6 @@
 import { google } from "$lib/server/auth";
 import { generateCodeVerifier, generateState } from "arctic";
 import { redirect } from "@sveltejs/kit";
-import { dev } from "$app/environment";
 
 import type { RequestEvent } from "@sveltejs/kit";
 

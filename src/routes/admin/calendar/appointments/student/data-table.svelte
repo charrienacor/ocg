@@ -22,11 +22,8 @@
   import * as Popover from "$lib/components/ui/popover/index.js";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
   import {
-    CalendarDate,
     DateFormatter,
-    type DateValue,
     getLocalTimeZone,
-    parseDate,
     today,
   } from "@internationalized/date";
 

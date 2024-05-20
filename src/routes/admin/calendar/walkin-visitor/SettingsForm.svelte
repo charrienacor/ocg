@@ -1,16 +1,11 @@
 <script lang="ts">
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
-  import { formSchema, type FormSchema } from "./schema";
-  import {
-    type SuperValidated,
-    type Infer,
-    superForm,
-  } from "sveltekit-superforms";
+  import { formSchema } from "./schema";
+  import { superForm } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
   import {
-    CalendarDate,
     DateFormatter,
     type DateValue,
     getLocalTimeZone,
@@ -22,7 +17,6 @@
   import { Calendar } from "$lib/components/ui/calendar/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
-  import FormDescription from "$lib/components/ui/form/form-description.svelte";
 
   const df = new DateFormatter("en-US", {
     dateStyle: "long",

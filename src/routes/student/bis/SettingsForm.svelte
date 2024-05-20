@@ -2,15 +2,11 @@
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
   import { Label } from "$lib/components/ui/label";
-  import { formSchema, type FormSchema } from "./schema";
-  import {
-    type SuperValidated,
-    type Infer,
-    superForm,
-  } from "sveltekit-superforms";
+  import { formSchema } from "./schema";
+  import { superForm } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
-  import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
+  import { Button } from "$lib/components/ui/button/index.js";
   import * as Popover from "$lib/components/ui/popover/index.js";
   import { Calendar as CalendarPrimitive } from "bits-ui";
   import {

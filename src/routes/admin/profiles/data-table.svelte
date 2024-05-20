@@ -5,7 +5,7 @@
     Subscribe,
     createRender,
   } from "svelte-headless-table";
-  import { addSortBy, addTableFilter } from "svelte-headless-table/plugins";
+  import { addTableFilter } from "svelte-headless-table/plugins";
   import { readable } from "svelte/store";
   import * as Table from "$lib/components/ui/table";
   import DataTableActions from "./data-table-actions.svelte";
@@ -90,7 +90,7 @@
 <div class="h-max">
   <div class="flex items-center py-4">
     <Input
-      class="max-w-sm"
+      class="max-w-full border-red-900"
       placeholder="Search"
       type="text"
       bind:value={$filterValue}

@@ -12,6 +12,14 @@ db.Counselors.insertMany([
     Status: "Active",
   },
   {
+    _id: "amlopez4@up.edu.ph",
+    First_Name: "Alyanna",
+    Middle_Name: "",
+    Last_Name: "Lopez",
+    RGC: "false",
+    Status: "Active",
+  },
+  {
     _id: "langiao@up.edu.ph",
     First_Name: "Liza",
     Middle_Name: "A.",
