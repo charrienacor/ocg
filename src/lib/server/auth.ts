@@ -5,7 +5,7 @@ import { dev } from "$app/environment";
 import { Google } from "arctic";
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "$env/static/private";
 
-const client = new MongoClient("mongodb://localhost:27017");
+const client = new MongoClient("mongodb://host.docker.internal:27017");
 await client.connect();
 
 const db = client.db("Aguhon");

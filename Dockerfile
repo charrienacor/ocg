@@ -1,14 +1,18 @@
-FROM node:lts-alpine as build
+FROM node:21-alpine AS build
+
 WORKDIR /app
-COPY ./package*.json ./
-RUN npm install
+COPY package*.json .
+RUN npm ci
 COPY . .
 RUN npm run build
+RUN npm prune --production
 
-FROM node:lts-alpine AS production
-COPY --from=build /app/build .
-COPY --from=build /app/package.json .
-COPY --from=build /app/package-lock.json .
-RUN npm ci --omit dev
-EXPOSE 5173
-CMD ["node", "."]
+FROM node:21-alpine AS run
+
+WORKDIR /app
+COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/build ./build
+COPY --from=build /app/node_modules ./node_modules
+CMD [ "node", "build" ]
+
+EXPOSE 3000

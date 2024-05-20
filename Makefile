@@ -8,7 +8,8 @@ reset:
 	docker volume rm aguhon_mongodb
 
 build:
-	docker-compose up --build
+	docker compose up --build database -d 
+	docker compose up -d
 
 update:
 	docker compose down
