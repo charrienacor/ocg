@@ -8,7 +8,7 @@
 
 <Html lang="en">
   <Text>
-    Hello {name}!, <br /> This is to inform you that your requested appointment
+    Hello {name}! <br /> This is to inform you that your requested appointment
     schdule on {date} at {time} with your requested counselor has been rejected with
     the following remarks: <br />
     {remark} <br />
