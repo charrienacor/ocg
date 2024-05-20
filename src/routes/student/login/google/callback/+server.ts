@@ -1,4 +1,3 @@
-import { OAuth2RequestError } from "arctic";
 import { generateId } from "lucia";
 import { google, lucia } from "$lib/server/auth";
 import db from "$db/mongo";

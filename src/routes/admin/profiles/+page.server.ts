@@ -1,5 +1,4 @@
-import { type RequestHandler } from "@sveltejs/kit";
-import { redirect, setFlash } from 'sveltekit-flash-message/server'
+import { redirect } from 'sveltekit-flash-message/server'
 import type { Actions, PageServerLoad } from "./$types";
 import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";

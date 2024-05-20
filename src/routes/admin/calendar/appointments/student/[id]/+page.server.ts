@@ -1,7 +1,6 @@
 import type { PageServerLoad, Actions } from "./$types";
 import db from "$db/mongo"
-import { type RequestHandler } from "@sveltejs/kit";
-import { redirect, setFlash } from 'sveltekit-flash-message/server'
+import { redirect } from 'sveltekit-flash-message/server'
 
 export const load: PageServerLoad = async (event) => {
   if (!event.locals.user) redirect("/admin/login", { type: 'loggedOut', message: 'You have been logged out' }, event);

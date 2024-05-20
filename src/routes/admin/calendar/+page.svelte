@@ -10,10 +10,6 @@
     UserIcon,
     LogOutIcon,
   } from "lucide-svelte";
-  import type { PageServerData } from "./$types";
-
-  export let data: PageServerData;
-  const name = data.name;
 </script>
 
 <head> 

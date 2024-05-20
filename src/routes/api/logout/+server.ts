@@ -1,4 +1,3 @@
-import { fail } from "@sveltejs/kit";
 import { lucia } from "$lib/server/auth";
 import { redirect } from 'sveltekit-flash-message/server';
 import type { RequestEvent } from "@sveltejs/kit";

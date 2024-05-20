@@ -5,15 +5,11 @@
   import { Button } from "$lib/components/ui/button/index.js";
   import { LogOutIcon } from "lucide-svelte";
   import {
-    CalendarDate,
     DateFormatter,
-    type DateValue,
     getLocalTimeZone,
-    parseDate,
     today,
   } from "@internationalized/date";
   import * as Dialog from "$lib/components/ui/dialog";
-  import { toast } from "svelte-sonner";
   export let data: PageServerData;
   let name = data.name;
   let email = data.email;

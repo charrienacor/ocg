@@ -1,20 +1,12 @@
-import { type RequestHandler } from "@sveltejs/kit";
 import type { PageServerLoad, Actions } from "./$types";
 import db from "$db/mongo";
-import { redirect, setFlash } from 'sveltekit-flash-message/server';
+import { redirect } from 'sveltekit-flash-message/server';
 import { GOOGLE_EMAIL } from "$env/static/private";
 import ApproveEmail from "$lib/email/ApproveEmail.svelte";
 import RejectEmail from "$lib/email/RejectEmail.svelte";
 import { render } from 'svelte-email';
 import transporter from "$lib/email/email.server";
-import {
-  CalendarDate,
-  DateFormatter,
-  type DateValue,
-  getLocalTimeZone,
-  parseDate,
-  today,
-} from "@internationalized/date";
+import { DateFormatter } from "@internationalized/date";
 
 export const load: PageServerLoad = async (event) => {
   if (!event.locals.user) redirect("/admin/login", { type: 'loggedOut', message: 'You have been logged out' }, event);

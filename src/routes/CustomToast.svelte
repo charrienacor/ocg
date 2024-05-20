@@ -265,7 +265,7 @@
         </div>
       </div>
     </div>
-  {:else if type === "Deny-AccessAppointment"}
+  {:else if type === "Deny-AccessAdmin"}
     <div
       class="flex rounded-md border-2 border-primary bg-secondary bg-opacity-5 p-5"
     >

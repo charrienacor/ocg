@@ -13,9 +13,7 @@
     } from "svelte-headless-table/plugins";
     import { readable } from "svelte/store";
     import DataTableActions from "./data-table-actions.svelte";
-    import ArrowUpDown from "lucide-svelte/icons/arrow-up-down";
     import * as Table from "$lib/components/ui/table/index.js";
-    import { Button } from "$lib/components/ui/button/index.js";
     import { cn } from "$lib/utils.js";
     import {
         DateFormatter,

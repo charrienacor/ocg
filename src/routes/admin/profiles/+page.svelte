@@ -3,7 +3,6 @@
     CalendarDays,
     FileTextIcon,
     LayoutDashboardIcon,
-    SearchIcon,
     UserIcon,
     LogOutIcon,
   } from "lucide-svelte";
