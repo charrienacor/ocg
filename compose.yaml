@@ -1,14 +1,27 @@
 name: aguhon
 
+volumes:
+  mongodb:
+
 services:
-  mongo:
-    image: mongo
+  mongodb:
+    image: mongo:latest
     restart: always
     volumes:
       - mongodb:/data/db
       - ./database/mongoinit.js:/docker-entrypoint-initdb.d/mongoinit.js:ro
     ports:
-      - "27017:27017"
-
-volumes:
-  mongodb:
+      - 27017:27017
+  # app:
+  #     container_name: aguhon-web
+  #     # The name of the image that will be created when building this container
+  #     build: .
+  #     expose:
+  #       - 5173
+  #     ports:
+  #       - 5173:5173
+  #     volumes: 
+  #       - .:/app
+  #       - /app/node_modules
+  #     depends_on:
+  #       - ongodb
