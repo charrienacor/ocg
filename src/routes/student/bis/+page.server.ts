@@ -1,4 +1,4 @@
-import { redirect } from "@sveltejs/kit";
+import { redirect, type RequestHandler } from "@sveltejs/kit";
 import type { Actions, PageServerLoad } from "./$types";
 import { fail } from "@sveltejs/kit";
 import { superValidate } from "sveltekit-superforms";
@@ -28,6 +28,7 @@ export const actions: Actions = {
     const data = form.data;
 
     await db.collection("BIS").insertOne({
+      
       _id: `${data.Student_Number}`, 
       
       Preliminaries: {
@@ -37,11 +38,11 @@ export const actions: Actions = {
         College: `${data.College}`,
       },
 
-      Personal_Information: {
+       Personal_Information: {
         Student_Name: `${data.Student_Name}`,
         Nickname: `${data.Nickname}`,
-        Sex: `${data.Sex}`,
-        Age: `${data.Age}`,
+        Student_Sex: `${data.Student_Sex}`,
+        Student_Age: `${data.Student_Age}`,
         Birth_Date: `${data.Birth_Date}`,
         Place_Of_Birth: `${data.Place_Of_Birth}`,
         Nationality: `${data.Nationality}`,
@@ -128,7 +129,7 @@ export const actions: Actions = {
         Allowance: `${data.Allowance}`,
         Source_Of_Allowance: `${data.Source_Of_Allowance}`,
         Specifics: `${data.Specifics}`,
-        Second_Other_Sources: `${data.Other_Sources_Of_Allowance}`,
+        Second_Other_Sources_Of_Allowance: `${data.Second_Other_Sources_Of_Allowance}`,
       },
 
       Vocational_Plans: {
@@ -142,15 +143,17 @@ export const actions: Actions = {
         Other_No_Reasons: `${data.Other_No_Reasons}`,
         Finish_In_UPB: `${data.Finish_In_UPB}`,
         Second_No_Reasons: `${data.Transfer_Reasons}`,
-        Second_Other_Sources_V: `${data.Future_Plans}`,
+        Future_Plans: `${data.Future_Plans}`,
+        Other_Future_Plans: `${data.Other_Future_Plans}`,
       },
 
       Leisure_Time_Activities: {
         Recreational_Activities: `${data.Recreational_Activities}`,
+        Interests: `${data.Interests}`,
         Clubs_Joined: `${data.Clubs_Joined}`,
         Clubs_To_Join: `${data.Clubs_To_Join}`,
-        Interests: `${data.Interests}`,
         Reading: `${data.Reading}`,
+        YesReading: `${data.YesReading}`,
       },
 
       Closing_Question: {
