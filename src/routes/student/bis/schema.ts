@@ -2,7 +2,8 @@ import { z } from "zod";
 
 
 export const formSchema = z.object({
-  // Preliminaries
+
+  // // Preliminaries
 
   Semester: z
     .string(),
@@ -27,16 +28,16 @@ export const formSchema = z.object({
       required_error: "Please select a college",
   }),
   
-  // Personal Information
+  // // Personal Information
 
   Student_Name: z
     .string()
-    .regex(/^[a-zA-Z,\s]+$/, { message: "This is required." })
+    // .regex(/^[a-zA-Z,\s]+$/, { message: "This is required." })
     .max(100),
 
   Nickname: z
     .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "This is required." })
+    // .regex(/^[a-zA-Z\s]+$/, { message: "This is required." })
     .max(100),
 
   Student_Sex: z
@@ -44,7 +45,7 @@ export const formSchema = z.object({
 
   Student_Age: z
     .string()
-    .regex(/[0-9]/, { message: "Only numbers allowed." })
+    // .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(2),
 
   Birth_Date: z
@@ -52,7 +53,7 @@ export const formSchema = z.object({
 
   Place_Of_Birth: z
     .string()
-    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
+    // .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
     .max(100),
 
   Nationality: z
@@ -66,33 +67,33 @@ export const formSchema = z.object({
 
   Cellphone_Number: z
     .string()
-    .regex(/[0-9]/, { message: "This is required." })
+    // .regex(/[0-9]/, { message: "This is required." })
     .max(11, { message: "Must be 11 digits" }),
 
   Email_Address: z
-    .string()
-    .regex(/^[a-z0-9,@\s.]+$/, { message: "This is required." }),
+    .string(),
+    // .regex(/^[a-z0-9,@\s.]+$/, { message: "This is required." }),
 
   Baguio_Address: z
     .string()
-    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
+    // .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
     .max(100),
 
   Baguio_Telephone_Number: z
     .string()
-    .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
+    // .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
     .max(30),
 
   Permanent_Address: z
-    .string()
-    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." }),
+    .string(),
+    // .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." }),
 
   Permanent_Telephone_Number: z
     .string()
-    .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
+    // .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
     .max(30),
 
-  // Family Data
+  // // Family Data
 
   Parent_Status: z
     .string(),
@@ -125,7 +126,6 @@ export const formSchema = z.object({
 
   Father_Address: z
     .string()
-    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
     .max(100),
 
   Father_Contact_Number: z
@@ -199,7 +199,7 @@ export const formSchema = z.object({
   Mother_Languages: z
     .string(),
 
-  // Children in the Familly
+  // Children in the Family
 
   Name: z.array(z.string()),
 
@@ -291,11 +291,12 @@ export const formSchema = z.object({
   Specifics: z
     .string(),
 
-  Other_Sources_Of_Allowance: z
+  Second_Other_Sources_Of_Allowance: z
     .string(),
 
-  // Vocational Plans
-  Course: z
+// // Vocational Plans
+  
+Course: z
     .string(),
 
   Major: z
@@ -328,26 +329,25 @@ export const formSchema = z.object({
   Future_Plans: z
     .string(),
 
-  // Leisure Time Activities
+  Other_Future_Plans: z
+    .string(),
+
+ // Leisure Time Activities
 
   Recreational_Activities: z
     .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
-    .max(200),
-
-  Clubs_Joined: z
-    .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
-    .max(200),
-
-  Clubs_To_Join: z
-    .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
     .max(200),
 
   Interests: z
     .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
+    .max(200),
+
+  Clubs_Joined: z
+    .string()
+    .max(200),
+
+  Clubs_To_Join: z
+    .string()
     .max(200),
 
   Reading: z.
@@ -355,7 +355,6 @@ export const formSchema = z.object({
 
   YesReading: z
     .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
     .max(200),
 
   // Closing Question
