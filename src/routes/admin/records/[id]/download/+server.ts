@@ -7,7 +7,7 @@ import type { RequestHandler } from './$types';
 export const GET: RequestHandler = async (event) => {
 	const client = new MongoClient("mongodb://localhost:27017");
 	await client.connect();
-	console.log(event.params.id);
+
 	const data = await client.db("Aguhon").collection("BIS").findOne({
 		_id: event.params.id
 	});
