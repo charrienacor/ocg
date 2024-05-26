@@ -3,77 +3,27 @@
     import { readable } from "svelte/store";
     import * as Table from "$lib/components/ui/table";
     import DataTableActions from "./data-table-actions.svelte";
+    import { page } from "$app/stores";
    
     type Payment = {
       id: number;
       first_name: string;
-      middle_name: string;
-      last_name: string;
       year: string;
       course: string;
     };
    
-    const data: Payment[] = [
-      {
-        id: 202110000,
-        first_name: "Lester",
-        middle_name: "N/A",
-        last_name: "Ignacio",
-        year: "Third Year",
-        course: "BS Computer Science",
-      },
-      {
-        id: 202110001,
-        first_name: "Charrie Anne",
-        middle_name: "S.",
-        last_name: "Nacor",
-        year: "Third Year",
-        course: "BS Computer Science",
-      },
-      {
-        id: 202110002,
-        first_name: "Alyanna May",
-        middle_name: "M.",
-        last_name: "Lopez",
-        year: "Third Year",
-        course: "BS Computer Science",
-      },
-      {
-        id: 202110003,
-        first_name: "Gideon Daniel",
-        middle_name: "T.",
-        last_name: "Orseno",
-        year: "Third Year",
-        course: "BS Computer Science",
-      },
-      {
-        id: 202110004,
-        first_name: "John Kenneth",
-        middle_name: "E.",
-        last_name: "Herrera",
-        year: "Third Year",
-        course: "BS Computer Science",
-      },
-    ];
+    const data: Payment[] = $page.data.students;
    
     const table = createTable(readable(data));
    
     const columns = table.createColumns([
       table.column({
-        accessor: "id",
+        accessor: "_id",
         header: "ID",
       }),
       table.column({
         accessor: "first_name",
         header: "First Name",
-      }),
-      table.column({
-        accessor: "middle_name",
-        header: "Middle Name",
-      }),
-      table.column({
-        accessor: "last_name",
-        header: "Last Name",
       }),
       table.column({
         accessor: "year",
@@ -84,7 +34,7 @@
         header: "Course",
       }),
       table.column({
-        accessor: ({ id }) => id,
+        accessor: ({ _id }) => _id,
         header: "Functions",
         cell: ({ value }) => {
             return createRender(DataTableActions, { id: value });

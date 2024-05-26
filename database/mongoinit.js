@@ -51,6 +51,14 @@ db.Counselors.insertMany([
     RGC: "false",
     Status: "Active",
   },
+  {
+    _id: "jeherrera@up.edu.ph",
+    First_Name: "JK",
+    Middle_Name: "",
+    Last_Name: "Herrera",
+    RGC: "false",
+    Status: "Active",
+  },
 ]);
 
 

@@ -2,16 +2,18 @@
     import { goto } from "$app/navigation";
     import { DownloadIcon, PencilIcon, ScanSearchIcon } from "lucide-svelte";
     import { Button } from "$lib/components/ui/button";
+
+    export let id: string;
 </script>
 
 <div class="flex">
 <Button 
+    href="/admin/records/{id}/download"
     data-tooltip-target="tooltip-light1"
     data-tooltip-style="light"
     variant="bigbutton"
     size="icon"
-    class="mr-1"
-    on:click={() => goto("#")}>
+    class="mr-1">
     <DownloadIcon size={15} /></Button>
     <div
         id="tooltip-light1"
