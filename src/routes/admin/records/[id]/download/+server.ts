@@ -19,7 +19,7 @@ export const GET: RequestHandler = async (event) => {
 	const { width, height } = firstPage.getSize();
 	const secondPage = pdfDoc.getPages()[1];
 
-	// Draw a rectangle with the color rgb(0, 45, 179)
+	// Customized color of text
 	const red = 0 / 255;
 	const green = 45 / 255;
 	const blue = 179 / 255;
@@ -380,54 +380,75 @@ export const GET: RequestHandler = async (event) => {
 	});
 
 	// CHILLDREN IN THE FAMILY -------------------------
-	firstPage.drawText(data?.Children_in_the_Family.Name?? 'N/A', {
-		x: 43,
-		y: height / 2 - 142,
-		size: 10,
-		color: rgb(red, green, blue)
-	});
 
-	firstPage.drawText(data?.Children_in_the_Family.Sex?? 'N/A', {
-		x: 185,
-		y: height / 2 - 142,
-		size: 10,
-		color: rgb(red, green, blue)
-	});
+	// Split names and draw each name on the PDF
+	function splitStrings(stringInput) {
+		const stringsArray = stringInput.split(',').map(name => name.trim());
+		return stringsArray;
+	}
 
-	firstPage.drawText(data?.Children_in_the_Family.Age?? 'N/A', {
-		x: 220,
-		y: height / 2 - 142,
-		size: 10,
-		color: rgb(red, green, blue)
-	});
+	const namesArray = splitStrings(data?.Children_in_the_Family.Name ?? '');
+	const sexArray = splitStrings(data?.Children_in_the_Family.Sex ?? '');
+	const ageArray = splitStrings(data?.Children_in_the_Family.Age ?? '');
+	const civilStatusArray = splitStrings(data?.Children_in_the_Family.Civil_Status ?? '');
+	const educAttainmentArray = splitStrings(data?.Children_in_the_Family.Educational_Attainment ?? '');
+	const occupationArray = splitStrings(data?.Children_in_the_Family.Occupation ?? '');
+	const residenceArray = splitStrings(data?.Children_in_the_Family.Residence ?? '');
 
-	firstPage.drawText(data?.Children_in_the_Family.Civil_Status?? 'N/A', {
-		x: 250,
-		y: height / 2 - 142,
-		size: 10,
-		color: rgb(red, green, blue)
-	});
-	
-	firstPage.drawText(data?.Children_in_the_Family.Educational_Attainment?? 'N/A', {
-		x: 300,
-		y: height / 2 - 142,
-		size: 10,
-		color: rgb(red, green, blue)
-	});
+	let startY = height / 2 - 142; // Starting y position
+    const lineHeight = 15; // Line height for each row
 
-	firstPage.drawText(data?.Children_in_the_Family.Occupation?? 'N/A', {
-		x: 400,
-		y: height / 2 - 142,
-		size: 10,
-		color: rgb(red, green, blue)
-	});
+    // Loop through each array and print the details in columns
+    for (let i = 0; i < namesArray.length; i++) {
+        firstPage.drawText(namesArray[i] ?? 'N/A', {
+            x: 43,
+            y: startY - (i * lineHeight),
+            size: 10,
+            color: rgb(red, green, blue)
+        });
 
-	firstPage.drawText(data?.Children_in_the_Family.Residence?? 'N/A', {
-		x: 490,
-		y: height / 2 - 142,
-		size: 10,
-		color: rgb(red, green, blue)
-	});
+        firstPage.drawText(sexArray[i] ?? 'N/A', {
+			x: 185,
+			y: startY - (i * lineHeight),
+			size: 10,
+			color: rgb(red, green, blue)
+        });
+
+        firstPage.drawText(ageArray[i] ?? 'N/A', {
+			x: 220,
+			y: startY - (i * lineHeight),
+			size: 10,
+			color: rgb(red, green, blue)
+        });
+
+        firstPage.drawText(civilStatusArray[i] ?? 'N/A', {
+			x: 250,
+			y: startY - (i * lineHeight),
+			size: 10,
+			color: rgb(red, green, blue)
+        });
+
+		firstPage.drawText(educAttainmentArray[i] ?? 'N/A', {
+			x: 300,
+			y: startY - (i * lineHeight),
+			size: 10,
+			color: rgb(red, green, blue)
+		});
+
+		firstPage.drawText(occupationArray[i] ?? 'N/A', {
+			x: 400,
+			y: startY - (i * lineHeight),
+			size: 10,
+			color: rgb(red, green, blue)
+		});
+
+		firstPage.drawText(residenceArray[i] ?? 'N/A', {
+			x: 490,
+			y: startY - (i * lineHeight),
+			size: 10,
+			color: rgb(red, green, blue)
+		});
+	}
 
 	// EDUCATIONAL BACKGROUND -------------------------
 	firstPage.drawText(data?.Educational_Background.Elementary_School?? 'N/A', {
