@@ -210,43 +210,67 @@ head {
 }
 
 .menu {
-    right: -56px;
+    right: -50px;
   }
 
 @media only screen and (max-width: 635px){
   .menu {
-    right: -115px;
+    right: -110px;
     top: 10px;
   }
 } 
 
-@media only screen and (min-width: 636px) and (max-width: 1025px) {
+@media only screen and (min-width: 636px) and (max-width: 749px) {
   .menu {
     right: -110px;
   }
 }
 
-@media only screen and (min-width: 1020px) and (max-width: 1050px) {
+@media only screen and (min-width: 750px) and (max-width: 1025px) {
   .menu {
-    right: -105px;
+    right: -135px;
+  }
+}
+
+@media only screen and (min-width: 1026px) and (max-width: 1034px) {
+  .menu {
+    right: -132px;
+  }
+}
+
+@media only screen and (min-width: 1035px) and (max-width: 1050px) {
+  .menu {
+    right: -125px;
   }
 }
 
 @media only screen and (min-width: 1051px) and (max-width: 1068px) {
   .menu {
-    right: -93px;
+    right: -117px;
   }
 }
 
-@media only screen and (min-width: 1069px) and (max-width: 1095px) {
+@media only screen and (min-width: 1069px) and (max-width: 1079px) {
   .menu {
-    right: -83px;
+    right: -110px;
+  }
+}
+
+@media only screen and (min-width: 1079px) and (max-width: 1095px) {
+  .menu {
+    right: -102px;
   }
 }
 
 @media only screen and (min-width: 1096px) and (max-width: 1115px) {
   .menu {
-    right: -70px;
+    right: -95px;
+  }
+}
+
+@media only screen and (min-width: 1116px) and (max-width: 1170px) {
+  .menu {
+    right: -64px;
   }
 }
 
@@ -270,9 +294,9 @@ head {
   }
 }
 
-@media only screen and (min-width: 735px) {
+@media only screen and (min-width: 750px) {
   .threedots {
     top: 30px;
-    right: 15px;
+    right: 40px;
   }
 }
