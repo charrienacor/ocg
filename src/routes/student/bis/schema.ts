@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-
 export const formSchema = z.object({
 
   // // Preliminaries
@@ -9,52 +8,36 @@ export const formSchema = z.object({
     .string(),
 
   School_Year: z
-    .string()
-    .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
-    .max(9, { message: "Must be 9 digits" }),
+    .string(),
 
   Student_Number: z
-    .string()
-    .regex(/[0-9]/, { message: "Only numbers allowed." })
-    .max(9, { message: "Must be 9 digits" }),
+    .string(),
 
   Degree_Program: z
-    .string({
-      required_error: "Please select a degree program",
-  }),
+    .string(),
 
   College: z
-    .string({
-      required_error: "Please select a college",
-  }),
+    .string(),
   
   // // Personal Information
 
   Student_Name: z
-    .string()
-    // .regex(/^[a-zA-Z,\s]+$/, { message: "This is required." })
-    .max(100),
+    .string(),
 
   Nickname: z
-    .string()
-    // .regex(/^[a-zA-Z\s]+$/, { message: "This is required." })
-    .max(100),
+    .string(),
 
   Student_Sex: z
     .string(),
 
   Student_Age: z
-    .string()
-    // .regex(/[0-9]/, { message: "Only numbers allowed." })
-    .max(2),
+    .string(),
 
   Birth_Date: z
     .string(),
 
   Place_Of_Birth: z
-    .string()
-    // .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
-    .max(100),
+    .string(),
 
   Nationality: z
     .string(),
@@ -66,67 +49,52 @@ export const formSchema = z.object({
     .string(),
 
   Cellphone_Number: z
-    .string()
-    // .regex(/[0-9]/, { message: "This is required." })
-    .max(11, { message: "Must be 11 digits" }),
+    .string(),
 
   Email_Address: z
     .string(),
-    // .regex(/^[a-z0-9,@\s.]+$/, { message: "This is required." }),
 
   Baguio_Address: z
-    .string()
-    // .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
-    .max(100),
+    .string(),
 
   Baguio_Telephone_Number: z
-    .string()
-    // .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
-    .max(30),
+    .string(),
 
   Permanent_Address: z
     .string(),
-    // .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." }),
 
   Permanent_Telephone_Number: z
-    .string()
-    // .regex(/[0-9]+[0-9]/, { message: "Only numbers and hyphen allowed." })
-    .max(30),
+    .string(),
 
   // // Family Data
 
-  Parent_Status: z
-    .string(),
+  Parent_Status: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
 
   Guardian: z
-    .string()
-    .max(50),
+    .string(),
 
   Guardian_Address: z
-    .string()
-    .max(100),
+    .string(),
 
   Guardian_Telephone_Number: z
-    .string()
-    .max(30),
+    .string(),
 
   Father_Name: z
     .string(),
 
   Father_Age: z
-    .number({ invalid_type_error: "Age must be a number." }),
+    .string(),
 
   Father_Living_Or_Dead: z
     .string(),
 
   Father_Place_Of_Birth: z
-    .string()
-    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
-    .max(100),
+    .string(),
 
   Father_Address: z
-    .string()
-    .max(100),
+    .string(),
 
   Father_Contact_Number: z
     .string(),
@@ -159,15 +127,13 @@ export const formSchema = z.object({
     .string(),
 
   Mother_Age: z
-    .number({ invalid_type_error: "Age must be a number." }),
+    .string(),
 
   Mother_Living_Or_Dead: z
     .string(),
 
   Mother_Place_Of_Birth: z
-    .string()
-    .regex(/^[a-zA-Z0-9,\s.-]+$/, { message: "This is required." })
-    .max(100),
+    .string(),
 
   Mother_Address: z
     .string(),
@@ -230,8 +196,9 @@ export const formSchema = z.object({
   Junior_High_School_Location: z
     .string(),
 
-  JHS_Type: z
-    .string(),
+  JHS_Type: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
 
   Junior_Number_Of_Students: z
     .string(),
@@ -242,8 +209,9 @@ export const formSchema = z.object({
   Senior_High_School_Location: z
     .string(),
 
-  SHS_Type: z
-    .string(),
+  SHS_Type: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
 
   Senior_Number_Of_Students: z
     .string(),
@@ -276,17 +244,19 @@ export const formSchema = z.object({
   Income: z
     .string(),
 
-  Source_Of_Income: z
-    .string(),
+  Source_of_Income: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
 
   Other_Sources_Of_Income: z
     .string(),
 
   Allowance: z
     .string(),
-
-  Source_Of_Allowance: z
-    .string(),
+    
+  Source_of_Allowance: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
 
   Specifics: z
     .string(),
@@ -305,11 +275,12 @@ Course: z
   Satisfaction: z
     .string(),
 
-  Yes_Reasons: z
-    .string(),
-
-  No_Reasons: z
-    .string(),
+  Yes_Reasons: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
+  No_Reasons: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
 
   Other_Course: z
     .string(),
@@ -326,8 +297,9 @@ Course: z
   Transfer_Reasons: z
     .string(),
 
-  Future_Plans: z
-    .string(),
+  Future_Plans: z.array(z.string()).refine((value) => value.some((item) => item), {
+    message: "You have to select at least one."
+  }),
 
   Other_Future_Plans: z
     .string(),
@@ -335,33 +307,26 @@ Course: z
  // Leisure Time Activities
 
   Recreational_Activities: z
-    .string()
-    .max(200),
+    .string(),
 
   Interests: z
-    .string()
-    .max(200),
+    .string(),
 
   Clubs_Joined: z
-    .string()
-    .max(200),
+    .string(),
 
   Clubs_To_Join: z
-    .string()
-    .max(200),
+    .string(),
 
   Reading: z.
     string(),
 
   YesReading: z
-    .string()
-    .max(200),
+    .string(),
 
   // Closing Question
   Dreams: z
-    .string()
-    .regex(/^[a-zA-Z\s]+$/, { message: "Only letters and spaces allowed." })
-    .max(500),
+    .string(),
 });
 
 export type FormSchema = typeof formSchema;
