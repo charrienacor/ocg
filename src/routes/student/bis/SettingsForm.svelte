@@ -1119,6 +1119,44 @@ let children = [
   </div>
 </Form.Fieldset>
 
+<div class="gap-4 md:grid md:grid-cols-3">
+  <Form.Field {form} name="Guardian">
+    <Form.Control let:attrs>
+      <Form.Label>Guardian (if not living with parents) </Form.Label>
+      <Input
+        {...attrs}
+        placeholder=""
+        bind:value={$formData.Guardian}
+      />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Guardian_Address">
+    <Form.Control let:attrs>
+      <Form.Label>Address</Form.Label>
+      <Input
+        {...attrs}
+        placeholder=""
+        bind:value={$formData.Guardian_Address}
+      />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+
+  <Form.Field {form} name="Guardian_Telephone_Number">
+    <Form.Control let:attrs>
+      <Form.Label>Telephone Number</Form.Label>
+      <Input
+        {...attrs}
+        placeholder=""
+        bind:value={$formData.Guardian_Telephone_Number}
+      />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+</div>
+
   <hr />
   <div class="grid grid-cols-2 gap-4">
     <div
