@@ -124,10 +124,10 @@ export const actions: Actions = {
 
       Financial_Information: {
         Income: `${data.Income}`,
-        Source_Of_Income: `${data.Source_Of_Income}`,
+        Source_of_Income: `${data.Source_of_Income}`,
         Other_Sources: `${data.Other_Sources_Of_Income}`,
         Allowance: `${data.Allowance}`,
-        Source_Of_Allowance: `${data.Source_Of_Allowance}`,
+        Source_of_Allowance: `${data.Source_of_Allowance}`,
         Specifics: `${data.Specifics}`,
         Second_Other_Sources_Of_Allowance: `${data.Second_Other_Sources_Of_Allowance}`,
       },
