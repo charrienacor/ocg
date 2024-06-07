@@ -2,67 +2,360 @@
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
   import { formSchema, type FormSchema } from "./schema";
-  import {
-    type SuperValidated,
-    type Infer,
-    superForm,
-  } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
   import CalendarIcon from "svelte-radix/Calendar.svelte";
   import { Button, buttonVariants } from "$lib/components/ui/button/index.js";
-  import * as Popover from "$lib/components/ui/popover/index.js";
-  import { Calendar as CalendarPrimitive } from "bits-ui";
-  import {
-    DateFormatter,
-    getLocalTimeZone,
-    today
-  } from "@internationalized/date";
-  import * as Calendar from "$lib/components/ui/calendar/index.js";
   import * as Select from "$lib/components/ui/select/index.js";
   import { cn } from "$lib/utils.js";
- 
-  type $$Props = CalendarPrimitive.Props;
-  type $$Events = CalendarPrimitive.Events;
- 
-  export let value: $$Props["value"] = undefined;
-  export let placeholder: $$Props["placeholder"] = today(getLocalTimeZone());
-  export let weekdayFormat: $$Props["weekdayFormat"] = "short";
- 
-  const monthFmt = new DateFormatter("en-US", {
-    month: "long"
-  });
- 
-  const yearOptions = Array.from({ length: 100 }, (_, i) => ({
-    label: String(new Date().getFullYear() - i),
-    value: new Date().getFullYear() - i
-  }));
-
-  const df = new DateFormatter("en-US", {
-    dateStyle: "long",
-  });
+  import SuperDebug, {
+    type Infer,
+    type SuperValidated,
+    superForm
+  } from "sveltekit-superforms";
+  import { toast } from "svelte-sonner";
+  import { browser } from "$app/environment";
+  import { page } from "$app/stores";
+  import { Checkbox } from "$lib/components/ui/checkbox/index.js";
   
-  export let data: any;
+  export let data: any | SuperValidated<Infer<FormSchema>> = $page.data.checkboxMultiple;
 
   const form = superForm(data, {
     validators: zodClient(formSchema),
+    onUpdated: ({ form: f }) => {
+      if (f.valid) {
+        toast.success(`You submitted the form successfully.`);
+      } else {
+        toast.error("Please fix the errors in the form.");
+      }
+    }
   });
 
   const { form: formData, enhance } = form;
 
-  const monthOptions = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ].map((month, i) => ({ value: i + 1, label: month }));
+  function addParentStatus(id: string) {
+    $formData.Parent_Status = [...$formData.Parent_Status, id];  }
+ 
+  function removeParentStatus(id: string) {
+    $formData.Parent_Status = $formData.Parent_Status.filter((i: string) => i !== id);
+  }
+
+  function addJHSType(id: string) {
+    $formData.JHS_Type = [...$formData.JHS_Type, id];
+  }
+ 
+  function removeJHSType(id: string) {
+    $formData.JHS_Type = $formData.JHS_Type.filter((i: string) => i !== id);
+  }
+
+  function addSHSType(id: string) {
+    $formData.SHS_Type = [...$formData.SHS_Type, id];
+  }
+ 
+  function removeSHSType(id: string) {
+    $formData.SHS_Type = $formData.SHS_Type.filter((i: string) => i !== id);
+  }
+
+  function addSourceIncome(id: string) {
+    $formData.Source_of_Income = [...$formData.Source_of_Income, id];
+  }
+ 
+  function removeSourceIncome(id: string) {
+    $formData.Source_of_Income = $formData.Source_of_Income.filter((i: string) => i !== id);
+  }
+
+  function addSourceAllowance(id: string) {
+    $formData.Source_of_Allowance = [...$formData.Source_of_Allowance, id];
+  }
+ 
+  function removeSourceAllowance(id: string) {
+    $formData.Source_of_Allowance = $formData.Source_of_Allowance.filter((i: string) => i !== id);
+  }
+
+  function addYesReason(id: string) {
+    $formData.Yes_Reasons = [...$formData.Yes_Reasons, id];
+  }
+ 
+  function removeYesReason(id: string) {
+    $formData.Yes_Reasons = $formData.Yes_Reasons.filter((i: string) => i !== id);
+  }
+
+  function addNoReason(id: string) {
+    $formData.No_Reasons = [...$formData.No_Reasons, id];
+  }
+ 
+  function removeNoReason(id: string) {
+    $formData.No_Reasons = $formData.No_Reasons.filter((i: string) => i !== id);
+  }
+
+  function addFuturePlan(id: string) {
+    $formData.Future_Plans = [...$formData.Future_Plans, id];
+  }
+ 
+  function removeFuturePlan(id: string) {
+    $formData.Future_Plans = $formData.Future_Plans.filter((i: string) => i !== id);
+  }
+
+  const parentStatuses = [
+  {
+    id: "Parents still married",
+    label: "Parents still married"
+  },
+  {
+    id: "Parents separated",
+    label: "Parents separated"
+  },
+  {
+    id: "Father re-married",
+    label: "Father re-married"
+  },
+  {
+    id: "Mother re-married",
+    label: "Mother re-married"
+  }
+] as const;
+
+const jhsTypes = [
+  {
+    id: "City",
+    label: "City"
+  },
+  {
+    id: "National",
+    label: "National"
+  },
+  {
+    id: "Exclusive",
+    label: "Exclusive"
+  },
+  {
+    id: "Co-ed",
+    label: "Co-ed"
+  },
+  {
+    id: "Provincial",
+    label: "Provincial"
+  },
+  {
+    id: "Barangay",
+    label: "Barangay"
+  },
+  {
+    id: "Sectarian",
+    label: "Sectarian"
+  },
+  {
+    id: "Non-sectarian",
+    label: "Non-sectarian"
+  },
+  {
+    id: "Agricultural",
+    label: "Agricultural"
+  },
+  {
+    id: "Technical/Vocational",
+    label: "Technical/Vocational"
+  },
+  {
+    id: "Vocational/Technical",
+    label: "Vocational/Technical"
+  },
+] as const;
+
+const shsTypes = [
+  {
+    id: "City",
+    label: "City"
+  },
+  {
+    id: "National",
+    label: "National"
+  },
+  {
+    id: "Exclusive",
+    label: "Exclusive"
+  },
+  {
+    id: "Co-ed",
+    label: "Co-ed"
+  },
+  {
+    id: "Provincial",
+    label: "Provincial"
+  },
+  {
+    id: "Barangay",
+    label: "Barangay"
+  },
+  {
+    id: "Sectarian",
+    label: "Sectarian"
+  },
+  {
+    id: "Non-sectarian",
+    label: "Non-sectarian"
+  },
+  {
+    id: "Agricultural",
+    label: "Agricultural"
+  },
+  {
+    id: "Technical/Vocational",
+    label: "Technical/Vocational"
+  },
+  {
+    id: "Vocational/Technical",
+    label: "Vocational/Technical"
+  },
+] as const;
+
+const sourceIncomes = [
+  {
+    id: "None",
+    label: "None"
+  },
+  {
+    id: "Salaries/wages/commission",
+    label: "Salaries/wages/commission"
+  },
+  {
+    id: "Farming/fishing",
+    label: "Farming/fishing"
+  },
+  {
+    id: "Own business",
+    label: "Own business"
+  },
+  {
+    id: "Pension",
+    label: "Pension"
+  },
+] as const;
+
+const sourceAllowances = [
+  {
+    id: "Parents and/or relatives",
+    label: "Parents and/or relatives"
+  },
+  {
+    id: "Study-now-pay-later plan",
+    label: "Study-now-pay-later plan"
+  },
+  {
+    id: "Student Assistantship",
+    label: "Student Assistantship"
+  },
+  {
+    id: "Scholarship/Fellowship (specify)",
+    label: "Scholarship/Fellowship (specify)"
+  },
+  {
+    id: "Part-time work outside of UP",
+    label: "Part-time work outside of UP"
+  },
+  {
+    id: "Savings from previous earnings",
+    label: "Savings from previous earnings"
+  },
+  {
+    id: "STFAP (specify bracket)",
+    label: "STFAP (specify bracket)"
+  },
+  {
+    id: "Other forms of financial aid from outside sources (e.g. private endowment)",
+    label: "Other forms of financial aid from outside sources (e.g. private endowment)"
+  },
+] as const;
+
+const yesReasons = [
+  {
+    id: "N/A",
+    label: "N/A"
+  },
+  {
+    id: "It is my interest.",
+    label: "It is my interest."
+  },
+  {
+    id: "There is a great opportunity to serve others.",
+    label: "There is a great opportunity to serve others."
+  },
+  {
+    id: "I will be able to utilize my talents.",
+    label: "I will be able to utilize my talents."
+  },
+  {
+    id: "There is a great demand for graduates of this course.",
+    label: "There is a great demand for graduates of this course."
+  },
+  {
+    id: "Prospect of good salary after graduation.",
+    label: "Prospect of good salary after graduations."
+  },
+  {
+    id: "It is prestigious.",
+    label: "It is prestigious."
+  }
+] as const;
+
+const noReasons = [
+  {
+    id: "N/A",
+    label: "N/A"
+  },
+  {
+    id: "Still undecided.",
+    label: "Still undecided."
+  },
+  {
+    id: "It was my parents' or others' choice.",
+    label: "It was my parents' or others' choice."
+  },
+  {
+    id: "The course I like is not offered in UP Baguio.",
+    label: "The course I like is not offered in UP Baguio."
+  },
+] as const;
+
+const futurePlans = [
+  {
+    id: "Work in hometown",
+    label: "Work in hometown"
+  },
+  {
+    id: "Work in private sector",
+    label: "Work in private sector"
+  },
+  {
+    id: "Work in the government",
+    label: "Work in the government"
+  },
+  {
+    id: "Work anywhere in the Philippines",
+    label: "Work anywhere in the Philippines"
+  },
+  {
+    id: "Work abroad",
+    label: "Work abroad"
+  },
+  {
+    id: "Pursue graduate studies in UP.",
+    label: "Pursue graduate studies in UP."
+  },
+  {
+    id: "Pursue graduate studies abroad.",
+    label: "Pursue graduate studies abroad."
+  },
+  {
+    id: "Pursue graduate studies in other school in PH.",
+    label: "Pursue graduate studies in other school in PH."
+  },
+  {
+    id: "Set up own business/firm/private practice",
+    label: "Set up own business/firm/private practice"
+  },
+] as const;
+
+
 
   const semesters = [
   { value: "first", label: "First Semester" },
@@ -141,24 +434,6 @@ const educations = [
   { value: "ma", label: "Master's Graduate" },
   { value: "phd", label: "Doctorate's Graduate" },
   { value: "voc", label: "Vocational" },
-];
-
-
-const civilStatuses = [
-  { value: "single", label: "Single" },
-  { value: "married", label: "Married" },
-  { value: "widowed", label: "Widowed" },
-  { value: "separated", label: "Separated" },
-  { value: "divorced", label: "Divorced" },
-];
-
-const educationalAttainments = [
-{ value: "elem", label: "Elementary Graduate" },
-{ value: "hs", label: "High School Graduate" },
-{ value: "college", label: "College Graduate" },
-{ value: "ma", label: "Master's Graduate" },
-{ value: "phd", label: "Doctorate's Graduate" },
-{ value: "voc", label: "Vocational" },
 ];
 
 const hsRanks = [
@@ -409,23 +684,6 @@ $: selectedReadingYN = $formData.readingYN
   }
 : undefined;
 
-$: defaultYear = placeholder
-  ? {
-      value: placeholder.year,
-      label: String(placeholder.year)
-    }
-  : undefined;
-
-$: defaultMonth = placeholder
-  ? {
-      value: placeholder.month,
-      label: monthFmt.format(placeholder.toDate(getLocalTimeZone()))
-    }
-  : undefined;
-
-let className: $$Props["class"] = undefined;
-export { className as class };
-
 let children = [
     { cName: "", 
 		  cSex: "", 
@@ -567,12 +825,6 @@ let children = [
     class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
   >
 <h1>Personal Information</h1>
-    <p class="mb-4">
-      <b>TO THE STUDENT:</b> The purpose of this form is to bring together all
-      essential information that may enable us to help you meet your specific needs
-      & future plans. The information will be kept confidential. Please answer
-      CAREFULLY, COMPLETELY & SINCERELY.
-    </p>
     <div class="gap-4 md:grid md:grid-cols-2">
       <Form.Field {form} name="Student_Name">
         <Form.Control let:attrs>
@@ -640,110 +892,15 @@ let children = [
 
       <Form.Field {form} name="Birth_Date">
         <Form.Control let:attrs>
-          <Form.Label>Date of Birth<br /></Form.Label>
-          <Popover.Root>
-            <Popover.Trigger asChild let:builder>
-              <Button
-                variant="outline"
-                class={cn(
-                  "w-full justify-start text-left font-normal",
-                  !value && "text-muted-foreground",
-                )}
-                builders={[builder]}
-              >
-                <CalendarIcon class="mr-2 h-4 w-4" />
-                {value
-                  ? df.format(value.toDate(getLocalTimeZone()))
-                  : "Select your birth date."}
-              </Button>
-            </Popover.Trigger>
-            <Popover.Content class="w-auto p-0" align="start">
-                  <CalendarPrimitive.Root
-                    bind:value
-                    bind:placeholder
-                    {weekdayFormat}
-                    class={cn("rounded-md border p-3", className)}
-                    {...$$restProps}
-                    on:keydown
-                    let:months
-                    let:weekdays
-                  >
-                <Calendar.Header>
-                  <Calendar.Heading class="flex w-full items-center justify-between gap-2">
-                    <Select.Root
-                      selected={defaultMonth}
-                      items={monthOptions}
-                      onSelectedChange={(v) => {
-                        if (!v || !placeholder) return;
-                        if (v.value === placeholder?.month) return;
-                        placeholder = placeholder.set({ month: v.value });
-                      }}
-                    >
-                      <Select.Trigger aria-label="Select month" class="w-[60%] bg-primary">
-                        <Select.Value placeholder="Select month" />
-                      </Select.Trigger>
-                      <Select.Content class="max-h-[200px] overflow-y-auto">
-                        {#each monthOptions as { value, label }}
-                          <Select.Item {value} {label}>
-                            {label}
-                          </Select.Item>
-                        {/each}
-                      </Select.Content>
-                    </Select.Root>
-                    <Select.Root
-                      selected={defaultYear}
-                      items={yearOptions}
-                      onSelectedChange={(v) => {
-                        if (!v || !placeholder) return;
-                        if (v.value === placeholder?.year) return;
-                        placeholder = placeholder.set({ year: v.value });
-                      }}
-                    >
-                      <Select.Trigger aria-label="Select year" class="w-[40%] bg-primary">
-                        <Select.Value placeholder="Select year" />
-                      </Select.Trigger>
-                      <Select.Content class="max-h-[200px] overflow-y-auto">
-                        {#each yearOptions as { value, label }}
-                          <Select.Item {value} {label}>
-                            {label}
-                          </Select.Item>
-                        {/each}
-                      </Select.Content>
-                    </Select.Root>
-                  </Calendar.Heading>
-                </Calendar.Header>
-                <Calendar.Months>
-                  {#each months as month}
-                    <Calendar.Grid>
-                      <Calendar.GridHead>
-                        <Calendar.GridRow class="flex">
-                          {#each weekdays as weekday}
-                            <Calendar.HeadCell>
-                              {weekday.slice(0, 2)}
-                            </Calendar.HeadCell>
-                          {/each}
-                        </Calendar.GridRow>
-                      </Calendar.GridHead>
-                      <Calendar.GridBody>
-                        {#each month.weeks as weekDates}
-                          <Calendar.GridRow class="mt-2 w-full">
-                            {#each weekDates as date}
-                              <Calendar.Cell {date}>
-                                <Calendar.Day {date} month={month.value} />
-                              </Calendar.Cell>
-                            {/each}
-                          </Calendar.GridRow>
-                        {/each}
-                      </Calendar.GridBody>
-                    </Calendar.Grid>
-                  {/each}
-                </Calendar.Months>
-              </CalendarPrimitive.Root>         
-            </Popover.Content>
-          </Popover.Root>
+          <Form.Label>Date of Birth</Form.Label>
+          <Input
+            {...attrs}
+            placeholder="MM-DD-YYYY"
+            bind:value={$formData.Birth_Date}
+          />
         </Form.Control>
         <Form.FieldErrors />
-      </Form.Field>
+      </Form.Field>   
 
       <Form.Field {form} name="Place_Of_Birth">
         <Form.Control let:attrs>
@@ -925,118 +1082,42 @@ let children = [
   >
 <h1>Family Data</h1>
 
-  <Form.Field {form} name="Parent_Status">
-    <Form.Control let:attrs>
-      <Form.Label
-        >Check any of the following that is applicable.(Checkbox)</Form.Label
-      >
-      <div class="gap-4 md:grid md:grid-cols-4">
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Parents still married</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Parents Separated</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Father re-married</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Mother re-married</label
-          >
-        </div>
-      </div>
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
-  <Form.Field {form} name="Guardian">
-    <Form.Control let:attrs>
-      <Form.Label>Guardian (If not living with parents)</Form.Label>
-      <Input
-        {...attrs}
-        placeholder="Name of your Guardian"
-        bind:value={$formData.Guardian}
-      />
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
-
-  <div class="gap-4 md:grid md:grid-cols-2">
-    <Form.Field {form} name="Guardian_Address">
-      <Form.Control let:attrs>
-        <Form.Label>Address</Form.Label>
-        <Input
-          {...attrs}
-          placeholder="Address"
-          bind:value={$formData.GuardianAddress}
-        />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
-
-    <Form.Field {form} name="Guardian_Telephone_Number">
-      <Form.Control let:attrs>
-        <Form.Label>Telephone Number</Form.Label>
-        <Input
-          {...attrs}
-          placeholder="09XXXXXXXXX"
-          bind:value={$formData.Telephone_Number}
-        />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
+<Form.Fieldset {form} name="Parent_Status">
+  <div class="mb-4">
+    <Form.Legend>Check any of the following that is applicable.</Form.Legend>
   </div>
+  <div class="gap-4 md:grid md:grid-cols-4">
+    {#each parentStatuses as parentStatus}
+      {@const checked = $formData.Parent_Status.includes(parentStatus.id)}
+        <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+          <Form.Control let:attrs>
+            <Checkbox
+              {...attrs}
+              {checked}
+              onCheckedChange={(v) => {
+                if (v) {
+                  addParentStatus(parentStatus.id);
+                } else {
+                  removeParentStatus(parentStatus.id);
+                }
+              }}
+            />
+            <Form.Label class="font-normal ml-2">
+              {parentStatus.label}
+            </Form.Label>
+            <input
+              hidden
+              type="checkbox"
+              name={attrs.name}
+              value={parentStatus.id}
+              {checked}
+            />
+          </Form.Control>
+        </div>
+    {/each}
+    <Form.FieldErrors />
+  </div>
+</Form.Fieldset>
 
   <hr />
   <div class="grid grid-cols-2 gap-4">
@@ -1655,207 +1736,56 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   </Form.Field>
 </div>
 
-<Form.Field {form} name="JHS_Type">
-  <Form.Control let:attrs>
-    <Form.Label>Type of Junior High School</Form.Label>
-    <div class="grid grid-cols-2 gap-4">
-      <div
-        class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-      >
-        PRIVATE
-      </div>
-      <div
-        class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-      >
-        PUBLIC
-      </div>
-    </div>
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <div class="gap-4 md:grid md:grid-cols-2">
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Exclusive</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Co-ed</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Sectarian</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Non-sectarian</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Vocational/Technical</label
-          >
-        </div>
-      </div>
+<Form.Fieldset {form} name="JHS_Type">
+  <div class="mb-4">
+    <Form.Legend>Type of Junior High School</Form.Legend>
+  </div>
 
-      <div class="gap-4 md:grid md:grid-cols-2">
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >City</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >National</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Provincial</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Barangay</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Agricultural</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Technical/Vocational</label
-          >
-        </div>
-      </div>
+  <div class="grid grid-cols-2 gap-2">
+    <div
+      class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+    >
+      PUBLIC
     </div>
-  </Form.Control>
-  <Form.FieldErrors />
-</Form.Field>
+    <div
+      class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+    >
+      PRIVATE
+    </div>
+  </div>
+
+  <div class="gap-4 md:grid md:grid-cols-4">
+    {#each jhsTypes as jhsType}
+      {@const checked = $formData.JHS_Type.includes(jhsType.id)}
+        <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+          <Form.Control let:attrs>
+            <Checkbox
+              {...attrs}
+              {checked}
+              onCheckedChange={(v) => {
+                if (v) {
+                  addJHSType(jhsType.id);
+                } else {
+                  removeJHSType(jhsType.id);
+                }
+              }}
+            />
+            <Form.Label class="font-normal ml-2">
+              {jhsType.label}
+            </Form.Label>
+            <input
+              hidden
+              type="checkbox"
+              name={attrs.name}
+              value={jhsType.id}
+              {checked}
+            />
+          </Form.Control>
+        </div>
+    {/each}
+    <Form.FieldErrors />
+  </div>
+</Form.Fieldset>
 
 <Form.Field {form} name="Junior_Number_Of_Students">
   <Form.Control let:attrs>
@@ -1913,207 +1843,57 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   </Form.Field>
 </div>
 
-<Form.Field {form} name="SHS_Type">
-  <Form.Control let:attrs>
-    <Form.Label>Type of Senior High School</Form.Label>
-    <div class="grid grid-cols-2 gap-4">
-      <div
-        class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-      >
-        PRIVATE
-      </div>
-      <div
-        class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
-      >
-        PUBLIC
-      </div>
-    </div>
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <div class="gap-4 md:grid md:grid-cols-2">
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Exclusive</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Co-ed</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Sectarian</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Non-sectarian</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Vocational/Technical</label
-          >
-        </div>
-      </div>
+<Form.Fieldset {form} name="SHS_Type">
+  <div class="mb-4">
+    <Form.Legend>Type of Senior High School</Form.Legend>
+  </div>
 
-      <div class="gap-4 md:grid md:grid-cols-2">
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >City</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >National</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Provincial</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Barangay</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Agricultural</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Technical/Vocational</label
-          >
-        </div>
-      </div>
+  <div class="grid grid-cols-2 gap-2">
+    <div
+      class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+    >
+      PUBLIC
     </div>
-  </Form.Control>
-  <Form.FieldErrors />
-</Form.Field>
+    <div
+      class="text-medium rounded-sm bg-rose-900 text-center text-xl text-white"
+    >
+      PRIVATE
+    </div>
+  </div>
+
+  <div class="gap-4 md:grid md:grid-cols-4">
+    {#each shsTypes as shsType}
+      {@const checked = $formData.SHS_Type.includes(shsType.id)}
+        <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+          <Form.Control let:attrs>
+            <Checkbox
+              {...attrs}
+              {checked}
+              onCheckedChange={(v) => {
+                if (v) {
+                  addSHSType(shsType.id);
+                } else {
+                  removeSHSType(shsType.id);
+                }
+              }}
+            />
+            <Form.Label class="font-normal ml-2">
+              {shsType.label}
+            </Form.Label>
+            <input
+              hidden
+              type="checkbox"
+              name={attrs.name}
+              value={shsType.id}
+              {checked}
+            />
+          </Form.Control>
+        </div>
+    {/each}
+    <Form.FieldErrors />
+  </div>
+</Form.Fieldset>
+
 
 <Form.Field {form} name="Senior_Number_Of_Students">
   <Form.Control let:attrs>
@@ -2366,102 +2146,48 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   <Form.FieldErrors />
   </Form.Field> 
 
-<Form.Field {form} name="Source_Of_Income">
-  <Form.Control let:attrs>
-    <Form.Label
-      >What is/are the source/s of your family's income? (Check as many
-      that applies)</Form.Label
-    >
-    <div class="gap-4 md:grid md:grid-cols-5">
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >None</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Salaries/Wages</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Farming/Fishing</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Own Business</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Pension</label
-        >
-      </div>
+  <Form.Fieldset {form} name="Source_of_Income">
+    <div class="mb-4">
+      <Form.Legend>What is/are the source/s of your family's income? (Check as many that applies).</Form.Legend>
     </div>
-  </Form.Control>
-  <Form.FieldErrors />
-</Form.Field>
+    <div class="gap-4 md:grid md:grid-cols-3">
+      {#each sourceIncomes as sourceIncome}
+        {@const checked = $formData.Source_of_Income.includes(sourceIncome.id)}
+          <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+            <Form.Control let:attrs>
+              <Checkbox
+                {...attrs}
+                {checked}
+                onCheckedChange={(v) => {
+                  if (v) {
+                    addSourceIncome(sourceIncome.id);
+                  } else {
+                    removeSourceIncome(sourceIncome.id);
+                  }
+                }}
+              />
+              <Form.Label class="font-normal ml-2">
+                {sourceIncome.label}
+              </Form.Label>
+              <input
+                hidden
+                type="checkbox"
+                name={attrs.name}
+                value={sourceIncome.id}
+                {checked}
+              />
+            </Form.Control>
+          </div>
+      {/each}
+      <Form.FieldErrors />
+    </div>
+  </Form.Fieldset>
+  
 
 <Form.Field {form} name="Other_Sources_Of_Income">
   <Form.Control let:attrs>
     <Form.Label
-      >Other sources of income of your family that was not stated above.</Form.Label
+      >Other sources of income of your family that was not stated above.  Please type <b>N/A</b>, if not applicable.</Form.Label
     >
     <Input
       {...attrs}
@@ -2479,155 +2205,55 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
         >monthly (EXCLUDING</b
       > board & lodging)
     </Form.Label>
-    <Input {...attrs} placeholder="PhP" bind:value={$formData.Allowance} />
+    <Input {...attrs} placeholder="" bind:value={$formData.Allowance} />
   </Form.Control>
   <Form.FieldErrors />
 </Form.Field>
 
-<Form.Field {form} name="Source_Of_Allowance">
-  <Form.Control let:attrs>
-    <Form.Label>Check below the source/s of your allowances</Form.Label>
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Parents and/or relatives</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Study-now-pay-later plan</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Student Assistantship</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Scholarship/Fellowship (specify)</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Part-time work outside of UP</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Savings from previous earnings</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >STFAP (specify bracket)</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Other forms of financial aid from outside sources (e.g. private
-          endowment)</label
-        >
-      </div>
-    </div>
-  </Form.Control>
-  <Form.FieldErrors />
-</Form.Field>
+<Form.Fieldset {form} name="Source_of_Allowance">
+  <div class="mb-4">
+    <Form.Legend>Check below the source/s of your allowances</Form.Legend>
+  </div>
+  <div class="gap-4 md:grid md:grid-cols-2">
+    {#each sourceAllowances as sourceAllowance}
+      {@const checked = $formData.Source_of_Allowance.includes(sourceAllowance.id)}
+        <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+          <Form.Control let:attrs>
+            <Checkbox
+              {...attrs}
+              {checked}
+              onCheckedChange={(v) => {
+                if (v) {
+                  addSourceAllowance(sourceAllowance.id);
+                } else {
+                  removeSourceAllowance(sourceAllowance.id);
+                }
+              }}
+            />
+            <Form.Label class="font-normal ml-2">
+              {sourceAllowance.label}
+            </Form.Label>
+            <input
+              hidden
+              type="checkbox"
+              name={attrs.name}
+              value={sourceAllowance.id}
+              {checked}
+            />
+          </Form.Control>
+        </div>
+    {/each}
+    <Form.FieldErrors />
+  </div>
+</Form.Fieldset>
+
 
 <div class="gap-4 md:grid md:grid-cols-2">
   <Form.Field {form} name="Specifics">
     <Form.Control let:attrs>
       <Form.Label
         >Specify details of checked options stated above (ex.
-        Scholarship/STFAP).</Form.Label
+        Scholarship/STFAP). Please type <b>N/A</b>, if not applicable.</Form.Label
       >
       <Input {...attrs} placeholder="" bind:value={$formData.specifics} />
     </Form.Control>
@@ -2637,7 +2263,7 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   <Form.Field {form} name="Second_Other_Sources_Of_Allowance">
     <Form.Control let:attrs>
       <Form.Label
-        >Other sources of allowance that was not stated above.</Form.Label
+        >Other sources of allowance that was not stated above. <br> Please type <b>N/A</b>, if not applicable.</Form.Label
       >
       <Input
         {...attrs}
@@ -2742,184 +2368,91 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   </Form.Field> 
 
 <div class="gap-4 md:grid md:grid-cols-2">
-  <Form.Field {form} name="Yes_Reasons">
-    <Form.Control let:attrs>
-      <Form.Label
-        >If <b>YES</b>, check the reasons for choosing this course.
-        (Checkbox)</Form.Label
-      >
-      <div class="gap-4 md:grid md:grid-cols-2">
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+  <Form.Fieldset {form} name="Yes_Reasons">
+    <div class="mb-4">
+      <Form.Legend>If <b>YES</b>, check the reasons for choosing this course.</Form.Legend>
+    </div>
+    <div class="gap-4 md:grid md:grid-cols-2">
+      {#each yesReasons as yesReason}
+        {@const checked = $formData.Yes_Reasons.includes(yesReason.id)}
+          <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+            <Form.Control let:attrs>
+              <Checkbox
+                {...attrs}
+                {checked}
+                onCheckedChange={(v) => {
+                  if (v) {
+                    addYesReason(yesReason.id);
+                  } else {
+                    removeYesReason(yesReason.id);
+                  }
+                }}
+              />
+              <Form.Label class="font-normal ml-2">
+                {yesReason.label}
+              </Form.Label>
+              <input
+                hidden
+                type="checkbox"
+                name={attrs.name}
+                value={yesReason.id}
+                {checked}
+              />
+            </Form.Control>
+          </div>
+      {/each}
+      <Form.FieldErrors />
+    </div>
+  </Form.Fieldset>
+  
+  <Form.Fieldset {form} name="No_Reasons">
+    <div class="mb-4">
+      <Form.Legend>If <b>NO</b>, check your reasons why you do not like your course.</Form.Legend>
+    </div>
+    <div class="gap-4 md:grid md:grid-cols-2">
+      {#each noReasons as noReason}
+        {@const checked = $formData.No_Reasons.includes(noReason.id)}
+          <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+            <Form.Control let:attrs>
+              <Checkbox
+                {...attrs}
+                {checked}
+                onCheckedChange={(v) => {
+                  if (v) {
+                    addNoReason(noReason.id);
+                  } else {
+                    removeNoReason(noReason.id);
+                  }
+                }}
+              />
+              <Form.Label class="font-normal ml-2">
+                {noReason.label}
+              </Form.Label>
+              <input
+                hidden
+                type="checkbox"
+                name={attrs.name}
+                value={noReason.id}
+                {checked}
+              />
+            </Form.Control>
+          </div>
+      {/each}
+      <Form.Field {form} name="Other_Course">
+        <Form.Control let:attrs>
+          <Form.Label>What course do you prefer?</Form.Label>
+          <Input
+            {...attrs}
+            placeholder=""
+            bind:value={$formData.Other_Course}
           />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >It is my interest.</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >There is a great opportunity to serve others.</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >I will be able to utilize my talents.</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >There is a great demand for graduates of this course.</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Prospect of good salary after graduation.</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >It is prestigious.</label
-          >
-        </div>
-      </div>
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
+        </Form.Control>
+        <Form.FieldErrors />
+      </Form.Field>
+      <Form.FieldErrors />
+    </div>
+  </Form.Fieldset>
 
-  <Form.Field {form} name="No_Reasons">
-    <Form.Control let:attrs>
-      <Form.Label
-        >If <b>NO</b>, check your reasons why you do not like your course.
-        (Checkbox)</Form.Label
-      >
-      <div class="gap-4 md:grid md:grid-cols-2">
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >Still undecided.</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >It was my parents' <br />or others' choice.</label
-          >
-        </div>
-        <div
-          class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-        >
-          <input
-            id="bordered-checkbox-1"
-            type="checkbox"
-            value=""
-            name="bordered-checkbox"
-            class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-          />
-          <label
-            for="bordered-checkbox-1"
-            class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >The course I like is not offered in UP Baguio.</label
-          >
-        </div>
-        <Form.Field {form} name="Other_Course">
-          <Form.Control let:attrs>
-            <Form.Label>What course do you prefer?</Form.Label>
-            <Input
-              {...attrs}
-              placeholder=""
-              bind:value={$formData.Other_Course}
-            />
-          </Form.Control>
-          <Form.FieldErrors />
-        </Form.Field>
-      </div>
-    </Form.Control>
-    <Form.FieldErrors />
-  </Form.Field>
 </div>
 
 <div class="gap-4 md:grid md:grid-cols-2">
@@ -2990,173 +2523,55 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   </Form.Field>
 </div>
 
-<Form.Field {form} name="Future_Plans">
-  <Form.Control let:attrs>
-    <Form.Label
-      >What are your plans after graduation? (Please check as many as
-      appropriate)(Checkbox)</Form.Label
-    >
-    <div class="gap-4 md:grid md:grid-cols-2">
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
+<Form.Fieldset {form} name="Future_Plans">
+  <div class="mb-4">
+    <Form.Legend>What are your plans after graduation? (Please check as many as
+      appropriate)</Form.Legend>
+  </div>
+  <div class="gap-4 md:grid md:grid-cols-2">
+    {#each futurePlans as futurePlan}
+      {@const checked = $formData.Future_Plans.includes(futurePlan.id)}
+        <div style="border: 0.5px solid #e0e0e0; border-radius: 6px; padding: 15px; display: flex; align-items: center;">
+          <Form.Control let:attrs>
+            <Checkbox
+              {...attrs}
+              {checked}
+              onCheckedChange={(v) => {
+                if (v) {
+                  addFuturePlan(futurePlan.id);
+                } else {
+                  removeFuturePlan(futurePlan.id);
+                }
+              }}
+            />
+            <Form.Label class="font-normal ml-2">
+              {futurePlan.label}
+            </Form.Label>
+            <input
+              hidden
+              type="checkbox"
+              name={attrs.name}
+              value={futurePlan.id}
+              {checked}
+            />
+          </Form.Control>
+        </div>
+    {/each}
+    <Form.Field {form} name="Other_Future_Plans">
+      <Form.Control let:attrs>
+        <Form.Label>Others (Please specify)</Form.Label>
+        <Input
+          {...attrs}
+          placeholder=""
+          bind:value={$formData.Other_Future_Plans}
         />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Work in hometown</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Work in private sector</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Work in the government</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Work anywhere in the Philippines</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Work abroad</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Pursue graduate studies in UP.</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Pursue graduate studies abroad.</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Pursue graduate studies in other school in PH.</label
-        >
-      </div>
-      <div
-        class="flex items-center rounded border border-gray-200 ps-4 dark:border-gray-700"
-      >
-        <input
-          id="bordered-checkbox-1"
-          type="checkbox"
-          value=""
-          name="bordered-checkbox"
-          class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
-        />
-        <label
-          for="bordered-checkbox-1"
-          class="ms-2 w-full py-4 text-sm font-medium text-gray-900 dark:text-gray-300"
-          >Set up own business/firm/private practice</label
-        >
-      </div>
-      <Form.Field {form} name="Other_Future_Plans">
-        <Form.Control let:attrs>
-          <Form.Label>Others (Please specify)</Form.Label>
-          <Input
-            {...attrs}
-            placeholder=""
-            bind:value={$formData.Other_Future_Plans}
-          />
-        </Form.Control>
-        <Form.FieldErrors />
-      </Form.Field>
-    </div>
-  </Form.Control>
-  <Form.FieldErrors />
-</Form.Field>
-</div>
+      </Form.Control>
+      <Form.FieldErrors />
+    </Form.Field>
+
+    <Form.FieldErrors />
+  </div>
+</Form.Fieldset>
 
 
 <div
@@ -3253,8 +2668,7 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   </Form.Field>
 </div>
 
-
-  
 <Form.Button class="w-full">Submit</Form.Button>
 </form>
+
 </div>
