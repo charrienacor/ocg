@@ -9,6 +9,7 @@
     UsersRound,
     UserIcon,
     LogOutIcon,
+    MenuIcon,
   } from "lucide-svelte";
 </script>
 
@@ -28,20 +29,10 @@
   <button
     id="dropdownMenuIconButton"
     data-dropdown-toggle="dropdownDots"
-    class="inline-flex items-center rounded-full bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-300 focus:outline-none focus:ring-4 focus:ring-gray-50 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    class="rounded-2xl bg-white p-3 text-center text-sm font-medium text-gray-900 hover:bg-gray-300 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-600"
     type="button"
   >
-    <svg
-      class="h-5 w-5"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="currentColor"
-      viewBox="0 0 4 15"
-    >
-      <path
-        d="M3.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 6.041a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Zm0 5.959a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"
-      />
-    </svg>
+    <MenuIcon size={25} />
   </button>
 
   <div
