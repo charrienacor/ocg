@@ -16,10 +16,34 @@
   import { browser } from "$app/environment";
   import { page } from "$app/stores";
   import { Checkbox } from "$lib/components/ui/checkbox/index.js";
-  
+  import { Label } from "$lib/components/ui/label/index.js";
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    const picture = document.getElementById("picture");
+
+    if (picture) {
+      picture.addEventListener("change", e => {
+        const target = e.target as HTMLInputElement;
+        const file = target.files?.[0];
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.addEventListener("load", () => {
+            $formData.Image = reader.result;
+          });
+
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+  });
+
   export let data: any | SuperValidated<Infer<FormSchema>> = $page.data.checkboxMultiple;
 
   const form = superForm(data, {
+    dataType: "json",
     validators: zodClient(formSchema),
     onUpdated: ({ form: f }) => {
       if (f.valid) {
@@ -2706,7 +2730,25 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   </Form.Field>
 </div>
 
+<div
+  class="center relative top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Image</h1>
+
+  <Form.Field {form} name="Image">
+    <Form.Control let:attrs>
+      <Label for="picture">Upload your image here.</Label>
+      <Input id="picture" type="file" accept="image/*" bind:value={$formData.Image} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+</div>
+
 <Form.Button class="w-full">Submit</Form.Button>
 </form>
+
+<!-- {#if browser}
+<SuperDebug data={$formData} />
+{/if} -->
 
 </div>

@@ -29,7 +29,7 @@
     variant="bigbutton"
     size="icon"
     class="mr-1"
-    on:click={() => goto("/admin/records/edit")}>
+    href="/admin/records/{id}/edit">
     <PencilIcon size={15} /></Button>
     <div
         id="tooltip-light2"
@@ -44,7 +44,7 @@
     variant="bigbutton"
     size="icon"
     class="mr-1"
-    on:click={() => goto("/admin/records/view")}>
+    href="/admin/records/{id}/view">
     <ScanSearchIcon size={20} /></Button>
     <div
         id="tooltip-light3"
