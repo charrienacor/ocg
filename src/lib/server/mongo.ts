@@ -12,6 +12,5 @@ if (!dev) {
 } else {
   connection_string = `mongodb://${DATABASE_USERNAME}:${DATABASE_PASSWORD}@localhost:${DATABASE_PORT}`;
 }
-const client = new MongoClient(connection_string);
-await client.connect();
+export const client = new MongoClient(connection_string);
 export default client.db("Aguhon");
