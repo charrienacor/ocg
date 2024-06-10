@@ -327,6 +327,9 @@ Course: z
   // Closing Question
   Dreams: z
     .string(),
+
+  Image: z
+    .string(),
 });
 
 export type FormSchema = typeof formSchema;

@@ -35,10 +35,12 @@
     export let data: any;
 
     const form = superForm(data, {
+      dataType: "json",
       validators: zodClient(formSchema),
     });
 
     const { form: formData, enhance } = form;
+    // $:console.log($formData);
 
     const semester = [
       { value: "first", label: "First Semester" },
@@ -301,7 +303,7 @@
   </div>
   
   <div class="relative mb-10 mt-5">
-    <h1 class="pb-0 pt-12 font-bold sm:pt-5">EDIT RECORDS OF [STUDENT'S FIRST NAME]</h1>
+    <h1 class="pb-0 pt-12 font-bold sm:pt-5">EDIT RECORDS OF {$formData._id}</h1>
     <form method="POST" use:enhance>
       <div
         class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"

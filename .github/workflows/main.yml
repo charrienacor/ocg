@@ -17,9 +17,9 @@ jobs:
       - name: Clone Repo
         uses: actions/checkout@v4
       - name: Build App Image
-        working-directory: app
+        working-directory: ./
         run: | 
-          docker build . --tag ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app
+          docker build ../ --tag ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app
       - name: Publish Images
         run: | 
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app
