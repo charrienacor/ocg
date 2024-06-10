@@ -20,6 +20,7 @@
   export let data: any | SuperValidated<Infer<FormSchema>> = $page.data.checkboxMultiple;
 
   const form = superForm(data, {
+    dataType: "json",
     validators: zodClient(formSchema),
     onUpdated: ({ form: f }) => {
       if (f.valid) {
