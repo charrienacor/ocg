@@ -3,14 +3,12 @@ import templateFile from '$lib/server/template.pdf?url';
 import { PDFDocument, rgb } from 'pdf-lib';
 import { ObjectId, MongoClient } from 'mongodb';
 import type { RequestHandler } from './$types';
+import db from "$db/mongo";
 
 export const GET: RequestHandler = async (event) => {
-	const client = new MongoClient("mongodb://localhost:27017");
-	await client.connect();
-
-	const data = await client.db("Aguhon").collection("BIS").findOne({
-		_id: event.params.id
-	});
+  const data = await db.collection("BIS").findOne({
+    _id: event.params.id
+  });
 
 	const pdfBytes = await read(templateFile).arrayBuffer();
 	const pdfDoc = await PDFDocument.load(pdfBytes);

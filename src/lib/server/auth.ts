@@ -3,12 +3,30 @@ import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
 import { Collection, MongoClient } from "mongodb";
 import { dev } from "$app/environment";
 import { Google } from "arctic";
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "$env/static/private";
+import {
+  GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET,
+  GOOGLE_CALLBACK_STUDENT,
+  GOOGLE_CALLBACK_ADMIN,
+  GOOGLE_CALLBACK_VISITOR,
+  GOOGLE_CALLBACK_DEV_STUDENT,
+  GOOGLE_CALLBACK_DEV_ADMIN,
+  GOOGLE_CALLBACK_DEV_VISITOR,
+} from "$env/static/private";
+import db from "$db/mongo";
 
-const client = new MongoClient("mongodb://host.docker.internal:27017");
-await client.connect();
+let callback_student_route = "";
+let callback_admin_route = "";
+let callback_visitor_route = "";
 
-const db = client.db("Aguhon");
+if (dev) {
+  callback_student_route = GOOGLE_CALLBACK_DEV_STUDENT;
+  callback_admin_route = GOOGLE_CALLBACK_DEV_ADMIN;
+  callback_visitor_route = GOOGLE_CALLBACK_DEV_VISITOR;
+} else {
+  callback_student_route = GOOGLE_CALLBACK_STUDENT;
+  callback_admin_route = GOOGLE_CALLBACK_ADMIN;
+  callback_visitor_route = GOOGLE_CALLBACK_VISITOR;
+}
 
 const User = db.collection<UserDoc>("users");
 const Session = db.collection<SessionDoc>("sessions");
@@ -63,18 +81,18 @@ interface DatabaseUserAttributes {
 export const google = new Google(
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  "http://localhost:5173/student/login/google/callback",
+  callback_student_route,
 );
 
 export const google1 = new Google(
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  "http://localhost:5173/admin/login/google/callback",
+  callback_admin_route,
 );
 
 
 export const google2 = new Google(
   GOOGLE_CLIENT_ID,
   GOOGLE_CLIENT_SECRET,
-  "http://localhost:5173/visitor/login/google/callback",
+  callback_visitor_route,
 );
