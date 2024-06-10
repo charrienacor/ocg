@@ -23,9 +23,6 @@ services:
     restart: unless-stopped
     ports:
       - ${APP_PORT}:3000
-    volumes: 
-      - ./:/usr/src/app
-      - /app/node_modules
     environment:
       ON_DOCKER: "true"
     depends_on:
