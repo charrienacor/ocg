@@ -16,7 +16,30 @@
   import { browser } from "$app/environment";
   import { page } from "$app/stores";
   import { Checkbox } from "$lib/components/ui/checkbox/index.js";
-  
+  import { Label } from "$lib/components/ui/label/index.js";
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    const picture = document.getElementById("picture");
+
+    if (picture) {
+      picture.addEventListener("change", e => {
+        const target = e.target as HTMLInputElement;
+        const file = target.files?.[0];
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.addEventListener("load", () => {
+            $formData.Image = reader.result;
+          });
+
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+  });
+
   export let data: any | SuperValidated<Infer<FormSchema>> = $page.data.checkboxMultiple;
 
   const form = superForm(data, {
