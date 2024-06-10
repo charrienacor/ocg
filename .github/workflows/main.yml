@@ -19,7 +19,7 @@ jobs:
       - name: Build App Image
         working-directory: ./
         run: | 
-          docker build . --tag ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app
+          docker build ../ --tag ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app
       - name: Publish Images
         run: | 
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app
