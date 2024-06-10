@@ -2707,7 +2707,25 @@ class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-wh
   </Form.Field>
 </div>
 
+<div
+  class="center relative top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
+>
+  <h1>Image</h1>
+
+  <Form.Field {form} name="Image">
+    <Form.Control let:attrs>
+      <Label for="picture">Upload your image here.</Label>
+      <Input id="picture" type="file" accept="image/*" bind:value={$formData.Image} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
+</div>
+
 <Form.Button class="w-full">Submit</Form.Button>
 </form>
+
+<!-- {#if browser}
+<SuperDebug data={$formData} />
+{/if} -->
 
 </div>
