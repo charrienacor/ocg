@@ -1,0 +1,33 @@
+name: aguhon-dev
+
+volumes:
+  mongodb:
+
+services:
+  database:
+    image: mongo:latest
+    restart: unless-stopped
+    volumes:
+      - mongodb:/data/db
+      - ./database/mongoinit.js:/docker-entrypoint-initdb.d/mongoinit.js:ro
+    ports:
+      - ${DATABASE_PORT}:27017
+    env_file: 
+      - ./.env
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${DATABASE_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+  app:
+    build: .
+    restart: unless-stopped
+    ports:
+      - ${APP_PORT}:3000
+    volumes: 
+      - ./:/usr/src/app
+      - /app/node_modules
+    environment:
+      ON_DOCKER: "true"
+
+    depends_on:
+        database:
+          condition: service_started
