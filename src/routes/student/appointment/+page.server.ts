@@ -6,7 +6,7 @@ import { zod } from "sveltekit-superforms/adapters";
 import db from "$db/mongo";
 import { redirect, setFlash } from 'sveltekit-flash-message/server'
 import { DateFormatter } from "@internationalized/date";
-import { GOOGLE_EMAIL } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 import { render } from 'svelte-email';
 import transporter from "$lib/email/email.server";
 import RequestEmail from "$lib/email/RequestEmail.svelte";
@@ -101,8 +101,8 @@ export const actions: Actions = {
         }
       });
       const message = {
-        from: GOOGLE_EMAIL,
-        to: GOOGLE_EMAIL,
+        from: env.GOOGLE_EMAIL,
+        to: env.GOOGLE_EMAIL,
         subject: `New Requested Appointment by Student ${data.Student_Name}`,
         html: emailhtml
       };
@@ -133,7 +133,7 @@ export const actions: Actions = {
         }
       });
       const message1 = {
-        from: GOOGLE_EMAIL,
+        from: env.GOOGLE_EMAIL,
         to: data.Student_Email,
         subject: `Confirmation of Requested Appointment`,
         html: emailhtml1

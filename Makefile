@@ -3,7 +3,7 @@ run:
 	npm run dev 
 
 reset-local:
-	docker compose -f compose.local.yaml down database
+	docker compose -f compose.local.yaml down
 	docker volume prune 
 	docker volume rm aguhon-dev_mongodb
 
@@ -15,3 +15,6 @@ reset-prod:
 build:
 	docker compose -f compose.local.yaml --env-file .env up --build database -d
 	docker compose -f compose.local.yaml --env-file .env up --build -d
+
+build-prod:
+	docker compose -f compose.production.yaml --env-file .env up --build -d

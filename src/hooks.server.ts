@@ -1,7 +1,9 @@
 import { lucia } from "$lib/server/auth";
 import type { Handle } from "@sveltejs/kit";
-
+import { client } from "$db/mongo";
 export const handle: Handle = async ({ event, resolve }) => {
+  await client.connect();
+
   const sessionId = event.cookies.get(lucia.sessionCookieName);
   if (!sessionId) {
     event.locals.user = null;

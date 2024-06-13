@@ -4,14 +4,8 @@ import { Collection, MongoClient } from "mongodb";
 import { dev } from "$app/environment";
 import { Google } from "arctic";
 import {
-  GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET,
-  GOOGLE_CALLBACK_STUDENT,
-  GOOGLE_CALLBACK_ADMIN,
-  GOOGLE_CALLBACK_VISITOR,
-  GOOGLE_CALLBACK_DEV_STUDENT,
-  GOOGLE_CALLBACK_DEV_ADMIN,
-  GOOGLE_CALLBACK_DEV_VISITOR,
-} from "$env/static/private";
+  env
+} from "$env/dynamic/private";
 import db from "$db/mongo";
 
 let callback_student_route = "";
@@ -19,13 +13,13 @@ let callback_admin_route = "";
 let callback_visitor_route = "";
 
 if (dev) {
-  callback_student_route = GOOGLE_CALLBACK_DEV_STUDENT;
-  callback_admin_route = GOOGLE_CALLBACK_DEV_ADMIN;
-  callback_visitor_route = GOOGLE_CALLBACK_DEV_VISITOR;
+  callback_student_route = env.GOOGLE_CALLBACK_DEV_STUDENT;
+  callback_admin_route = env.GOOGLE_CALLBACK_DEV_ADMIN;
+  callback_visitor_route = env.GOOGLE_CALLBACK_DEV_VISITOR;
 } else {
-  callback_student_route = GOOGLE_CALLBACK_STUDENT;
-  callback_admin_route = GOOGLE_CALLBACK_ADMIN;
-  callback_visitor_route = GOOGLE_CALLBACK_VISITOR;
+  callback_student_route = env.GOOGLE_CALLBACK_STUDENT;
+  callback_admin_route = env.GOOGLE_CALLBACK_ADMIN;
+  callback_visitor_route = env.GOOGLE_CALLBACK_VISITOR;
 }
 
 const User = db.collection<UserDoc>("users");
@@ -79,20 +73,20 @@ interface DatabaseUserAttributes {
 }
 
 export const google = new Google(
-  GOOGLE_CLIENT_ID,
-  GOOGLE_CLIENT_SECRET,
+  env.GOOGLE_CLIENT_ID,
+  env.GOOGLE_CLIENT_SECRET,
   callback_student_route,
 );
 
 export const google1 = new Google(
-  GOOGLE_CLIENT_ID,
-  GOOGLE_CLIENT_SECRET,
+  env.GOOGLE_CLIENT_ID,
+  env.GOOGLE_CLIENT_SECRET,
   callback_admin_route,
 );
 
 
 export const google2 = new Google(
-  GOOGLE_CLIENT_ID,
-  GOOGLE_CLIENT_SECRET,
+  env.GOOGLE_CLIENT_ID,
+  env.GOOGLE_CLIENT_SECRET,
   callback_visitor_route,
 );

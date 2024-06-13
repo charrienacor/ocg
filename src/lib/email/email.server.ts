@@ -1,13 +1,13 @@
 import nodemailer from "nodemailer";
-import { GOOGLE_EMAIL, GOOGLE_EMAIL_PASSWORD } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 
 let transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,
   secure: false,
   auth: {
-    user: GOOGLE_EMAIL,
-    pass: GOOGLE_EMAIL_PASSWORD,
+    user: env.GOOGLE_EMAIL,
+    pass: env.GOOGLE_EMAIL_PASSWORD,
   },
 });
 

@@ -17,6 +17,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${DATABASE_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+    labels: 
+      - "com.centurylinklabs.watchtower.enable=false"
 
   app:
     image: kaiserace/aguhon-app:latest
@@ -25,10 +27,13 @@ services:
       - ${APP_PORT}:3000
     environment:
       ON_DOCKER: "true"
+    env_file: 
+      - ./.env
     depends_on:
         database:
           condition: service_started
-
+    labels: 
+      - "com.centurylinklabs.watchtower.enable=true"
   watchtower:
     image: containrrr/watchtower
     restart: unless-stopped
