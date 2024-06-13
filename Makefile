@@ -15,3 +15,6 @@ reset-prod:
 build:
 	docker compose -f compose.local.yaml --env-file .env up --build database -d
 	docker compose -f compose.local.yaml --env-file .env up --build -d
+
+build-prod:
+	docker compose -f compose.production.yaml --env-file .env up --build -d
