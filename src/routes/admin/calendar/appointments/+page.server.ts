@@ -1,7 +1,7 @@
 import type { PageServerLoad, Actions } from "./$types";
 import db from "$db/mongo";
 import { redirect } from 'sveltekit-flash-message/server';
-import { GOOGLE_EMAIL } from "$env/static/private";
+import { env } from "$env/dynamic/private";
 import ApproveEmail from "$lib/email/ApproveEmail.svelte";
 import RejectEmail from "$lib/email/RejectEmail.svelte";
 import { render } from 'svelte-email';
@@ -61,7 +61,7 @@ export const actions: Actions = {
         }
       });
       const message = {
-        from: GOOGLE_EMAIL,
+        from: env.GOOGLE_EMAIL,
         to: email,
         subject: "Approved Requested Schedule Appointment",
         html: emailhtml
@@ -122,7 +122,7 @@ export const actions: Actions = {
         }
       });
       const message = {
-        from: GOOGLE_EMAIL,
+        from: env.GOOGLE_EMAIL,
         to: email,
         subject: "Rejected Requested Schedule Appointment",
         html: emailhtml
