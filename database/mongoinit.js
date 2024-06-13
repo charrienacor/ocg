@@ -1,4 +1,3 @@
-
 db = new Mongo().getDB("Aguhon");
 
 db.createCollection("Counselors");
@@ -46,7 +45,7 @@ db.Counselors.insertMany([
   {
     _id: "mpticag@up.edu.ph",
     First_Name: "Merjerie",
-    Middle_Name: "P.",
+   Middle_Name: "P.",
     Last_Name: "Ticag",
     RGC: "false",
     Status: "Active",
@@ -76,5 +75,3 @@ db.College.insertMany([
     College: "Arts and Communication",
   },
 ])
-
-
