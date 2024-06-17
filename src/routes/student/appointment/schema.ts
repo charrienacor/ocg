@@ -15,8 +15,7 @@ export const formSchema = z.object({
   Guidance_Counselor: z.string(),
 
   Appointment_Date: z.string(),
-  Appointment_Hour: z.string(),
-  Appointment_Minute: z.string(),
+  Appointment_Time: z.string(),
 
   Nature_Of_Concern: z.string().max(1000),
 });
