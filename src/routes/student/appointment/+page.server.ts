@@ -27,7 +27,7 @@ export const load: PageServerLoad = async (event) => {
   );
 
   let appointments = db.collection("Appointments").find(
-    { Status: "Accepted" }).project(
+    { Status: "Approved" }).project(
       {
         _id: 0,
         Appointment_Date: 1,
@@ -38,6 +38,7 @@ export const load: PageServerLoad = async (event) => {
 
   let college = db.collection("College").find().project({ _id: 0 });
 
+  let timeslots = db.collection("TimeSlots").find().project({ _id: 0 });
 
   return {
     name: event.locals.user.username,
@@ -46,6 +47,7 @@ export const load: PageServerLoad = async (event) => {
     counselor: await counselors.toArray(),
     college: await college.toArray(),
     appointments: await appointments.toArray(),
+    timeslots: await timeslots.toArray(),
   };
 };
 
@@ -78,7 +80,7 @@ export const actions: Actions = {
         Student_ID: `${data.Student_ID}`,
         Counselor: `${data.Guidance_Counselor}`,
         Appointment_Date: `${data.Appointment_Date}`,
-        Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
+        Appointment_Time: `${data.Appointment_Time}`,
         Nature_Of_Concern: `${data.Nature_Of_Concern}`,
         Status: "Pending",
         Denial_Remark: "",
@@ -89,7 +91,7 @@ export const actions: Actions = {
       });
       rawdate = new Date(data.Appointment_Date);
       date = df.format(rawdate);
-      time = `${data.Appointment_Hour}:${data.Appointment_Minute}`
+      time = `${data.Appointment_Time}`
       const emailhtml = render({
         template: RequestEmail,
         props: {

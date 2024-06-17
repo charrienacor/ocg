@@ -8,7 +8,7 @@ reset-local:
 	docker volume rm aguhon-dev_mongodb
 
 reset-prod:
-	docker compose -f compose.production.yaml down database
+	docker compose -f compose.production.yaml down 
 	docker volume prune 
 	docker volume rm aguhon-prod_mongodb
 

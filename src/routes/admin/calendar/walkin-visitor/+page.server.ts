@@ -29,7 +29,7 @@ export const load: PageServerLoad = async (event) => {
   );
 
   let appointments = db.collection("Visitor_Appointments").find(
-    { Status: "Accepted" }).project(
+    { Status: "Approved" }).project(
       {
         _id: 0,
         Appointment_Date: 1,
@@ -37,10 +37,12 @@ export const load: PageServerLoad = async (event) => {
         Counselor: 1,
       });
 
+  let timeslots = db.collection("TimeSlots").find().project({ _id: 0 });
   return {
     form: await superValidate(zod(formSchema)),
     counselor: await counselors.toArray(),
     appointments: await appointments.toArray(),
+    timeslots: await timeslots.toArray(),
   };
 };
 
@@ -75,7 +77,7 @@ export const actions: Actions = {
         Visitor_Institution: `${data.Visitor_Institution}`,
         Counselor: `${data.Guidance_Counselor}`,
         Appointment_Date: `${data.Appointment_Date}`,
-        Appointment_Time: `${data.Appointment_Hour}:${data.Appointment_Minute}`,
+        Appointment_Time: `${data.Appointment_Time}`,
         Nature_Of_Concern: `${data.Nature_Of_Concern}`,
         Status: "Pending",
         Denial_Remark: "",
@@ -86,7 +88,7 @@ export const actions: Actions = {
       });
       rawdate = new Date(data.Appointment_Date);
       date = df.format(rawdate);
-      time = `${data.Appointment_Hour}:${data.Appointment_Minute}`
+      time = `${data.Appointment_Time}`
     } catch (e) {
       setFlash({ type: 'appointmentError', message: 'Please check your input and try again.' }, event);
     }

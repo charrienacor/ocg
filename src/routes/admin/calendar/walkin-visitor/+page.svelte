@@ -5,7 +5,7 @@
     LayoutDashboardIcon,
     UserIcon,
     LogOutIcon,
-    MenuIcon
+    MenuIcon,
   } from "lucide-svelte";
   import Button from "$lib/components/ui/button/button.svelte";
   import type { PageServerData } from "./$types";
@@ -20,10 +20,12 @@
   export let data: PageServerData;
   let counselors = data.counselor;
   let appointments = data.appointments;
+  let timeslots = data.timeslots;
 
   $: selectedDate = today(getLocalTimeZone());
   $: filterDate = "";
   $: filterAppointments = appointments;
+  $: day = "";
   const df = new DateFormatter("en-US", {
     dateStyle: "long",
   });
@@ -123,6 +125,15 @@
             filterAppointments = appointments.filter(
               (e) => e.Appointment_Date === filterDate,
             );
+            day = [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ][selectedDate.toDate(getLocalTimeZone()).getDay()];
           } else {
             console.log(v);
           }
@@ -136,11 +147,11 @@
           <p class="text-lg">Book an Appointment</p>
         </Button>
       </Dialog.Trigger>
-      <Dialog.Content>
+      <Dialog.Content class="max-h-screen overflow-y-scroll">
         <Dialog.Header>
           <Dialog.Title>Book an Appointment</Dialog.Title>
         </Dialog.Header>
-        <SettingsForm data={data.form} {counselors} />
+        <SettingsForm data={data.form} {counselors} {timeslots} />
       </Dialog.Content>
     </Dialog.Root>
   </div>
@@ -152,20 +163,63 @@
     </h1>
     <hr class="mx-4 h-3" />
     {#each counselors as counselor}
-      <p class="pl-5">
-        <b
-          >{counselor.First_Name}
-          {counselor.Middle_Name}
-          {counselor.Last_Name}</b
-        >
-        {#each filterAppointments as appointment}
-          {#if counselor._id === appointment.Counselor}
-            <p class="pl-10 text-sm">
-              {appointment.Appointment_Time} - Unavailable
-            </p>
+      {#each timeslots as email}
+        {#if email.Email === counselor._id}
+          <p class="pl-5">
+            <b
+              >{counselor.First_Name}
+              {counselor.Middle_Name}
+              {counselor.Last_Name}</b
+            >
+          </p>
+          {#if day === "Monday"}
+            {#each email.Monday as time}
+              {#if filterAppointments.find((appointment) => appointment.Appointment_Time === time) && filterAppointments.find((appointment) => appointment.Counselor === counselor._id)}
+                <p class="pl-10 text-sm">{time} - Unvailable</p>
+              {:else}
+                <p class="pl-10 text-sm">{time} - Available</p>
+              {/if}
+            {/each}
+          {:else if day === "Tuesday"}
+            {#each email.Tuesday as time}
+              {#if filterAppointments.find((appointment) => appointment.Appointment_Time === time) && filterAppointments.find((appointment) => appointment.Counselor === counselor._id)}
+                <p class="pl-10 text-sm">{time} - Unvailable</p>
+              {:else}
+                <p class="pl-10 text-sm">{time} - Available</p>
+              {/if}
+            {/each}
+          {:else if day === "Wednesday"}
+            {#each email.Wednesday as time}
+              {#if filterAppointments.find((appointment) => appointment.Appointment_Time === time) && filterAppointments.find((appointment) => appointment.Counselor === counselor._id)}
+                <p class="pl-10 text-sm">{time} - Unvailable</p>
+              {:else}
+                <p class="pl-10 text-sm">{time} - Available</p>
+              {/if}
+            {/each}
+          {:else if day === "Thursday"}
+            {#each email.Thursday as time}
+              {#if filterAppointments.find((appointment) => appointment.Appointment_Time === time) && filterAppointments.find((appointment) => appointment.Counselor === counselor._id)}
+                <p class="pl-10 text-sm">{time} - Unvailable</p>
+              {:else}
+                <p class="pl-10 text-sm">{time} - Available</p>
+              {/if}
+            {/each}
+          {:else if day === "Friday"}
+            {#each email.Friday as time}
+              {#if filterAppointments.find((appointment) => appointment.Appointment_Time === time) && filterAppointments.find((appointment) => appointment.Counselor === counselor._id)}
+                <p class="pl-10 text-sm">{time} - Unvailable</p>
+              {:else}
+                <p class="pl-10 text-sm">{time} - Available</p>
+              {/if}
+            {/each}
+          {:else}
+            <p></p>
           {/if}
-        {/each}
-      </p>
+          <p></p>
+        {:else}
+          <p></p>
+        {/if}
+      {/each}
     {/each}
   </div>
 </div>

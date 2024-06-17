@@ -3,11 +3,7 @@ import { redirect } from 'sveltekit-flash-message/server';
 import type { RequestEvent } from "@sveltejs/kit";
 
 export async function GET(event: RequestEvent): Promise<Response> {
-  if (!event.locals.session) {
-    return new Response(null, {
-      status: 400,
-    });
-  }
+  if (!event.locals.user) redirect("/homepage", { type: 'loggedOut', message: 'You have been logged out.' }, event);
   await lucia.invalidateSession(event.locals.session.id);
   await lucia.deleteExpiredSessions();
   const sessionCookie = lucia.createBlankSessionCookie();

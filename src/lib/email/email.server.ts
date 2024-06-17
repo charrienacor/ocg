@@ -9,6 +9,9 @@ let transporter = nodemailer.createTransport({
     user: env.GOOGLE_EMAIL,
     pass: env.GOOGLE_EMAIL_PASSWORD,
   },
+  tls: {
+    rejectUnauthorized: false,
+  }
 });
 
 transporter.verify(function(error, success) {
