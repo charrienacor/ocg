@@ -4,7 +4,7 @@ volumes:
   mongodb:
 
 services:
-  database:
+  aguhon-database:
     image: mongo:latest
     restart: unless-stopped
     volumes:
@@ -30,7 +30,7 @@ services:
     env_file: 
       - ./.env
     depends_on:
-        database:
+        aguhon-database:
           condition: service_started
     labels: 
       - "com.centurylinklabs.watchtower.enable=true"
