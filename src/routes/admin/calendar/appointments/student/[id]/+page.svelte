@@ -5,7 +5,7 @@
     LayoutDashboardIcon,
     UserIcon,
     LogOutIcon,
-    MenuIcon
+    MenuIcon,
   } from "lucide-svelte";
   import type { PageServerData } from "./$types";
   import * as Card from "$lib/components/ui/card";

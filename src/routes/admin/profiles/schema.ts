@@ -7,7 +7,6 @@ export const formSchema = z.object({
   Last_Name: z.string(),
   RGC: z.boolean(),
   Status: z.string(),
-
 });
 
 export type FormSchema = typeof formSchema;

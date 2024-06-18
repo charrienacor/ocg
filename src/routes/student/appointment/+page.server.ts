@@ -4,10 +4,10 @@ import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema";
 import { zod } from "sveltekit-superforms/adapters";
 import db from "$db/mongo";
-import { redirect, setFlash } from 'sveltekit-flash-message/server'
+import { redirect, setFlash } from "sveltekit-flash-message/server";
 import { DateFormatter } from "@internationalized/date";
 import { env } from "$env/dynamic/private";
-import { render } from 'svelte-email';
+import { render } from "svelte-email";
 import transporter from "$lib/email/email.server";
 import RequestEmail from "$lib/email/RequestEmail.svelte";
 import ConfirmationEmail from "$lib/email/ConfirmationEmail.svelte";
@@ -17,24 +17,27 @@ let date = "";
 let time = "";
 
 export const load: PageServerLoad = async (event) => {
-  if (!event.locals.user) redirect("/student/login", { type: 'loggedOut', message: 'You have been logged out.' }, event);
+  if (!event.locals.user)
+    redirect(
+      "/student/login",
+      { type: "loggedOut", message: "You have been logged out." },
+      event,
+    );
 
-  let counselors = db.collection("Counselors").find(
-    {
-      Status: "Active",
-      RGC: "true",
-    },
-  );
+  let counselors = db.collection("Counselors").find({
+    Status: "Active",
+    RGC: "true",
+  });
 
-  let appointments = db.collection("Appointments").find(
-    { Status: "Approved" }).project(
-      {
-        _id: 0,
-        Appointment_Date: 1,
-        Appointment_Time: 1,
-        Counselor: 1,
-      });
-
+  let appointments = db
+    .collection("Appointments")
+    .find({ Status: "Approved" })
+    .project({
+      _id: 0,
+      Appointment_Date: 1,
+      Appointment_Time: 1,
+      Counselor: 1,
+    });
 
   let college = db.collection("College").find().project({ _id: 0 });
 
@@ -91,7 +94,7 @@ export const actions: Actions = {
       });
       rawdate = new Date(data.Appointment_Date);
       date = df.format(rawdate);
-      time = `${data.Appointment_Time}`
+      time = `${data.Appointment_Time}`;
       const emailhtml = render({
         template: RequestEmail,
         props: {
@@ -100,13 +103,13 @@ export const actions: Actions = {
           time: time,
           email: data.Student_Email,
           concern: data.Nature_Of_Concern,
-        }
+        },
       });
       const message = {
         from: env.GOOGLE_EMAIL,
         to: env.GOOGLE_EMAIL,
         subject: `New Requested Appointment by Student ${data.Student_Name}`,
-        html: emailhtml
+        html: emailhtml,
       };
 
       const sendEmail = async (message) => {
@@ -132,13 +135,13 @@ export const actions: Actions = {
           time: time,
           email: data.Student_Email,
           concern: data.Nature_Of_Concern,
-        }
+        },
       });
       const message1 = {
         from: env.GOOGLE_EMAIL,
         to: data.Student_Email,
         subject: `Confirmation of Requested Appointment`,
-        html: emailhtml1
+        html: emailhtml1,
       };
 
       const sendEmail1 = async (message1) => {
@@ -156,13 +159,22 @@ export const actions: Actions = {
 
       await sendEmail1(message1);
     } catch (e) {
-
-      setFlash({ type: 'appointmentError', message: 'Please check your input and try again.' }, event);
+      setFlash(
+        {
+          type: "appointmentError",
+          message: "Please check your input and try again.",
+        },
+        event,
+      );
     }
-    redirect("./appointment", {
-      type: "appointmentSuccess",
-      message: `You have booked an appointment on ${date} at ${time}.`
-    }, event);
+    redirect(
+      "./appointment",
+      {
+        type: "appointmentSuccess",
+        message: `You have booked an appointment on ${date} at ${time}.`,
+      },
+      event,
+    );
     return {
       form,
     };

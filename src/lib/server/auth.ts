@@ -3,9 +3,7 @@ import { MongodbAdapter } from "@lucia-auth/adapter-mongodb";
 import { Collection, MongoClient } from "mongodb";
 import { dev } from "$app/environment";
 import { Google } from "arctic";
-import {
-  env
-} from "$env/dynamic/private";
+import { env } from "$env/dynamic/private";
 import db from "$db/mongo";
 
 let callback_student_route = "";
@@ -83,7 +81,6 @@ export const google1 = new Google(
   env.GOOGLE_CLIENT_SECRET,
   callback_admin_route,
 );
-
 
 export const google2 = new Google(
   env.GOOGLE_CLIENT_ID,

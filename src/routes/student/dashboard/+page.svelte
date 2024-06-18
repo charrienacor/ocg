@@ -8,14 +8,14 @@
     FileTextIcon,
     LayoutDashboardIcon,
     LogOutIcon,
-    MenuIcon
+    MenuIcon,
   } from "lucide-svelte";
 
   export let data: PageServerData;
   const name = data.name;
 </script>
 
-<head> 
+<head>
   <style>
     header {
       display: flex;

@@ -1,7 +1,7 @@
 import { generateId } from "lucia";
 import { google2, lucia } from "$lib/server/auth";
 import db from "$db/mongo";
-import { redirect } from 'sveltekit-flash-message/server'
+import { redirect } from "sveltekit-flash-message/server";
 
 import type { RequestEvent } from "@sveltejs/kit";
 
@@ -35,9 +35,9 @@ export async function GET(event: RequestEvent): Promise<Response> {
     const user = await response.json();
 
     // Replace this with your own DB client.
-    const existingUser = await db.collection("users").findOne(
-      { google_id: `${user.sub}` },
-    );
+    const existingUser = await db
+      .collection("users")
+      .findOne({ google_id: `${user.sub}` });
 
     if (existingUser !== null) {
       const session = await lucia.createSession(existingUser._id, {});
@@ -65,9 +65,20 @@ export async function GET(event: RequestEvent): Promise<Response> {
     }
   } catch (e) {
     // invalid code
-    redirect("/visitor/login", { type: 'somethingWentWrong', message: 'Log-in failed, please try again.' }, event);
+    redirect(
+      "/visitor/login",
+      {
+        type: "somethingWentWrong",
+        message: "Log-in failed, please try again.",
+      },
+      event,
+    );
   }
-  redirect("/visitor/appointment", { type: 'loggedIn', message: 'You have successfully logged in!' }, event);
+  redirect(
+    "/visitor/appointment",
+    { type: "loggedIn", message: "You have successfully logged in!" },
+    event,
+  );
 }
 
 interface user {

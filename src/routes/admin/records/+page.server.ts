@@ -8,11 +8,12 @@ export const load: PageServerLoad = async (event) => {
 
   const data = await db.collection("BIS").find().toArray();
   return {
-    students: data.map(d => ({
+    students: data.map((d) => ({
       ...d,
-      _id: d._id.toString()
+      _id: d._id.toString(),
     })),
 
-    name: event.locals.user.username, email: event.locals.user.email
+    name: event.locals.user.username,
+    email: event.locals.user.email,
   };
 };

@@ -1,6 +1,6 @@
 name: Push Docker Images
 
-on: 
+on:
   release:
     types: [created, edited]
 
@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Build App Image
         working-directory: ./
-        run: | 
+        run: |
           docker build . --tag ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app
       - name: Publish Images
-        run: | 
+        run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/aguhon-app

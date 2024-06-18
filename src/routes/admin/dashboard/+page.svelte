@@ -7,7 +7,7 @@
     LayoutDashboardIcon,
     UserIcon,
     LogOutIcon,
-    MenuIcon
+    MenuIcon,
   } from "lucide-svelte";
   import type { PageServerData } from "./$types";
 
@@ -15,7 +15,7 @@
   const name = data.name;
 </script>
 
-<head> 
+<head>
   <style>
     header {
       display: flex;
@@ -124,7 +124,7 @@
     <Button
       variant="bigbutton"
       size="default"
-      class="text-xl w-full mb-3"
+      class="mb-3 w-full text-xl"
       on:click={() => goto("/admin/profiles")}
     >
       Manage Admin Accounts
@@ -132,11 +132,10 @@
     <Button
       variant="bigbutton"
       size="default"
-      class="text-xl w-full"
+      class="w-full text-xl"
       on:click={() => goto("/api/logout")}
     >
       Log Out
     </Button>
   </div>
 </div>
-

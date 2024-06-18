@@ -2,9 +2,7 @@
   import * as Form from "$lib/components/ui/form";
   import { Input } from "$lib/components/ui/input";
   import { formSchema } from "./schema";
-  import {
-    superForm,
-  } from "sveltekit-superforms";
+  import { superForm } from "sveltekit-superforms";
   import { zodClient } from "sveltekit-superforms/adapters";
   import { Checkbox } from "$lib/components/ui/checkbox/index.js";
   import * as Select from "$lib/components/ui/select/index.js";

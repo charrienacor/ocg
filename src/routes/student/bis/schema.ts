@@ -1,169 +1,119 @@
 import { z } from "zod";
 
 export const formSchema = z.object({
-
   // // Preliminaries
 
-  Semester: z
-    .string(),
+  Semester: z.string(),
 
-  School_Year: z
-    .string(),
+  School_Year: z.string(),
 
-  Student_Number: z
-    .string(),
+  Student_Number: z.string(),
 
-  Degree_Program: z
-    .string(),
+  Degree_Program: z.string(),
 
-  College: z
-    .string(),
-  
+  College: z.string(),
+
   // // Personal Information
 
-  Student_Name: z
-    .string(),
+  Student_Name: z.string(),
 
-  Nickname: z
-    .string(),
+  Nickname: z.string(),
 
-  Student_Sex: z
-    .string(),
+  Student_Sex: z.string(),
 
-  Student_Age: z
-    .string(),
+  Student_Age: z.string(),
 
-  Birth_Date: z
-    .string(),
+  Birth_Date: z.string(),
 
-  Place_Of_Birth: z
-    .string(),
+  Place_Of_Birth: z.string(),
 
-  Nationality: z
-    .string(),
+  Nationality: z.string(),
 
-  Citizenship: z
-    .string(),
+  Citizenship: z.string(),
 
-  Religion: z
-    .string(),
+  Religion: z.string(),
 
-  Cellphone_Number: z
-    .string(),
+  Cellphone_Number: z.string(),
 
-  Email_Address: z
-    .string(),
+  Email_Address: z.string(),
 
-  Baguio_Address: z
-    .string(),
+  Baguio_Address: z.string(),
 
-  Baguio_Telephone_Number: z
-    .string(),
+  Baguio_Telephone_Number: z.string(),
 
-  Permanent_Address: z
-    .string(),
+  Permanent_Address: z.string(),
 
-  Permanent_Telephone_Number: z
-    .string(),
+  Permanent_Telephone_Number: z.string(),
 
   // // Family Data
 
-  Parent_Status: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
-  }),
+  Parent_Status: z
+    .array(z.string())
+    .refine((value) => value.some((item) => item), {
+      message: "You have to select at least one.",
+    }),
 
-  Guardian: z
-    .string(),
+  Guardian: z.string(),
 
-  Guardian_Address: z
-    .string(),
+  Guardian_Address: z.string(),
 
-  Guardian_Telephone_Number: z
-    .string(),
+  Guardian_Telephone_Number: z.string(),
 
-  Father_Name: z
-    .string(),
+  Father_Name: z.string(),
 
-  Father_Age: z
-    .string(),
+  Father_Age: z.string(),
 
-  Father_Living_Or_Dead: z
-    .string(),
+  Father_Living_Or_Dead: z.string(),
 
-  Father_Place_Of_Birth: z
-    .string(),
+  Father_Place_Of_Birth: z.string(),
 
-  Father_Address: z
-    .string(),
+  Father_Address: z.string(),
 
-  Father_Contact_Number: z
-    .string(),
+  Father_Contact_Number: z.string(),
 
-  Father_Religion: z
-    .string(),
+  Father_Religion: z.string(),
 
-  Father_Occupation: z
-    .string(),
+  Father_Occupation: z.string(),
 
-  Father_Monthly_Income: z
-    .string(),
+  Father_Monthly_Income: z.string(),
 
-  Father_Employer_Name: z
-    .string(),
+  Father_Employer_Name: z.string(),
 
-  Father_Employer_Address: z
-    .string(),
+  Father_Employer_Address: z.string(),
 
-  Father_Highest_Degree_Completed: z
-    .string(),
+  Father_Highest_Degree_Completed: z.string(),
 
-  Father_School: z
-    .string(),
+  Father_School: z.string(),
 
-  Father_Languages: z
-    .string(),
+  Father_Languages: z.string(),
 
-  Mother_Name: z
-    .string(),
+  Mother_Name: z.string(),
 
-  Mother_Age: z
-    .string(),
+  Mother_Age: z.string(),
 
-  Mother_Living_Or_Dead: z
-    .string(),
+  Mother_Living_Or_Dead: z.string(),
 
-  Mother_Place_Of_Birth: z
-    .string(),
+  Mother_Place_Of_Birth: z.string(),
 
-  Mother_Address: z
-    .string(),
+  Mother_Address: z.string(),
 
-  Mother_Contact_Number: z
-    .string(),
+  Mother_Contact_Number: z.string(),
 
-  Mother_Religion: z
-    .string(),
+  Mother_Religion: z.string(),
 
-  Mother_Occupation: z
-    .string(),
+  Mother_Occupation: z.string(),
 
-  Mother_Monthly_Income: z
-    .string(),
+  Mother_Monthly_Income: z.string(),
 
-  Mother_Employer_Name: z
-    .string(),
+  Mother_Employer_Name: z.string(),
 
-  Mother_Employer_Address: z
-    .string(),
+  Mother_Employer_Address: z.string(),
 
-  Mother_Highest_Degree_Completed: z
-    .string(),
+  Mother_Highest_Degree_Completed: z.string(),
 
-  Mother_School: z
-    .string(),
+  Mother_School: z.string(),
 
-  Mother_Languages: z
-    .string(),
+  Mother_Languages: z.string(),
 
   // Children in the Family
 
@@ -181,155 +131,126 @@ export const formSchema = z.object({
 
   Residence: z.array(z.string()),
 
-  
   // Educational Background
 
-  Elementary_School: z
-    .string(),
+  Elementary_School: z.string(),
 
-  Elementary_School_Location: z
-    .string(),
+  Elementary_School_Location: z.string(),
 
-  Junior_High_School: z
-    .string(),
+  Junior_High_School: z.string(),
 
-  Junior_High_School_Location: z
-    .string(),
+  Junior_High_School_Location: z.string(),
 
   JHS_Type: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
+    message: "You have to select at least one.",
   }),
 
-  Junior_Number_Of_Students: z
-    .string(),
+  Junior_Number_Of_Students: z.string(),
 
-  Senior_High_School: z
-    .string(),
+  Senior_High_School: z.string(),
 
-  Senior_High_School_Location: z
-    .string(),
+  Senior_High_School_Location: z.string(),
 
   SHS_Type: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
+    message: "You have to select at least one.",
   }),
 
-  Senior_Number_Of_Students: z
-    .string(),
+  Senior_Number_Of_Students: z.string(),
 
-  HS_Rank: z
-    .string(),
+  HS_Rank: z.string(),
 
-  School_Ave: z
-    .string(),
+  School_Ave: z.string(),
 
-  Honors: z
-    .string(),
+  Honors: z.string(),
 
-  Awards: z
-    .string(),
+  Awards: z.string(),
 
-  First_Campus: z
-    .string(),
+  First_Campus: z.string(),
 
-  First_Campus_Reason: z
-    .string(),
+  First_Campus_Reason: z.string(),
 
-  Second_Campus: z
-    .string(),
+  Second_Campus: z.string(),
 
-  Second_Campus_Reason: z
-    .string(),
+  Second_Campus_Reason: z.string(),
 
   // Financial Information
-  Income: z
-    .string(),
+  Income: z.string(),
 
-  Source_of_Income: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
-  }),
+  Source_of_Income: z
+    .array(z.string())
+    .refine((value) => value.some((item) => item), {
+      message: "You have to select at least one.",
+    }),
 
-  Other_Sources_Of_Income: z
-    .string(),
+  Other_Sources_Of_Income: z.string(),
 
-  Allowance: z
-    .string(),
-    
-  Source_of_Allowance: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
-  }),
+  Allowance: z.string(),
 
-  Specifics: z
-    .string(),
+  Source_of_Allowance: z
+    .array(z.string())
+    .refine((value) => value.some((item) => item), {
+      message: "You have to select at least one.",
+    }),
 
-  Second_Other_Sources_Of_Allowance: z
-    .string(),
+  Specifics: z.string(),
 
-// // Vocational Plans
-  
-Course: z
-    .string(),
+  Second_Other_Sources_Of_Allowance: z.string(),
 
-  Major: z
-    .string(),
+  // // Vocational Plans
 
-  Satisfaction: z
-    .string(),
+  Course: z.string(),
 
-  Yes_Reasons: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
-  }),
-  No_Reasons: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
-  }),
+  Major: z.string(),
 
-  Other_Course: z
-    .string(),
+  Satisfaction: z.string(),
 
-  Other_Yes_Reasons: z
-    .string(),
+  Yes_Reasons: z
+    .array(z.string())
+    .refine((value) => value.some((item) => item), {
+      message: "You have to select at least one.",
+    }),
+  No_Reasons: z
+    .array(z.string())
+    .refine((value) => value.some((item) => item), {
+      message: "You have to select at least one.",
+    }),
 
-  Other_No_Reasons: z
-    .string(),
+  Other_Course: z.string(),
 
-  Finish_In_UPB: z
-    .string(),
+  Other_Yes_Reasons: z.string(),
 
-  Transfer_Reasons: z
-    .string(),
+  Other_No_Reasons: z.string(),
 
-  Future_Plans: z.array(z.string()).refine((value) => value.some((item) => item), {
-    message: "You have to select at least one."
-  }),
+  Finish_In_UPB: z.string(),
 
-  Other_Future_Plans: z
-    .string(),
+  Transfer_Reasons: z.string(),
 
- // Leisure Time Activities
+  Future_Plans: z
+    .array(z.string())
+    .refine((value) => value.some((item) => item), {
+      message: "You have to select at least one.",
+    }),
 
-  Recreational_Activities: z
-    .string(),
+  Other_Future_Plans: z.string(),
 
-  Interests: z
-    .string(),
+  // Leisure Time Activities
 
-  Clubs_Joined: z
-    .string(),
+  Recreational_Activities: z.string(),
 
-  Clubs_To_Join: z
-    .string(),
+  Interests: z.string(),
 
-  Reading: z.
-    string(),
+  Clubs_Joined: z.string(),
 
-  YesReading: z
-    .string(),
+  Clubs_To_Join: z.string(),
+
+  Reading: z.string(),
+
+  YesReading: z.string(),
 
   // Closing Question
-  Dreams: z
-    .string(),
+  Dreams: z.string(),
 
-  Image: z
-    .string(),
+  Image: z.string(),
 });
 
 export type FormSchema = typeof formSchema;

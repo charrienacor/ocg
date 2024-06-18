@@ -5,7 +5,7 @@
     LayoutDashboardIcon,
     UserIcon,
     LogOutIcon,
-    MenuIcon
+    MenuIcon,
   } from "lucide-svelte";
 
   import DataTable from "./data-table.svelte";

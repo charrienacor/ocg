@@ -4,7 +4,7 @@ import { superValidate } from "sveltekit-superforms";
 import { formSchema } from "./schema";
 import { zod } from "sveltekit-superforms/adapters";
 import db from "$db/mongo";
-import { redirect, setFlash } from 'sveltekit-flash-message/server'
+import { redirect, setFlash } from "sveltekit-flash-message/server";
 import { DateFormatter } from "@internationalized/date";
 
 let rawdate: Date;
@@ -12,31 +12,42 @@ let date = "";
 let time = "";
 
 export const load: PageServerLoad = async (event) => {
-  if (!event.locals.user) redirect("/admin/login", { type: 'loggedOut', message: 'You have been logged out' }, event);
+  if (!event.locals.user)
+    redirect(
+      "/admin/login",
+      { type: "loggedOut", message: "You have been logged out" },
+      event,
+    );
 
   let whitelist = await db.collection("Counselors").findOne({
     _id: `${event.locals.user.email}`,
-    Status: { $in: ["Active", "On-leave"] }
+    Status: { $in: ["Active", "On-leave"] },
   });
 
-  if (!whitelist) redirect("/homepage", { type: 'unauthorizedAccess', message: "You are not authorized to access admin pages." }, event);
-
-  let counselors = db.collection("Counselors").find(
-    {
-      Status: "Active",
-      RGC: "true",
-    },
-  );
-
-  let appointments = db.collection("Appointments").find(
-    { Status: "Approved" }).project(
+  if (!whitelist)
+    redirect(
+      "/homepage",
       {
-        _id: 0,
-        Appointment_Date: 1,
-        Appointment_Time: 1,
-        Counselor: 1,
-      });
+        type: "unauthorizedAccess",
+        message: "You are not authorized to access admin pages.",
+      },
+      event,
+    );
 
+  let counselors = db.collection("Counselors").find({
+    Status: "Active",
+    RGC: "true",
+  });
+
+  let appointments = db
+    .collection("Appointments")
+    .find({ Status: "Approved" })
+    .project({
+      _id: 0,
+      Appointment_Date: 1,
+      Appointment_Time: 1,
+      Counselor: 1,
+    });
 
   let college = db.collection("College").find().project({ _id: 0 });
 
@@ -92,15 +103,24 @@ export const actions: Actions = {
       });
       rawdate = new Date(data.Appointment_Date);
       date = df.format(rawdate);
-      time = `${data.Appointment_Hour}:${data.Appointment_Minute}`
+      time = `${data.Appointment_Hour}:${data.Appointment_Minute}`;
     } catch (e) {
-
-      setFlash({ type: 'appointmentError', message: 'Please check your input and try again.' }, event);
+      setFlash(
+        {
+          type: "appointmentError",
+          message: "Please check your input and try again.",
+        },
+        event,
+      );
     }
-    redirect("./walkin-student", {
-      type: "appointmentSuccess",
-      message: `You have booked an appointment on ${date} at ${time}.`
-    }, event);
+    redirect(
+      "./walkin-student",
+      {
+        type: "appointmentSuccess",
+        message: `You have booked an appointment on ${date} at ${time}.`,
+      },
+      event,
+    );
     return {
       form,
     };

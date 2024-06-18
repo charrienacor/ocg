@@ -4,7 +4,7 @@ import { env } from "$env/dynamic/private";
 let connection_string = "";
 if (!dev) {
   if (env.DATABASE_HOSTNAME === undefined) {
-    connection_string = "mongodb://localhost:27107"
+    connection_string = "mongodb://localhost:27107";
   } else {
     connection_string = `mongodb://${env.DATABASE_USERNAME}:${env.DATABASE_PASSWORD}@${env.DATABASE_HOSTNAME}:${env.DATABASE_PORT}`;
   }

@@ -84,12 +84,12 @@ pre {
 }
 
 .longtext {
-  line-height: 42px; 
+  line-height: 42px;
   text-align: center;
 }
 
 .text {
-  line-height: 42px; 
+  line-height: 42px;
   text-align: center;
 }
 
@@ -159,7 +159,6 @@ head {
 }
 
 @media only screen and (min-width: 611px) {
-
   .school {
     font-size: 30px;
   }
@@ -210,15 +209,15 @@ head {
 }
 
 .menu {
-    right: -50px;
-  }
+  right: -50px;
+}
 
-@media only screen and (max-width: 635px){
+@media only screen and (max-width: 635px) {
   .menu {
     right: -110px;
     top: 10px;
   }
-} 
+}
 
 @media only screen and (min-width: 636px) and (max-width: 749px) {
   .menu {
