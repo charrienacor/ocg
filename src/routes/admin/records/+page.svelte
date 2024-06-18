@@ -7,11 +7,11 @@
     LogOutIcon,
     UserIcon,
     SearchIcon,
-    MenuIcon
+    MenuIcon,
   } from "lucide-svelte";
 </script>
 
-<head> 
+<head>
   <style>
     header {
       display: flex;
@@ -91,27 +91,36 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-  <h1 class="pb-5 pt-12 font-bold sm:pt-5">STUDENT RECORDS</h1>
-  <form class="mx-auto w-full">
-    <label for="default-search" class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white">Search</label>
-    <div class="relative">
-      <div class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3">
-        <SearchIcon size={20} />
-      </div>
-      <input
-        type="search"
-        id="default-search"
-        class="text-md mb-10 block w-full rounded-md border p-4 ps-10 text-gray-800 focus:border-blue-500 focus:ring-blue-500"
-        placeholder="Search"
-        required
-      />
-      <button
-        type="submit"
-        class="absolute bottom-2.5 end-2.5 rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-200 hover:text-black"
-        >Search</button>
+<h1 class="pb-5 pt-12 font-bold sm:pt-5">STUDENT RECORDS</h1>
+<form class="mx-auto w-full">
+  <label
+    for="default-search"
+    class="sr-only mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >Search</label
+  >
+  <div class="relative">
+    <div
+      class="pointer-events-none absolute inset-y-0 start-0 flex items-center ps-3"
+    >
+      <SearchIcon size={20} />
     </div>
-  </form>
-
-  <div class="table-wrap relative block max-h-96 overflow-x-auto rounded-lg border border-none">
-    <DataTable />
+    <input
+      type="search"
+      id="default-search"
+      class="text-md mb-10 block w-full rounded-md border p-4 ps-10 text-gray-800 focus:border-blue-500 focus:ring-blue-500"
+      placeholder="Search"
+      required
+    />
+    <button
+      type="submit"
+      class="absolute bottom-2.5 end-2.5 rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white hover:bg-gray-200 hover:text-black"
+      >Search</button
+    >
   </div>
+</form>
+
+<div
+  class="table-wrap relative block max-h-96 overflow-x-auto rounded-lg border border-none"
+>
+  <DataTable />
+</div>

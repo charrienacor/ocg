@@ -11,6 +11,7 @@
     UserRound,
     ShieldCheck,
     TreePalm,
+    ClipboardX,
   } from "lucide-svelte";
   import { Separator } from "$lib/components/ui/separator";
   export let type: any;
@@ -33,6 +34,25 @@
             </div>
           </div>
           <Separator class="bg-up-forest-green" />
+          <div class="font-normal">
+            {message}
+          </div>
+        </div>
+      </div>
+    </div>
+  {:else if type === "FormValidationError"}
+    <div
+      class="flex rounded-md border-2 border-primary bg-secondary bg-opacity-5 p-5"
+    >
+      <div class="flex flex-row gap-3">
+        <div class="flex items-center">
+          <ClipboardX color="#7b1113" />
+        </div>
+        <div class="flex flex-col">
+          <div>
+            <div class="font-bold text-primary">Entry Fields Missing!</div>
+          </div>
+          <Separator class="bg-primary" />
           <div class="font-normal">
             {message}
           </div>

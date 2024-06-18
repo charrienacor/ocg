@@ -45,7 +45,7 @@ db.Counselors.insertMany([
   {
     _id: "mpticag@up.edu.ph",
     First_Name: "Merjerie",
-   Middle_Name: "P.",
+    Middle_Name: "P.",
     Last_Name: "Ticag",
     RGC: "false",
     Status: "Active",
@@ -59,7 +59,6 @@ db.Counselors.insertMany([
     Status: "Active",
   },
 ]);
-
 
 db.createCollection("College");
 db.College.insertMany([
@@ -80,26 +79,26 @@ db.createCollection("TimeSlots");
 db.TimeSlots.insertMany([
   {
     Email: "langiao@up.edu.ph",
-    Monday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Tuesday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Wednesday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Thursday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Friday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
+    Monday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Tuesday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Wednesday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Thursday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Friday: ["9:00 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
   },
   {
     Email: "apparcasio@up.edu.ph",
-    Monday: ["8:15 AM", "10:15 AM", "2:15 PM"], 
-    Tuesday: ["8:15 AM", "10:15 AM", "2:15 PM"], 
-    Wednesday: ["8:15 AM", "10:15 AM", "2:15 PM"], 
-    Thursday: ["8:15 AM", "10:15 AM", "2:15 PM"], 
-    Friday: ["8:15 AM", "10:15 AM", "2:15 PM"], 
+    Monday: ["8:15 AM", "10:15 AM", "2:15 PM"],
+    Tuesday: ["8:15 AM", "10:15 AM", "2:15 PM"],
+    Wednesday: ["8:15 AM", "10:15 AM", "2:15 PM"],
+    Thursday: ["8:15 AM", "10:15 AM", "2:15 PM"],
+    Friday: ["8:15 AM", "10:15 AM", "2:15 PM"],
   },
   {
     Email: "jetuguinay@up.edu.ph",
-    Monday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Tuesday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Wednesday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Thursday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"], 
-    Friday: ["8:00 AM", "9:30 AM"], 
+    Monday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Tuesday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Wednesday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Thursday: ["8:30 AM", "9:30 AM", "10:30 AM", "2:00 PM", "3:30 PM"],
+    Friday: ["8:00 AM", "9:30 AM"],
   },
 ]);

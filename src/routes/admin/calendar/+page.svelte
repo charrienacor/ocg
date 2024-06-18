@@ -13,7 +13,7 @@
   } from "lucide-svelte";
 </script>
 
-<head> 
+<head>
   <style>
     header {
       display: flex;
@@ -119,11 +119,10 @@
     <Button
       variant="bigbutton"
       size="default"
-      class="text-xl w-full mb-3"
+      class="mb-3 w-full text-xl"
       on:click={() => goto("/admin/calendar/appointments")}
     >
       Edit Pending Appointments
     </Button>
   </div>
 </div>
-

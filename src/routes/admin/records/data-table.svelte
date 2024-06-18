@@ -1,21 +1,26 @@
 <script lang="ts">
-  import { createTable, Render, Subscribe, createRender, } from "svelte-headless-table";
+  import {
+    createTable,
+    Render,
+    Subscribe,
+    createRender,
+  } from "svelte-headless-table";
   import { readable } from "svelte/store";
   import * as Table from "$lib/components/ui/table";
   import DataTableActions from "./data-table-actions.svelte";
   import { page } from "$app/stores";
- 
+
   type Payment = {
     id: number;
     first_name: string;
     year: string;
     course: string;
   };
- 
+
   const data: Payment[] = $page.data.students;
- 
+
   const table = createTable(readable(data));
- 
+
   const columns = table.createColumns([
     table.column({
       accessor: "_id",
@@ -37,15 +42,15 @@
       accessor: ({ _id }) => _id,
       header: "Functions",
       cell: ({ value }) => {
-          return createRender(DataTableActions, { id: value });
+        return createRender(DataTableActions, { id: value });
       },
     }),
   ]);
- 
+
   const { headerRows, pageRows, tableAttrs, tableBodyAttrs } =
     table.createViewModel(columns);
 </script>
- 
+
 <div class="rounded-md border">
   <Table.Root {...$tableAttrs}>
     <Table.Header>

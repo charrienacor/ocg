@@ -6,12 +6,12 @@
     FileTextIcon,
     LayoutDashboardIcon,
     LogOutIcon,
-    MenuIcon
+    MenuIcon,
   } from "lucide-svelte";
   export let data: PageServerData;
 </script>
 
-<head> 
+<head>
   <style>
     header {
       display: flex;
@@ -82,4 +82,4 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<SettingsForm data = {data.form}/>
+<SettingsForm data={data.form} />

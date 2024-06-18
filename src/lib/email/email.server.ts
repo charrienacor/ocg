@@ -11,10 +11,10 @@ let transporter = nodemailer.createTransport({
   },
   tls: {
     rejectUnauthorized: false,
-  }
+  },
 });
 
-transporter.verify(function(error, success) {
+transporter.verify(function (error, success) {
   if (error) {
     console.error(error);
   } else {

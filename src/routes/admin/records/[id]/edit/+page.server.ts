@@ -9,16 +9,15 @@ import db from "$db/mongo";
 export const load: PageServerLoad = async (event) => {
   if (!event.locals.user) redirect(302, "/student/login");
 
-
-  const existingBIS:any = await db.collection("BIS").findOne({_id:event.params.id})
+  const existingBIS: any = await db
+    .collection("BIS")
+    .findOne({ _id: event.params.id });
   if (!existingBIS) redirect(302, "/admin/records");
-
-
 
   return {
     name: event.locals.user.username,
     email: event.locals.user.email,
-    form: await superValidate(existingBIS,zod(formSchema),{errors: false}),
+    form: await superValidate(existingBIS, zod(formSchema), { errors: false }),
   };
 };
 
@@ -30,15 +29,17 @@ export const actions: Actions = {
         form,
       });
     }
-  
+
     const data = form.data;
 
-    await db.collection("BIS").updateOne({
-      
-      _id:event.params.id, 
-    }, {
-      $set:data
-    });
+    await db.collection("BIS").updateOne(
+      {
+        _id: event.params.id,
+      },
+      {
+        $set: data,
+      },
+    );
     return {
       form,
     };

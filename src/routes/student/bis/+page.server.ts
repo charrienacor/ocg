@@ -12,7 +12,7 @@ export const load: PageServerLoad = async (event) => {
   return {
     name: event.locals.user.username,
     email: event.locals.user.email,
-    form: await superValidate(zod(formSchema),{errors: false}),
+    form: await superValidate(zod(formSchema), { errors: false }),
   };
 };
 
@@ -24,17 +24,18 @@ export const actions: Actions = {
         form,
       });
     }
-  
+
     const data = form.data;
 
     await db.collection("BIS").insertOne({
       _id: `${data.Student_Number}`,
-      ...data})
+      ...data,
+    });
 
     // await db.collection("BIS").insertOne({
-      
-    //   _id: `${data.Student_Number}`, 
-      
+
+    //   _id: `${data.Student_Number}`,
+
     //   Preliminaries: {
     //     Semester: `${data.Semester}`,
     //     School_Year: `${data.School_Year}`,

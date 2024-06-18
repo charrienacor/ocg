@@ -13,7 +13,7 @@ services:
     command: --port 27018
     ports:
       - ${DATABASE_PORT}:27018
-    env_file: 
+    env_file:
       - ./.env
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${DATABASE_USERNAME}
@@ -28,5 +28,5 @@ services:
     environment:
       ON_DOCKER: "true"
     depends_on:
-        aguhon-database:
-          condition: service_started
+      aguhon-database:
+        condition: service_started
