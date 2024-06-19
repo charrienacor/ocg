@@ -1,16 +1,17 @@
 import { z } from "zod";
 
 export const formSchema = z.object({
-  Student_Name: z.string(),
-  Student_Email: z.string(),
+  Student_Name: z.string().max(100, { message: "Cannot exceed 100 characters" }),
+  Student_Email: z.string().email({ message: "Must input valid email" }).max(100, { message: "Cannot esceed 100 characters" }),
   Student_ID: z
     .string()
     .regex(/[0-9]/, { message: "Only numbers allowed." })
     .max(9, { message: "Must be 9 digits." })
     .min(9, { message: "Must be 9 digits." }),
-  Contact_Number: z.string(),
-  College: z.string(),
-  Course: z.string(),
+  Contact_Number: z.string()
+    .max(100, { message: "Cannot exceed 100 characters" }),
+  College: z.string().max(100),
+  Course: z.string().max(100),
 
   Guidance_Counselor: z.string(),
 

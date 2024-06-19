@@ -168,6 +168,7 @@
       <Dialog.Content class="max-h-screen overflow-y-scroll">
         <Dialog.Header>
           <Dialog.Title>Book an Appointment</Dialog.Title>
+          <Dialog.Description><p class="text-red-500">* Required Fields</p></Dialog.Description>
         </Dialog.Header>
         <SettingsForm
           data={data.form}

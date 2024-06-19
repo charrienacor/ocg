@@ -55,23 +55,32 @@
 <form method="POST" use:enhance>
   <Form.Field {form} name="Visitor_Name">
     <Form.Control let:attrs>
-      <Form.Label>Name</Form.Label>
-      <Input {...attrs} bind:value={$formData.name} />
+      <Form.Label class="flex flex-row gap-1"
+        >Name
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
+      <Input {...attrs} bind:value={$formData.Name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
   <Form.Field {form} name="Visitor_Email">
     <Form.Control let:attrs>
-      <Form.Label>Email</Form.Label>
-      <Input {...attrs} bind:value={$formData.email} />
+      <Form.Label class="flex flex-row gap-1"
+        >Email
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
+      <Input {...attrs} bind:value={$formData.Email} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
   <Form.Field {form} name="Contact_Num">
     <Form.Control let:attrs>
-      <Form.Label>Contact Number</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Contact Number
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input {...attrs} bind:value={$formData.Contact} />
     </Form.Control>
     <Form.Description
@@ -82,7 +91,10 @@
 
   <Form.Field {form} name="Visitor_Institution">
     <Form.Control let:attrs>
-      <Form.Label>Associated Institution</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Associated Institution
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input {...attrs} bind:value={$formData.Institution} />
     </Form.Control>
     <Form.FieldErrors />
@@ -90,7 +102,9 @@
 
   <Form.Field {form} name="Guidance_Counselor">
     <Form.Control let:attrs>
-      <Form.Label>Guidance Counselor</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Guidance Counselor <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Select.Root
         selected={selectedCounselor}
         onSelectedChange={(v) => {
@@ -119,7 +133,10 @@
 
   <Form.Field {form} name="Appointment_Date" class="flex flex-col">
     <Form.Control let:attrs>
-      <Form.Label>Appointment Date<br /></Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Appointment Date
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Popover.Root>
         <Popover.Trigger
           {...attrs}
@@ -165,7 +182,10 @@
   </Form.Field>
   <Form.Field {form} name="Appointment_Time">
     <Form.Control let:attrs>
-      <Form.Label>Appointment Time</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Appointment Time
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Select.Root
         selected={selectedTime}
         onSelectedChange={(v) => {
@@ -215,8 +235,12 @@
       <Form.Label>Nature of Concern</Form.Label>
       <Input {...attrs} bind:value={$formData.Nature_Of_Concern} />
     </Form.Control>
+    <Form.Description>Kindly indicate if urgent</Form.Description>
     <Form.FieldErrors />
   </Form.Field>
-
-  <Form.Button>Submit</Form.Button>
+  {#if $formData.Name === "" || $formData.Email === "" || $formData.Contact === "" || $formData.Institution === "" || $formData.Name === undefined || $formData.Email === undefined || $formData.Contact === undefined || $formData.Institution === undefined || $formData.Counselor === undefined || $formData.App_Date === undefined || $formData.Appointment_Time === ""}
+    <Form.Button disabled>Submit</Form.Button>
+  {:else}
+    <Form.Button>Submit</Form.Button>
+  {/if}
 </form>
