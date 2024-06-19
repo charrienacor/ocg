@@ -60,28 +60,40 @@
         value: $formData.Appointment_Time,
       }
     : undefined;
+
+  $formData.Student_Name = name;
+  $formData.Student_Email = email;
 </script>
 
 <form method="POST" use:enhance>
   <Form.Field {form} name="Student_Name">
     <Form.Control let:attrs>
-      <Form.Label>Student Name</Form.Label>
-      <Input {...attrs} bind:value={name} />
+      <Form.Label class="flex flex-row gap-1"
+        >Student Name
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
+      <Input {...attrs} bind:value={$formData.Student_Name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
   <Form.Field {form} name="Student_Email">
     <Form.Control let:attrs>
-      <Form.Label>Student Email</Form.Label>
-      <Input {...attrs} bind:value={email} />
+      <Form.Label class="flex flex-row gap-1"
+        >Student Email
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
+      <Input {...attrs} bind:value={$formData.Student_Email} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
   <Form.Field {form} name="Student_ID">
     <Form.Control let:attrs>
-      <Form.Label>Student Number</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Student Number
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input
         {...attrs}
         placeholder="20XXXXXXX"
@@ -93,7 +105,10 @@
 
   <Form.Field {form} name="Contact_Number">
     <Form.Control let:attrs>
-      <Form.Label>Contact Number</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Contact Number
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input
         {...attrs}
         placeholder="09XXXXXXXXX"
@@ -105,7 +120,10 @@
 
   <Form.Field {form} name="College">
     <Form.Control let:attrs>
-      <Form.Label>College</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >College
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Select.Root
         selected={selectedCollege}
         onSelectedChange={(v) => {
@@ -133,7 +151,10 @@
 
   <Form.Field {form} name="Course">
     <Form.Control let:attrs>
-      <Form.Label>Course</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Degree Program
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input {...attrs} bind:value={$formData.Course} />
     </Form.Control>
     <Form.FieldErrors />
@@ -141,7 +162,10 @@
 
   <Form.Field {form} name="Guidance_Counselor">
     <Form.Control let:attrs>
-      <Form.Label>Guidance Counselor</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Guidance Counselor
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Select.Root
         selected={selectedCounselor}
         onSelectedChange={(v) => {
@@ -170,7 +194,10 @@
 
   <Form.Field {form} name="Appointment_Date" class="flex flex-col">
     <Form.Control let:attrs>
-      <Form.Label>Appointment Date<br /></Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Appointment Date
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Popover.Root>
         <Popover.Trigger
           {...attrs}
@@ -216,7 +243,10 @@
   </Form.Field>
   <Form.Field {form} name="Appointment_Time">
     <Form.Control let:attrs>
-      <Form.Label>Appointment Time</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Appointment Time
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Select.Root
         selected={selectedTime}
         onSelectedChange={(v) => {
@@ -268,6 +298,9 @@
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
-
-  <Form.Button>Submit</Form.Button>
+  {#if $formData.Student_Name === "" || $formData.Student_Name === undefined || $formData.Student_Email === "" || $formData.Student_Email === undefined || $formData.Student_ID === "" || $formData.Student_ID === undefined || $formData.College === "" || $formData.College === undefined || $formData.Course === "" || $formData.Course === undefined || $formData.Counselor === "" || $formData.Counselor === undefined || $formData.App_Date === undefined || $formData.App_Date === "" || $formData.Appointment_Time === "" || $formData.Appointment_Time === undefined}
+    <Form.Button disabled>Submit</Form.Button>
+  {:else}
+    <Form.Button>Submit</Form.Button>
+  {/if}
 </form>

@@ -29,6 +29,7 @@
   export let data: any;
   export let counselors: any;
   export let colleges: any;
+  export let timeslots: any;
 
   const form = superForm(data, {
     validators: zodClient(formSchema),
@@ -36,34 +37,7 @@
 
   const { form: formData, enhance } = form;
 
-  const hours = [
-    { value: "07", label: "7" },
-    { value: "08", label: "8" },
-    { value: "09", label: "9" },
-    { value: "10", label: "10" },
-    { value: "11", label: "11" },
-    { value: "12", label: "12" },
-    { value: "13", label: "13" },
-    { value: "14", label: "14" },
-    { value: "15", label: "15" },
-    { value: "16", label: "16" },
-    { value: "17", label: "17" },
-  ];
-
-  const minutes = [
-    { value: "00", label: "00" },
-    { value: "05", label: "05" },
-    { value: "10", label: "10" },
-    { value: "15", label: "15" },
-    { value: "20", label: "20" },
-    { value: "25", label: "25" },
-    { value: "30", label: "30" },
-    { value: "35", label: "35" },
-    { value: "40", label: "40" },
-    { value: "45", label: "45" },
-    { value: "50", label: "50" },
-    { value: "55", label: "55" },
-  ];
+  $: dayTime = "";
 
   $: selectedCounselor = $formData.Counselor
     ? {
@@ -72,24 +46,16 @@
       }
     : undefined;
 
-  $: selectedHour = $formData.Hour
-    ? {
-        label: $formData.Hour,
-        value: $formData.Hour,
-      }
-    : undefined;
-
-  $: selectedMinute = $formData.Minute
-    ? {
-        label: $formData.Minute,
-        value: $formData.Minute,
-      }
-    : undefined;
-
   $: selectedCollege = $formData.College
     ? {
-        label: $formData.college,
-        value: $formData.college,
+        label: $formData.College,
+        value: $formData.College,
+      }
+    : undefined;
+  $: selectedTime = $formData.Appointment_Time
+    ? {
+        label: $formData.Appointment_Time,
+        value: $formData.Appointment_Time,
       }
     : undefined;
 </script>
@@ -97,23 +63,32 @@
 <form method="POST" use:enhance>
   <Form.Field {form} name="Student_Name">
     <Form.Control let:attrs>
-      <Form.Label>Student Name</Form.Label>
-      <Input {...attrs} bind:value={$formData.name} />
+      <Form.Label class="flex flex-row gap-1"
+        >Student Name
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
+      <Input {...attrs} bind:value={$formData.Student_Name} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
   <Form.Field {form} name="Student_Email">
     <Form.Control let:attrs>
-      <Form.Label>Student Email</Form.Label>
-      <Input {...attrs} bind:value={$formData.email} />
+      <Form.Label class="flex flex-row gap-1"
+        >Student Email
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
+      <Input {...attrs} bind:value={$formData.Student_Email} />
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
 
   <Form.Field {form} name="Student_ID">
     <Form.Control let:attrs>
-      <Form.Label>Student Number</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Student Number
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input
         {...attrs}
         placeholder="20XXXXXXX"
@@ -125,7 +100,10 @@
 
   <Form.Field {form} name="Contact_Number">
     <Form.Control let:attrs>
-      <Form.Label>Contact Number</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Contact Number
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input
         {...attrs}
         placeholder="09XXXXXXXXX"
@@ -137,7 +115,10 @@
 
   <Form.Field {form} name="College">
     <Form.Control let:attrs>
-      <Form.Label>College</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >College
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Select.Root
         selected={selectedCollege}
         onSelectedChange={(v) => {
@@ -165,7 +146,10 @@
 
   <Form.Field {form} name="Course">
     <Form.Control let:attrs>
-      <Form.Label>Course</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Degree Program
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Input {...attrs} bind:value={$formData.Course} />
     </Form.Control>
     <Form.FieldErrors />
@@ -173,7 +157,10 @@
 
   <Form.Field {form} name="Guidance_Counselor">
     <Form.Control let:attrs>
-      <Form.Label>Guidance Counselor</Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Guidance Counselor
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Select.Root
         selected={selectedCounselor}
         onSelectedChange={(v) => {
@@ -202,7 +189,10 @@
 
   <Form.Field {form} name="Appointment_Date" class="flex flex-col">
     <Form.Control let:attrs>
-      <Form.Label>Appointment Date<br /></Form.Label>
+      <Form.Label class="flex flex-row gap-1"
+        >Appointment Date
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
       <Popover.Root>
         <Popover.Trigger
           {...attrs}
@@ -225,6 +215,15 @@
             onValueChange={(v) => {
               if (v) {
                 $formData.App_Date = v.toString();
+                dayTime = [
+                  "Sunday",
+                  "Monday",
+                  "Tuesday",
+                  "Wednesday",
+                  "Thursday",
+                  "Friday",
+                  "Saturday",
+                ][v.toDate(getLocalTimeZone()).getDay()];
               } else {
                 $formData.App_Date = "";
               }
@@ -237,61 +236,55 @@
       <input hidden value={$formData.App_Date} name={attrs.name} />
     </Form.Control>
   </Form.Field>
-  <div class="flex flex-row">
-    <Form.Field {form} name="Appointment_Hour">
-      <Form.Control let:attrs>
-        <Form.Label>Appointment Time</Form.Label>
-        <Select.Root
-          selected={selectedHour}
-          onSelectedChange={(v) => {
-            v && ($formData.Hour = v.value);
-          }}
-        >
-          <Select.Trigger {...attrs} class="w-[100px]">
-            <Select.Value placeholder="HH" />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each hours as hour}
-                <Select.Item value={hour.value} label={hour.label}
-                  >{hour.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.Hour} name={attrs.name} />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
-
-    <Form.Field {form} name="Appointment_Minute">
-      <Form.Control let:attrs>
-        <Form.Label><br /></Form.Label>
-        <Select.Root
-          selected={selectedMinute}
-          onSelectedChange={(v) => {
-            v && ($formData.Minute = v.value);
-          }}
-        >
-          <Select.Trigger {...attrs} class="w-[100px]">
-            <Select.Value placeholder="MM" />
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              {#each minutes as minute}
-                <Select.Item value={minute.value} label={minute.label}
-                  >{minute.label}</Select.Item
-                >
-              {/each}
-            </Select.Group>
-          </Select.Content>
-        </Select.Root>
-        <input hidden bind:value={$formData.Minute} name={attrs.name} />
-      </Form.Control>
-      <Form.FieldErrors />
-    </Form.Field>
-  </div>
+  <Form.Field {form} name="Appointment_Time">
+    <Form.Control let:attrs>
+      <Form.Label class="flex flex-row gap-1"
+        >Appointment Time
+        <p class="text-xs text-red-500">*</p></Form.Label
+      >
+      <Select.Root
+        selected={selectedTime}
+        onSelectedChange={(v) => {
+          v && ($formData.Appointment_Time = v.value);
+        }}
+      >
+        <Select.Trigger {...attrs} class="w-[200px]">
+          <Select.Value placeholder="Pick a time" />
+        </Select.Trigger>
+        <Select.Content>
+          <Select.Group>
+            {#each timeslots as timeslot}
+              {#if $formData.Counselor === timeslot.Email}
+                {#if dayTime === "Monday"}
+                  {#each timeslot.Monday as time}
+                    <Select.Item value={time} label={time}>{time}</Select.Item>
+                  {/each}
+                {:else if dayTime === "Tuesday"}
+                  {#each timeslot.Tuesday as time}
+                    <Select.Item value={time} label={time}>{time}</Select.Item>
+                  {/each}
+                {:else if dayTime === "Wednesday"}
+                  {#each timeslot.Wednesday as time}
+                    <Select.Item value={time} label={time}>{time}</Select.Item>
+                  {/each}
+                {:else if dayTime === "Thursday"}
+                  {#each timeslot.Thursday as time}
+                    <Select.Item value={time} label={time}>{time}</Select.Item>
+                  {/each}
+                {:else if dayTime === "Friday"}
+                  {#each timeslot.Friday as time}
+                    <Select.Item value={time} label={time}>{time}</Select.Item>
+                  {/each}
+                {/if}
+              {/if}
+            {/each}
+          </Select.Group>
+        </Select.Content>
+      </Select.Root>
+      <input hidden bind:value={$formData.Appointment_Time} name={attrs.name} />
+    </Form.Control>
+    <Form.FieldErrors />
+  </Form.Field>
 
   <Form.Field {form} name="Nature_Of_Concern">
     <Form.Control let:attrs>
@@ -300,6 +293,9 @@
     </Form.Control>
     <Form.FieldErrors />
   </Form.Field>
-
-  <Form.Button>Submit</Form.Button>
+  {#if $formData.Student_Name === "" || $formData.Student_Name === undefined || $formData.Student_Email === "" || $formData.Student_Email === undefined || $formData.Student_ID === "" || $formData.Student_ID === undefined || $formData.College === "" || $formData.College === undefined || $formData.Course === "" || $formData.Course === undefined || $formData.Counselor === "" || $formData.Counselor === undefined || $formData.App_Date === undefined || $formData.App_Date === "" || $formData.Appointment_Time === "" || $formData.Appointment_Time === undefined}
+    <Form.Button disabled>Submit</Form.Button>
+  {:else}
+    <Form.Button>Submit</Form.Button>
+  {/if}
 </form>
