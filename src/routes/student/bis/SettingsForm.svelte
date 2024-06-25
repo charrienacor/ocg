@@ -2909,7 +2909,7 @@
         </Form.Field>
       </div>
 
-      <Form.Button class="w-full">Submit</Form.Button>
+      <form.button class="w-full">submit</form.button>
     </div>
   </form>
 
