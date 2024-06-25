@@ -267,7 +267,7 @@
                       </div>
                     {:else if cell.id === "Counselor" || cell.id === "Appointment_Date" || cell.id === "Appointment_Time" || cell.id === "Status"}
                       <div
-                        class="flex flex-row content-center items-center justify-center gap-1 align-middle"
+                        class="flex flex-row content-center items-centergap-1 align-middle"
                       >
                         <div>
                           <Render of={cell.render()} />
