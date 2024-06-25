@@ -7,11 +7,13 @@
 
 <Html lang="en">
   <Text>
-    Hello {name}! <br /> This is to inform you that your requested appointment
-    schdule on {date} at {time} with your requested counselor has been approved.
-    Please proceed to visit the Office of Counseling and Guidance at the mentioned
-    time. <br /> 
-    Thank you for your understanding and patience! <br />
+    Dear {name}, <br /> <br />
+    
+    Thank you for submitting an appointment request. We are <u>pleased to inform you</u> that your requested appointment schedule on {date} at {time} with 
+    your requested counselor has been <b>approved</b>. Please proceed to visit the Office of Counseling and Guidance at the mentioned time. <br /> <br />
+    If you have any questions, please do not hesitate to reach out to us. Thank you for your understanding and patience! <br />
+    <hr>
+    <hr>
     Best Regards, <br />
     <br />
     Office of Counseling and Guidance <br />
