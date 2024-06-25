@@ -15,7 +15,7 @@ db.Counselors.insertMany([
     First_Name: "Alyanna",
     Middle_Name: "",
     Last_Name: "Lopez",
-    RGC: "true",
+    RGC: "false",
     Status: "Active",
   },
   {

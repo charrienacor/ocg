@@ -104,11 +104,12 @@ export const actions: Actions = {
       });
       const message = {
         from: env.GOOGLE_EMAIL,
-        to: env.GOOGLE_EMAIL,
+        to: "yannamiiiyx@gmail.com",
         subject: `New Requested Appointment by Visitor ${data.Visitor_Name}`,
         html: emailhtml,
       };
 
+      
       const sendEmail = async (message) => {
         await new Promise((resolve, reject) => {
           transporter.sendMail(message, (err, info) => {

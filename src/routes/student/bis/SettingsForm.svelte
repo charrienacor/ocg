@@ -755,11 +755,8 @@
     & SINCERELY.
   </h3>
   <form method="POST" use:enhance>
-    <div
-      class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
-    >
+    <div class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8">
       <h1>Preliminaries</h1>
-
       <div class="md:grid md:grid-cols-2 md:gap-4">
         <Form.Field {form} name="Semester">
           <Form.Control let:attrs>
@@ -2784,11 +2781,10 @@
             </Form.Control>
             <Form.FieldErrors />
           </Form.Field>
-
           <Form.FieldErrors />
         </div>
       </Form.Fieldset>
-
+    </div>
       <div
         class="center relative top-1/2 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
       >
@@ -2893,7 +2889,7 @@
       <div
         class="center relative top-1/2 mb-10 mt-10 flex flex-col gap-3 rounded-lg border bg-white px-8 py-8"
       >
-        <h1>Image</h1>
+        <h1>Signature and 1x1 Picture</h1>
 
         <Form.Field {form} name="Image">
           <Form.Control let:attrs>
@@ -2909,8 +2905,9 @@
         </Form.Field>
       </div>
 
-      <form.button class="w-full">submit</form.button>
-    </div>
+
+      <Form.Button class="w-full">Submit</Form.Button>
+    
   </form>
 
   <!-- {#if browser}

@@ -152,7 +152,7 @@
 </script>
 
 <div class="w-full">
-  <div class="flex items-center gap-1 py-4">
+  <div class="flex flex-row justify-between gap-1 py-4">
     <Input
       class="max-w-sm"
       placeholder="Search"
@@ -250,7 +250,7 @@
                       </div>
                     {:else if cell.id === "Counselor" || cell.id === "Appointment_Date" || cell.id === "Appointment_Time" || cell.id === "Status"}
                       <div
-                        class="flex flex-row content-center items-center justify-center gap-1 align-middle"
+                        class="flex flex-row content-center items-center gap-1 align-middle"
                       >
                         <div>
                           <Render of={cell.render()} />

@@ -147,7 +147,7 @@
           <p class="text-lg">Book an Appointment</p>
         </Button>
       </Dialog.Trigger>
-      <Dialog.Content class="max-h-screen overflow-y-scroll">
+      <Dialog.Content class="max-h-96 overflow-y-scroll">
         <Dialog.Header>
           <Dialog.Title>Book an Appointment</Dialog.Title>
           <Dialog.Description

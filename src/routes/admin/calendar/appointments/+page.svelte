@@ -98,7 +98,7 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
-<div class="absolute flex items-center">
+<div class="absolute m-auto left-0 right-0 w-[89vw]">
   <Tabs.Root value="student" class="mx-auto">
     <div class="mx-auto flex justify-between px-9">
       <h1 class="pt-12 font-bold sm:pt-5">MANAGE APPOINTMENTS</h1>
