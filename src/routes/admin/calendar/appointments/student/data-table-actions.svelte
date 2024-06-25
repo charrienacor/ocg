@@ -56,7 +56,7 @@
         <Dialog.Title>Reject Appointment Schedule Request</Dialog.Title>
         <Dialog.Description>
           The requested appointment schedule will be denied. Include remarks for
-          denial below.
+          denial below. An email notification with the following remarks will be sent.
         </Dialog.Description>
       </Dialog.Header>
       <form method="POST" action="?/rejected">

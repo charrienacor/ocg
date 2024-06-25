@@ -81,7 +81,7 @@ export const actions: Actions = {
       const message = {
         from: env.GOOGLE_EMAIL,
         to: email,
-        subject: "Approved Requested Schedule Appointment",
+        subject: "Approved Requested Appointment",
         html: emailhtml,
       };
 
@@ -160,8 +160,8 @@ export const actions: Actions = {
       });
       const message = {
         from: env.GOOGLE_EMAIL,
-        to: "yannamiiiyx@gmail.com",
-        subject: "Rejected Requested Schedule Appointment",
+        to: email,
+        subject: "Rejected Requested Appointment",
         html: emailhtml,
       };
 

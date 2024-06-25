@@ -8,12 +8,17 @@
 
 <Html lang="en">
   <Text>
-    Hello {name}! <br /> This is to inform you that your requested appointment
-    schdule on {date} at {time} with your requested counselor has been rejected with
-    the following remarks: <br />
-    {remark} <br />
+    Dear {name},  <br /><br />
+    
+    Thank you for submitting an appointment request. We sincerely appreciate the time and courage it took for you to reach out to us.
+    After carefully checking the schedules of the guidance counselors, we <u>regret to inform you</u> that your requested appointment schedule 
+    on {date} at {time} with your requested counselor has been <b>rejected</b> with the following remarks from the counselor: <br /> <br />
+    <i style="padding-left: 50px;">{remark}</i><br />
     <br /> 
-    Thank you for your understanding and patience! <br />
+    If you are available on any other timeslot, please submit another appointment request through the website (http://localhost:5173/homepage). <br />
+    If you have any questions, please don't hesitate to reach out to us. Thank you for your understanding and patience! <br />
+    <hr>
+    <hr>
     Best Regards, <br />
     <br />
     Office of Counseling and Guidance <br />
