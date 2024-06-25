@@ -160,7 +160,7 @@ export const actions: Actions = {
       });
       const message = {
         from: env.GOOGLE_EMAIL,
-        to: email,
+        to: "yannamiiiyx@gmail.com",
         subject: "Rejected Requested Schedule Appointment",
         html: emailhtml,
       };

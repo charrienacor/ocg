@@ -107,7 +107,7 @@ export const actions: Actions = {
       });
       const message = {
         from: env.GOOGLE_EMAIL,
-        to: env.GOOGLE_EMAIL,
+        to: "yannamiiiyx@gmail.com",
         subject: `New Requested Appointment by Student ${data.Student_Name}`,
         html: emailhtml,
       };

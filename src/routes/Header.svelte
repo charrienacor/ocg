@@ -1,7 +1,7 @@
 <header class="flex">
   <div class="corner sm:w-36">
     <a
-      href="https://up.edu.ph/"
+      href="/"
       class="h-full w-full items-center justify-center"
     >
       <img
