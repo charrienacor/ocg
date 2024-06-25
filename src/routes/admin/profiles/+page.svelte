@@ -13,6 +13,7 @@
   import { Button } from "$lib/components/ui/button/index.js";
   import type { PageServerData } from "./$types";
   import SettingsForm from "./SettingsForm.svelte";
+    import { ComponentRenderConfig } from "svelte-headless-table";
 
   export let data: PageServerData;
   let counselors = data.counselor;
@@ -98,16 +99,18 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
+
+<div class="absolute m-auto left-0 right-0 w-[89vw]">
 <h1 class="pb-5 pt-12 font-bold sm:pt-5">ADMIN ACCOUNTS</h1>
 <div
-  class="table-wrap max-h relative block overflow-x-auto rounded-lg border border-none"
+  class="table-wrap max-h static block overflow-x-auto rounded-lg border border-none w-full"
 >
   <DataTable {counselors} />
 </div>
 
 <Dialog.Root>
   <Dialog.Trigger>
-    <Button class="text-md mt-7 w-full">Add Admin Account</Button>
+    <Button class="text-md mt-7 w-[89vw]">Add Admin Account</Button>
   </Dialog.Trigger>
   <Dialog.Content>
     <Dialog.Header>
@@ -116,3 +119,4 @@
     <SettingsForm data={data.form} />
   </Dialog.Content>
 </Dialog.Root>
+</div>

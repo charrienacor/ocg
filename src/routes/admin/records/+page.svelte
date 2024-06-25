@@ -91,6 +91,7 @@
   <script src="https://unpkg.com/flowbite@1.5.1/dist/flowbite.js"></script>
 </div>
 
+<div class="absolute m-auto left-0 right-0 w-[89vw]">
 <h1 class="pb-5 pt-12 font-bold sm:pt-5">STUDENT RECORDS</h1>
 <form class="mx-auto w-full">
   <label
@@ -123,4 +124,5 @@
   class="table-wrap relative block max-h-96 overflow-x-auto rounded-lg border border-none"
 >
   <DataTable />
+</div>
 </div>
